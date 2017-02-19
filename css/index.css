@@ -1,13 +1,21 @@
 .navbar-fixed-top .container-fluid {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 1);
 }
 
 .navbar-inverse {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 1);
+}
+
+.navbar-inverse .navbar-nav>.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 #education.outer {
-    background-image: url('../res/images/ut1.png');
+    background-image: url('../res/img/ut1.png');
     background-size: cover;
     background-position: top;
     display: block;
