@@ -29,11 +29,6 @@ body {
     margin: 5px;
 }
 
-.container-fluid {
-    padding: 0px;
-    margin: 0px;
-}
-
 .modal {
     width: 60%;
     left: 5%;
@@ -110,5 +105,7 @@ section .light {
 }
 
 ;
+
+}
 
 }
