@@ -469,7 +469,7 @@ h2 {
     filter: drop-shadow(0 8px 4px #65735818);
     transition: transform 0.2s;
 }
-.card:hover img {
+.card:hover .card-art img {
     transform: scale(1.06);
 }
 .level-pill,
@@ -1056,3 +1056,72 @@ progress::-moz-progress-bar {
         transition: none !important;
     }
 }
+
+/* Game items stay local; rarity is independent of a skill's unlock status. */
+.asset-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.specialty-badge[data-specialty="Ingredients"] { background: #f3e5d5; }
+.specialty-badge[data-specialty="Skills"] { background: #e6e8f5; }
+.shiny-badge { background: #fff0ba; color: #796020; }
+.card-resources {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 13px 0 9px;
+}
+.card-resources > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+.card-resources small { font-size: 10px; color: var(--muted); }
+.resource-berry { border-right: 1px solid var(--line); padding-right: 8px; }
+.resource-item.locked { opacity: .55; }
+.card-rarities { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 13px; }
+.rarity-badge {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 3px 6px;
+    font-size: 9px;
+    text-transform: capitalize;
+}
+.rarity-gold, .slot.locked.rarity-gold {
+    background: linear-gradient(135deg, #fff7cf, #f7e5a0);
+    border-color: #dec274;
+    color: #70501e;
+}
+.rarity-silver, .slot.locked.rarity-silver {
+    background: linear-gradient(135deg, #effaff, #d2e9f8);
+    border-color: #a5c8df;
+    color: #355570;
+}
+.rarity-normal, .slot.locked.rarity-normal {
+    background: linear-gradient(135deg, #fff, #f0f1ed);
+    border-color: #d4d6d0;
+    color: #5a6257;
+}
+.slot-name { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.slot-label { font-weight: 600; }
+.slot[class*="rarity-"] .slot-name { align-items: flex-start; flex-direction: column; gap: 3px; }
+.rarity-caption { font-size: 8px; text-transform: uppercase; letter-spacing: .7px; opacity: .8; }
+.slot.locked .slot-label { opacity: .7; }
+.rarity-legend { font-size: 10px; color: var(--muted); margin: -4px 0 10px; }
+@media (max-width: 480px) {
+    .card-resources { gap: 3px; }
+    .card-resources .asset-icon { width: 23px; height: 23px; }
+    .card-resources small { font-size: 8px; }
+    .rarity-badge { font-size: 8px; padding: 3px 4px; }
+    .slot-name { flex-wrap: wrap; }
+}
+
+.filter .asset-icon, .card-bottom .asset-icon { width: 17px; height: 17px; }
+.filter { display: inline-flex; align-items: center; gap: 5px; }

@@ -11,6 +11,29 @@ function node(tag, className, text) {
     if (text != null) element.textContent = text;
     return element;
 }
+function assetIcon(category, name) {
+    const path = sleepAssets[category]?.[name];
+    if (!path) return null;
+    const img = node("img", "asset-icon");
+    img.src = `/pokemon-sleep/assets/${path}`;
+    img.alt = ""; // The adjacent label (or parent title) names the item.
+    img.width = 28;
+    img.height = 28;
+    img.loading = "lazy";
+    img.addEventListener("error", () => { img.hidden = true; }, { once: true });
+    return img;
+}
+function appendIcon(parent, category, name) {
+    const icon = assetIcon(category, name);
+    if (icon) parent.append(icon);
+}
+function specialtyBadge(mon) {
+    const badge = node("span", "tag specialty-badge");
+    badge.dataset.specialty = mon.specialty || "";
+    appendIcon(badge, "specialties", mon.specialty);
+    badge.append(document.createTextNode(mon.specialty ? `${mon.specialty} specialist` : "Specialty not yet mapped"));
+    return badge;
+}
 function artwork(mon) {
     // The regional Wooper artwork is available separately; costumes use base art.
     const dex =
@@ -103,15 +126,37 @@ function render() {
         );
         const bottom = node("div", "card-bottom"),
             type = node("span");
-        type.append(
-            node("i", "specialty-dot"),
-            document.createTextNode(mon.specialty || "Specialty unresolved"),
-        );
+        appendIcon(type, "specialties", mon.specialty);
+        type.append(document.createTextNode(mon.specialty || "Specialty unresolved"));
         bottom.append(
             type,
             node("span", "", mon.nature || "Mint effect pending"),
         );
-        info.append(heading, skill, bottom);
+        const resources = node("div", "card-resources");
+        const berry = node("span", "resource-berry");
+        berry.title = mon.berry || "Berry unknown";
+        berry.setAttribute("aria-label", berry.title);
+        appendIcon(berry, "berries", mon.berry);
+        resources.append(berry);
+        for (const slot of mon.ingredients) {
+            const item = node("span", `resource-item${slot.unlocked ? "" : " locked"}`);
+            item.title = `${slot.name || "Ingredient unknown"} ×${slot.quantity ?? "?"} · ${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`;
+            item.setAttribute("aria-label", item.title);
+            appendIcon(item, "ingredients", slot.name);
+            if (slot.name) item.append(node("small", "", `×${slot.quantity ?? "?"}`));
+            else item.append(node("small", "", "?"));
+            resources.append(item);
+        }
+        const badges = node("div", "card-rarities");
+        for (const rarity of ["gold", "silver", "normal"]) {
+            const count = mon.subskills.filter(slot => sleepAssets.subskills[slot.name] === rarity).length;
+            if (count) {
+                const badge = node("span", `rarity-badge rarity-${rarity}`, `${count} ${rarity}`);
+                badge.title = `${count} ${rarity} subskill${count === 1 ? "" : "s"}, including locked skills`;
+                badges.append(badge);
+            }
+        }
+        info.append(heading, skill, resources, badges, bottom);
         card.append(art, info);
         card.addEventListener("click", () => showDetail(mon));
         fragment.append(card);
@@ -145,16 +190,11 @@ function showDetail(mon) {
     header.append(artwork(mon), title);
     const body = node("div", "detail-body"),
         meta = node("div", "detail-meta");
-    meta.append(
-        node(
-            "span",
-            "tag",
-            mon.specialty
-                ? `${mon.specialty} specialist`
-                : "Specialty not yet mapped",
-        ),
-        node("span", "tag", mon.berry || "Berry unknown"),
-    );
+    const berryBadge = node("span", "tag berry-badge");
+    appendIcon(berryBadge, "berries", mon.berry);
+    berryBadge.append(document.createTextNode(mon.berry || "Berry unknown"));
+    meta.append(specialtyBadge(mon), berryBadge);
+    if (mon.shiny) meta.append(node("span", "tag shiny-badge", "✦ Shiny"));
     body.append(meta);
     const xp = section("Experience");
     const xpLabel = node("div", "xp-label");
@@ -200,9 +240,24 @@ function showDetail(mon) {
         ["subskills", "Subskills"],
     ]) {
         const s = section(label);
+        if (key === "subskills") {
+            const legend = node("p", "rarity-legend", "Gold · Silver · Normal");
+            s.append(legend);
+        }
         for (const slot of mon[key]) {
             const row = node("div", `slot${slot.unlocked ? "" : " locked"}`),
                 name = node("span", "", slot.name || "Not yet mapped");
+            name.className = "slot-name";
+            if (key === "ingredients") {
+                const icon = assetIcon("ingredients", slot.name);
+                if (icon) name.prepend(icon);
+            }
+            const rarity = key === "subskills" ? sleepAssets.subskills[slot.name] : null;
+            if (rarity) {
+                row.classList.add(`rarity-${rarity}`);
+                const text = node("span", "slot-label", slot.name || "Not yet mapped");
+                name.replaceChildren(text, node("span", "rarity-caption", rarity));
+            }
             if (key === "ingredients" && slot.quantity != null)
                 name.append(node("em", "", `×${slot.quantity}`));
             row.append(
@@ -210,7 +265,7 @@ function showDetail(mon) {
                 node(
                     "small",
                     "",
-                    `${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`,
+                    `${slot.unlocked ? "" : "🔒 Locked · "}Lv. ${slot.unlock_level ?? "?"}`,
                 ),
             );
             s.append(row);
@@ -301,6 +356,10 @@ document.querySelectorAll(".filter").forEach((button) =>
         render();
     }),
 );
+document.querySelectorAll(".filter[data-specialty]").forEach((button) => {
+    const icon = assetIcon("specialties", button.dataset.specialty);
+    if (icon) button.prepend(icon);
+});
 fetch("/pokemon-sleep/roster.json", { cache: "no-cache" })
     .then((response) => {
         if (!response.ok) throw new Error("Roster unavailable");
