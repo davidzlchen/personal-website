@@ -301,7 +301,7 @@ document.querySelectorAll(".filter").forEach((button) =>
         render();
     }),
 );
-fetch("./roster.json", { cache: "no-cache" })
+fetch("/pokemon-sleep/roster.json", { cache: "no-cache" })
     .then((response) => {
         if (!response.ok) throw new Error("Roster unavailable");
         return response.json();
