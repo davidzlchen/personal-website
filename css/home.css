@@ -1103,3 +1103,6 @@ footer {
         transition: none !important;
     }
 }
+
+.odds-cover { background: #f0e2cf; }
+.odds-illustration { display: block; position: absolute; width: min(90%, 520px); height: 190px; bottom: 0; left: 50%; transform: translateX(-50%); object-fit: contain; }
