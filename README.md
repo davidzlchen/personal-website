@@ -118,3 +118,10 @@ Raw responses and credentials remain outside this repository. A failed fetch or
 validation preserves the published snapshot. Commit and deploy validated outputs
 through the normal branch/PR workflow. The Mac needs internet and its private
 session runtime; this is not a credential-bearing Vercel endpoint.
+
+## Blog
+
+`/blog/` lists project stories. The launch post lives at
+`/blog/pokemon-sleep-repository/` and links to the reusable public template.
+Blog styles extend the homepage theme in `css/blog.css`. Add future static posts
+under `blog/<slug>/index.html` and add an entry to the blog index.
