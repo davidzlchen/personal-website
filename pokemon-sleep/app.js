@@ -84,6 +84,25 @@ function artwork(mon) {
 function speciesLabel(mon) {
     return `${mon.variant ? mon.variant + " " : ""}${mon.species}`;
 }
+function matchesSearch(mon, query) {
+    const aliases = [
+        ...mon.subskills.map((slot) => subskillAbbreviations[slot.name]),
+        ...Object.entries(mon.nature_effects || {}).flatMap(([effect, direction]) => {
+            const label = natureAbbreviations[effect];
+            return label ? [label, `${direction === "up" ? "↑" : "↓"} ${label}`] : [];
+        }),
+    ].filter(Boolean).map((label) => label.toLowerCase());
+    // Match badge abbreviations exactly: ING should not match "Helping".
+    if (aliases.includes(query.replace(/\s+/g, " "))) return true;
+    const knownAlias = Object.values(subskillAbbreviations).concat(Object.values(natureAbbreviations))
+        .some((label) => label.toLowerCase() === query);
+    if (knownAlias) return false;
+    return [mon.nickname, speciesLabel(mon), mon.nature, mon.berry, mon.main_skill.name,
+        ...mon.ingredients.map((slot) => slot.name),
+        ...mon.subskills.map((slot) => slot.name),
+        ...Object.keys(mon.nature_effects || {}),
+    ].filter(Boolean).join(" ").toLowerCase().includes(query);
+}
 function render() {
     const query = $("#search").value.trim().toLocaleLowerCase();
     const shown = roster.filter(
@@ -91,19 +110,7 @@ function render() {
             (!specialty || mon.specialty === specialty) &&
             (!$("#shiny").checked || mon.shiny) &&
             (!$("#legendary").checked || legendarySpecies.has(mon.national_dex)) &&
-            [
-                mon.nickname,
-                speciesLabel(mon),
-                mon.nature,
-                mon.berry,
-                mon.main_skill.name,
-                ...mon.ingredients.map((x) => x.name),
-                ...mon.subskills.map((x) => x.name),
-            ]
-                .filter(Boolean)
-                .join(" ")
-                .toLocaleLowerCase()
-                .includes(query),
+            matchesSearch(mon, query),
     );
     const sort = $("#sort").value;
     shown.sort((a, b) =>
