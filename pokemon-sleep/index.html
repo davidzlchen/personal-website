@@ -20,10 +20,11 @@
             <a class="home" href="/"
                 >david z. chen <span>/</span>
                 <strong>Pokémon Sleep Collection</strong></a
-            ><span class="nav-note"
-                ><span class="live-dot"></span> A little better, every
-                night</span
             >
+            <div class="snapshot-picker">
+                <label>Snapshot <select id="history-select" disabled><option>Loading snapshots…</option></select></label>
+                <p id="history-status" role="status" hidden></p>
+            </div>
         </header>
         <main>
             <section class="hero">
@@ -93,14 +94,6 @@
                     <span id="highest">—</span>
                     <p>highest level</p>
                 </div>
-            </section>
-            <section class="history" aria-label="Snapshot history">
-                <div class="history-heading">
-                    <div><p class="eyebrow">OVER TIME</p><h2>Collection history.</h2></div>
-                    <label>Snapshot <select id="history-select" disabled><option>Loading history…</option></select></label>
-                </div>
-                <p id="history-status" role="status">Loading saved snapshots…</p>
-                <div id="history-progress" class="history-progress"></div>
             </section>
             <section id="supplies" class="supplies">
                 <p class="eyebrow">THE ITEM BAG</p>

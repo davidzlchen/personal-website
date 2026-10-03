@@ -18,26 +18,6 @@ async function readSnapshot(entry) {
     }
     return savedSnapshots.get(entry.id);
 }
-function snapshotTotals(data) {
-    const mons = data.roster.records;
-    return [mons.length,
-        new Set(mons.map(mon => `${mon.national_dex}:${mon.variant === "Paldean" ? mon.variant : ""}`)).size,
-        mons.filter(mon => mon.shiny).length,
-        Math.max(0, ...mons.map(mon => mon.level)), data.inventory.dream_shards];
-}
-function renderProgress(current, previous) {
-    const container = $("#history-progress");
-    container.replaceChildren();
-    if (!previous) return;
-    const totals = snapshotTotals(current), baseline = snapshotTotals(previous);
-    ["Helpers", "Species", "Shinies", "Highest level", "Dream Shards"].forEach((label, index) => {
-        const card = node("div", "history-stat");
-        const delta = totals[index] == null || baseline[index] == null ? null : totals[index] - baseline[index];
-        card.append(node("span", "", label), node("strong", "", number(totals[index])),
-            node("small", "", delta == null ? "Change unknown" : `${delta > 0 ? "+" : ""}${number(delta)} since previous snapshot`));
-        container.append(card);
-    });
-}
 function showSnapshot(data) {
     if (dialog.open) dialog.close();
     selectedMon = null;
@@ -51,17 +31,12 @@ function showSnapshot(data) {
 async function selectSnapshot(index) {
     const request = ++snapshotRequest;
     const entry = snapshots[index];
-    $("#history-status").textContent = "Loading snapshot…";
+    $("#history-status").hidden = true;
+    $("#history-select").setAttribute("aria-busy", "true");
     try {
-        const [current, previous] = await Promise.all([
-            readSnapshot(entry), index > 0 ? readSnapshot(snapshots[index - 1]).catch(() => null) : null,
-        ]);
+        const current = await readSnapshot(entry);
         if (request !== snapshotRequest) return;
         showSnapshot(current);
-        renderProgress(current, previous);
-        $("#history-status").textContent = previous
-            ? `Viewing ${dateLabel(entry.captured_at)} · Changes compared with ${dateLabel(snapshots[index - 1].captured_at)}. Collection totals include added and removed Pokémon.`
-            : `Viewing ${dateLabel(entry.captured_at)} · ${index > 0 ? "Previous snapshot unavailable; comparisons could not be loaded." : "First saved snapshot. Progress comparisons will appear as more captures are saved."}`;
         $("#history-select").dataset.loaded = String(index);
         return true;
     } catch {
@@ -69,7 +44,10 @@ async function selectSnapshot(index) {
         $("#history-status").textContent = "Could not load that snapshot. The previous view is unchanged; select a snapshot to retry.";
         const loaded = $("#history-select").dataset.loaded;
         if (loaded != null) $("#history-select").value = loaded;
+        $("#history-status").hidden = false;
         return false;
+    } finally {
+        if (request === snapshotRequest) $("#history-select").removeAttribute("aria-busy");
     }
 }
 $("#history-select").addEventListener("change", event => selectSnapshot(Number(event.target.value)));
@@ -92,6 +70,7 @@ async function initializeHistory() {
         if (!await selectSnapshot(snapshots.length - 1)) throw new Error("Latest archive unavailable");
     } catch {
         $("#history-status").textContent = "History unavailable. Showing the latest published snapshot.";
+        $("#history-status").hidden = false;
         try {
             const [roster, inventory] = await Promise.all([readJSON("roster.json"), readJSON("inventory.json")]);
             if (roster.captured_at !== inventory.captured_at) throw new Error("Snapshot dates do not match");
