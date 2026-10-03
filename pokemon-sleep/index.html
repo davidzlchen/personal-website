@@ -48,16 +48,8 @@
                     </p>
                     <div class="hero-footer">
                         <a href="#collection" class="button"
-                            >Explore the collection <span>↗</span></a
+                            >Explore the Pokémon <span>↗</span></a
                         >
-                        <div class="snapshot-picker">
-                            <label>
-                                <span id="snapshot" class="snapshot">Loading field notes…</span>
-                                <span class="snapshot-chevron" aria-hidden="true">⌄</span>
-                                <select id="history-select" aria-label="Roster snapshot" disabled><option>Loading snapshots…</option></select>
-                            </label>
-                            <p id="history-status" role="status" hidden></p>
-                        </div>
                     </div>
                 </div>
                 <div
@@ -89,6 +81,17 @@
                     ><span class="art-caption">THE NIGHT SHIFT</span>
                 </div>
             </section>
+            <div class="snapshot-toolbar" role="group" aria-label="Choose the Field Notes snapshot">
+                <p class="eyebrow">FIELD NOTES AS OF</p>
+                <div class="snapshot-picker">
+                    <label>
+                        <span id="snapshot" class="snapshot">Loading field notes…</span>
+                        <span class="snapshot-chevron" aria-hidden="true">⌄</span>
+                        <select id="history-select" aria-label="Field Notes snapshot" disabled><option>Loading snapshots…</option></select>
+                    </label>
+                    <p id="history-status" role="status" hidden></p>
+                </div>
+            </div>
             <section class="stats" aria-label="Collection overview">
                 <div>
                     <span id="total">—</span>
