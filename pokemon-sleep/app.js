@@ -440,14 +440,14 @@ function applyInventory(data) {
     inventory = data;
     $("#inventory-overview").replaceChildren();
     $("#inventory-date").textContent = `Supplies snapshot · ${dateLabel(data.captured_at)}. Counts change as items are used.`;
-    for (const [label, value] of [
-        ["Dream Shards", data.dream_shards],
-        ["Ingredients in the bag", data.entries.filter((entry) => entry.category === "Ingredients").reduce((sum, entry) => sum + (entry.quantity || 0), 0)],
-        ["Pokémon candy stacks", data.entries.filter((entry) => entry.category === "Pokémon candies" && entry.quantity > 0).length],
+    for (const [label, value, iconCategory, iconName] of [
+        ["Dream Shards", data.dream_shards, "items", "Dream Shards"],
+        ["Ingredients in the bag", data.entries.filter((entry) => entry.category === "Ingredients").reduce((sum, entry) => sum + (entry.quantity || 0), 0), "ingredients", "Bean Sausage"],
+        ["Pokémon candy stacks", data.entries.filter((entry) => entry.category === "Pokémon candies" && entry.quantity > 0).length, "items", "Mareep Candy"],
     ]) {
         const stat = node("div", "inventory-stat");
         const caption = node("span", "inventory-stat-label");
-        appendIcon(caption, "items", label);
+        appendIcon(caption, iconCategory, iconName);
         caption.append(document.createTextNode(label));
         stat.append(node("strong", "", number(value)), caption);
         $("#inventory-overview").append(stat);
