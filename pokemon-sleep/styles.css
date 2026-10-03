@@ -1125,3 +1125,10 @@ progress::-moz-progress-bar {
 
 .filter .asset-icon, .card-bottom .asset-icon { width: 17px; height: 17px; }
 .filter { display: inline-flex; align-items: center; gap: 5px; }
+
+.collection-toggles { display: flex; flex-wrap: wrap; gap: 10px 16px; }
+.filter-row { flex-wrap: wrap; gap: 12px; }
+@media (max-width: 480px) {
+    .collection-toggles { width: 100%; }
+    .collection-toggles .shiny-filter { padding-top: 0; }
+}
