@@ -21,10 +21,7 @@
                 >david z. chen <span>/</span>
                 <strong>Pokémon Sleep Collection</strong></a
             >
-            <div class="snapshot-picker">
-                <label>Snapshot <select id="history-select" disabled><option>Loading snapshots…</option></select></label>
-                <p id="history-status" role="status" hidden></p>
-            </div>
+            <span class="nav-note"><span class="live-dot"></span> A little better, every night</span>
         </header>
         <main>
             <section class="hero">
@@ -43,9 +40,15 @@
                     <div class="hero-footer">
                         <a href="#collection" class="button"
                             >Explore the collection <span>↗</span></a
-                        ><span id="snapshot" class="snapshot"
-                            >Loading snapshot…</span
                         >
+                        <div class="snapshot-picker">
+                            <label>
+                                <span id="snapshot" class="snapshot">Loading snapshot…</span>
+                                <span class="snapshot-chevron" aria-hidden="true">⌄</span>
+                                <select id="history-select" aria-label="Roster snapshot" disabled><option>Loading snapshots…</option></select>
+                            </label>
+                            <p id="history-status" role="status" hidden></p>
+                        </div>
                     </div>
                 </div>
                 <div
