@@ -1160,7 +1160,6 @@ progress::-moz-progress-bar {
 .capture-row span { color: var(--muted); }
 .capture-row strong { text-align: right; font-weight: 600; }
 .supplies { margin: 60px 0; scroll-margin-top: 30px; }
-.supplies-link { font-size: 12px; font-weight: 600; }
 .supplies h2 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -1px; }
 #inventory-date, #inventory-count { color: var(--muted); font-size: 12px; }
 .inventory-overview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
