@@ -44,3 +44,5 @@ Main skill defaults and specialties use species references where noted. Minted
 nature effects and certain individual main skills remain unresolved. Missing
 values are displayed explicitly. Pokémon species/shiny artwork is served from
 [PokéAPI sprites](https://github.com/PokeAPI/sprites); in-game costumes may differ.
+
+Capture details expose only each Pokémon’s game island and date met, plus the existing roster snapshot date. `pokemon-sleep/areas.json` maps capture field IDs using the game’s `fields` master table and English `MD_fields` labels (master version 134). Date met uses America/New_York, matching the owner’s timezone. Raw capture timestamps, account IDs, and API payloads remain private. Unknown islands or dates stay unfilled.

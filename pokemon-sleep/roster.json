@@ -22,6 +22,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-1",
+      "met_date": "2025-05-15",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Energy for Everyone S",
@@ -100,6 +102,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-2",
+      "met_date": "2026-01-06",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -178,6 +182,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-3",
+      "met_date": "2025-04-04",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Lunar Blessing (Energy for Everyone S)",
@@ -253,6 +259,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-4",
+      "met_date": "2025-09-28",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -328,6 +336,8 @@
       "specialty": null,
       "shiny": false,
       "id": "mon-5",
+      "met_date": "2026-03-19",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": null,
@@ -407,6 +417,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-6",
+      "met_date": "2025-07-15",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -482,6 +494,8 @@
       "specialty": "Berries",
       "shiny": true,
       "id": "mon-7",
+      "met_date": "2024-12-04",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -560,6 +574,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-8",
+      "met_date": "2025-12-29",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -638,6 +654,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-9",
+      "met_date": "2025-06-07",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -713,6 +731,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-10",
+      "met_date": "2025-12-07",
+      "met_area": "Amber Canyon",
       "variant": "Paldean",
       "main_skill": {
         "name": "Charge Energy S",
@@ -791,6 +811,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-11",
+      "met_date": "2025-07-31",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Mimic (Skill Copy)",
@@ -869,6 +891,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-12",
+      "met_date": "2025-05-16",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -947,6 +971,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-13",
+      "met_date": "2025-08-23",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Tasty Chance S",
@@ -1025,6 +1051,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-14",
+      "met_date": "2026-04-16",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Heal Pulse (Energizing Cheer S)",
@@ -1101,6 +1129,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-15",
+      "met_date": "2025-08-30",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -1179,6 +1209,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-16",
+      "met_date": "2026-07-17",
+      "met_area": "Cyan Beach",
       "variant": null,
       "main_skill": {
         "name": "Dream Shard Magnet S",
@@ -1257,6 +1289,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-17",
+      "met_date": "2026-02-28",
+      "met_area": "Snowdrop Tundra",
       "variant": null,
       "main_skill": {
         "name": "Dream Shard Magnet S",
@@ -1335,6 +1369,8 @@
       "specialty": "Berries",
       "shiny": true,
       "id": "mon-18",
+      "met_date": "2025-10-08",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Metronome",
@@ -1413,6 +1449,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-19",
+      "met_date": "2025-12-12",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Berry Burst",
@@ -1491,6 +1529,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-20",
+      "met_date": "2025-09-10",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Hyper Cutter (Ingredient Draw S)",
@@ -1569,6 +1609,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-21",
+      "met_date": "2026-04-21",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Tasty Chance S",
@@ -1647,6 +1689,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-22",
+      "met_date": "2025-11-22",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -1725,6 +1769,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-23",
+      "met_date": "2025-08-07",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -1800,6 +1846,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-24",
+      "met_date": "2025-01-01",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -1878,6 +1926,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-25",
+      "met_date": "2025-10-18",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -1956,6 +2006,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-26",
+      "met_date": "2025-02-08",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -2034,6 +2086,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-27",
+      "met_date": "2025-05-29",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -2112,6 +2166,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-28",
+      "met_date": "2025-10-08",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Energy for Everyone S",
@@ -2190,6 +2246,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-29",
+      "met_date": "2026-08-13",
+      "met_area": "Cyan Beach",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -2268,6 +2326,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-30",
+      "met_date": "2024-12-20",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Energizing Cheer S",
@@ -2343,6 +2403,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-31",
+      "met_date": "2025-02-27",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength M",
@@ -2421,6 +2483,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-32",
+      "met_date": "2026-04-30",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Hyper Cutter (Ingredient Draw S)",
@@ -2499,6 +2563,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-33",
+      "met_date": "2026-09-30",
+      "met_area": "Cyan Beach",
       "variant": null,
       "main_skill": {
         "name": "Dream Shard Magnet S",
@@ -2574,6 +2640,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-34",
+      "met_date": "2026-09-06",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Energizing Cheer S",
@@ -2652,6 +2720,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-35",
+      "met_date": "2025-08-02",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Berry Burst",
@@ -2730,6 +2800,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-36",
+      "met_date": "2025-09-28",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Dream Shard Magnet S",
@@ -2808,6 +2880,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-37",
+      "met_date": "2026-08-29",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Energy for Everyone S",
@@ -2886,6 +2960,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-38",
+      "met_date": "2025-09-23",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -2964,6 +3040,8 @@
       "specialty": "Berries",
       "shiny": true,
       "id": "mon-39",
+      "met_date": "2026-08-22",
+      "met_area": "Cyan Beach",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength M",
@@ -3042,6 +3120,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-40",
+      "met_date": "2026-03-18",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -3120,6 +3200,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-41",
+      "met_date": "2026-05-28",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -3198,6 +3280,8 @@
       "specialty": "Berries",
       "shiny": false,
       "id": "mon-42",
+      "met_date": "2026-07-27",
+      "met_area": "Cyan Beach",
       "variant": null,
       "main_skill": {
         "name": "Extra Helpful S",
@@ -3276,6 +3360,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-43",
+      "met_date": "2026-05-03",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -3354,6 +3440,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-44",
+      "met_date": "2025-04-06",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Extra Helpful S",
@@ -3429,6 +3517,8 @@
       "specialty": "Berries",
       "shiny": false,
       "id": "mon-45",
+      "met_date": "2025-05-11",
+      "met_area": "Cyan Beach",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -3504,6 +3594,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-46",
+      "met_date": "2025-04-02",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Lunar Blessing (Energy for Everyone S)",
@@ -3582,6 +3674,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-47",
+      "met_date": "2025-11-01",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -3660,6 +3754,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-48",
+      "met_date": "2026-04-25",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Draw S",
@@ -3739,6 +3835,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-49",
+      "met_date": "2024-12-19",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength M",
@@ -3815,6 +3913,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-50",
+      "met_date": "2026-05-28",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Energy for Everyone S",
@@ -3893,6 +3993,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-51",
+      "met_date": "2025-03-04",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -3971,6 +4073,8 @@
       "specialty": "Berries",
       "shiny": false,
       "id": "mon-52",
+      "met_date": "2026-05-29",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Cooking Power-Up S",
@@ -4046,6 +4150,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-53",
+      "met_date": "2026-04-03",
+      "met_area": "Greengrass Isle (Expert)",
       "variant": null,
       "main_skill": {
         "name": "Energy for Everyone S",
@@ -4125,6 +4231,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-54",
+      "met_date": "2026-07-01",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -4203,6 +4311,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-55",
+      "met_date": "2024-12-27",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -4281,6 +4391,8 @@
       "specialty": "Berries",
       "shiny": true,
       "id": "mon-56",
+      "met_date": "2025-09-16",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -4359,6 +4471,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-57",
+      "met_date": "2025-10-28",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -4434,6 +4548,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-58",
+      "met_date": "2025-12-25",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -4512,6 +4628,8 @@
       "specialty": "Berries",
       "shiny": true,
       "id": "mon-59",
+      "met_date": "2025-03-26",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -4590,6 +4708,8 @@
       "specialty": "Berries",
       "shiny": true,
       "id": "mon-60",
+      "met_date": "2026-06-18",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -4668,6 +4788,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-61",
+      "met_date": "2026-06-15",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength M",
@@ -4746,6 +4868,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-62",
+      "met_date": "2025-02-14",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Energizing Cheer S",
@@ -4824,6 +4948,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-63",
+      "met_date": "2024-11-27",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength M",
@@ -4897,6 +5023,8 @@
       "specialty": null,
       "shiny": false,
       "id": "mon-64",
+      "met_date": "2025-04-13",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": null,
@@ -4978,6 +5106,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-65",
+      "met_date": "2025-08-14",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -5056,6 +5186,8 @@
       "specialty": "Berries",
       "shiny": true,
       "id": "mon-66",
+      "met_date": "2025-01-09",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Tasty Chance S",
@@ -5131,6 +5263,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-67",
+      "met_date": "2024-12-29",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Tasty Chance S",
@@ -5209,6 +5343,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-68",
+      "met_date": "2026-06-20",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Draco Meteor (Berry Burst)",
@@ -5287,6 +5423,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-69",
+      "met_date": "2025-10-20",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -5362,6 +5500,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-70",
+      "met_date": "2025-07-17",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Berry Burst",
@@ -5440,6 +5580,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-71",
+      "met_date": "2026-09-27",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Psystrike (Berry Zone)",
@@ -5515,6 +5657,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-72",
+      "met_date": "2025-12-19",
+      "met_area": "Taupe Hollow",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -5593,6 +5737,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-73",
+      "met_date": "2025-11-26",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -5671,6 +5817,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-74",
+      "met_date": "2025-01-03",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -5746,6 +5894,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-75",
+      "met_date": "2026-06-08",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Extra Helpful S",
@@ -5824,6 +5974,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-76",
+      "met_date": "2026-09-09",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Metronome",
@@ -5899,6 +6051,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-77",
+      "met_date": "2025-09-16",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Helper Boost",
@@ -5978,6 +6132,8 @@
       "specialty": "Berries",
       "shiny": false,
       "id": "mon-78",
+      "met_date": "2026-04-01",
+      "met_area": "Greengrass Isle (Expert)",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -6053,6 +6209,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-79",
+      "met_date": "2026-03-16",
+      "met_area": "Cyan Beach",
       "variant": null,
       "main_skill": {
         "name": "Helper Boost",
@@ -6131,6 +6289,8 @@
       "specialty": "Berries",
       "shiny": true,
       "id": "mon-80",
+      "met_date": "2025-08-09",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -6206,6 +6366,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-81",
+      "met_date": "2026-09-21",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Psystrike (Berry Zone)",
@@ -6284,6 +6446,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-82",
+      "met_date": "2025-06-12",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Cooking Power-Up S",
@@ -6362,6 +6526,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-83",
+      "met_date": "2025-11-20",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -6440,6 +6606,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-84",
+      "met_date": "2025-12-23",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -6518,6 +6686,8 @@
       "specialty": "Berries",
       "shiny": false,
       "id": "mon-85",
+      "met_date": "2025-12-23",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -6596,6 +6766,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-86",
+      "met_date": "2026-01-14",
+      "met_area": "Greengrass Isle (Expert)",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -6674,6 +6846,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-87",
+      "met_date": "2025-06-10",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -6749,6 +6923,8 @@
       "specialty": "Ingredients",
       "shiny": true,
       "id": "mon-88",
+      "met_date": "2026-08-22",
+      "met_area": "Cyan Beach",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -6824,6 +7000,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-89",
+      "met_date": "2025-01-24",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Transform (Skill Copy)",
@@ -6902,6 +7080,8 @@
       "specialty": "Ingredients",
       "shiny": false,
       "id": "mon-90",
+      "met_date": "2025-07-06",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Charge Energy S",
@@ -6978,6 +7158,8 @@
       "specialty": "Skills",
       "shiny": true,
       "id": "mon-91",
+      "met_date": "2025-02-01",
+      "met_area": "Cyan Beach",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength M",
@@ -7056,6 +7238,8 @@
       "specialty": "Berries",
       "shiny": true,
       "id": "mon-92",
+      "met_date": "2026-09-17",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Dream Shard Magnet S",
@@ -7134,6 +7318,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-93",
+      "met_date": "2026-06-18",
+      "met_area": "Lapis Lakeside",
       "variant": null,
       "main_skill": {
         "name": "Draco Meteor (Berry Burst)",
@@ -7212,6 +7398,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-94",
+      "met_date": "2024-12-20",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -7287,6 +7475,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-95",
+      "met_date": "2025-11-14",
+      "met_area": "Amber Canyon",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",
@@ -7365,6 +7555,8 @@
       "specialty": "Berries",
       "shiny": false,
       "id": "mon-96",
+      "met_date": "2024-11-03",
+      "met_area": "Greengrass Isle",
       "variant": "Costume",
       "main_skill": {
         "name": "Charge Strength S",
@@ -7443,6 +7635,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-97",
+      "met_date": "2025-01-01",
+      "met_area": "Greengrass Isle",
       "variant": null,
       "main_skill": {
         "name": "Energy for Everyone S",
@@ -7521,6 +7715,8 @@
       "specialty": "Berries",
       "shiny": false,
       "id": "mon-98",
+      "met_date": "2025-06-22",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Charge Strength S",
@@ -7599,6 +7795,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-99",
+      "met_date": "2026-02-19",
+      "met_area": "Snowdrop Tundra",
       "variant": null,
       "main_skill": {
         "name": "Nuzzle (Energizing Cheer S)",
@@ -7674,6 +7872,8 @@
       "specialty": "Skills",
       "shiny": false,
       "id": "mon-100",
+      "met_date": "2025-10-07",
+      "met_area": "Old Gold Power Plant",
       "variant": null,
       "main_skill": {
         "name": "Ingredient Magnet S",

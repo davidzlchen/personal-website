@@ -1092,7 +1092,7 @@ progress::-moz-progress-bar {
     border-radius: 5px;
     padding: 3px 6px;
     font-size: 9px;
-    text-transform: uppercase;
+    text-transform: none;
 }
 .rarity-gold, .slot.locked.rarity-gold {
     background: linear-gradient(135deg, #fff7cf, #f7e5a0);
@@ -1141,3 +1141,20 @@ progress::-moz-progress-bar {
     cursor: help;
 }
 .subskill-badge.locked { opacity: .5; border-style: dashed; }
+
+.card-subskills { gap: 5px; }
+.subskill-badge { text-align: left; font-weight: 600; font-size: 10px; padding: 4px 6px; }
+.card-nature { border-top: 1px solid var(--line); padding-top: 10px; }
+.card-nature-name { display: block; font-size: 11px; font-weight: 600; margin-bottom: 6px; }
+.nature-badges { display: flex; flex-wrap: wrap; gap: 5px; }
+.nature-badge { font-size: 10px; padding: 4px 7px; border-radius: 5px; border: 1px solid; }
+.nature-badge.up { color: #356548; background: #e8f1e5; border-color: #c2d8bc; }
+.nature-badge.down { color: #875346; background: #f6e9e2; border-color: #e8c9ba; }
+.nature-badge.neutral { color: var(--muted); background: #f0f1eb; border-color: var(--line); }
+.capture-row { display: flex; justify-content: space-between; gap: 15px; font-size: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.capture-row span { color: var(--muted); }
+.capture-row strong { text-align: right; font-weight: 600; }
+@media (max-width: 480px) {
+    .subskill-badge { font-size: 9px; }
+    .nature-badge { font-size: 9px; }
+}

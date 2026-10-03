@@ -3,16 +3,26 @@ import argparse
 import datetime
 import json
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 FIELDS = ('species', 'national_dex', 'nickname', 'level', 'rp', 'xp_total',
           'xp_in_level', 'xp_level_required', 'xp_to_next_level', 'nature',
           'original_nature', 'nature_effects', 'berry', 'specialty', 'shiny')
 
-def sanitize(source, captured_at):
+def sanitize(source, captured_at, areas=None):
+    areas = areas or {}
     records = []
     for index, record in enumerate(source['records'], 1):
         result = {key: record.get(key) for key in FIELDS}
         result['id'] = f'mon-{index}'
+        # Publish only the calendar day and game island, never the raw timestamp.
+        met = record.get('met_at_utc')
+        try:
+            instant = datetime.datetime.fromisoformat(met) if met else None
+            result['met_date'] = instant.astimezone(ZoneInfo('America/New_York')).date().isoformat() if instant and instant.tzinfo else None
+        except (ValueError, TypeError):
+            result['met_date'] = None
+        result['met_area'] = areas.get(str((record.get('raw') or {}).get('capfi')))
         result['variant'] = 'Paldean' if record.get('region_id') == '4' else ('Costume' if record.get('form_id') else None)
         skill = record.get('main_skill') or {}
         result['main_skill'] = {key: skill.get(key) for key in ('name', 'level', 'name_source')}
@@ -31,7 +41,8 @@ def main():
     parser.add_argument('--output', type=Path, default=Path('pokemon-sleep/roster.json'))
     args = parser.parse_args()
     datetime.date.fromisoformat(args.captured_at)
-    result = sanitize(json.loads(args.input.read_text()), args.captured_at)
+    areas = json.loads((Path(__file__).resolve().parents[1] / 'pokemon-sleep/areas.json').read_text())
+    result = sanitize(json.loads(args.input.read_text()), args.captured_at, areas)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     print(f'Exported {result["count"]} public Pokémon records.')

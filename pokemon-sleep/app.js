@@ -4,6 +4,24 @@ const number = (value) =>
     value == null ? "Unknown" : Number(value).toLocaleString("en-US");
 let roster = [],
     specialty = "";
+let snapshotDate = null;
+function dateLabel(value) {
+    if (!value) return "Unknown";
+    return new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", {
+        month: "long", day: "numeric", year: "numeric", timeZone: "UTC",
+    });
+}
+function natureBadges(mon) {
+    const badges = node("div", "nature-badges");
+    for (const [effect, direction] of Object.entries(mon.nature_effects || {})) {
+        const badge = node("span", `nature-badge ${direction}`, `${direction === "up" ? "↑" : "↓"} ${effect}`);
+        badge.title = `${effect} ${direction === "up" ? "increased" : "decreased"}`;
+        badges.append(badge);
+    }
+    if (!badges.childElementCount)
+        badges.append(node("span", "nature-badge neutral", mon.nature ? "No stat changes" : "Mint effects unknown"));
+    return badges;
+}
 const dialog = $("#detail");
 function node(tag, className, text) {
     const element = document.createElement(tag);
@@ -125,14 +143,8 @@ function render() {
                     : `Lv. ${mon.main_skill.level}`,
             ),
         );
-        const bottom = node("div", "card-bottom"),
-            type = node("span");
-        appendIcon(type, "specialties", mon.specialty);
-        type.append(document.createTextNode(mon.specialty || "Specialty unresolved"));
-        bottom.append(
-            type,
-            node("span", "", mon.nature || "Mint effect pending"),
-        );
+        const bottom = node("div", "card-nature");
+        bottom.append(node("span", "card-nature-name", mon.nature || "Nature unresolved"), natureBadges(mon));
         const resources = node("div", "card-resources");
         const berry = node("span", "resource-berry");
         berry.title = mon.berry || "Berry unknown";
@@ -151,11 +163,11 @@ function render() {
         const badges = node("div", "card-subskills");
         for (const slot of mon.subskills) {
             const rarity = sleepAssets.subskills[slot.name];
-            const abbreviation = subskillAbbreviations[slot.name] || "?";
+            const label = slot.name || "Not yet mapped";
             const badge = node(
                 "span",
                 `subskill-badge${rarity ? ` rarity-${rarity}` : ""}${slot.unlocked ? "" : " locked"}`,
-                abbreviation,
+                label,
             );
             badge.title = `${slot.name || "Subskill not yet mapped"} · ${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`;
             badge.setAttribute("aria-label", badge.title);
@@ -292,19 +304,19 @@ function showDetail(mon) {
                 `Original nature: ${mon.original_nature || "Unknown"}`,
             ),
         );
-    for (const [effect, direction] of Object.entries(
-        mon.nature_effects || {},
-    )) {
-        const line = node("p", "effect");
-        line.append(
-            node("span", direction, direction === "up" ? "↑" : "↓"),
-            document.createTextNode(
-                `${effect} ${direction === "up" ? "increased" : "decreased"}`,
-            ),
-        );
-        nature.append(line);
-    }
+    nature.append(natureBadges(mon));
     body.append(nature);
+    const capture = section("Capture details");
+    for (const [label, value] of [
+        ["Area met", mon.met_area || "Unknown"],
+        ["Date met", dateLabel(mon.met_date)],
+        ["Roster captured", dateLabel(snapshotDate)],
+    ]) {
+        const row = node("div", "capture-row");
+        row.append(node("span", "", label), node("strong", "", value));
+        capture.append(row);
+    }
+    body.append(capture);
     const review = node("details", "review");
     review.append(node("summary", "", "About these stats"));
     review.append(
@@ -372,6 +384,7 @@ fetch("/pokemon-sleep/roster.json", { cache: "no-cache" })
     })
     .then((data) => {
         roster = data.records;
+        snapshotDate = data.captured_at;
         for (const [nickname, selector] of [
             ["charge king", ".label-one span"],
             ["sausage king", ".label-two span"],
