@@ -125,3 +125,5 @@ session runtime; this is not a credential-bearing Vercel endpoint.
 `/blog/pokemon-sleep-repository/` and links to the reusable public template.
 Blog styles extend the homepage theme in `css/blog.css`. Add future static posts
 under `blog/<slug>/index.html` and add an entry to the blog index.
+
+Researcher rank uses the full response’s `UD.main.all.uExp` and cumulative `research_rank.need_user_exp` thresholds from game master version 134. Only the derived rank is published; missing or invalid EXP stays unavailable. The overview follows the selected snapshot and weekly sync exports the rank automatically.

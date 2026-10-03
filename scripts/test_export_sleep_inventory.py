@@ -30,6 +30,16 @@ class InventoryTest(unittest.TestCase):
         self.assertIsNone(unknown['quantity'])
         self.assertTrue(unknown['needs_review'])
 
+    def test_researcher_rank_thresholds_and_missing_exp(self):
+        reference = {'research_ranks': [
+            {'rank': 1, 'total_exp': 0}, {'rank': 2, 'total_exp': 103},
+            {'rank': 3, 'total_exp': 249}]}
+        for exp, expected in [(0, 1), (102, 1), (103, 2), (248, 2), (249, 3), (999, 3)]:
+            self.assertEqual(exporter.researcher_rank(exp, reference), expected)
+        for exp in [None, -1, True, '103']:
+            self.assertIsNone(exporter.researcher_rank(exp, reference))
+        self.assertIsNone(exporter.researcher_rank(103, {}))
+
     def test_delta_is_not_a_full_inventory(self):
         with self.assertRaises(ValueError):
             exporter.sanitize({'UD': {'invent': {'add': []}}}, {}, '2026-10-02', {'records': []})

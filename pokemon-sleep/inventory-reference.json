@@ -3091,5 +3091,287 @@
     "235": "235",
     "236": "236",
     "237": "236"
-  }
+  },
+  "research_ranks": [
+    {
+      "rank": 1,
+      "total_exp": 0
+    },
+    {
+      "rank": 2,
+      "total_exp": 103
+    },
+    {
+      "rank": 3,
+      "total_exp": 249
+    },
+    {
+      "rank": 4,
+      "total_exp": 449
+    },
+    {
+      "rank": 5,
+      "total_exp": 712
+    },
+    {
+      "rank": 6,
+      "total_exp": 1064
+    },
+    {
+      "rank": 7,
+      "total_exp": 1528
+    },
+    {
+      "rank": 8,
+      "total_exp": 2128
+    },
+    {
+      "rank": 9,
+      "total_exp": 2852
+    },
+    {
+      "rank": 10,
+      "total_exp": 3719
+    },
+    {
+      "rank": 11,
+      "total_exp": 4685
+    },
+    {
+      "rank": 12,
+      "total_exp": 5739
+    },
+    {
+      "rank": 13,
+      "total_exp": 6886
+    },
+    {
+      "rank": 14,
+      "total_exp": 8156
+    },
+    {
+      "rank": 15,
+      "total_exp": 9565
+    },
+    {
+      "rank": 16,
+      "total_exp": 11123
+    },
+    {
+      "rank": 17,
+      "total_exp": 12846
+    },
+    {
+      "rank": 18,
+      "total_exp": 14715
+    },
+    {
+      "rank": 19,
+      "total_exp": 16739
+    },
+    {
+      "rank": 20,
+      "total_exp": 18938
+    },
+    {
+      "rank": 21,
+      "total_exp": 21322
+    },
+    {
+      "rank": 22,
+      "total_exp": 23903
+    },
+    {
+      "rank": 23,
+      "total_exp": 26691
+    },
+    {
+      "rank": 24,
+      "total_exp": 29700
+    },
+    {
+      "rank": 25,
+      "total_exp": 32919
+    },
+    {
+      "rank": 26,
+      "total_exp": 36360
+    },
+    {
+      "rank": 27,
+      "total_exp": 40094
+    },
+    {
+      "rank": 28,
+      "total_exp": 44142
+    },
+    {
+      "rank": 29,
+      "total_exp": 48524
+    },
+    {
+      "rank": 30,
+      "total_exp": 53266
+    },
+    {
+      "rank": 31,
+      "total_exp": 58349
+    },
+    {
+      "rank": 32,
+      "total_exp": 63699
+    },
+    {
+      "rank": 33,
+      "total_exp": 69329
+    },
+    {
+      "rank": 34,
+      "total_exp": 75347
+    },
+    {
+      "rank": 35,
+      "total_exp": 81774
+    },
+    {
+      "rank": 36,
+      "total_exp": 88684
+    },
+    {
+      "rank": 37,
+      "total_exp": 96120
+    },
+    {
+      "rank": 38,
+      "total_exp": 103982
+    },
+    {
+      "rank": 39,
+      "total_exp": 112300
+    },
+    {
+      "rank": 40,
+      "total_exp": 121236
+    },
+    {
+      "rank": 41,
+      "total_exp": 130730
+    },
+    {
+      "rank": 42,
+      "total_exp": 140812
+    },
+    {
+      "rank": 43,
+      "total_exp": 151511
+    },
+    {
+      "rank": 44,
+      "total_exp": 162857
+    },
+    {
+      "rank": 45,
+      "total_exp": 174701
+    },
+    {
+      "rank": 46,
+      "total_exp": 187172
+    },
+    {
+      "rank": 47,
+      "total_exp": 200531
+    },
+    {
+      "rank": 48,
+      "total_exp": 214831
+    },
+    {
+      "rank": 49,
+      "total_exp": 230130
+    },
+    {
+      "rank": 50,
+      "total_exp": 246490
+    },
+    {
+      "rank": 51,
+      "total_exp": 270403
+    },
+    {
+      "rank": 52,
+      "total_exp": 297400
+    },
+    {
+      "rank": 53,
+      "total_exp": 327822
+    },
+    {
+      "rank": 54,
+      "total_exp": 362434
+    },
+    {
+      "rank": 55,
+      "total_exp": 400028
+    },
+    {
+      "rank": 56,
+      "total_exp": 444662
+    },
+    {
+      "rank": 57,
+      "total_exp": 497364
+    },
+    {
+      "rank": 58,
+      "total_exp": 558725
+    },
+    {
+      "rank": 59,
+      "total_exp": 627597
+    },
+    {
+      "rank": 60,
+      "total_exp": 705536
+    },
+    {
+      "rank": 61,
+      "total_exp": 818080
+    },
+    {
+      "rank": 62,
+      "total_exp": 960388
+    },
+    {
+      "rank": 63,
+      "total_exp": 1149827
+    },
+    {
+      "rank": 64,
+      "total_exp": 1403277
+    },
+    {
+      "rank": 65,
+      "total_exp": 1744257
+    },
+    {
+      "rank": 66,
+      "total_exp": 2093188
+    },
+    {
+      "rank": 67,
+      "total_exp": 2449876
+    },
+    {
+      "rank": 68,
+      "total_exp": 2812285
+    },
+    {
+      "rank": 69,
+      "total_exp": 3186007
+    },
+    {
+      "rank": 70,
+      "total_exp": 3595267
+    }
+  ]
 }

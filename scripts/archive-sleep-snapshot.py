@@ -15,7 +15,7 @@ def archive(root):
     roster = json.loads((root / 'roster.json').read_text())
     inventory = json.loads((root / 'inventory.json').read_text())
     check_keys(roster, 'captured_at count records')
-    check_keys(inventory, 'captured_at dream_shards entries pokemon_candies')
+    check_keys(inventory, 'captured_at researcher_rank dream_shards entries pokemon_candies')
     date = roster['captured_at']
     datetime.date.fromisoformat(date)
     if date != inventory['captured_at'] or not roster['records'] or roster['count'] != len(roster['records']):
