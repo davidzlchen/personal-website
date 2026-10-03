@@ -785,7 +785,6 @@ progress::-moz-progress-bar {
     color: #9b859d;
 }
 .review {
-    border-top: 1px solid var(--line);
     padding-top: 16px;
     font-size: 10px;
     line-height: 1.8;
