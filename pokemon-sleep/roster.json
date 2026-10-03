@@ -1,0 +1,7736 @@
+{
+  "captured_at": "2026-10-02",
+  "count": 100,
+  "records": [
+    {
+      "species": "Igglybuff",
+      "national_dex": 174,
+      "nickname": null,
+      "level": 14,
+      "rp": 387,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Pecha Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-1",
+      "variant": null,
+      "main_skill": {
+        "name": "Energy for Everyone S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Honey",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Pure Oil",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Honey",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Clodsire",
+      "national_dex": 980,
+      "nickname": null,
+      "level": 60,
+      "rp": 3405,
+      "xp_total": 51907,
+      "xp_in_level": 414,
+      "xp_level_required": 2865,
+      "xp_to_next_level": 2451,
+      "nature": "Calm",
+      "original_nature": "Calm",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Main skill chance": "up"
+      },
+      "berry": "Chesto Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-2",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Soothing Cacao",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": true
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Cresselia",
+      "national_dex": 488,
+      "nickname": null,
+      "level": 30,
+      "rp": 1688,
+      "xp_total": 22554,
+      "xp_in_level": 968,
+      "xp_level_required": 1312,
+      "xp_to_next_level": 344,
+      "nature": "Modest",
+      "original_nature": "Modest",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Ingredient finding": "up"
+      },
+      "berry": "Mago Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-3",
+      "variant": null,
+      "main_skill": {
+        "name": "Lunar Blessing (Energy for Everyone S)",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Warming Ginger",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Toxicroak",
+      "national_dex": 454,
+      "nickname": null,
+      "level": 21,
+      "rp": 681,
+      "xp_total": 6394,
+      "xp_in_level": 0,
+      "xp_level_required": 537,
+      "xp_to_next_level": 537,
+      "nature": "Docile",
+      "original_nature": "Docile",
+      "nature_effects": {},
+      "berry": "Chesto Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-4",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Pure Oil",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 8,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Mew",
+      "national_dex": 151,
+      "nickname": null,
+      "level": 27,
+      "rp": 3652,
+      "xp_total": 22223,
+      "xp_in_level": 370,
+      "xp_level_required": 1463,
+      "xp_to_next_level": 1093,
+      "nature": "Quirky",
+      "original_nature": "Quirky",
+      "nature_effects": {},
+      "berry": "Mago Berry",
+      "specialty": null,
+      "shiny": false,
+      "id": "mon-5",
+      "variant": null,
+      "main_skill": {
+        "name": null,
+        "level": null,
+        "name_source": null
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Egg",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fiery Herb",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": null,
+          "quantity": 0,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": null,
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "ingredient slot 3 is absent or unresolved",
+        "subskill slot 5 is absent or unresolved",
+        "individual skill parameters require interpretation",
+        "main skill name is unresolved",
+        "specialty is unresolved"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Golem",
+      "national_dex": 76,
+      "nickname": null,
+      "level": 30,
+      "rp": 1621,
+      "xp_total": 12422,
+      "xp_in_level": 430,
+      "xp_level_required": 729,
+      "xp_to_next_level": 299,
+      "nature": "Quirky",
+      "original_nature": "Quirky",
+      "nature_effects": {},
+      "berry": "Sitrus Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-6",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 6,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Ekans",
+      "national_dex": 23,
+      "nickname": null,
+      "level": 6,
+      "rp": 340,
+      "xp_total": 525,
+      "xp_in_level": 0,
+      "xp_level_required": 202,
+      "xp_to_next_level": 202,
+      "nature": "Hardy",
+      "original_nature": "Hardy",
+      "nature_effects": {},
+      "berry": "Chesto Berry",
+      "specialty": "Berries",
+      "shiny": true,
+      "id": "mon-7",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Bean Sausage",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 10,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Snover",
+      "national_dex": 459,
+      "nickname": null,
+      "level": 13,
+      "rp": 414,
+      "xp_total": 2688,
+      "xp_in_level": 0,
+      "xp_level_required": 419,
+      "xp_to_next_level": 419,
+      "nature": "Naughty",
+      "original_nature": "Naughty",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Rawst Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-8",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Bellsprout",
+      "national_dex": 69,
+      "nickname": null,
+      "level": 13,
+      "rp": 473,
+      "xp_total": 2688,
+      "xp_in_level": 0,
+      "xp_level_required": 419,
+      "xp_to_next_level": 419,
+      "nature": "Naughty",
+      "original_nature": "Naughty",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Durin Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-9",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 6,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Wooper",
+      "national_dex": 194,
+      "nickname": null,
+      "level": 15,
+      "rp": 374,
+      "xp_total": 3536,
+      "xp_in_level": 0,
+      "xp_level_required": 440,
+      "xp_to_next_level": 440,
+      "nature": "Quirky",
+      "original_nature": "Quirky",
+      "nature_effects": {},
+      "berry": "Chesto Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-10",
+      "variant": "Paldean",
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Soothing Cacao",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Mr. Mime",
+      "national_dex": 122,
+      "nickname": null,
+      "level": 30,
+      "rp": 1779,
+      "xp_total": 12251,
+      "xp_in_level": 259,
+      "xp_level_required": 729,
+      "xp_to_next_level": 470,
+      "nature": "Rash",
+      "original_nature": "Rash",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Mago Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-11",
+      "variant": null,
+      "main_skill": {
+        "name": "Mimic (Skill Copy)",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 6,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Quagsire",
+      "national_dex": 195,
+      "nickname": null,
+      "level": 30,
+      "rp": 1645,
+      "xp_total": 12603,
+      "xp_in_level": 611,
+      "xp_level_required": 729,
+      "xp_to_next_level": 118,
+      "nature": "Mild",
+      "original_nature": "Mild",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Oran Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-12",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 6,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Dedenne",
+      "national_dex": 702,
+      "nickname": null,
+      "level": 53,
+      "rp": 3889,
+      "xp_total": 35955,
+      "xp_in_level": 1291,
+      "xp_level_required": 1946,
+      "xp_to_next_level": 655,
+      "nature": "Calm",
+      "original_nature": "Calm",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Main skill chance": "up"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-13",
+      "variant": null,
+      "main_skill": {
+        "name": "Tasty Chance S",
+        "level": 6,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 1,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 2,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Latias",
+      "national_dex": 380,
+      "nickname": null,
+      "level": 33,
+      "rp": 1589,
+      "xp_total": 26839,
+      "xp_in_level": 1216,
+      "xp_level_required": 1413,
+      "xp_to_next_level": 197,
+      "nature": "Careful",
+      "original_nature": "Careful",
+      "nature_effects": {
+        "Ingredient finding": "down",
+        "Main skill chance": "up"
+      },
+      "berry": "Yache Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-14",
+      "variant": null,
+      "main_skill": {
+        "name": "Heal Pulse (Energizing Cheer S)",
+        "level": 1,
+        "name_source": "species default checked against user screenshot"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Plump Pumpkin",
+          "quantity": 2,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [],
+      "needs_review": false
+    },
+    {
+      "species": "Charmander",
+      "national_dex": 4,
+      "nickname": null,
+      "level": 14,
+      "rp": 515,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Timid",
+      "original_nature": "Timid",
+      "nature_effects": {
+        "Speed of help": "down",
+        "EXP gains": "up"
+      },
+      "berry": "Leppa Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-15",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Bean Sausage",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fiery Herb",
+          "quantity": 6,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Gulpin",
+      "national_dex": 316,
+      "nickname": null,
+      "level": 17,
+      "rp": 498,
+      "xp_total": 4747,
+      "xp_in_level": 317,
+      "xp_level_required": 469,
+      "xp_to_next_level": 152,
+      "nature": "Lonely",
+      "original_nature": "Lonely",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Chesto Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-16",
+      "variant": null,
+      "main_skill": {
+        "name": "Dream Shard Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 1,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Swalot",
+      "national_dex": 317,
+      "nickname": null,
+      "level": 51,
+      "rp": 6040,
+      "xp_total": 32766,
+      "xp_in_level": 1411,
+      "xp_level_required": 1562,
+      "xp_to_next_level": 151,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Chesto Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-17",
+      "variant": null,
+      "main_skill": {
+        "name": "Dream Shard Magnet S",
+        "level": 8,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Cleffa",
+      "national_dex": 173,
+      "nickname": null,
+      "level": 14,
+      "rp": 367,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Jolly",
+      "original_nature": "Jolly",
+      "nature_effects": {
+        "Ingredient finding": "down",
+        "EXP gains": "up"
+      },
+      "berry": "Pecha Berry",
+      "specialty": "Berries",
+      "shiny": true,
+      "id": "mon-18",
+      "variant": null,
+      "main_skill": {
+        "name": "Metronome",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Honey",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Sceptile",
+      "national_dex": 254,
+      "nickname": null,
+      "level": 59,
+      "rp": 5825,
+      "xp_total": 50159,
+      "xp_in_level": 1472,
+      "xp_level_required": 2806,
+      "xp_to_next_level": 1334,
+      "nature": "Lax",
+      "original_nature": "Lax",
+      "nature_effects": {
+        "Main skill chance": "down",
+        "Energy recovery": "up"
+      },
+      "berry": "Durin Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-19",
+      "variant": null,
+      "main_skill": {
+        "name": "Berry Burst",
+        "level": 6,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Egg",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Rousing Coffee",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Large Leek",
+          "quantity": 2,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Mawile",
+      "national_dex": 303,
+      "nickname": null,
+      "level": 25,
+      "rp": 983,
+      "xp_total": 8681,
+      "xp_in_level": 13,
+      "xp_level_required": 622,
+      "xp_to_next_level": 609,
+      "nature": "Bold",
+      "original_nature": "Bold",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Energy recovery": "up"
+      },
+      "berry": "Belue Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-20",
+      "variant": null,
+      "main_skill": {
+        "name": "Hyper Cutter (Ingredient Draw S)",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Pure Oil",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Corn",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Greengrass Corn",
+          "quantity": 6,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Dedenne",
+      "national_dex": 702,
+      "nickname": null,
+      "level": 23,
+      "rp": 987,
+      "xp_total": 7489,
+      "xp_in_level": 0,
+      "xp_level_required": 579,
+      "xp_to_next_level": 579,
+      "nature": "Brave",
+      "original_nature": "Brave",
+      "nature_effects": {
+        "Speed of help": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-21",
+      "variant": null,
+      "main_skill": {
+        "name": "Tasty Chance S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 1,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Greengrass Corn",
+          "quantity": 2,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Trapinch",
+      "national_dex": 328,
+      "nickname": null,
+      "level": 15,
+      "rp": 470,
+      "xp_total": 3659,
+      "xp_in_level": 123,
+      "xp_level_required": 440,
+      "xp_to_next_level": 317,
+      "nature": "Lonely",
+      "original_nature": "Lonely",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Figy Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-22",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Glossy Avocado",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fiery Herb",
+          "quantity": 6,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fiery Herb",
+          "quantity": 9,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Eevee",
+      "national_dex": 133,
+      "nickname": null,
+      "level": 23,
+      "rp": 681,
+      "xp_total": 7587,
+      "xp_in_level": 98,
+      "xp_level_required": 579,
+      "xp_to_next_level": 481,
+      "nature": "Gentle",
+      "original_nature": "Gentle",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Persim Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-23",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Bewear",
+      "national_dex": 760,
+      "nickname": null,
+      "level": 51,
+      "rp": 2736,
+      "xp_total": 32601,
+      "xp_in_level": 1246,
+      "xp_level_required": 1562,
+      "xp_to_next_level": 316,
+      "nature": "Bashful",
+      "original_nature": "Bashful",
+      "nature_effects": {},
+      "berry": "Cheri Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-24",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 4,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Corn",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Corn",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 10,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Toxicroak",
+      "national_dex": 454,
+      "nickname": null,
+      "level": 31,
+      "rp": 1308,
+      "xp_total": 13054,
+      "xp_in_level": 333,
+      "xp_level_required": 748,
+      "xp_to_next_level": 415,
+      "nature": "Gentle",
+      "original_nature": "Gentle",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Chesto Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-25",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Pure Oil",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Pure Oil",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 8,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Vaporeon",
+      "national_dex": 134,
+      "nickname": null,
+      "level": 38,
+      "rp": 4053,
+      "xp_total": 18978,
+      "xp_in_level": 638,
+      "xp_level_required": 875,
+      "xp_to_next_level": 237,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Oran Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-26",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 7,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Squirtle",
+      "national_dex": 7,
+      "nickname": null,
+      "level": 14,
+      "rp": 552,
+      "xp_total": 3139,
+      "xp_in_level": 32,
+      "xp_level_required": 429,
+      "xp_to_next_level": 397,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Oran Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-27",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Pawmi",
+      "national_dex": 921,
+      "nickname": null,
+      "level": 13,
+      "rp": 454,
+      "xp_total": 2688,
+      "xp_in_level": 0,
+      "xp_level_required": 419,
+      "xp_to_next_level": 419,
+      "nature": "Lonely",
+      "original_nature": "Lonely",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-28",
+      "variant": null,
+      "main_skill": {
+        "name": "Energy for Everyone S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Soothing Cacao",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 6,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Wooper",
+      "national_dex": 194,
+      "nickname": null,
+      "level": 15,
+      "rp": 464,
+      "xp_total": 3536,
+      "xp_in_level": 0,
+      "xp_level_required": 440,
+      "xp_to_next_level": 440,
+      "nature": "Relaxed",
+      "original_nature": "Relaxed",
+      "nature_effects": {
+        "Energy recovery": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Oran Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-29",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Wobbuffet",
+      "national_dex": 202,
+      "nickname": null,
+      "level": 12,
+      "rp": 622,
+      "xp_total": 2281,
+      "xp_in_level": 0,
+      "xp_level_required": 407,
+      "xp_to_next_level": 407,
+      "nature": "Lonely",
+      "original_nature": "Lonely",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Mago Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-30",
+      "variant": null,
+      "main_skill": {
+        "name": "Energizing Cheer S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 1,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Pure Oil",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Pinsir",
+      "national_dex": 127,
+      "nickname": null,
+      "level": 51,
+      "rp": 2466,
+      "xp_total": 32319,
+      "xp_in_level": 964,
+      "xp_level_required": 1562,
+      "xp_to_next_level": 598,
+      "nature": "Hardy",
+      "original_nature": "Hardy",
+      "nature_effects": {},
+      "berry": "Lum Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-31",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength M",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Honey",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Honey",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Apple",
+          "quantity": 8,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Dwebble",
+      "national_dex": 557,
+      "nickname": null,
+      "level": 15,
+      "rp": 555,
+      "xp_total": 3536,
+      "xp_in_level": 0,
+      "xp_level_required": 440,
+      "xp_to_next_level": 440,
+      "nature": "Careful",
+      "original_nature": "Careful",
+      "nature_effects": {
+        "Ingredient finding": "down",
+        "Main skill chance": "up"
+      },
+      "berry": "Lum Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-32",
+      "variant": null,
+      "main_skill": {
+        "name": "Hyper Cutter (Ingredient Draw S)",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Glossy Avocado",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Glossy Avocado",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Glossy Avocado",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Gulpin",
+      "national_dex": 316,
+      "nickname": null,
+      "level": 16,
+      "rp": 419,
+      "xp_total": 3976,
+      "xp_in_level": 0,
+      "xp_level_required": 454,
+      "xp_to_next_level": 454,
+      "nature": "Modest",
+      "original_nature": "Modest",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Ingredient finding": "up"
+      },
+      "berry": "Chesto Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-33",
+      "variant": null,
+      "main_skill": {
+        "name": "Dream Shard Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 1,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Honey",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Wobbuffet",
+      "national_dex": 202,
+      "nickname": null,
+      "level": 17,
+      "rp": 631,
+      "xp_total": 4430,
+      "xp_in_level": 0,
+      "xp_level_required": 469,
+      "xp_to_next_level": 469,
+      "nature": "Quirky",
+      "original_nature": "Quirky",
+      "nature_effects": {},
+      "berry": "Mago Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-34",
+      "variant": null,
+      "main_skill": {
+        "name": "Energizing Cheer S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Apple",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 2,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Treecko",
+      "national_dex": 252,
+      "nickname": null,
+      "level": 15,
+      "rp": 499,
+      "xp_total": 3536,
+      "xp_in_level": 0,
+      "xp_level_required": 440,
+      "xp_to_next_level": 440,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Durin Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-35",
+      "variant": null,
+      "main_skill": {
+        "name": "Berry Burst",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Egg",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Rousing Coffee",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Swalot",
+      "national_dex": 317,
+      "nickname": null,
+      "level": 25,
+      "rp": 4453,
+      "xp_total": 8688,
+      "xp_in_level": 20,
+      "xp_level_required": 622,
+      "xp_to_next_level": 602,
+      "nature": "Impish",
+      "original_nature": "Impish",
+      "nature_effects": {
+        "Ingredient finding": "down",
+        "Energy recovery": "up"
+      },
+      "berry": "Chesto Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-36",
+      "variant": null,
+      "main_skill": {
+        "name": "Dream Shard Magnet S",
+        "level": 8,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 1,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Honey",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Happiny",
+      "national_dex": 440,
+      "nickname": null,
+      "level": 14,
+      "rp": 434,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Rash",
+      "original_nature": "Rash",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Persim Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-37",
+      "variant": null,
+      "main_skill": {
+        "name": "Energy for Everyone S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Egg",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Honey",
+          "quantity": 8,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Larvitar",
+      "national_dex": 246,
+      "nickname": null,
+      "level": 13,
+      "rp": 464,
+      "xp_total": 4529,
+      "xp_in_level": 497,
+      "xp_level_required": 629,
+      "xp_to_next_level": 132,
+      "nature": "Calm",
+      "original_nature": "Calm",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Main skill chance": "up"
+      },
+      "berry": "Sitrus Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-38",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Warming Ginger",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 8,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Tinkatuff",
+      "national_dex": 958,
+      "nickname": null,
+      "level": 21,
+      "rp": 868,
+      "xp_total": 6394,
+      "xp_in_level": 0,
+      "xp_level_required": 537,
+      "xp_to_next_level": 537,
+      "nature": "Adamant",
+      "original_nature": "Adamant",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Ingredient finding": "down"
+      },
+      "berry": "Pecha Berry",
+      "specialty": "Berries",
+      "shiny": true,
+      "id": "mon-39",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength M",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Golem",
+      "national_dex": 76,
+      "nickname": null,
+      "level": 34,
+      "rp": 2005,
+      "xp_total": 15357,
+      "xp_in_level": 337,
+      "xp_level_required": 803,
+      "xp_to_next_level": 466,
+      "nature": "Mild",
+      "original_nature": "Mild",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Sitrus Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-40",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Charmander",
+      "national_dex": 4,
+      "nickname": null,
+      "level": 15,
+      "rp": 610,
+      "xp_total": 3536,
+      "xp_in_level": 0,
+      "xp_level_required": 440,
+      "xp_to_next_level": 440,
+      "nature": "Naughty",
+      "original_nature": "Naughty",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Leppa Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-41",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Bean Sausage",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Piplup",
+      "national_dex": 393,
+      "nickname": null,
+      "level": 14,
+      "rp": 611,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Naive",
+      "original_nature": "Naive",
+      "nature_effects": {
+        "Main skill chance": "down",
+        "EXP gains": "up"
+      },
+      "berry": "Oran Berry",
+      "specialty": "Berries",
+      "shiny": false,
+      "id": "mon-42",
+      "variant": null,
+      "main_skill": {
+        "name": "Extra Helpful S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Egg",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Large Leek",
+          "quantity": 1,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Pumpkaboo",
+      "national_dex": 710,
+      "nickname": null,
+      "level": 16,
+      "rp": 455,
+      "xp_total": 4384,
+      "xp_in_level": 408,
+      "xp_level_required": 454,
+      "xp_to_next_level": 46,
+      "nature": "Hasty",
+      "original_nature": "Hasty",
+      "nature_effects": {
+        "Energy recovery": "down",
+        "EXP gains": "up"
+      },
+      "berry": "Bluk Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-43",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Plump Pumpkin",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Plump Pumpkin",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Plump Pumpkin",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Growlithe",
+      "national_dex": 58,
+      "nickname": null,
+      "level": 13,
+      "rp": 436,
+      "xp_total": 2688,
+      "xp_in_level": 0,
+      "xp_level_required": 419,
+      "xp_to_next_level": 419,
+      "nature": "Rash",
+      "original_nature": "Rash",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Leppa Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-44",
+      "variant": null,
+      "main_skill": {
+        "name": "Extra Helpful S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fiery Herb",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 3,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 5,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Sealeo",
+      "national_dex": 364,
+      "nickname": null,
+      "level": 32,
+      "rp": 1385,
+      "xp_total": 13932,
+      "xp_in_level": 463,
+      "xp_level_required": 766,
+      "xp_to_next_level": 303,
+      "nature": "Serious",
+      "original_nature": "Serious",
+      "nature_effects": {},
+      "berry": "Rawst Berry",
+      "specialty": "Berries",
+      "shiny": false,
+      "id": "mon-45",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Pure Oil",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Pure Oil",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Pure Oil",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Cresselia",
+      "national_dex": 488,
+      "nickname": null,
+      "level": 28,
+      "rp": 1550,
+      "xp_total": 20219,
+      "xp_in_level": 1143,
+      "xp_level_required": 1235,
+      "xp_to_next_level": 92,
+      "nature": "Hardy",
+      "original_nature": "Hardy",
+      "nature_effects": {},
+      "berry": "Mago Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-46",
+      "variant": null,
+      "main_skill": {
+        "name": "Lunar Blessing (Energy for Everyone S)",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Warming Ginger",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Tyranitar",
+      "national_dex": 248,
+      "nickname": null,
+      "level": 57,
+      "rp": 4087,
+      "xp_total": 65617,
+      "xp_in_level": 385,
+      "xp_level_required": 3799,
+      "xp_to_next_level": 3414,
+      "nature": "Modest",
+      "original_nature": "Modest",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Ingredient finding": "up"
+      },
+      "berry": "Wiki Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-47",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Warming Ginger",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Cutiefly",
+      "national_dex": 742,
+      "nickname": null,
+      "level": 14,
+      "rp": 423,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Timid",
+      "original_nature": "Timid",
+      "nature_effects": {
+        "Speed of help": "down",
+        "EXP gains": "up"
+      },
+      "berry": "Pecha Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-48",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Draw S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Honey",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Pure Oil",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Honey",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill has multiple internal IDs; exact ID is unresolved",
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Ampharos",
+      "national_dex": 181,
+      "nickname": "charge king",
+      "level": 53,
+      "rp": 6030,
+      "xp_total": 35226,
+      "xp_in_level": 562,
+      "xp_level_required": 1946,
+      "xp_to_next_level": 1384,
+      "nature": "Brave",
+      "original_nature": "Brave",
+      "nature_effects": {
+        "Speed of help": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-49",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength M",
+        "level": 7,
+        "name_source": "species default checked against user screenshot"
+      },
+      "ingredients": [
+        {
+          "name": "Fiery Herb",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 3,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [],
+      "needs_review": false
+    },
+    {
+      "species": "Chansey",
+      "national_dex": 113,
+      "nickname": null,
+      "level": 30,
+      "rp": 1799,
+      "xp_total": 12354,
+      "xp_in_level": 362,
+      "xp_level_required": 729,
+      "xp_to_next_level": 367,
+      "nature": "Naughty",
+      "original_nature": "Naughty",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Persim Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-50",
+      "variant": null,
+      "main_skill": {
+        "name": "Energy for Everyone S",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Egg",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Dragonite",
+      "national_dex": 149,
+      "nickname": null,
+      "level": 60,
+      "rp": 5489,
+      "xp_total": 78676,
+      "xp_in_level": 1436,
+      "xp_level_required": 4297,
+      "xp_to_next_level": 2861,
+      "nature": "Modest",
+      "original_nature": "Modest",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Ingredient finding": "up"
+      },
+      "berry": "Yache Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-51",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fiery Herb",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fiery Herb",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Fiery Herb",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": true
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Salamence",
+      "national_dex": 373,
+      "nickname": null,
+      "level": 50,
+      "rp": 4274,
+      "xp_total": 45630,
+      "xp_in_level": 640,
+      "xp_level_required": 2042,
+      "xp_to_next_level": 1402,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Yache Berry",
+      "specialty": "Berries",
+      "shiny": false,
+      "id": "mon-52",
+      "variant": null,
+      "main_skill": {
+        "name": "Cooking Power-Up S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Soft Potato",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 3,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Gardevoir",
+      "national_dex": 282,
+      "nickname": null,
+      "level": 53,
+      "rp": 4872,
+      "xp_total": 35078,
+      "xp_in_level": 414,
+      "xp_level_required": 1946,
+      "xp_to_next_level": 1532,
+      "nature": null,
+      "original_nature": "Naughty",
+      "nature_effects": {},
+      "berry": "Mago Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-53",
+      "variant": null,
+      "main_skill": {
+        "name": "Energy for Everyone S",
+        "level": 6,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Apple",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Large Leek",
+          "quantity": 2,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "mint effect has not been decoded; original nature shown",
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Pumpkaboo",
+      "national_dex": 710,
+      "nickname": null,
+      "level": 15,
+      "rp": 531,
+      "xp_total": 3536,
+      "xp_in_level": 0,
+      "xp_level_required": 440,
+      "xp_to_next_level": 440,
+      "nature": "Rash",
+      "original_nature": "Rash",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Bluk Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-54",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Plump Pumpkin",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Plump Pumpkin",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 18,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Abomasnow",
+      "national_dex": 460,
+      "nickname": null,
+      "level": 30,
+      "rp": 1372,
+      "xp_total": 12273,
+      "xp_in_level": 281,
+      "xp_level_required": 729,
+      "xp_to_next_level": 448,
+      "nature": "Gentle",
+      "original_nature": "Gentle",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Rawst Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-55",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 5,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Caterpie",
+      "national_dex": 10,
+      "nickname": null,
+      "level": 25,
+      "rp": 637,
+      "xp_total": 8749,
+      "xp_in_level": 81,
+      "xp_level_required": 622,
+      "xp_to_next_level": 541,
+      "nature": "Brave",
+      "original_nature": "Brave",
+      "nature_effects": {
+        "Speed of help": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Lum Berry",
+      "specialty": "Berries",
+      "shiny": true,
+      "id": "mon-56",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Honey",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Eevee",
+      "national_dex": 133,
+      "nickname": null,
+      "level": 13,
+      "rp": 669,
+      "xp_total": 2688,
+      "xp_in_level": 0,
+      "xp_level_required": 419,
+      "xp_to_next_level": 419,
+      "nature": "Bold",
+      "original_nature": "Bold",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Energy recovery": "up"
+      },
+      "berry": "Persim Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-57",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Plump Pumpkin",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Plump Pumpkin",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Cetitan",
+      "national_dex": 975,
+      "nickname": null,
+      "level": 54,
+      "rp": 2522,
+      "xp_total": 37172,
+      "xp_in_level": 562,
+      "xp_level_required": 2195,
+      "xp_to_next_level": 1633,
+      "nature": "Bashful",
+      "original_nature": "Bashful",
+      "nature_effects": {},
+      "berry": "Rawst Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-58",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Soft Potato",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Swablu",
+      "national_dex": 333,
+      "nickname": null,
+      "level": 12,
+      "rp": 440,
+      "xp_total": 2281,
+      "xp_in_level": 0,
+      "xp_level_required": 407,
+      "xp_to_next_level": 407,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Pamtre Berry",
+      "specialty": "Berries",
+      "shiny": true,
+      "id": "mon-59",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Egg",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fancy Apple",
+          "quantity": 5,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Pichu",
+      "national_dex": 172,
+      "nickname": null,
+      "level": 16,
+      "rp": 457,
+      "xp_total": 3976,
+      "xp_in_level": 0,
+      "xp_level_required": 454,
+      "xp_to_next_level": 454,
+      "nature": "Lax",
+      "original_nature": "Lax",
+      "nature_effects": {
+        "Main skill chance": "down",
+        "Energy recovery": "up"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Berries",
+      "shiny": true,
+      "id": "mon-60",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Apple",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Quaxwell",
+      "national_dex": 913,
+      "nickname": null,
+      "level": 14,
+      "rp": 708,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Timid",
+      "original_nature": "Timid",
+      "nature_effects": {
+        "Speed of help": "down",
+        "EXP gains": "up"
+      },
+      "berry": "Oran Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-61",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength M",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Large Leek",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Comfey",
+      "national_dex": 764,
+      "nickname": null,
+      "level": 32,
+      "rp": 1706,
+      "xp_total": 13885,
+      "xp_in_level": 416,
+      "xp_level_required": 766,
+      "xp_to_next_level": 350,
+      "nature": "Rash",
+      "original_nature": "Rash",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Pecha Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-62",
+      "variant": null,
+      "main_skill": {
+        "name": "Energizing Cheer S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Corn",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Corn",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 9,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Ampharos",
+      "national_dex": 181,
+      "nickname": "powder",
+      "level": 51,
+      "rp": 5776,
+      "xp_total": 31508,
+      "xp_in_level": 153,
+      "xp_level_required": 1562,
+      "xp_to_next_level": 1409,
+      "nature": "Brave",
+      "original_nature": "Brave",
+      "nature_effects": {
+        "Speed of help": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-63",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength M",
+        "level": 7,
+        "name_source": "species default checked against user screenshot"
+      },
+      "ingredients": [
+        {
+          "name": "Fiery Herb",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 3,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [],
+      "needs_review": false
+    },
+    {
+      "species": "Darkrai",
+      "national_dex": 491,
+      "nickname": null,
+      "level": 32,
+      "rp": 4291,
+      "xp_total": 31299,
+      "xp_in_level": 1667,
+      "xp_level_required": 1685,
+      "xp_to_next_level": 18,
+      "nature": "Bashful",
+      "original_nature": "Bashful",
+      "nature_effects": {},
+      "berry": "Wiki Berry",
+      "specialty": null,
+      "shiny": false,
+      "id": "mon-64",
+      "variant": null,
+      "main_skill": {
+        "name": null,
+        "level": null,
+        "name_source": null
+      },
+      "ingredients": [
+        {
+          "name": "Bean Sausage",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Rousing Coffee",
+          "quantity": 3,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": null,
+          "quantity": 0,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": null,
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "ingredient slot 3 is absent or unresolved",
+        "subskill slot 5 is absent or unresolved",
+        "main skill name is unresolved",
+        "specialty is unresolved"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Vikavolt",
+      "national_dex": 738,
+      "nickname": null,
+      "level": 60,
+      "rp": 4555,
+      "xp_total": 51989,
+      "xp_in_level": 496,
+      "xp_level_required": 2865,
+      "xp_to_next_level": 2369,
+      "nature": "Naive",
+      "original_nature": "Naive",
+      "nature_effects": {
+        "Main skill chance": "down",
+        "EXP gains": "up"
+      },
+      "berry": "Lum Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-65",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Rousing Coffee",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Rousing Coffee",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Rousing Coffee",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": true
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Sneasel",
+      "national_dex": 215,
+      "nickname": null,
+      "level": 21,
+      "rp": 670,
+      "xp_total": 6394,
+      "xp_in_level": 0,
+      "xp_level_required": 537,
+      "xp_to_next_level": 537,
+      "nature": "Mild",
+      "original_nature": "Mild",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Wiki Berry",
+      "specialty": "Berries",
+      "shiny": true,
+      "id": "mon-66",
+      "variant": null,
+      "main_skill": {
+        "name": "Tasty Chance S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Bean Sausage",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Cramorant",
+      "national_dex": 845,
+      "nickname": null,
+      "level": 30,
+      "rp": 1495,
+      "xp_total": 12485,
+      "xp_in_level": 493,
+      "xp_level_required": 729,
+      "xp_to_next_level": 236,
+      "nature": "Serious",
+      "original_nature": "Serious",
+      "nature_effects": {},
+      "berry": "Pamtre Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-67",
+      "variant": null,
+      "main_skill": {
+        "name": "Tasty Chance S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Pure Oil",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 8,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Latios",
+      "national_dex": 381,
+      "nickname": null,
+      "level": 42,
+      "rp": 2026,
+      "xp_total": 40486,
+      "xp_in_level": 983,
+      "xp_level_required": 1701,
+      "xp_to_next_level": 718,
+      "nature": "Quiet",
+      "original_nature": "Quiet",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Yache Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-68",
+      "variant": null,
+      "main_skill": {
+        "name": "Draco Meteor (Berry Burst)",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Toxicroak",
+      "national_dex": 454,
+      "nickname": null,
+      "level": 31,
+      "rp": 1270,
+      "xp_total": 12766,
+      "xp_in_level": 45,
+      "xp_level_required": 748,
+      "xp_to_next_level": 703,
+      "nature": "Lonely",
+      "original_nature": "Lonely",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Chesto Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-69",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Pure Oil",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Pure Oil",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Pure Oil",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Treecko",
+      "national_dex": 252,
+      "nickname": null,
+      "level": 15,
+      "rp": 523,
+      "xp_total": 3536,
+      "xp_in_level": 0,
+      "xp_level_required": 440,
+      "xp_to_next_level": 440,
+      "nature": "Quirky",
+      "original_nature": "Quirky",
+      "nature_effects": {},
+      "berry": "Durin Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-70",
+      "variant": null,
+      "main_skill": {
+        "name": "Berry Burst",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Egg",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Rousing Coffee",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Rousing Coffee",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Mewtwo",
+      "national_dex": 150,
+      "nickname": null,
+      "level": 29,
+      "rp": 1805,
+      "xp_total": 20311,
+      "xp_in_level": 0,
+      "xp_level_required": 1275,
+      "xp_to_next_level": 1275,
+      "nature": "Bold",
+      "original_nature": "Bold",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Energy recovery": "up"
+      },
+      "berry": "Mago Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-71",
+      "variant": null,
+      "main_skill": {
+        "name": "Psystrike (Berry Zone)",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Corn",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Diglett",
+      "national_dex": 50,
+      "nickname": null,
+      "level": 14,
+      "rp": 386,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Hardy",
+      "original_nature": "Hardy",
+      "nature_effects": {},
+      "berry": "Figy Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-72",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Bulbasaur",
+      "national_dex": 1,
+      "nickname": null,
+      "level": 13,
+      "rp": 541,
+      "xp_total": 2688,
+      "xp_in_level": 0,
+      "xp_level_required": 419,
+      "xp_to_next_level": 419,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Durin Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-73",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Honey",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 4,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 6,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Skeledirge",
+      "national_dex": 911,
+      "nickname": null,
+      "level": 31,
+      "rp": 1943,
+      "xp_total": 13218,
+      "xp_in_level": 497,
+      "xp_level_required": 748,
+      "xp_to_next_level": 251,
+      "nature": "Quiet",
+      "original_nature": "Quiet",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Bluk Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-74",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Apple",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Fiery Herb",
+          "quantity": 5,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Spiritomb",
+      "national_dex": 442,
+      "nickname": null,
+      "level": 52,
+      "rp": 2592,
+      "xp_total": 33813,
+      "xp_in_level": 896,
+      "xp_level_required": 1747,
+      "xp_to_next_level": 851,
+      "nature": "Quirky",
+      "original_nature": "Quirky",
+      "nature_effects": {},
+      "berry": "Wiki Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-75",
+      "variant": null,
+      "main_skill": {
+        "name": "Extra Helpful S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Togetic",
+      "national_dex": 176,
+      "nickname": null,
+      "level": 24,
+      "rp": 628,
+      "xp_total": 8068,
+      "xp_in_level": 0,
+      "xp_level_required": 600,
+      "xp_to_next_level": 600,
+      "nature": "Relaxed",
+      "original_nature": "Relaxed",
+      "nature_effects": {
+        "Energy recovery": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Pecha Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-76",
+      "variant": null,
+      "main_skill": {
+        "name": "Metronome",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Egg",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Raikou",
+      "national_dex": 243,
+      "nickname": null,
+      "level": 50,
+      "rp": 5241,
+      "xp_total": 54603,
+      "xp_in_level": 616,
+      "xp_level_required": 2451,
+      "xp_to_next_level": 1835,
+      "nature": null,
+      "original_nature": "Rash",
+      "nature_effects": {},
+      "berry": "Grepa Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-77",
+      "variant": null,
+      "main_skill": {
+        "name": "Helper Boost",
+        "level": 6,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Bean Sausage",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fiery Herb",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Large Leek",
+          "quantity": 2,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "mint effect has not been decoded; original nature shown",
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Cyndaquil",
+      "national_dex": 155,
+      "nickname": null,
+      "level": 16,
+      "rp": 492,
+      "xp_total": 3976,
+      "xp_in_level": 0,
+      "xp_level_required": 454,
+      "xp_to_next_level": 454,
+      "nature": "Timid",
+      "original_nature": "Timid",
+      "nature_effects": {
+        "Speed of help": "down",
+        "EXP gains": "up"
+      },
+      "berry": "Leppa Berry",
+      "specialty": "Berries",
+      "shiny": false,
+      "id": "mon-78",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Warming Ginger",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fiery Herb",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Suicune",
+      "national_dex": 245,
+      "nickname": null,
+      "level": 25,
+      "rp": 1466,
+      "xp_total": 15602,
+      "xp_in_level": 0,
+      "xp_level_required": 1120,
+      "xp_to_next_level": 1120,
+      "nature": "Docile",
+      "original_nature": "Docile",
+      "nature_effects": {},
+      "berry": "Oran Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-79",
+      "variant": null,
+      "main_skill": {
+        "name": "Helper Boost",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Apple",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Greengrass Corn",
+          "quantity": 2,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Pikachu",
+      "national_dex": 25,
+      "nickname": null,
+      "level": 17,
+      "rp": 828,
+      "xp_total": 4430,
+      "xp_in_level": 0,
+      "xp_level_required": 469,
+      "xp_to_next_level": 469,
+      "nature": "Lax",
+      "original_nature": "Lax",
+      "nature_effects": {
+        "Main skill chance": "down",
+        "Energy recovery": "up"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Berries",
+      "shiny": true,
+      "id": "mon-80",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Apple",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fancy Apple",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Mewtwo",
+      "national_dex": 150,
+      "nickname": null,
+      "level": 26,
+      "rp": 1603,
+      "xp_total": 17141,
+      "xp_in_level": 419,
+      "xp_level_required": 1157,
+      "xp_to_next_level": 738,
+      "nature": "Serious",
+      "original_nature": "Serious",
+      "nature_effects": {},
+      "berry": "Mago Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-81",
+      "variant": null,
+      "main_skill": {
+        "name": "Psystrike (Berry Zone)",
+        "level": 2,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Greengrass Corn",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Flareon",
+      "national_dex": 136,
+      "nickname": null,
+      "level": 32,
+      "rp": 4595,
+      "xp_total": 13819,
+      "xp_in_level": 350,
+      "xp_level_required": 766,
+      "xp_to_next_level": 416,
+      "nature": "Gentle",
+      "original_nature": "Gentle",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Leppa Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-82",
+      "variant": null,
+      "main_skill": {
+        "name": "Cooking Power-Up S",
+        "level": 7,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Flygon",
+      "national_dex": 330,
+      "nickname": null,
+      "level": 60,
+      "rp": 3630,
+      "xp_total": 52096,
+      "xp_in_level": 603,
+      "xp_level_required": 2865,
+      "xp_to_next_level": 2262,
+      "nature": "Gentle",
+      "original_nature": "Gentle",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Figy Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-83",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 5,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Glossy Avocado",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Glossy Avocado",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Glossy Avocado",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": true
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Cetoddle",
+      "national_dex": 974,
+      "nickname": null,
+      "level": 14,
+      "rp": 437,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Mild",
+      "original_nature": "Mild",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Rawst Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-84",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Soft Potato",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soft Potato",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Plump Pumpkin",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Pikachu",
+      "national_dex": 25,
+      "nickname": null,
+      "level": 16,
+      "rp": 691,
+      "xp_total": 3976,
+      "xp_in_level": 0,
+      "xp_level_required": 454,
+      "xp_to_next_level": 454,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Berries",
+      "shiny": false,
+      "id": "mon-85",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Eevee",
+      "national_dex": 133,
+      "nickname": null,
+      "level": 13,
+      "rp": 624,
+      "xp_total": 2688,
+      "xp_in_level": 0,
+      "xp_level_required": 419,
+      "xp_to_next_level": 419,
+      "nature": "Quiet",
+      "original_nature": "Quiet",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Persim Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-86",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Blastoise",
+      "national_dex": 9,
+      "nickname": null,
+      "level": 60,
+      "rp": 4299,
+      "xp_total": 53074,
+      "xp_in_level": 1581,
+      "xp_level_required": 2865,
+      "xp_to_next_level": 1284,
+      "nature": "Lonely",
+      "original_nature": "Lonely",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Oran Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-87",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": true
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Croagunk",
+      "national_dex": 453,
+      "nickname": null,
+      "level": 15,
+      "rp": 452,
+      "xp_total": 3536,
+      "xp_in_level": 0,
+      "xp_level_required": 440,
+      "xp_to_next_level": 440,
+      "nature": "Serious",
+      "original_nature": "Serious",
+      "nature_effects": {},
+      "berry": "Chesto Berry",
+      "specialty": "Ingredients",
+      "shiny": true,
+      "id": "mon-88",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Pure Oil",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Pure Oil",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Ditto",
+      "national_dex": 132,
+      "nickname": "Josh",
+      "level": 58,
+      "rp": 2130,
+      "xp_total": 47086,
+      "xp_in_level": 1065,
+      "xp_level_required": 2666,
+      "xp_to_next_level": 1601,
+      "nature": "Bashful",
+      "original_nature": "Bashful",
+      "nature_effects": {},
+      "berry": "Persim Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-89",
+      "variant": null,
+      "main_skill": {
+        "name": "Transform (Skill Copy)",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Pure Oil",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Large Leek",
+          "quantity": 3,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Slowpoke Tail",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Aggron",
+      "national_dex": 306,
+      "nickname": "sausage king",
+      "level": 38,
+      "rp": 2184,
+      "xp_total": 18929,
+      "xp_in_level": 589,
+      "xp_level_required": 875,
+      "xp_to_next_level": 286,
+      "nature": "Mild",
+      "original_nature": "Mild",
+      "nature_effects": {
+        "Ingredient finding": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Belue Berry",
+      "specialty": "Ingredients",
+      "shiny": false,
+      "id": "mon-90",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Energy S",
+        "level": 3,
+        "name_source": "species default checked against user screenshot"
+      },
+      "ingredients": [
+        {
+          "name": "Bean Sausage",
+          "quantity": 2,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Bean Sausage",
+          "quantity": 5,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 7,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [],
+      "needs_review": false
+    },
+    {
+      "species": "Sudowoodo",
+      "national_dex": 185,
+      "nickname": null,
+      "level": 15,
+      "rp": 676,
+      "xp_total": 3536,
+      "xp_in_level": 0,
+      "xp_level_required": 440,
+      "xp_to_next_level": 440,
+      "nature": "Bold",
+      "original_nature": "Bold",
+      "nature_effects": {
+        "Speed of help": "down",
+        "Energy recovery": "up"
+      },
+      "berry": "Sitrus Berry",
+      "specialty": "Skills",
+      "shiny": true,
+      "id": "mon-91",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength M",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Greengrass Soybeans",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Tasty Mushroom",
+          "quantity": 2,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Munna",
+      "national_dex": 517,
+      "nickname": null,
+      "level": 16,
+      "rp": 544,
+      "xp_total": 3976,
+      "xp_in_level": 0,
+      "xp_level_required": 454,
+      "xp_to_next_level": 454,
+      "nature": "Adamant",
+      "original_nature": "Adamant",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Ingredient finding": "down"
+      },
+      "berry": "Mago Berry",
+      "specialty": "Berries",
+      "shiny": true,
+      "id": "mon-92",
+      "variant": null,
+      "main_skill": {
+        "name": "Dream Shard Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Energy Recovery Bonus",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Latios",
+      "national_dex": 381,
+      "nickname": null,
+      "level": 29,
+      "rp": 1285,
+      "xp_total": 20370,
+      "xp_in_level": 59,
+      "xp_level_required": 1275,
+      "xp_to_next_level": 1216,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Yache Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-93",
+      "variant": null,
+      "main_skill": {
+        "name": "Draco Meteor (Berry Burst)",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Snoozy Tomato",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Vaporeon",
+      "national_dex": 134,
+      "nickname": null,
+      "level": 38,
+      "rp": 1850,
+      "xp_total": 18825,
+      "xp_in_level": 485,
+      "xp_level_required": 875,
+      "xp_to_next_level": 390,
+      "nature": "Jolly",
+      "original_nature": "Jolly",
+      "nature_effects": {
+        "Ingredient finding": "down",
+        "EXP gains": "up"
+      },
+      "berry": "Oran Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-94",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 4,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Level Up M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Toxel",
+      "national_dex": 848,
+      "nickname": null,
+      "level": 14,
+      "rp": 355,
+      "xp_total": 3107,
+      "xp_in_level": 0,
+      "xp_level_required": 429,
+      "xp_to_next_level": 429,
+      "nature": "Quirky",
+      "original_nature": "Quirky",
+      "nature_effects": {},
+      "berry": "Chesto Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-95",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Pikachu",
+      "national_dex": 25,
+      "nickname": "meowmeow",
+      "level": 13,
+      "rp": 645,
+      "xp_total": 2725,
+      "xp_in_level": 37,
+      "xp_level_required": 419,
+      "xp_to_next_level": 382,
+      "nature": "Sassy",
+      "original_nature": "Sassy",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "EXP gains": "down"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Berries",
+      "shiny": false,
+      "id": "mon-96",
+      "variant": "Costume",
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up M",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Dream Shard Bonus",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Pawmot",
+      "national_dex": 923,
+      "nickname": null,
+      "level": 52,
+      "rp": 4796,
+      "xp_total": 33369,
+      "xp_in_level": 452,
+      "xp_level_required": 1747,
+      "xp_to_next_level": 1295,
+      "nature": "Careful",
+      "original_nature": "Careful",
+      "nature_effects": {
+        "Ingredient finding": "down",
+        "Main skill chance": "up"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-97",
+      "variant": null,
+      "main_skill": {
+        "name": "Energy for Everyone S",
+        "level": 6,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Soothing Cacao",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Skill Trigger M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Raichu",
+      "national_dex": 26,
+      "nickname": null,
+      "level": 51,
+      "rp": 3241,
+      "xp_total": 32862,
+      "xp_in_level": 1507,
+      "xp_level_required": 1562,
+      "xp_to_next_level": 55,
+      "nature": "Naughty",
+      "original_nature": "Naughty",
+      "nature_effects": {
+        "Speed of help": "up",
+        "Main skill chance": "down"
+      },
+      "berry": "Grepa Berry",
+      "specialty": "Berries",
+      "shiny": false,
+      "id": "mon-98",
+      "variant": null,
+      "main_skill": {
+        "name": "Charge Strength S",
+        "level": 3,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Fancy Apple",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Warming Ginger",
+          "quantity": 2,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Fancy Egg",
+          "quantity": 3,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Speed M",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Ingredient Finder S",
+          "unlock_level": 50,
+          "unlocked": true
+        },
+        {
+          "name": "Inventory Up S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Togedemaru",
+      "national_dex": 777,
+      "nickname": null,
+      "level": 21,
+      "rp": 836,
+      "xp_total": 6394,
+      "xp_in_level": 0,
+      "xp_level_required": 537,
+      "xp_to_next_level": 537,
+      "nature": "Gentle",
+      "original_nature": "Gentle",
+      "nature_effects": {
+        "Main skill chance": "up",
+        "Energy recovery": "down"
+      },
+      "berry": "Belue Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-99",
+      "variant": null,
+      "main_skill": {
+        "name": "Nuzzle (Energizing Cheer S)",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Glossy Avocado",
+          "quantity": 1,
+          "unlock_level": 30,
+          "unlocked": false
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Helping Speed S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Research EXP Bonus",
+          "unlock_level": 25,
+          "unlocked": false
+        },
+        {
+          "name": "Inventory Up L",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    },
+    {
+      "species": "Eevee",
+      "national_dex": 133,
+      "nickname": "jolteon",
+      "level": 30,
+      "rp": 1071,
+      "xp_total": 12007,
+      "xp_in_level": 15,
+      "xp_level_required": 729,
+      "xp_to_next_level": 714,
+      "nature": "Serious",
+      "original_nature": "Serious",
+      "nature_effects": {},
+      "berry": "Persim Berry",
+      "specialty": "Skills",
+      "shiny": false,
+      "id": "mon-100",
+      "variant": null,
+      "main_skill": {
+        "name": "Ingredient Magnet S",
+        "level": 1,
+        "name_source": "community species default"
+      },
+      "ingredients": [
+        {
+          "name": "Moomoo Milk",
+          "quantity": 1,
+          "unlock_level": 1,
+          "unlocked": true
+        },
+        {
+          "name": "Soothing Cacao",
+          "quantity": 1,
+          "unlock_level": 30,
+          "unlocked": true
+        },
+        {
+          "name": "Moomoo Milk",
+          "quantity": 4,
+          "unlock_level": 60,
+          "unlocked": false
+        }
+      ],
+      "subskills": [
+        {
+          "name": "Berry Finding S",
+          "unlock_level": 10,
+          "unlocked": true
+        },
+        {
+          "name": "Helping Bonus",
+          "unlock_level": 25,
+          "unlocked": true
+        },
+        {
+          "name": "Sleep EXP Bonus",
+          "unlock_level": 50,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Trigger S",
+          "unlock_level": 70,
+          "unlocked": false
+        },
+        {
+          "name": "Skill Level Up S",
+          "unlock_level": 80,
+          "unlocked": false
+        }
+      ],
+      "review_reasons": [
+        "main skill name uses community species default; not independently checked in app"
+      ],
+      "needs_review": true
+    }
+  ]
+}
