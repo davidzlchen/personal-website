@@ -44,9 +44,8 @@ sanitized snapshots to a separate store if redeploying per refresh becomes noisy
 
 The date selector loads a paired roster and item bag from `history.json` and
 `snapshots/`. The first real capture is October 2, 2026; earlier game progress
-cannot be reconstructed from this capture. Collection totals are compared with
-the previous saved snapshot, including added or removed helpers. Public row IDs
-are snapshot-local, so comparisons do not claim to track individual Pokémon.
+cannot be reconstructed from this capture. The header dropdown lets you browse
+saved captures without a comparison panel. Public row IDs are snapshot-local.
 
 After exporting **both** a new roster and its matching inventory, run:
 
