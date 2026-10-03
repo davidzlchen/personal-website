@@ -203,8 +203,11 @@ function renderCandyBalance() {
     const box = dialog.querySelector(".candy-box");
     if (!box || !selectedMon) return;
     const candy = inventory?.captured_at === snapshotDate ? inventory.pokemon_candies[selectedMon.id] : null;
+    const label = node("span", "candy-label");
+    if (candy) appendIcon(label, "items", candy.name);
+    label.append(node("strong", "", candy?.name || "Candy balance unavailable"));
     box.replaceChildren(
-        node("strong", "", candy?.name || "Candy balance unavailable"),
+        label,
         node("span", "", candy ? `${number(candy.quantity)} available` : "—"),
     );
 }
@@ -417,6 +420,7 @@ function renderInventory() {
         for (const entry of matching) {
             const item = node("div", "inventory-item");
             if (category === "Ingredients") appendIcon(item, "ingredients", entry.name);
+            else appendIcon(item, "items", entry.name);
             const text = node("div", "inventory-item-text");
             text.append(node("strong", "", entry.name || entry.unresolved_label || "Unmapped item"));
             if (entry.description) text.append(node("p", "", entry.description));
@@ -446,7 +450,10 @@ fetch("/pokemon-sleep/inventory.json", { cache: "no-cache" })
             ["Pokémon candy stacks", data.entries.filter((entry) => entry.category === "Pokémon candies" && entry.quantity > 0).length],
         ]) {
             const stat = node("div", "inventory-stat");
-            stat.append(node("strong", "", number(value)), node("span", "", label));
+            const caption = node("span", "inventory-stat-label");
+            appendIcon(caption, "items", label);
+            caption.append(document.createTextNode(label));
+            stat.append(node("strong", "", number(value)), caption);
             $("#inventory-overview").append(stat);
         }
         renderInventory();
