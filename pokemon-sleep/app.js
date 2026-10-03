@@ -200,16 +200,14 @@ function section(title) {
 }
 let selectedMon = null;
 function renderCandyBalance() {
-    const box = dialog.querySelector(".candy-box");
+    const box = dialog.querySelector(".candy-badge");
     if (!box || !selectedMon) return;
     const candy = inventory?.captured_at === snapshotDate ? inventory.pokemon_candies[selectedMon.id] : null;
-    const label = node("span", "candy-label");
-    if (candy) appendIcon(label, "items", candy.name);
-    label.append(node("strong", "", candy?.name || "Candy balance unavailable"));
-    box.replaceChildren(
-        label,
-        node("span", "", candy ? `${number(candy.quantity)} available` : "—"),
-    );
+    box.replaceChildren();
+    if (candy) appendIcon(box, "items", candy.name);
+    box.append(document.createTextNode(candy ? `${candy.name} × ${number(candy.quantity)}` : "Candy unavailable"));
+    box.title = candy ? "Shared by this Pokémon’s evolution family. Snapshot balance." : "Candy balance unavailable for this roster snapshot.";
+    box.setAttribute("aria-label", `${box.textContent}. ${box.title}`);
 }
 function showDetail(mon) {
     selectedMon = mon;
@@ -234,13 +232,9 @@ function showDetail(mon) {
     const berryBadge = node("span", "tag berry-badge");
     appendIcon(berryBadge, "berries", mon.berry);
     berryBadge.append(document.createTextNode(mon.berry || "Berry unknown"));
-    meta.append(specialtyBadge(mon), berryBadge);
+    meta.append(specialtyBadge(mon), berryBadge, node("span", "tag candy-badge"));
     if (mon.shiny) meta.append(node("span", "tag shiny-badge", "✦ Shiny"));
     body.append(meta);
-    const candySection = section("Pokémon candy");
-    candySection.append(node("div", "skill-box candy-box"));
-    candySection.append(node("p", "section-hint", "Shared by this Pokémon’s evolution family. Snapshot balance."));
-    body.append(candySection);
 
     const xp = section("Experience");
     const xpLabel = node("div", "xp-label");
