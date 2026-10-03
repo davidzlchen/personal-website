@@ -61,6 +61,13 @@ function appendIcon(parent, category, name) {
     const icon = assetIcon(category, name);
     if (icon) parent.append(icon);
 }
+function favoriteStar() {
+    const star = node("span", "favorite-star", "★");
+    star.title = "Favorited in Pokémon Sleep";
+    star.setAttribute("role", "img");
+    star.setAttribute("aria-label", "Favorited");
+    return star;
+}
 function specialtyBadge(mon) {
     const badge = node("span", "tag specialty-badge");
     badge.dataset.specialty = mon.specialty || "";
@@ -138,7 +145,7 @@ function render() {
         card.dataset.specialty = mon.specialty || "";
         card.setAttribute(
             "aria-label",
-            `View ${mon.nickname || speciesLabel(mon)}, level ${mon.level}`,
+            `View ${mon.nickname || speciesLabel(mon)}, level ${mon.level}${mon.favorite === true ? ", favorited" : ""}`,
         );
         const art = node("div", "card-art");
         art.append(
@@ -146,6 +153,7 @@ function render() {
             artwork(mon),
         );
         if (mon.shiny) art.append(node("span", "shine-pill", "✦ Shiny"));
+        if (mon.favorite === true) art.append(favoriteStar());
         const info = node("div", "card-info"),
             heading = node("div", "card-heading");
         const names = node("div");
@@ -241,6 +249,7 @@ function showDetail(mon) {
             `${speciesLabel(mon)} · Level ${mon.level} · ${number(mon.rp)} RP`,
         ),
     );
+    if (mon.favorite === true) title.querySelector("h2").append(favoriteStar());
     header.append(artwork(mon), title);
     const body = node("div", "detail-body"),
         meta = node("div", "detail-meta");
