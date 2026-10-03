@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>David’s sleepy little collection · Pokémon Sleep</title>
+        <meta
+            name="description"
+            content="Meet David’s Pokémon Sleep collection. Browse Pokémon, ingredients, skills, and the little details that make each helper unique."
+        />
+        <meta name="theme-color" content="#172c32" />
+        <link rel="icon" href="./moon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="./styles.css" />
+        <script defer src="./app.js"></script>
+    </head>
+    <body>
+        <header class="nav">
+            <a class="home" href="/"
+                >david z. chen <span>/</span>
+                <strong>sleep collection</strong></a
+            ><span class="nav-note"
+                ><span class="live-dot"></span> A little better, every
+                night</span
+            >
+        </header>
+        <main>
+            <section class="hero">
+                <div class="hero-copy">
+                    <p class="eyebrow">POKÉMON SLEEP · FIELD NOTES</p>
+                    <h1>
+                        A sleepy little<br />collection<span class="spark"
+                            >✦</span
+                        >
+                    </h1>
+                    <p class="intro">
+                        A hundred helpers, a few familiar faces, and a whole lot
+                        of bean sausage. Meet the Pokémon keeping me company
+                        overnight.
+                    </p>
+                    <div class="hero-footer">
+                        <a href="#collection" class="button"
+                            >Explore the collection <span>↗</span></a
+                        ><span id="snapshot" class="snapshot"
+                            >Loading snapshot…</span
+                        >
+                    </div>
+                </div>
+                <div
+                    class="hero-art"
+                    aria-label="Featured helpers: Ampharos, Latias, and Aggron"
+                >
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                    <span class="art-star s1">✦</span
+                    ><span class="art-star s2">✧</span
+                    ><span class="art-star s3">·</span>
+                    <div class="moon"></div>
+                    <img
+                        class="hero-mon ampharos"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/181.png"
+                        alt="Ampharos"
+                    /><img
+                        class="hero-mon latias"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/380.png"
+                        alt="Latias"
+                    /><img
+                        class="hero-mon aggron"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/306.png"
+                        alt="Aggron"
+                    /><span class="art-label label-one"
+                        >charge king <span>Lv. 53</span></span
+                    ><span class="art-label label-two"
+                        >sausage king <span>Lv. 38</span></span
+                    ><span class="art-caption">THE NIGHT SHIFT</span>
+                </div>
+            </section>
+            <section class="stats" aria-label="Collection overview">
+                <div>
+                    <span id="total">—</span>
+                    <p>sleepy helpers</p>
+                </div>
+                <div>
+                    <span id="species">—</span>
+                    <p>different species</p>
+                </div>
+                <div>
+                    <span id="shinies">—</span>
+                    <p>shiny discoveries</p>
+                </div>
+                <div>
+                    <span id="highest">—</span>
+                    <p>highest level</p>
+                </div>
+            </section>
+            <section id="collection" class="collection">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">THE POKÉMON BOX</p>
+                        <h2>Everyone’s here.</h2>
+                    </div>
+                    <p>Tap a helper to get to know them.</p>
+                </div>
+                <div class="controls">
+                    <label class="search"
+                        ><span aria-hidden="true">⌕</span
+                        ><input
+                            type="search"
+                            id="search"
+                            placeholder="Find a name, species, ingredient, or skill…"
+                            aria-label="Search Pokémon" /></label
+                    ><label class="sort"
+                        >Sort by
+                        <select id="sort">
+                            <option value="rp">Highest RP</option>
+                            <option value="level">Highest level</option>
+                            <option value="name">Species A–Z</option>
+                            <option value="nickname">Nickname A–Z</option>
+                        </select></label
+                    >
+                </div>
+                <div class="filter-row">
+                    <div class="filters" role="group" aria-label="Specialty">
+                        <button
+                            class="filter active"
+                            data-specialty=""
+                            aria-pressed="true"
+                        >
+                            All helpers</button
+                        ><button
+                            class="filter"
+                            data-specialty="Berries"
+                            aria-pressed="false"
+                        >
+                            Berries</button
+                        ><button
+                            class="filter"
+                            data-specialty="Ingredients"
+                            aria-pressed="false"
+                        >
+                            Ingredients</button
+                        ><button
+                            class="filter"
+                            data-specialty="Skills"
+                            aria-pressed="false"
+                        >
+                            Skills
+                        </button>
+                    </div>
+                    <label class="shiny-filter"
+                        ><input type="checkbox" id="shiny" />
+                        <span>✦ Shiny only</span></label
+                    >
+                </div>
+                <p
+                    id="result-count"
+                    class="result-count"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Opening the box…
+                </p>
+                <div id="grid" class="grid"></div>
+                <p id="empty" class="empty" hidden>
+                    No helpers found. Try another search or filter.
+                </p>
+            </section>
+            <section class="field-note">
+                <span class="note-icon">☾</span>
+                <div>
+                    <h3>A snapshot of the collection</h3>
+                    <p>
+                        These stats come from my Pokémon Sleep roster.
+                        Main-skill names and specialties use species references
+                        where noted. A few individual skills and mint effects
+                        are still being mapped; unresolved values stay unfilled.
+                        Artwork shows species, rather than every in-game
+                        costume.
+                    </p>
+                    <a href="./roster.json" download="david-pokemon-sleep.json"
+                        >Download the public roster ↗</a
+                    >
+                </div>
+            </section>
+        </main>
+        <footer>
+            <a href="/">Back to david z. chen ↗</a>
+            <p>
+                An unofficial personal collection. Pokémon artwork © Pokémon /
+                Nintendo / Creatures / GAME FREAK, via
+                <a href="https://github.com/PokeAPI/sprites">PokéAPI</a>.
+            </p>
+        </footer>
+        <dialog id="detail">
+            <button
+                id="close-detail"
+                class="close"
+                aria-label="Close Pokémon details"
+            >
+                ×
+            </button>
+            <div id="detail-content"></div>
+        </dialog>
+    </body>
+</html>
