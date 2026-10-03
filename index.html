@@ -1,58 +1,424 @@
 <!doctype html>
-<html class="no-js" lang="">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Place favicon.ico in the root directory -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Bootstrap from CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <!-- Bootstrap icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-  <!-- Custom CSS files -->
-  <link rel="stylesheet" href="css/main.css">
-</head>
-
-<body>
-  <div class="section">
-    <div class="pagination-center">
-      <div class="row text-center">
-        <h1 class="display-5">hi, i'm <strong>david z. chen</strong></h2>
-      </div>
-      <div class="row text-center">
-        <p class="lead">i work on realtime distributed sync systems @ facebook</h3>
-      </div>
-      <div class="row text-center">
-        <hr style="width:50%; margin-left: auto; margin-right: auto;" align="center" />
-      </div>
-      <div class="row justify-content-center">
-        <a href="./resumes/fall2019.pdf" class="d-block px-3 m-1 btn btn-outline-dark col-auto">
-          <i class="bi bi-journal"></i>
-          résumé
-        </a>
-        <div class="w-100 d-block d-sm-none"></div>
-        <a href="https://github.com/davidzlchen" class="px-3 m-1 btn btn-outline-dark col-auto">
-          <i class="bi bi-github"></i>
-          github
-        </a>
-        <div class="w-100 d-block d-sm-none"></div>
-        <a href="https://linkedin.com/in/davidzlchen" class="px-3 m-1 btn btn-outline-dark col-auto">
-          <i class="bi bi-linkedin"></i>
-          linkedin
-        </a>
-        <div class="w-100 d-block d-sm-none"></div>
-        <a href="mailto:davidzchen@utexas.edu" class="px-3 m-1 btn btn-outline-dark col-auto">
-          <i class="bi bi-envelope"></i>
-          email
-        </a>
-      </div>
-      </p>
-    </div>
-</body>
-
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>David Z. Chen · Software & side projects</title>
+        <meta
+            name="description"
+            content="A little corner of the internet for David Z. Chen’s software, side projects, and interests. Explore JustSkiing, SkiGuessr, and Pokémon Sleep Collection."
+        />
+        <meta name="theme-color" content="#203b40" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="stylesheet" href="/css/home.css" />
+    </head>
+    <body>
+        <header class="nav">
+            <a class="wordmark" href="/" aria-label="David Z. Chen home"
+                >david z. chen<span class="wordmark-dot">.</span></a
+            >
+            <nav aria-label="Main navigation">
+                <a href="#projects">Projects</a><a href="#about">About</a
+                ><a href="#contact"
+                    >Say hello <span aria-hidden="true">↗</span></a
+                >
+            </nav>
+        </header>
+        <main>
+            <section class="hero" aria-labelledby="intro-title">
+                <div class="hero-copy">
+                    <p class="eyebrow">
+                        SOFTWARE, SIDE PROJECTS & A LITTLE CURIOSITY
+                    </p>
+                    <h1 id="intro-title">
+                        Hi, I’m David.<br /><span class="soft"
+                            >I like making things.</span
+                        >
+                    </h1>
+                    <p class="intro">
+                        Useful tools, little games, and things just for the fun
+                        of it. This is a home for what I’m building and the
+                        interests behind it.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button" href="#projects"
+                            >Take a look around
+                            <span aria-hidden="true">↗</span></a
+                        ><span class="quiet-note"
+                            >A few things I’ve made,<br />all in one
+                            place.</span
+                        >
+                    </div>
+                </div>
+                <div
+                    class="desk"
+                    aria-label="An illustrated collection of mountains, climbing holds, and a sleepy moon"
+                >
+                    <div class="desk-ring"></div>
+                    <span class="star star-one" aria-hidden="true">✦</span
+                    ><span class="star star-two" aria-hidden="true">✧</span>
+                    <div class="mountain-postcard">
+                        <span class="postcard-label">A LITTLE TIME OUTSIDE</span
+                        ><svg viewBox="0 0 300 180" aria-hidden="true">
+                            <circle cx="239" cy="42" r="23" fill="#ead8ab" />
+                            <path
+                                d="M0 177 98 44 176 161 230 89 300 176Z"
+                                fill="#a4b99b"
+                            />
+                            <path
+                                d="m0 177 98-133 78 117 54-72 70 87Z"
+                                fill="none"
+                                stroke="#789176"
+                                stroke-width="1"
+                            />
+                            <path
+                                d="m66 88 32-44 37 56-22-9-15 9-11-19Z"
+                                fill="#f7f8f2"
+                            />
+                            <path
+                                d="m204 124 26-35 26 32-17-4-9 8-13-9Z"
+                                fill="#f7f8f2"
+                            />
+                            <path d="m9 176 95-61 64 61Z" fill="#6a897b" />
+                            <path
+                                d="m122 177 80-44 79 44Z"
+                                fill="#4c7367"
+                            /></svg
+                        ><span class="postcard-foot"
+                            >MORE MOUNTAINS, PLEASE.</span
+                        >
+                    </div>
+                    <div class="night-card">
+                        <div class="moon" aria-hidden="true"></div>
+                        <span class="night-stars" aria-hidden="true"
+                            >✧ &nbsp; · &nbsp; ✦</span
+                        ><span class="night-caption"
+                            >A LITTLE TIME DREAMING</span
+                        >
+                    </div>
+                    <div class="climb-card">
+                        <svg viewBox="0 0 130 90" aria-hidden="true">
+                            <g fill="#afc293">
+                                <path
+                                    d="M15 40c-8-22 9-29 28-19s23 21 7 29-27 9-35-10Z"
+                                />
+                                <path
+                                    d="M89 27c-11-18 0-23 16-19s20 17 9 22-18 10-25-3Z"
+                                />
+                            </g>
+                            <path
+                                d="M57 74c-8-10 2-22 20-23s33 14 17 22-28 12-37 1Z"
+                                fill="#cd9c7b"
+                            />
+                            <g fill="#203b40" opacity=".3">
+                                <circle cx="29" cy="34" r="3" />
+                                <circle cx="102" cy="20" r="2" />
+                                <circle cx="76" cy="65" r="3" />
+                            </g></svg
+                        ><span>ONE MORE TRY.</span>
+                    </div>
+                    <span class="desk-label"
+                        >THE THINGS THAT KEEP ME CURIOUS</span
+                    >
+                </div>
+            </section>
+            <div class="chapter-line">
+                <span>A SMALL COLLECTION OF PERSONAL PROJECTS</span
+                ><span aria-hidden="true">↓</span>
+            </div>
+            <section
+                id="projects"
+                class="projects"
+                aria-labelledby="projects-title"
+            >
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">THINGS I’VE BEEN BUILDING</p>
+                        <h2 id="projects-title">
+                            From idea to something real.
+                        </h2>
+                    </div>
+                    <p>Made around things I enjoy.</p>
+                </div>
+                <div class="project-grid">
+                    <a
+                        class="project"
+                        href="https://justskiing.info"
+                        aria-label="Explore JustSkiing, live ski resort conditions"
+                    >
+                        <div class="cover ski-cover" aria-hidden="true">
+                            <div class="mini-header">
+                                <span class="mini-logo">↟ JustSkiing</span
+                                ><span class="mini-status"
+                                    ><i></i> On the mountain</span
+                                >
+                            </div>
+                            <svg class="ski-mountains" viewBox="0 0 600 200">
+                                <path
+                                    d="M0 194 118 42l82 108 67-101 124 145 93-136 116 136Z"
+                                    fill="#bed0b8"
+                                />
+                                <path
+                                    d="m84 86 34-44 32 44-18-6-13 12-15-16Z"
+                                    fill="#f7f8f2"
+                                />
+                                <path
+                                    d="m240 90 27-41 43 53-29-10-14 8-14-18Z"
+                                    fill="#f7f8f2"
+                                />
+                                <path
+                                    d="m0 200 155-77 96 77 129-75 114 75Z"
+                                    fill="#95b5a3"
+                                />
+                            </svg>
+                            <div class="condition-tiles">
+                                <div>
+                                    <span>Lift & trail status</span
+                                    ><strong>Know before you go.</strong>
+                                    <div class="mini-bars">
+                                        <i></i><i></i><i></i><i></i><i></i
+                                        ><i></i>
+                                    </div>
+                                </div>
+                                <div class="condition-note">
+                                    <span>Live updates</span
+                                    ><strong
+                                        >Less checking.<br />More
+                                        skiing.</strong
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-copy">
+                            <div class="project-title">
+                                <h3>JustSkiing</h3>
+                                <span class="project-arrow" aria-hidden="true"
+                                    >↗</span
+                                >
+                            </div>
+                            <p>
+                                Live lift and trail status, snow conditions, and
+                                a clearer picture of what’s happening on the
+                                mountain.
+                            </p>
+                            <div class="project-footer">
+                                <span class="category"
+                                    ><i></i> Skiing · Useful tools</span
+                                ><span>justskiing.info</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a
+                        class="project"
+                        href="https://skiguessr.vercel.app"
+                        aria-label="Play SkiGuessr, a ski mountain guessing game"
+                    >
+                        <div class="cover guess-cover" aria-hidden="true">
+                            <div class="mini-header">
+                                <span class="mini-logo"
+                                    >SkiGuessr<span class="mini-logo-dot"
+                                        >.</span
+                                    ></span
+                                ><span class="mini-status"
+                                    >A mountain mystery</span
+                                >
+                            </div>
+                            <div class="guess-picture">
+                                <svg viewBox="0 0 600 220">
+                                    <circle
+                                        cx="445"
+                                        cy="61"
+                                        r="31"
+                                        fill="#ebd4a4"
+                                    />
+                                    <path
+                                        d="M0 220 153 52l89 111 73-132 152 189Z"
+                                        fill="#9eb6b5"
+                                    />
+                                    <path
+                                        d="m122 87 31-35 40 49-28-8-18 7-13-13Zm154 16 39-72 51 74-32-13-18 14-19-21Z"
+                                        fill="#edf1e5"
+                                    />
+                                    <path
+                                        d="M0 220 155 146l95 74 87-56 117 56Z"
+                                        fill="#557878"
+                                    />
+                                    <path
+                                        d="M337 220 476 112l124 108Z"
+                                        fill="#648988"
+                                    />
+                                </svg>
+                                <div class="guess-pin">?</div>
+                            </div>
+                            <span class="guess-prompt"
+                                >Somewhere snowy. Any guesses?</span
+                            >
+                        </div>
+                        <div class="project-copy">
+                            <div class="project-title">
+                                <h3>SkiGuessr</h3>
+                                <span class="project-arrow" aria-hidden="true"
+                                    >↗</span
+                                >
+                            </div>
+                            <p>
+                                A little geography game for skiers. Explore the
+                                photos, follow the clues, and name that ski
+                                resort.
+                            </p>
+                            <div class="project-footer">
+                                <span class="category"
+                                    ><i></i> Skiing · Little games</span
+                                ><span>Play a round</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a
+                        class="project"
+                        href="/pokemon-sleep/"
+                        aria-label="Browse Pokémon Sleep Collection"
+                    >
+                        <div class="cover sleep-cover" aria-hidden="true">
+                            <div class="mini-header">
+                                <span class="mini-logo"
+                                    >Pokémon Sleep Collection</span
+                                ><span class="mini-status"
+                                    >The night shift</span
+                                >
+                            </div>
+                            <div class="sleep-orbit"></div>
+                            <span class="sleep-star">✦</span>
+                            <div class="small-moon"></div>
+                            <img
+                                class="sleep-mon sleep-ampharos"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/181.png"
+                                alt=""
+                                loading="lazy"
+                            /><img
+                                class="sleep-mon sleep-latias"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/380.png"
+                                alt=""
+                                loading="lazy"
+                            /><img
+                                class="sleep-mon sleep-aggron"
+                                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/306.png"
+                                alt=""
+                                loading="lazy"
+                            /><span class="sleep-caption"
+                                >GOOD COMPANY, OVERNIGHT.</span
+                            >
+                        </div>
+                        <div class="project-copy">
+                            <div class="project-title">
+                                <h3>Pokémon Sleep Collection</h3>
+                                <span class="project-arrow" aria-hidden="true"
+                                    >↗</span
+                                >
+                            </div>
+                            <p>
+                                My sleepy helpers, all in one place. Browse
+                                their ingredients, skills, and the little
+                                details that make each one unique.
+                            </p>
+                            <div class="project-footer">
+                                <span class="category"
+                                    ><i></i> Pokémon · Personal
+                                    collections</span
+                                ><span>Meet the helpers</span>
+                            </div>
+                        </div>
+                    </a>
+                    <article class="project hangboard-project">
+                        <div class="cover climb-cover" aria-hidden="true">
+                            <div class="mini-header">
+                                <span class="mini-logo">Hangboard</span
+                                ><span class="mini-status"
+                                    >One session at a time</span
+                                >
+                            </div>
+                            <div class="hangboard">
+                                <div class="holds">
+                                    <i></i><i></i><i></i><i></i>
+                                </div>
+                                <div class="holds holds-small">
+                                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                                </div>
+                                <div class="holds holds-low">
+                                    <i></i><i></i>
+                                </div>
+                                <span>STAY CURIOUS. KEEP CLIMBING.</span>
+                            </div>
+                            <span class="climb-caption"
+                                >A LITTLE STRONGER, EVERY SESSION.</span
+                            >
+                        </div>
+                        <div class="project-copy">
+                            <div class="project-title">
+                                <h3>Hangboard</h3>
+                                <span class="in-progress">In progress</span>
+                            </div>
+                            <p>
+                                A personal training companion for climbing.
+                                Build workouts and keep track of the sessions
+                                along the way.
+                            </p>
+                            <div class="project-footer">
+                                <span class="category"
+                                    ><i></i> Climbing · Training</span
+                                ><span>More soon</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section id="about" class="about" aria-labelledby="about-title">
+                <div class="about-intro">
+                    <p class="eyebrow">A LITTLE ABOUT THIS CORNER</p>
+                    <h2 id="about-title">Built out of curiosity.</h2>
+                </div>
+                <div class="about-copy">
+                    <p>
+                        My projects tend to start with a small question: could
+                        this be more useful, more playful, or just a little
+                        easier?
+                    </p>
+                    <p>
+                        Sometimes that turns into a tool for a day on the
+                        mountain. Sometimes it’s a game, a training companion,
+                        or a collection of sleepy Pokémon. This is where those
+                        ideas live.
+                    </p>
+                    <div class="interest-tags">
+                        <span>Software</span><span>Skiing</span
+                        ><span>Climbing</span><span>Little experiments</span>
+                    </div>
+                </div>
+            </section>
+            <section
+                id="contact"
+                class="contact"
+                aria-labelledby="contact-title"
+            >
+                <div>
+                    <p class="eyebrow">KEEP IN TOUCH</p>
+                    <h2 id="contact-title">Always up for a good idea.</h2>
+                    <p>Find me around the internet.</p>
+                </div>
+                <div class="contact-links">
+                    <a href="https://github.com/davidzlchen"
+                        >GitHub <span aria-hidden="true">↗</span></a
+                    ><a href="https://linkedin.com/in/davidzlchen"
+                        >LinkedIn <span aria-hidden="true">↗</span></a
+                    >
+                </div>
+            </section>
+        </main>
+        <footer>
+            <span>David Z. Chen</span
+            ><span
+                >A little corner of the internet.
+                <span class="footer-star" aria-hidden="true">✦</span></span
+            >
+        </footer>
+    </body>
 </html>
