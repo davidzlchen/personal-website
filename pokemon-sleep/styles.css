@@ -1230,3 +1230,5 @@ progress::-moz-progress-bar {
     .subskill-badge { font-size: 9px; padding: 4px 3px; }
     .nature-badge { font-size: 9px; }
 }
+
+.detail-share { border: 0; background: transparent; padding: 6px 0; color: var(--muted); font: inherit; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }

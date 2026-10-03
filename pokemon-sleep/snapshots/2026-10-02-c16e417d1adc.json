@@ -19,6 +19,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Pecha Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -37,46 +38,54 @@
             "name": "Honey",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Pure Oil",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Honey",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -100,6 +109,7 @@
           "Speed of help": "down",
           "Main skill chance": "up"
         },
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -118,46 +128,54 @@
             "name": "Soothing Cacao",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -181,6 +199,7 @@
           "Speed of help": "down",
           "Ingredient finding": "up"
         },
+        "nature_neutralized": false,
         "berry": "Mago Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -199,46 +218,54 @@
             "name": "Warming Ginger",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Snoozy Tomato",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -259,6 +286,7 @@
         "nature": "Docile",
         "original_nature": "Docile",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -277,46 +305,54 @@
             "name": "Pure Oil",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 8,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Bonus",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -337,8 +373,9 @@
         "nature": "Quirky",
         "original_nature": "Quirky",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Mago Berry",
-        "specialty": null,
+        "specialty": "All",
         "shiny": false,
         "favorite": false,
         "id": "mon-5",
@@ -346,65 +383,67 @@
         "met_area": "Taupe Hollow",
         "variant": null,
         "main_skill": {
-          "name": null,
-          "level": null,
-          "name_source": null
+          "name": "Versatile (Cooking Power-Up S)",
+          "level": 8,
+          "name_source": "official species description and client master table"
         },
         "ingredients": [
           {
             "name": "Fancy Egg",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fiery Herb",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": null,
-            "quantity": 0,
+            "quantity": null,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": true
           }
         ],
         "subskills": [
           {
             "name": "Skill Level Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Bonus",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": null,
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": true
           }
         ],
-        "review_reasons": [
-          "ingredient slot 3 is absent or unresolved",
-          "subskill slot 5 is absent or unresolved",
-          "individual skill parameters require interpretation",
-          "main skill name is unresolved",
-          "specialty is unresolved"
-        ],
-        "needs_review": true
+        "review_reasons": [],
+        "needs_review": false
       },
       {
         "species": "Golem",
@@ -419,6 +458,7 @@
         "nature": "Quirky",
         "original_nature": "Quirky",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Sitrus Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -437,46 +477,54 @@
             "name": "Greengrass Soybeans",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 6,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -497,6 +545,7 @@
         "nature": "Hardy",
         "original_nature": "Hardy",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Berries",
         "shiny": true,
@@ -515,46 +564,54 @@
             "name": "Bean Sausage",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up S",
             "unlock_level": 10,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -578,6 +635,7 @@
           "Speed of help": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Rawst Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -596,46 +654,54 @@
             "name": "Snoozy Tomato",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Bonus",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -659,6 +725,7 @@
           "Speed of help": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Durin Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -677,46 +744,54 @@
             "name": "Snoozy Tomato",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 6,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Berry Finding S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -737,6 +812,7 @@
         "nature": "Quirky",
         "original_nature": "Quirky",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -755,46 +831,54 @@
             "name": "Soothing Cacao",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -818,6 +902,7 @@
           "Ingredient finding": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Mago Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -836,46 +921,54 @@
             "name": "Snoozy Tomato",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Snoozy Tomato",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 6,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -899,6 +992,7 @@
           "Ingredient finding": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Oran Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -917,46 +1011,54 @@
             "name": "Tasty Mushroom",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 6,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -980,6 +1082,7 @@
           "Speed of help": "down",
           "Main skill chance": "up"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -998,46 +1101,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 1,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 2,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Bonus",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1061,6 +1172,7 @@
           "Ingredient finding": "down",
           "Main skill chance": "up"
         },
+        "nature_neutralized": false,
         "berry": "Yache Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -1079,46 +1191,54 @@
             "name": "Snoozy Tomato",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Snoozy Tomato",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Plump Pumpkin",
             "quantity": 2,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Speed S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [],
@@ -1140,6 +1260,7 @@
           "Speed of help": "down",
           "EXP gains": "up"
         },
+        "nature_neutralized": false,
         "berry": "Leppa Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -1158,46 +1279,54 @@
             "name": "Bean Sausage",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fiery Herb",
             "quantity": 6,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1221,6 +1350,7 @@
           "Speed of help": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -1239,46 +1369,54 @@
             "name": "Greengrass Soybeans",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 1,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Berry Finding S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1302,6 +1440,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -1320,46 +1459,54 @@
             "name": "Greengrass Soybeans",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Berry Finding S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1383,6 +1530,7 @@
           "Ingredient finding": "down",
           "EXP gains": "up"
         },
+        "nature_neutralized": false,
         "berry": "Pecha Berry",
         "specialty": "Berries",
         "shiny": true,
@@ -1401,46 +1549,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Honey",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1464,6 +1620,7 @@
           "Main skill chance": "down",
           "Energy recovery": "up"
         },
+        "nature_neutralized": false,
         "berry": "Durin Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -1482,46 +1639,54 @@
             "name": "Fancy Egg",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Rousing Coffee",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Large Leek",
             "quantity": 2,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Berry Finding S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1545,6 +1710,7 @@
           "Speed of help": "down",
           "Energy recovery": "up"
         },
+        "nature_neutralized": false,
         "berry": "Belue Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -1563,46 +1729,54 @@
             "name": "Pure Oil",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Corn",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Greengrass Corn",
             "quantity": 6,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1626,6 +1800,7 @@
           "Speed of help": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -1644,46 +1819,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 1,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Greengrass Corn",
             "quantity": 2,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1707,6 +1890,7 @@
           "Speed of help": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Figy Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -1725,46 +1909,54 @@
             "name": "Glossy Avocado",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fiery Herb",
             "quantity": 6,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fiery Herb",
             "quantity": 9,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1788,6 +1980,7 @@
           "Main skill chance": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Persim Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -1806,46 +1999,54 @@
             "name": "Moomoo Milk",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1866,6 +2067,7 @@
         "nature": "Bashful",
         "original_nature": "Bashful",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Cheri Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -1884,46 +2086,54 @@
             "name": "Greengrass Corn",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Corn",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 10,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -1947,6 +2157,7 @@
           "Main skill chance": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -1965,46 +2176,54 @@
             "name": "Pure Oil",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Pure Oil",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 8,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2028,6 +2247,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Oran Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -2046,46 +2266,54 @@
             "name": "Moomoo Milk",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Level Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2109,6 +2337,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Oran Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -2127,46 +2356,54 @@
             "name": "Moomoo Milk",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2190,6 +2427,7 @@
           "Speed of help": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -2208,46 +2446,54 @@
             "name": "Soothing Cacao",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 6,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2271,6 +2517,7 @@
           "Energy recovery": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Oran Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -2289,46 +2536,54 @@
             "name": "Tasty Mushroom",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Level Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2352,6 +2607,7 @@
           "Speed of help": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Mago Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -2370,46 +2626,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 1,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Pure Oil",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2430,6 +2694,7 @@
         "nature": "Hardy",
         "original_nature": "Hardy",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Lum Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -2448,46 +2713,54 @@
             "name": "Honey",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Honey",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Apple",
             "quantity": 8,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Speed S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2511,6 +2784,7 @@
           "Ingredient finding": "down",
           "Main skill chance": "up"
         },
+        "nature_neutralized": false,
         "berry": "Lum Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -2529,46 +2803,54 @@
             "name": "Glossy Avocado",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Glossy Avocado",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Glossy Avocado",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2592,6 +2874,7 @@
           "Speed of help": "down",
           "Ingredient finding": "up"
         },
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -2610,46 +2893,54 @@
             "name": "Greengrass Soybeans",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 1,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Honey",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Bonus",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2670,6 +2961,7 @@
         "nature": "Quirky",
         "original_nature": "Quirky",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Mago Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -2688,46 +2980,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Apple",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 2,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2751,6 +3051,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Durin Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -2769,46 +3070,54 @@
             "name": "Fancy Egg",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Rousing Coffee",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2832,6 +3141,7 @@
           "Ingredient finding": "down",
           "Energy recovery": "up"
         },
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -2850,46 +3160,54 @@
             "name": "Greengrass Soybeans",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 1,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Honey",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2913,6 +3231,7 @@
           "Ingredient finding": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Persim Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -2931,46 +3250,54 @@
             "name": "Fancy Egg",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Honey",
             "quantity": 8,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -2994,6 +3321,7 @@
           "Speed of help": "down",
           "Main skill chance": "up"
         },
+        "nature_neutralized": false,
         "berry": "Sitrus Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -3012,46 +3340,54 @@
             "name": "Warming Ginger",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 8,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3075,6 +3411,7 @@
           "Speed of help": "up",
           "Ingredient finding": "down"
         },
+        "nature_neutralized": false,
         "berry": "Pecha Berry",
         "specialty": "Berries",
         "shiny": true,
@@ -3093,46 +3430,54 @@
             "name": "Snoozy Tomato",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Snoozy Tomato",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Research EXP Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3156,6 +3501,7 @@
           "Ingredient finding": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Sitrus Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -3174,46 +3520,54 @@
             "name": "Greengrass Soybeans",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3237,6 +3591,7 @@
           "Speed of help": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Leppa Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -3255,46 +3610,54 @@
             "name": "Bean Sausage",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3318,6 +3681,7 @@
           "Main skill chance": "down",
           "EXP gains": "up"
         },
+        "nature_neutralized": false,
         "berry": "Oran Berry",
         "specialty": "Berries",
         "shiny": false,
@@ -3336,46 +3700,54 @@
             "name": "Fancy Egg",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Large Leek",
             "quantity": 1,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Berry Finding S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3399,6 +3771,7 @@
           "Energy recovery": "down",
           "EXP gains": "up"
         },
+        "nature_neutralized": false,
         "berry": "Bluk Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -3417,46 +3790,54 @@
             "name": "Plump Pumpkin",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Plump Pumpkin",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Plump Pumpkin",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3480,6 +3861,7 @@
           "Ingredient finding": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Leppa Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -3498,46 +3880,54 @@
             "name": "Fiery Herb",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 3,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 5,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3558,6 +3948,7 @@
         "nature": "Serious",
         "original_nature": "Serious",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Rawst Berry",
         "specialty": "Berries",
         "shiny": false,
@@ -3576,46 +3967,54 @@
             "name": "Pure Oil",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Pure Oil",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Pure Oil",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Berry Finding S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Bonus",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3636,6 +4035,7 @@
         "nature": "Hardy",
         "original_nature": "Hardy",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Mago Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -3654,46 +4054,54 @@
             "name": "Warming Ginger",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3717,6 +4125,7 @@
           "Speed of help": "down",
           "Ingredient finding": "up"
         },
+        "nature_neutralized": false,
         "berry": "Wiki Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -3735,46 +4144,54 @@
             "name": "Warming Ginger",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3798,6 +4215,7 @@
           "Speed of help": "down",
           "EXP gains": "up"
         },
+        "nature_neutralized": false,
         "berry": "Pecha Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -3816,46 +4234,54 @@
             "name": "Honey",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Pure Oil",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Honey",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -3880,6 +4306,7 @@
           "Speed of help": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -3898,46 +4325,54 @@
             "name": "Fiery Herb",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 3,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [],
@@ -3959,6 +4394,7 @@
           "Speed of help": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Persim Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -3977,46 +4413,54 @@
             "name": "Fancy Egg",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4040,6 +4484,7 @@
           "Speed of help": "down",
           "Ingredient finding": "up"
         },
+        "nature_neutralized": false,
         "berry": "Yache Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -4058,46 +4503,54 @@
             "name": "Fiery Herb",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fiery Herb",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fiery Herb",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4121,6 +4574,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Yache Berry",
         "specialty": "Berries",
         "shiny": false,
@@ -4139,46 +4593,54 @@
             "name": "Soft Potato",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 3,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Berry Finding S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4196,9 +4658,10 @@
         "xp_in_level": 414,
         "xp_level_required": 1946,
         "xp_to_next_level": 1532,
-        "nature": null,
+        "nature": "Naughty",
         "original_nature": "Naughty",
         "nature_effects": {},
+        "nature_neutralized": true,
         "berry": "Mago Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -4217,50 +4680,57 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Apple",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Large Leek",
             "quantity": 2,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
-          "mint effect has not been decoded; original nature shown",
           "main skill name uses community species default; not independently checked in app"
         ],
         "needs_review": true
@@ -4281,6 +4751,7 @@
           "Ingredient finding": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Bluk Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -4299,46 +4770,54 @@
             "name": "Plump Pumpkin",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Plump Pumpkin",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 18,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4362,6 +4841,7 @@
           "Main skill chance": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Rawst Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -4380,46 +4860,54 @@
             "name": "Snoozy Tomato",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 5,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4443,6 +4931,7 @@
           "Speed of help": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Lum Berry",
         "specialty": "Berries",
         "shiny": true,
@@ -4461,46 +4950,54 @@
             "name": "Honey",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Snoozy Tomato",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Snoozy Tomato",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4524,6 +5021,7 @@
           "Speed of help": "down",
           "Energy recovery": "up"
         },
+        "nature_neutralized": false,
         "berry": "Persim Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -4542,46 +5040,54 @@
             "name": "Plump Pumpkin",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Plump Pumpkin",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Speed S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Berry Finding S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4602,6 +5108,7 @@
         "nature": "Bashful",
         "original_nature": "Bashful",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Rawst Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -4620,46 +5127,54 @@
             "name": "Soft Potato",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4683,6 +5198,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Pamtre Berry",
         "specialty": "Berries",
         "shiny": true,
@@ -4701,46 +5217,54 @@
             "name": "Fancy Egg",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fancy Apple",
             "quantity": 5,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Level Up S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4764,6 +5288,7 @@
           "Main skill chance": "down",
           "Energy recovery": "up"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Berries",
         "shiny": true,
@@ -4782,46 +5307,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Apple",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Level Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4845,6 +5378,7 @@
           "Speed of help": "down",
           "EXP gains": "up"
         },
+        "nature_neutralized": false,
         "berry": "Oran Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -4863,46 +5397,54 @@
             "name": "Greengrass Soybeans",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Large Leek",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -4926,6 +5468,7 @@
           "Ingredient finding": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Pecha Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -4944,46 +5487,54 @@
             "name": "Greengrass Corn",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Corn",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 9,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5007,6 +5558,7 @@
           "Speed of help": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -5025,46 +5577,54 @@
             "name": "Fiery Herb",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 3,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [],
@@ -5083,8 +5643,9 @@
         "nature": "Bashful",
         "original_nature": "Bashful",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Wiki Berry",
-        "specialty": null,
+        "specialty": "All",
         "shiny": false,
         "favorite": false,
         "id": "mon-64",
@@ -5092,64 +5653,67 @@
         "met_area": "Greengrass Isle",
         "variant": null,
         "main_skill": {
-          "name": null,
-          "level": null,
-          "name_source": null
+          "name": "Bad Dreams (Charge Strength M)",
+          "level": 6,
+          "name_source": "official species description and client master table"
         },
         "ingredients": [
           {
             "name": "Bean Sausage",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Rousing Coffee",
             "quantity": 3,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": null,
-            "quantity": 0,
+            "quantity": null,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": true
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": null,
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": true
           }
         ],
-        "review_reasons": [
-          "ingredient slot 3 is absent or unresolved",
-          "subskill slot 5 is absent or unresolved",
-          "main skill name is unresolved",
-          "specialty is unresolved"
-        ],
-        "needs_review": true
+        "review_reasons": [],
+        "needs_review": false
       },
       {
         "species": "Vikavolt",
@@ -5167,6 +5731,7 @@
           "Main skill chance": "down",
           "EXP gains": "up"
         },
+        "nature_neutralized": false,
         "berry": "Lum Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -5185,46 +5750,54 @@
             "name": "Rousing Coffee",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Rousing Coffee",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Rousing Coffee",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Research EXP Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5248,6 +5821,7 @@
           "Ingredient finding": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Wiki Berry",
         "specialty": "Berries",
         "shiny": true,
@@ -5266,46 +5840,54 @@
             "name": "Bean Sausage",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5326,6 +5908,7 @@
         "nature": "Serious",
         "original_nature": "Serious",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Pamtre Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -5344,46 +5927,54 @@
             "name": "Pure Oil",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 8,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5407,6 +5998,7 @@
           "Ingredient finding": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Yache Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -5425,46 +6017,54 @@
             "name": "Snoozy Tomato",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Berry Finding S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5488,6 +6088,7 @@
           "Speed of help": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -5506,46 +6107,54 @@
             "name": "Pure Oil",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Pure Oil",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Pure Oil",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5566,6 +6175,7 @@
         "nature": "Quirky",
         "original_nature": "Quirky",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Durin Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -5584,46 +6194,54 @@
             "name": "Fancy Egg",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Rousing Coffee",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Rousing Coffee",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Level Up S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Berry Finding S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5647,6 +6265,7 @@
           "Speed of help": "down",
           "Energy recovery": "up"
         },
+        "nature_neutralized": false,
         "berry": "Mago Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -5665,46 +6284,54 @@
             "name": "Greengrass Soybeans",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Corn",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Speed S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5725,6 +6352,7 @@
         "nature": "Hardy",
         "original_nature": "Hardy",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Figy Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -5743,46 +6371,54 @@
             "name": "Snoozy Tomato",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Snoozy Tomato",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Snoozy Tomato",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Berry Finding S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5806,6 +6442,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Durin Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -5824,46 +6461,54 @@
             "name": "Honey",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Snoozy Tomato",
             "quantity": 4,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 6,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Bonus",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5887,6 +6532,7 @@
           "Ingredient finding": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Bluk Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -5905,46 +6551,54 @@
             "name": "Fancy Apple",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Apple",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fiery Herb",
             "quantity": 5,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -5965,6 +6619,7 @@
         "nature": "Quirky",
         "original_nature": "Quirky",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Wiki Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -5983,46 +6638,54 @@
             "name": "Tasty Mushroom",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up L",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6046,6 +6709,7 @@
           "Energy recovery": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Pecha Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -6064,46 +6728,54 @@
             "name": "Fancy Egg",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6121,9 +6793,10 @@
         "xp_in_level": 616,
         "xp_level_required": 2451,
         "xp_to_next_level": 1835,
-        "nature": null,
+        "nature": "Rash",
         "original_nature": "Rash",
         "nature_effects": {},
+        "nature_neutralized": true,
         "berry": "Grepa Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -6142,50 +6815,57 @@
             "name": "Bean Sausage",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fiery Herb",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Large Leek",
             "quantity": 2,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Speed M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
-          "mint effect has not been decoded; original nature shown",
           "main skill name uses community species default; not independently checked in app"
         ],
         "needs_review": true
@@ -6206,6 +6886,7 @@
           "Speed of help": "down",
           "EXP gains": "up"
         },
+        "nature_neutralized": false,
         "berry": "Leppa Berry",
         "specialty": "Berries",
         "shiny": false,
@@ -6224,46 +6905,54 @@
             "name": "Warming Ginger",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fiery Herb",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Berry Finding S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6284,6 +6973,7 @@
         "nature": "Docile",
         "original_nature": "Docile",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Oran Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -6302,46 +6992,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Apple",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Greengrass Corn",
             "quantity": 2,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6365,6 +7063,7 @@
           "Main skill chance": "down",
           "Energy recovery": "up"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Berries",
         "shiny": true,
@@ -6383,46 +7082,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Apple",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fancy Apple",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6443,6 +7150,7 @@
         "nature": "Serious",
         "original_nature": "Serious",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Mago Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -6461,46 +7169,54 @@
             "name": "Greengrass Soybeans",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Greengrass Corn",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6524,6 +7240,7 @@
           "Main skill chance": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Leppa Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -6542,46 +7259,54 @@
             "name": "Moomoo Milk",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6605,6 +7330,7 @@
           "Main skill chance": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Figy Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -6623,46 +7349,54 @@
             "name": "Glossy Avocado",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Glossy Avocado",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Glossy Avocado",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Level Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6686,6 +7420,7 @@
           "Ingredient finding": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Rawst Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -6704,46 +7439,54 @@
             "name": "Soft Potato",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soft Potato",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Plump Pumpkin",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6767,6 +7510,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Berries",
         "shiny": false,
@@ -6785,46 +7529,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Ingredient Finder S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6848,6 +7600,7 @@
           "Ingredient finding": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Persim Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -6866,46 +7619,54 @@
             "name": "Moomoo Milk",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -6929,6 +7690,7 @@
           "Speed of help": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Oran Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -6947,46 +7709,54 @@
             "name": "Moomoo Milk",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7007,6 +7777,7 @@
         "nature": "Serious",
         "original_nature": "Serious",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Ingredients",
         "shiny": true,
@@ -7025,46 +7796,54 @@
             "name": "Pure Oil",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Pure Oil",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7085,6 +7864,7 @@
         "nature": "Bashful",
         "original_nature": "Bashful",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Persim Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -7103,46 +7883,54 @@
             "name": "Pure Oil",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Large Leek",
             "quantity": 3,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Slowpoke Tail",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7166,6 +7954,7 @@
           "Ingredient finding": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Belue Berry",
         "specialty": "Ingredients",
         "shiny": false,
@@ -7184,46 +7973,54 @@
             "name": "Bean Sausage",
             "quantity": 2,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Bean Sausage",
             "quantity": 5,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 7,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Speed M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [],
@@ -7245,6 +8042,7 @@
           "Speed of help": "down",
           "Energy recovery": "up"
         },
+        "nature_neutralized": false,
         "berry": "Sitrus Berry",
         "specialty": "Skills",
         "shiny": true,
@@ -7263,46 +8061,54 @@
             "name": "Snoozy Tomato",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Greengrass Soybeans",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Tasty Mushroom",
             "quantity": 2,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up L",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Berry Finding S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7326,6 +8132,7 @@
           "Speed of help": "up",
           "Ingredient finding": "down"
         },
+        "nature_neutralized": false,
         "berry": "Mago Berry",
         "specialty": "Berries",
         "shiny": true,
@@ -7344,46 +8151,54 @@
             "name": "Moomoo Milk",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Energy Recovery Bonus",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7407,6 +8222,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Yache Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -7425,46 +8241,54 @@
             "name": "Snoozy Tomato",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7488,6 +8312,7 @@
           "Ingredient finding": "down",
           "EXP gains": "up"
         },
+        "nature_neutralized": false,
         "berry": "Oran Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -7506,46 +8331,54 @@
             "name": "Moomoo Milk",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Level Up M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7566,6 +8399,7 @@
         "nature": "Quirky",
         "original_nature": "Quirky",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Chesto Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -7584,46 +8418,54 @@
             "name": "Moomoo Milk",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Skill Trigger S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7647,6 +8489,7 @@
           "Main skill chance": "up",
           "EXP gains": "down"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Berries",
         "shiny": false,
@@ -7665,46 +8508,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Inventory Up S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up M",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Dream Shard Bonus",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7728,6 +8579,7 @@
           "Ingredient finding": "down",
           "Main skill chance": "up"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -7746,46 +8598,54 @@
             "name": "Soothing Cacao",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Speed M",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Skill Trigger M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7809,6 +8669,7 @@
           "Speed of help": "up",
           "Main skill chance": "down"
         },
+        "nature_neutralized": false,
         "berry": "Grepa Berry",
         "specialty": "Berries",
         "shiny": false,
@@ -7827,46 +8688,54 @@
             "name": "Fancy Apple",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Warming Ginger",
             "quantity": 2,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Fancy Egg",
             "quantity": 3,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Berry Finding S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Speed M",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Ingredient Finder S",
             "unlock_level": 50,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Inventory Up S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7890,6 +8759,7 @@
           "Main skill chance": "up",
           "Energy recovery": "down"
         },
+        "nature_neutralized": false,
         "berry": "Belue Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -7908,46 +8778,54 @@
             "name": "Moomoo Milk",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Glossy Avocado",
             "quantity": 1,
             "unlock_level": 30,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Helping Speed S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Research EXP Bonus",
             "unlock_level": 25,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Inventory Up L",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
@@ -7968,6 +8846,7 @@
         "nature": "Serious",
         "original_nature": "Serious",
         "nature_effects": {},
+        "nature_neutralized": false,
         "berry": "Persim Berry",
         "specialty": "Skills",
         "shiny": false,
@@ -7986,46 +8865,54 @@
             "name": "Moomoo Milk",
             "quantity": 1,
             "unlock_level": 1,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Soothing Cacao",
             "quantity": 1,
             "unlock_level": 30,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Moomoo Milk",
             "quantity": 4,
             "unlock_level": 60,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "subskills": [
           {
             "name": "Berry Finding S",
             "unlock_level": 10,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Helping Bonus",
             "unlock_level": 25,
-            "unlocked": true
+            "unlocked": true,
+            "empty": false
           },
           {
             "name": "Sleep EXP Bonus",
             "unlock_level": 50,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Trigger S",
             "unlock_level": 70,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           },
           {
             "name": "Skill Level Up S",
             "unlock_level": 80,
-            "unlocked": false
+            "unlocked": false,
+            "empty": false
           }
         ],
         "review_reasons": [
