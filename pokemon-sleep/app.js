@@ -62,6 +62,7 @@ function render() {
         (mon) =>
             (!specialty || mon.specialty === specialty) &&
             (!$("#shiny").checked || mon.shiny) &&
+            (!$("#legendary").checked || legendarySpecies.has(mon.national_dex)) &&
             [
                 mon.nickname,
                 speciesLabel(mon),
@@ -341,7 +342,7 @@ dialog.addEventListener("click", (event) => {
             dialog.close();
     }
 });
-for (const selector of ["#search", "#sort", "#shiny"])
+for (const selector of ["#search", "#sort", "#shiny", "#legendary"])
     $(selector).addEventListener(
         selector === "#search" ? "input" : "change",
         render,
