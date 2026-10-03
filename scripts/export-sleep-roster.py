@@ -14,6 +14,8 @@ def sanitize(source, captured_at, areas=None):
     records = []
     for index, record in enumerate(source['records'], 1):
         result = {key: record.get(key) for key in FIELDS}
+        favorite_flag = (record.get('raw') or {}).get('favfl')
+        result['favorite'] = favorite_flag == 1 if type(favorite_flag) is int and favorite_flag in (0, 1) else None
         result['id'] = f'mon-{index}'
         # Publish only the calendar day and game island, never the raw timestamp.
         met = record.get('met_at_utc')

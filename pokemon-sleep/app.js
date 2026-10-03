@@ -115,6 +115,7 @@ function render() {
         (mon) =>
             (!specialty || mon.specialty === specialty) &&
             (!$("#shiny").checked || mon.shiny) &&
+            (!$("#favorite").checked || mon.favorite === true) &&
             (!$("#legendary").checked || legendarySpecies.has(mon.national_dex)) &&
             matchesSearch(mon, query),
     );
@@ -392,7 +393,7 @@ dialog.addEventListener("click", (event) => {
             dialog.close();
     }
 });
-for (const selector of ["#search", "#sort", "#shiny", "#legendary"])
+for (const selector of ["#search", "#sort", "#shiny", "#legendary", "#favorite"])
     $(selector).addEventListener(
         selector === "#search" ? "input" : "change",
         render,

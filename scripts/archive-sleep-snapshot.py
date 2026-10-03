@@ -21,7 +21,7 @@ def archive(root):
     if date != inventory['captured_at'] or not roster['records'] or roster['count'] != len(roster['records']):
         raise ValueError('A nonempty roster and supplies from the same capture date are required.')
     for mon in roster['records']:
-        check_keys(mon, 'id species national_dex nickname level rp xp_total xp_in_level xp_level_required xp_to_next_level nature original_nature nature_effects berry specialty shiny met_date met_area variant main_skill ingredients subskills review_reasons needs_review')
+        check_keys(mon, 'id species national_dex nickname level rp xp_total xp_in_level xp_level_required xp_to_next_level nature original_nature nature_effects berry specialty shiny favorite met_date met_area variant main_skill ingredients subskills review_reasons needs_review')
         check_keys(mon['main_skill'], 'name level name_source')
         if set(mon.get('nature_effects') or {}) - {'Speed of help', 'Ingredient finding', 'Main skill chance', 'Energy recovery', 'EXP gains'}:
             raise ValueError('Unexpected nature effects.')
