@@ -489,6 +489,25 @@ h2 {
     right: 12px;
     color: #877541;
 }
+.favorite-star {
+    color: #b88722;
+    font-size: 20px;
+    line-height: 1;
+}
+.card-art .favorite-star {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    z-index: 1;
+    background: #ffffffab;
+    border-radius: 50%;
+    padding: 5px;
+}
+.detail-header h2 .favorite-star {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
 .card-info {
     padding: 17px 16px;
     flex: 1;
