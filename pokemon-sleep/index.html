@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="/pokemon-sleep/styles.css" />
         <script defer src="/pokemon-sleep/asset-data.js"></script>
         <script defer src="/pokemon-sleep/app.js?v=island-cards-1"></script>
-        <script defer src="/pokemon-sleep/history.js?v=special-1"></script>
+        <script defer src="/pokemon-sleep/history.js?v=journal-1"></script>
     </head>
     <body>
         <header class="nav">
@@ -84,11 +84,16 @@
             <div class="snapshot-toolbar" role="group" aria-label="Choose the Field Notes snapshot">
                 <p class="eyebrow">FIELD NOTES AS OF</p>
                 <div class="snapshot-picker">
-                    <label>
+                    <button id="history-trigger" class="snapshot-trigger" type="button" aria-expanded="false" aria-controls="snapshot-menu" aria-label="Choose a saved Field Notes snapshot" disabled>
+                        <svg class="snapshot-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 3v4M17 3v4M4 10h16"/><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 14h3M8 17h6"/></svg>
                         <span id="snapshot" class="snapshot">Loading field notes…</span>
-                        <span class="snapshot-chevron" aria-hidden="true">⌄</span>
-                        <select id="history-select" aria-label="Field Notes snapshot" disabled><option>Loading snapshots…</option></select>
-                    </label>
+                        <span id="snapshot-latest" class="snapshot-latest" hidden>Latest</span>
+                        <svg class="snapshot-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+                    </button>
+                    <div id="snapshot-menu" class="snapshot-menu" hidden>
+                        <div class="snapshot-menu-heading"><span>Saved field notes</span><span id="snapshot-count"></span></div>
+                        <div id="snapshot-entries" class="snapshot-entries"></div>
+                    </div>
                     <p id="history-status" role="status" hidden></p>
                 </div>
             </div>
