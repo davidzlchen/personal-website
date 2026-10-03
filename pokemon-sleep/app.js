@@ -485,6 +485,6 @@ function applyRoster(data) {
         year: "numeric",
         timeZone: "UTC",
     });
-    $("#snapshot").textContent = `Roster snapshot · ${date}`;
+    $("#snapshot").textContent = date;
     render();
 }
