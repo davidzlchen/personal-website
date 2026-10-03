@@ -1,0 +1,37 @@
+/* Shared navigation and page edges across the personal site. */
+.nav.site-header {
+    max-width: 1320px;
+    margin: auto;
+    padding: 29px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 24px;
+    border-bottom: 1px solid var(--line);
+}
+.site-header .wordmark {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--ink);
+}
+.site-header .wordmark-dot { color: #8b9f78; }
+.nav.site-header nav { display: flex; gap: 30px; font-size: 12px; }
+.site-header nav a { color: #6b7a70; text-decoration: none; }
+.site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--ink); }
+.site-header a:focus-visible { outline: 3px solid #6b8a72; outline-offset: 5px; }
+.site-header .nav-note { margin-left: auto; white-space: nowrap; }
+@media (max-width: 1000px) {
+    .nav.site-header { padding: 25px 30px; }
+    main, main.blog-main { padding-left: 30px; padding-right: 30px; }
+}
+@media (max-width: 740px) {
+    .nav.site-header { padding: 23px 22px; gap: 16px; }
+    .site-header .wordmark { font-size: 13px; }
+    .nav.site-header nav { gap: 17px; font-size: 12px; }
+    .site-header .nav-note { display: none; }
+    main, main.blog-main { padding-left: 22px; padding-right: 22px; }
+}
