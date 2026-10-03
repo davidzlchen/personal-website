@@ -453,6 +453,15 @@ $("#inventory-search").addEventListener("input", renderInventory);
 $("#inventory-zero").addEventListener("change", renderInventory);
 function applyInventory(data) {
     inventory = data;
+    const islands = data.island_bests || [];
+    $("#island-bests").hidden = islands.length === 0;
+    $("#island-bests-rows").replaceChildren();
+    for (const island of islands) {
+        const row = node("tr");
+        row.append(node("th", "", island.name), node("td", "", number(island.strength)), node("td", "", island.rank || "—"));
+        row.firstChild.scope = "row";
+        $("#island-bests-rows").append(row);
+    }
     $("#researcher-rank").textContent = number(data.researcher_rank);
     $("#inventory-overview").replaceChildren();
     $("#inventory-date").textContent = `As of ${dateLabel(data.captured_at)}.`;
