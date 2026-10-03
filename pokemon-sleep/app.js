@@ -156,6 +156,7 @@ function render() {
         rp.append(node("small", "", "RP"));
         heading.append(names, rp);
         const skill = node("div", "card-skill");
+        skill.title = mon.main_skill.name || "Skill not yet mapped";
         skill.append(
             node("span", "", mon.main_skill.name || "Skill not yet mapped"),
             node(
