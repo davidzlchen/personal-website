@@ -458,7 +458,7 @@ function applyInventory(data) {
     $("#island-bests-rows").replaceChildren();
     for (const island of islands) {
         const row = node("tr");
-        row.append(node("th", "", island.name), node("td", "", number(island.strength)), node("td", "", island.rank || "—"));
+        row.append(node("th", "", island.name), node("td", "", number(island.strength)), node("td", "", island.rank || "—"), node("td", "", island.area_bonus_percent == null ? "—" : `${island.area_bonus_percent}%`));
         row.firstChild.scope = "row";
         $("#island-bests-rows").append(row);
     }

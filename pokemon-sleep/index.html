@@ -22,7 +22,7 @@
         <link rel="icon" href="/pokemon-sleep/moon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="/pokemon-sleep/styles.css" />
         <script defer src="/pokemon-sleep/asset-data.js"></script>
-        <script defer src="/pokemon-sleep/app.js?v=islands-1"></script>
+        <script defer src="/pokemon-sleep/app.js?v=area-bonus-1"></script>
         <script defer src="/pokemon-sleep/history.js?v=special-1"></script>
     </head>
     <body>
@@ -112,16 +112,6 @@
                     <p>researcher rank</p>
                 </div>
             </section>
-            <details class="island-bests" id="island-bests" hidden>
-                <summary>Island bests <span>Snorlax Strength &amp; rank</span></summary>
-                <div class="island-table-wrap">
-                    <table class="island-table">
-                        <caption>Personal bests as of the selected snapshot.</caption>
-                        <thead><tr><th scope="col">Island</th><th scope="col">Best Strength</th><th scope="col">Rank</th></tr></thead>
-                        <tbody id="island-bests-rows"></tbody>
-                    </table>
-                </div>
-            </details>
             <section id="supplies" class="supplies">
                 <p class="eyebrow">THE ITEM BAG</p>
                 <h2>Ready for the night.</h2>
@@ -134,6 +124,16 @@
                 <p id="inventory-count" role="status" aria-live="polite" hidden></p>
                 <div id="inventory-groups"></div>
             </section>
+            <details class="island-bests" id="island-bests" hidden>
+                <summary>Island bests <span>Strength, rank &amp; area bonus</span></summary>
+                <div class="island-table-wrap">
+                    <table class="island-table">
+                        <caption>Personal bests as of the selected snapshot.</caption>
+                        <thead><tr><th scope="col">Island</th><th scope="col">Best Strength</th><th scope="col">Rank</th><th scope="col">Area bonus</th></tr></thead>
+                        <tbody id="island-bests-rows"></tbody>
+                    </table>
+                </div>
+            </details>
             <section id="collection" class="collection">
                 <div class="section-heading">
                     <div>

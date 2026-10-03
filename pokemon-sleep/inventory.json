@@ -2282,42 +2282,50 @@
     {
       "name": "Greengrass Isle",
       "strength": 3987507,
-      "rank": "Master 20"
+      "rank": "Master 20",
+      "area_bonus_percent": 85.0
     },
     {
       "name": "Cyan Beach",
       "strength": 5322282,
-      "rank": "Master 20"
+      "rank": "Master 20",
+      "area_bonus_percent": 85.0
     },
     {
       "name": "Taupe Hollow",
       "strength": 4098265,
-      "rank": "Master 19"
+      "rank": "Master 19",
+      "area_bonus_percent": 85.0
     },
     {
       "name": "Snowdrop Tundra",
       "strength": 1249963,
-      "rank": "Master 7"
+      "rank": "Master 7",
+      "area_bonus_percent": 43.0
     },
     {
       "name": "Lapis Lakeside",
       "strength": 5280164,
-      "rank": "Master 20"
+      "rank": "Master 20",
+      "area_bonus_percent": 85.0
     },
     {
       "name": "Old Gold Power Plant",
       "strength": 3929974,
-      "rank": "Master 15"
+      "rank": "Master 15",
+      "area_bonus_percent": 85.0
     },
     {
       "name": "Greengrass Isle (Expert)",
       "strength": 696871,
-      "rank": "Great 4"
+      "rank": "Great 4",
+      "area_bonus_percent": 30.0
     },
     {
       "name": "Amber Canyon",
       "strength": 6051257,
-      "rank": "Master 17"
+      "rank": "Master 17",
+      "area_bonus_percent": 62.0
     }
   ]
 }
