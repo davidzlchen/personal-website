@@ -164,7 +164,7 @@ function render() {
         const badges = node("div", "card-subskills");
         for (const slot of mon.subskills) {
             const rarity = sleepAssets.subskills[slot.name];
-            const label = slot.name || "Not yet mapped";
+            const label = subskillAbbreviations[slot.name] || "?";
             const badge = node(
                 "span",
                 `subskill-badge${rarity ? ` rarity-${rarity}` : ""}${slot.unlocked ? "" : " locked"}`,
