@@ -1,0 +1,40 @@
+{
+  "source": "https://github.com/nerolis-lab/nerolis-lab/tree/main/frontend/public/images/island",
+  "files": [
+    {
+      "file": "islands/amber.png",
+      "url": "https://raw.githubusercontent.com/nerolis-lab/nerolis-lab/main/frontend/public/images/island/amber.png",
+      "sha256": "d49060a632039b281b59124daa7535bcfab04bc92c6e1cba35da5db0c08d79e4"
+    },
+    {
+      "file": "islands/cyan.png",
+      "url": "https://raw.githubusercontent.com/nerolis-lab/nerolis-lab/main/frontend/public/images/island/cyan.png",
+      "sha256": "e661f2716710a4052ce852f3e7509666537b8793f90d50f973c0dc21348bdcf7"
+    },
+    {
+      "file": "islands/greengrass.png",
+      "url": "https://raw.githubusercontent.com/nerolis-lab/nerolis-lab/main/frontend/public/images/island/greengrass.png",
+      "sha256": "9415b7ae986999298e30483e861f97479527754d1103500f52c306d6c8179b99"
+    },
+    {
+      "file": "islands/lapis.png",
+      "url": "https://raw.githubusercontent.com/nerolis-lab/nerolis-lab/main/frontend/public/images/island/lapis.png",
+      "sha256": "b64cef05db4f5dfa02fe5d0572226d21d4cfa81ca0b9816b431dc0087285e948"
+    },
+    {
+      "file": "islands/powerplant.png",
+      "url": "https://raw.githubusercontent.com/nerolis-lab/nerolis-lab/main/frontend/public/images/island/powerplant.png",
+      "sha256": "8289c4b603cc559b80c23d5355ac102587cbd229ea10ef73c5da7d8a9212155b"
+    },
+    {
+      "file": "islands/snowdrop.png",
+      "url": "https://raw.githubusercontent.com/nerolis-lab/nerolis-lab/main/frontend/public/images/island/snowdrop.png",
+      "sha256": "34b2afb94f71b43b273c5fc18d1847e530e7a0ff416e18eddc2faabea1282a7b"
+    },
+    {
+      "file": "islands/taupe.png",
+      "url": "https://raw.githubusercontent.com/nerolis-lab/nerolis-lab/main/frontend/public/images/island/taupe.png",
+      "sha256": "904462b0cdeeebb5c6c401dd92052d1e2cded098ee7cdbe26f50a454b0a89b2c"
+    }
+  ]
+}
