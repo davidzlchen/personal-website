@@ -3373,5 +3373,1627 @@
       "rank": 70,
       "total_exp": 3595267
     }
-  ]
+  ],
+  "island_ranks": {
+    "1": {
+      "name": "Greengrass Isle",
+      "ranks": [
+        {
+          "id": 1,
+          "name": "Basic 1",
+          "strength": 0
+        },
+        {
+          "id": 2,
+          "name": "Basic 2",
+          "strength": 3118
+        },
+        {
+          "id": 3,
+          "name": "Basic 3",
+          "strength": 7171
+        },
+        {
+          "id": 4,
+          "name": "Basic 4",
+          "strength": 11693
+        },
+        {
+          "id": 5,
+          "name": "Basic 5",
+          "strength": 17149
+        },
+        {
+          "id": 6,
+          "name": "Great 1",
+          "strength": 23385
+        },
+        {
+          "id": 7,
+          "name": "Great 2",
+          "strength": 31492
+        },
+        {
+          "id": 8,
+          "name": "Great 3",
+          "strength": 41314
+        },
+        {
+          "id": 9,
+          "name": "Great 4",
+          "strength": 53006
+        },
+        {
+          "id": 10,
+          "name": "Great 5",
+          "strength": 65634
+        },
+        {
+          "id": 11,
+          "name": "Ultra 1",
+          "strength": 79197
+        },
+        {
+          "id": 12,
+          "name": "Ultra 2",
+          "strength": 93540
+        },
+        {
+          "id": 13,
+          "name": "Ultra 3",
+          "strength": 109130
+        },
+        {
+          "id": 14,
+          "name": "Ultra 4",
+          "strength": 125032
+        },
+        {
+          "id": 15,
+          "name": "Ultra 5",
+          "strength": 156121
+        },
+        {
+          "id": 16,
+          "name": "Master 1",
+          "strength": 187832
+        },
+        {
+          "id": 17,
+          "name": "Master 2",
+          "strength": 220177
+        },
+        {
+          "id": 18,
+          "name": "Master 3",
+          "strength": 253169
+        },
+        {
+          "id": 19,
+          "name": "Master 4",
+          "strength": 286821
+        },
+        {
+          "id": 20,
+          "name": "Master 5",
+          "strength": 321146
+        },
+        {
+          "id": 21,
+          "name": "Master 6",
+          "strength": 356158
+        },
+        {
+          "id": 22,
+          "name": "Master 7",
+          "strength": 391870
+        },
+        {
+          "id": 23,
+          "name": "Master 8",
+          "strength": 428296
+        },
+        {
+          "id": 24,
+          "name": "Master 9",
+          "strength": 465451
+        },
+        {
+          "id": 25,
+          "name": "Master 10",
+          "strength": 532707
+        },
+        {
+          "id": 26,
+          "name": "Master 11",
+          "strength": 601308
+        },
+        {
+          "id": 27,
+          "name": "Master 12",
+          "strength": 742056
+        },
+        {
+          "id": 28,
+          "name": "Master 13",
+          "strength": 885619
+        },
+        {
+          "id": 29,
+          "name": "Master 14",
+          "strength": 1029700
+        },
+        {
+          "id": 30,
+          "name": "Master 15",
+          "strength": 1199506
+        },
+        {
+          "id": 31,
+          "name": "Master 16",
+          "strength": 1486800
+        },
+        {
+          "id": 32,
+          "name": "Master 17",
+          "strength": 1795052
+        },
+        {
+          "id": 33,
+          "name": "Master 18",
+          "strength": 2165541
+        },
+        {
+          "id": 34,
+          "name": "Master 19",
+          "strength": 2604280
+        },
+        {
+          "id": 35,
+          "name": "Master 20",
+          "strength": 3245795
+        }
+      ]
+    },
+    "2": {
+      "name": "Cyan Beach",
+      "ranks": [
+        {
+          "id": 1,
+          "name": "Basic 1",
+          "strength": 0
+        },
+        {
+          "id": 2,
+          "name": "Basic 2",
+          "strength": 4822
+        },
+        {
+          "id": 3,
+          "name": "Basic 3",
+          "strength": 11090
+        },
+        {
+          "id": 4,
+          "name": "Basic 4",
+          "strength": 18082
+        },
+        {
+          "id": 5,
+          "name": "Basic 5",
+          "strength": 26520
+        },
+        {
+          "id": 6,
+          "name": "Great 1",
+          "strength": 36164
+        },
+        {
+          "id": 7,
+          "name": "Great 2",
+          "strength": 48700
+        },
+        {
+          "id": 8,
+          "name": "Great 3",
+          "strength": 63889
+        },
+        {
+          "id": 9,
+          "name": "Great 4",
+          "strength": 81971
+        },
+        {
+          "id": 10,
+          "name": "Great 5",
+          "strength": 101499
+        },
+        {
+          "id": 11,
+          "name": "Ultra 1",
+          "strength": 122474
+        },
+        {
+          "id": 12,
+          "name": "Ultra 2",
+          "strength": 144654
+        },
+        {
+          "id": 13,
+          "name": "Ultra 3",
+          "strength": 168763
+        },
+        {
+          "id": 14,
+          "name": "Ultra 4",
+          "strength": 195283
+        },
+        {
+          "id": 15,
+          "name": "Ultra 5",
+          "strength": 224455
+        },
+        {
+          "id": 16,
+          "name": "Master 1",
+          "strength": 256544
+        },
+        {
+          "id": 17,
+          "name": "Master 2",
+          "strength": 291842
+        },
+        {
+          "id": 18,
+          "name": "Master 3",
+          "strength": 330670
+        },
+        {
+          "id": 19,
+          "name": "Master 4",
+          "strength": 373381
+        },
+        {
+          "id": 20,
+          "name": "Master 5",
+          "strength": 420363
+        },
+        {
+          "id": 21,
+          "name": "Master 6",
+          "strength": 472043
+        },
+        {
+          "id": 22,
+          "name": "Master 7",
+          "strength": 528891
+        },
+        {
+          "id": 23,
+          "name": "Master 8",
+          "strength": 591424
+        },
+        {
+          "id": 24,
+          "name": "Master 9",
+          "strength": 660210
+        },
+        {
+          "id": 25,
+          "name": "Master 10",
+          "strength": 735875
+        },
+        {
+          "id": 26,
+          "name": "Master 11",
+          "strength": 819107
+        },
+        {
+          "id": 27,
+          "name": "Master 12",
+          "strength": 910662
+        },
+        {
+          "id": 28,
+          "name": "Master 13",
+          "strength": 1018462
+        },
+        {
+          "id": 29,
+          "name": "Master 14",
+          "strength": 1184155
+        },
+        {
+          "id": 30,
+          "name": "Master 15",
+          "strength": 1379432
+        },
+        {
+          "id": 31,
+          "name": "Master 16",
+          "strength": 1709820
+        },
+        {
+          "id": 32,
+          "name": "Master 17",
+          "strength": 2064310
+        },
+        {
+          "id": 33,
+          "name": "Master 18",
+          "strength": 2490372
+        },
+        {
+          "id": 34,
+          "name": "Master 19",
+          "strength": 2994922
+        },
+        {
+          "id": 35,
+          "name": "Master 20",
+          "strength": 3732664
+        }
+      ]
+    },
+    "3": {
+      "name": "Taupe Hollow",
+      "ranks": [
+        {
+          "id": 1,
+          "name": "Basic 1",
+          "strength": 0
+        },
+        {
+          "id": 2,
+          "name": "Basic 2",
+          "strength": 6885
+        },
+        {
+          "id": 3,
+          "name": "Basic 3",
+          "strength": 15835
+        },
+        {
+          "id": 4,
+          "name": "Basic 4",
+          "strength": 25817
+        },
+        {
+          "id": 5,
+          "name": "Basic 5",
+          "strength": 37865
+        },
+        {
+          "id": 6,
+          "name": "Great 1",
+          "strength": 51635
+        },
+        {
+          "id": 7,
+          "name": "Great 2",
+          "strength": 69534
+        },
+        {
+          "id": 8,
+          "name": "Great 3",
+          "strength": 91221
+        },
+        {
+          "id": 9,
+          "name": "Great 4",
+          "strength": 117038
+        },
+        {
+          "id": 10,
+          "name": "Great 5",
+          "strength": 144921
+        },
+        {
+          "id": 11,
+          "name": "Ultra 1",
+          "strength": 174869
+        },
+        {
+          "id": 12,
+          "name": "Ultra 2",
+          "strength": 206538
+        },
+        {
+          "id": 13,
+          "name": "Ultra 3",
+          "strength": 240961
+        },
+        {
+          "id": 14,
+          "name": "Ultra 4",
+          "strength": 278826
+        },
+        {
+          "id": 15,
+          "name": "Ultra 5",
+          "strength": 320478
+        },
+        {
+          "id": 16,
+          "name": "Master 1",
+          "strength": 366295
+        },
+        {
+          "id": 17,
+          "name": "Master 2",
+          "strength": 416694
+        },
+        {
+          "id": 18,
+          "name": "Master 3",
+          "strength": 472133
+        },
+        {
+          "id": 19,
+          "name": "Master 4",
+          "strength": 533116
+        },
+        {
+          "id": 20,
+          "name": "Master 5",
+          "strength": 600197
+        },
+        {
+          "id": 21,
+          "name": "Master 6",
+          "strength": 673986
+        },
+        {
+          "id": 22,
+          "name": "Master 7",
+          "strength": 755154
+        },
+        {
+          "id": 23,
+          "name": "Master 8",
+          "strength": 844439
+        },
+        {
+          "id": 24,
+          "name": "Master 9",
+          "strength": 942653
+        },
+        {
+          "id": 25,
+          "name": "Master 10",
+          "strength": 1050688
+        },
+        {
+          "id": 26,
+          "name": "Master 11",
+          "strength": 1169527
+        },
+        {
+          "id": 27,
+          "name": "Master 12",
+          "strength": 1300250
+        },
+        {
+          "id": 28,
+          "name": "Master 13",
+          "strength": 1444045
+        },
+        {
+          "id": 29,
+          "name": "Master 14",
+          "strength": 1602220
+        },
+        {
+          "id": 30,
+          "name": "Master 15",
+          "strength": 1776213
+        },
+        {
+          "id": 31,
+          "name": "Master 16",
+          "strength": 1967605
+        },
+        {
+          "id": 32,
+          "name": "Master 17",
+          "strength": 2333568
+        },
+        {
+          "id": 33,
+          "name": "Master 18",
+          "strength": 2815203
+        },
+        {
+          "id": 34,
+          "name": "Master 19",
+          "strength": 3385564
+        },
+        {
+          "id": 35,
+          "name": "Master 20",
+          "strength": 4219534
+        }
+      ]
+    },
+    "4": {
+      "name": "Snowdrop Tundra",
+      "ranks": [
+        {
+          "id": 1,
+          "name": "Basic 1",
+          "strength": 0
+        },
+        {
+          "id": 2,
+          "name": "Basic 2",
+          "strength": 10486
+        },
+        {
+          "id": 3,
+          "name": "Basic 3",
+          "strength": 24118
+        },
+        {
+          "id": 4,
+          "name": "Basic 4",
+          "strength": 39323
+        },
+        {
+          "id": 5,
+          "name": "Basic 5",
+          "strength": 57673
+        },
+        {
+          "id": 6,
+          "name": "Great 1",
+          "strength": 78645
+        },
+        {
+          "id": 7,
+          "name": "Great 2",
+          "strength": 105909
+        },
+        {
+          "id": 8,
+          "name": "Great 3",
+          "strength": 138940
+        },
+        {
+          "id": 9,
+          "name": "Great 4",
+          "strength": 178262
+        },
+        {
+          "id": 10,
+          "name": "Great 5",
+          "strength": 220730
+        },
+        {
+          "id": 11,
+          "name": "Ultra 1",
+          "strength": 266344
+        },
+        {
+          "id": 12,
+          "name": "Ultra 2",
+          "strength": 314580
+        },
+        {
+          "id": 13,
+          "name": "Ultra 3",
+          "strength": 367010
+        },
+        {
+          "id": 14,
+          "name": "Ultra 4",
+          "strength": 424683
+        },
+        {
+          "id": 15,
+          "name": "Ultra 5",
+          "strength": 488123
+        },
+        {
+          "id": 16,
+          "name": "Master 1",
+          "strength": 557907
+        },
+        {
+          "id": 17,
+          "name": "Master 2",
+          "strength": 634669
+        },
+        {
+          "id": 18,
+          "name": "Master 3",
+          "strength": 719107
+        },
+        {
+          "id": 19,
+          "name": "Master 4",
+          "strength": 811989
+        },
+        {
+          "id": 20,
+          "name": "Master 5",
+          "strength": 914159
+        },
+        {
+          "id": 21,
+          "name": "Master 6",
+          "strength": 1026546
+        },
+        {
+          "id": 22,
+          "name": "Master 7",
+          "strength": 1150172
+        },
+        {
+          "id": 23,
+          "name": "Master 8",
+          "strength": 1286161
+        },
+        {
+          "id": 24,
+          "name": "Master 9",
+          "strength": 1435749
+        },
+        {
+          "id": 25,
+          "name": "Master 10",
+          "strength": 1600296
+        },
+        {
+          "id": 26,
+          "name": "Master 11",
+          "strength": 1781298
+        },
+        {
+          "id": 27,
+          "name": "Master 12",
+          "strength": 1980400
+        },
+        {
+          "id": 28,
+          "name": "Master 13",
+          "strength": 2199412
+        },
+        {
+          "id": 29,
+          "name": "Master 14",
+          "strength": 2440325
+        },
+        {
+          "id": 30,
+          "name": "Master 15",
+          "strength": 2705329
+        },
+        {
+          "id": 31,
+          "name": "Master 16",
+          "strength": 2996833
+        },
+        {
+          "id": 32,
+          "name": "Master 17",
+          "strength": 3317487
+        },
+        {
+          "id": 33,
+          "name": "Master 18",
+          "strength": 3670206
+        },
+        {
+          "id": 34,
+          "name": "Master 19",
+          "strength": 4058197
+        },
+        {
+          "id": 35,
+          "name": "Master 20",
+          "strength": 4706403
+        }
+      ]
+    },
+    "5": {
+      "name": "Lapis Lakeside",
+      "ranks": [
+        {
+          "id": 1,
+          "name": "Basic 1",
+          "strength": 0
+        },
+        {
+          "id": 2,
+          "name": "Basic 2",
+          "strength": 12938
+        },
+        {
+          "id": 3,
+          "name": "Basic 3",
+          "strength": 29756
+        },
+        {
+          "id": 4,
+          "name": "Basic 4",
+          "strength": 48515
+        },
+        {
+          "id": 5,
+          "name": "Basic 5",
+          "strength": 71156
+        },
+        {
+          "id": 6,
+          "name": "Great 1",
+          "strength": 97031
+        },
+        {
+          "id": 7,
+          "name": "Great 2",
+          "strength": 130668
+        },
+        {
+          "id": 8,
+          "name": "Great 3",
+          "strength": 171420
+        },
+        {
+          "id": 9,
+          "name": "Great 4",
+          "strength": 219936
+        },
+        {
+          "id": 10,
+          "name": "Great 5",
+          "strength": 272333
+        },
+        {
+          "id": 11,
+          "name": "Ultra 1",
+          "strength": 328610
+        },
+        {
+          "id": 12,
+          "name": "Ultra 2",
+          "strength": 388122
+        },
+        {
+          "id": 13,
+          "name": "Ultra 3",
+          "strength": 452809
+        },
+        {
+          "id": 14,
+          "name": "Ultra 4",
+          "strength": 522025
+        },
+        {
+          "id": 15,
+          "name": "Ultra 5",
+          "strength": 596086
+        },
+        {
+          "id": 16,
+          "name": "Master 1",
+          "strength": 675330
+        },
+        {
+          "id": 17,
+          "name": "Master 2",
+          "strength": 760123
+        },
+        {
+          "id": 18,
+          "name": "Master 3",
+          "strength": 850851
+        },
+        {
+          "id": 19,
+          "name": "Master 4",
+          "strength": 958702
+        },
+        {
+          "id": 20,
+          "name": "Master 5",
+          "strength": 1075709
+        },
+        {
+          "id": 21,
+          "name": "Master 6",
+          "strength": 1202596
+        },
+        {
+          "id": 22,
+          "name": "Master 7",
+          "strength": 1340143
+        },
+        {
+          "id": 23,
+          "name": "Master 8",
+          "strength": 1489190
+        },
+        {
+          "id": 24,
+          "name": "Master 9",
+          "strength": 1650645
+        },
+        {
+          "id": 25,
+          "name": "Master 10",
+          "strength": 1825483
+        },
+        {
+          "id": 26,
+          "name": "Master 11",
+          "strength": 2014758
+        },
+        {
+          "id": 27,
+          "name": "Master 12",
+          "strength": 2219603
+        },
+        {
+          "id": 28,
+          "name": "Master 13",
+          "strength": 2441243
+        },
+        {
+          "id": 29,
+          "name": "Master 14",
+          "strength": 2680993
+        },
+        {
+          "id": 30,
+          "name": "Master 15",
+          "strength": 2925574
+        },
+        {
+          "id": 31,
+          "name": "Master 16",
+          "strength": 3188730
+        },
+        {
+          "id": 32,
+          "name": "Master 17",
+          "strength": 3454577
+        },
+        {
+          "id": 33,
+          "name": "Master 18",
+          "strength": 3739033
+        },
+        {
+          "id": 34,
+          "name": "Master 19",
+          "strength": 4166848
+        },
+        {
+          "id": 35,
+          "name": "Master 20",
+          "strength": 5193272
+        }
+      ]
+    },
+    "6": {
+      "name": "Old Gold Power Plant",
+      "ranks": [
+        {
+          "id": 1,
+          "name": "Basic 1",
+          "strength": 0
+        },
+        {
+          "id": 2,
+          "name": "Basic 2",
+          "strength": 20142
+        },
+        {
+          "id": 3,
+          "name": "Basic 3",
+          "strength": 46326
+        },
+        {
+          "id": 4,
+          "name": "Basic 4",
+          "strength": 75531
+        },
+        {
+          "id": 5,
+          "name": "Basic 5",
+          "strength": 110779
+        },
+        {
+          "id": 6,
+          "name": "Great 1",
+          "strength": 151061
+        },
+        {
+          "id": 7,
+          "name": "Great 2",
+          "strength": 203429
+        },
+        {
+          "id": 8,
+          "name": "Great 3",
+          "strength": 266875
+        },
+        {
+          "id": 9,
+          "name": "Great 4",
+          "strength": 342406
+        },
+        {
+          "id": 10,
+          "name": "Great 5",
+          "strength": 423979
+        },
+        {
+          "id": 11,
+          "name": "Ultra 1",
+          "strength": 511595
+        },
+        {
+          "id": 12,
+          "name": "Ultra 2",
+          "strength": 604246
+        },
+        {
+          "id": 13,
+          "name": "Ultra 3",
+          "strength": 704953
+        },
+        {
+          "id": 14,
+          "name": "Ultra 4",
+          "strength": 810696
+        },
+        {
+          "id": 15,
+          "name": "Ultra 5",
+          "strength": 921725
+        },
+        {
+          "id": 16,
+          "name": "Master 1",
+          "strength": 1038306
+        },
+        {
+          "id": 17,
+          "name": "Master 2",
+          "strength": 1160717
+        },
+        {
+          "id": 18,
+          "name": "Master 3",
+          "strength": 1289248
+        },
+        {
+          "id": 19,
+          "name": "Master 4",
+          "strength": 1431702
+        },
+        {
+          "id": 20,
+          "name": "Master 5",
+          "strength": 1582395
+        },
+        {
+          "id": 21,
+          "name": "Master 6",
+          "strength": 1741777
+        },
+        {
+          "id": 22,
+          "name": "Master 7",
+          "strength": 1910321
+        },
+        {
+          "id": 23,
+          "name": "Master 8",
+          "strength": 2088527
+        },
+        {
+          "id": 24,
+          "name": "Master 9",
+          "strength": 2276921
+        },
+        {
+          "id": 25,
+          "name": "Master 10",
+          "strength": 2476059
+        },
+        {
+          "id": 26,
+          "name": "Master 11",
+          "strength": 2686523
+        },
+        {
+          "id": 27,
+          "name": "Master 12",
+          "strength": 2908932
+        },
+        {
+          "id": 28,
+          "name": "Master 13",
+          "strength": 3143935
+        },
+        {
+          "id": 29,
+          "name": "Master 14",
+          "strength": 3442846
+        },
+        {
+          "id": 30,
+          "name": "Master 15",
+          "strength": 3744954
+        },
+        {
+          "id": 31,
+          "name": "Master 16",
+          "strength": 4086475
+        },
+        {
+          "id": 32,
+          "name": "Master 17",
+          "strength": 4451914
+        },
+        {
+          "id": 33,
+          "name": "Master 18",
+          "strength": 4909073
+        },
+        {
+          "id": 34,
+          "name": "Master 19",
+          "strength": 5472793
+        },
+        {
+          "id": 35,
+          "name": "Master 20",
+          "strength": 6674166
+        }
+      ]
+    },
+    "10001": {
+      "name": "Greengrass Isle (Expert)",
+      "ranks": [
+        {
+          "id": 1,
+          "name": "Basic 1",
+          "strength": 0
+        },
+        {
+          "id": 2,
+          "name": "Basic 2",
+          "strength": 41895
+        },
+        {
+          "id": 3,
+          "name": "Basic 3",
+          "strength": 96358
+        },
+        {
+          "id": 4,
+          "name": "Basic 4",
+          "strength": 157104
+        },
+        {
+          "id": 5,
+          "name": "Basic 5",
+          "strength": 228205
+        },
+        {
+          "id": 6,
+          "name": "Great 1",
+          "strength": 309675
+        },
+        {
+          "id": 7,
+          "name": "Great 2",
+          "strength": 414995
+        },
+        {
+          "id": 8,
+          "name": "Great 3",
+          "strength": 539088
+        },
+        {
+          "id": 9,
+          "name": "Great 4",
+          "strength": 684812
+        },
+        {
+          "id": 10,
+          "name": "Great 5",
+          "strength": 839478
+        },
+        {
+          "id": 11,
+          "name": "Ultra 1",
+          "strength": 997610
+        },
+        {
+          "id": 12,
+          "name": "Ultra 2",
+          "strength": 1178280
+        },
+        {
+          "id": 13,
+          "name": "Ultra 3",
+          "strength": 1374658
+        },
+        {
+          "id": 14,
+          "name": "Ultra 4",
+          "strength": 1580857
+        },
+        {
+          "id": 15,
+          "name": "Ultra 5",
+          "strength": 1797364
+        },
+        {
+          "id": 16,
+          "name": "Master 1",
+          "strength": 2014314
+        },
+        {
+          "id": 17,
+          "name": "Master 2",
+          "strength": 2251791
+        },
+        {
+          "id": 18,
+          "name": "Master 3",
+          "strength": 2501141
+        },
+        {
+          "id": 19,
+          "name": "Master 4",
+          "strength": 2760321
+        },
+        {
+          "id": 20,
+          "name": "Master 5",
+          "strength": 3057187
+        },
+        {
+          "id": 21,
+          "name": "Master 6",
+          "strength": 3361630
+        },
+        {
+          "id": 22,
+          "name": "Master 7",
+          "strength": 3667816
+        },
+        {
+          "id": 23,
+          "name": "Master 8",
+          "strength": 4014149
+        },
+        {
+          "id": 24,
+          "name": "Master 9",
+          "strength": 4378519
+        },
+        {
+          "id": 25,
+          "name": "Master 10",
+          "strength": 4778794
+        },
+        {
+          "id": 26,
+          "name": "Master 11",
+          "strength": 5184989
+        },
+        {
+          "id": 27,
+          "name": "Master 12",
+          "strength": 5614239
+        },
+        {
+          "id": 28,
+          "name": "Master 13",
+          "strength": 6067795
+        },
+        {
+          "id": 29,
+          "name": "Master 14",
+          "strength": 6541407
+        },
+        {
+          "id": 30,
+          "name": "Master 15",
+          "strength": 7152862
+        },
+        {
+          "id": 31,
+          "name": "Master 16",
+          "strength": 7780648
+        },
+        {
+          "id": 32,
+          "name": "Master 17",
+          "strength": 8414117
+        },
+        {
+          "id": 33,
+          "name": "Master 18",
+          "strength": 9067058
+        },
+        {
+          "id": 34,
+          "name": "Master 19",
+          "strength": 9752517
+        },
+        {
+          "id": 35,
+          "name": "Master 20",
+          "strength": 10981171
+        }
+      ]
+    },
+    "7": {
+      "name": "Amber Canyon",
+      "ranks": [
+        {
+          "id": 1,
+          "name": "Basic 1",
+          "strength": 0
+        },
+        {
+          "id": 2,
+          "name": "Basic 2",
+          "strength": 26478
+        },
+        {
+          "id": 3,
+          "name": "Basic 3",
+          "strength": 60899
+        },
+        {
+          "id": 4,
+          "name": "Basic 4",
+          "strength": 99293
+        },
+        {
+          "id": 5,
+          "name": "Basic 5",
+          "strength": 145629
+        },
+        {
+          "id": 6,
+          "name": "Great 1",
+          "strength": 198585
+        },
+        {
+          "id": 7,
+          "name": "Great 2",
+          "strength": 264456
+        },
+        {
+          "id": 8,
+          "name": "Great 3",
+          "strength": 344986
+        },
+        {
+          "id": 9,
+          "name": "Great 4",
+          "strength": 440123
+        },
+        {
+          "id": 10,
+          "name": "Great 5",
+          "strength": 541880
+        },
+        {
+          "id": 11,
+          "name": "Ultra 1",
+          "strength": 654607
+        },
+        {
+          "id": 12,
+          "name": "Ultra 2",
+          "strength": 774923
+        },
+        {
+          "id": 13,
+          "name": "Ultra 3",
+          "strength": 900988
+        },
+        {
+          "id": 14,
+          "name": "Ultra 4",
+          "strength": 1033561
+        },
+        {
+          "id": 15,
+          "name": "Ultra 5",
+          "strength": 1176798
+        },
+        {
+          "id": 16,
+          "name": "Master 1",
+          "strength": 1325740
+        },
+        {
+          "id": 17,
+          "name": "Master 2",
+          "strength": 1485571
+        },
+        {
+          "id": 18,
+          "name": "Master 3",
+          "strength": 1650692
+        },
+        {
+          "id": 19,
+          "name": "Master 4",
+          "strength": 1828870
+        },
+        {
+          "id": 20,
+          "name": "Master 5",
+          "strength": 2015408
+        },
+        {
+          "id": 21,
+          "name": "Master 6",
+          "strength": 2215366
+        },
+        {
+          "id": 22,
+          "name": "Master 7",
+          "strength": 2427642
+        },
+        {
+          "id": 23,
+          "name": "Master 8",
+          "strength": 2655957
+        },
+        {
+          "id": 24,
+          "name": "Master 9",
+          "strength": 2904897
+        },
+        {
+          "id": 25,
+          "name": "Master 10",
+          "strength": 3179971
+        },
+        {
+          "id": 26,
+          "name": "Master 11",
+          "strength": 3470704
+        },
+        {
+          "id": 27,
+          "name": "Master 12",
+          "strength": 3774089
+        },
+        {
+          "id": 28,
+          "name": "Master 13",
+          "strength": 4097770
+        },
+        {
+          "id": 29,
+          "name": "Master 14",
+          "strength": 4430839
+        },
+        {
+          "id": 30,
+          "name": "Master 15",
+          "strength": 4815792
+        },
+        {
+          "id": 31,
+          "name": "Master 16",
+          "strength": 5236414
+        },
+        {
+          "id": 32,
+          "name": "Master 17",
+          "strength": 5715237
+        },
+        {
+          "id": 33,
+          "name": "Master 18",
+          "strength": 6304719
+        },
+        {
+          "id": 34,
+          "name": "Master 19",
+          "strength": 7019168
+        },
+        {
+          "id": 35,
+          "name": "Master 20",
+          "strength": 8528976
+        }
+      ]
+    },
+    "10002": {
+      "name": "Cyan Beach (Expert)",
+      "ranks": [
+        {
+          "id": 1,
+          "name": "Basic 1",
+          "strength": 0
+        },
+        {
+          "id": 2,
+          "name": "Basic 2",
+          "strength": 41895
+        },
+        {
+          "id": 3,
+          "name": "Basic 3",
+          "strength": 96358
+        },
+        {
+          "id": 4,
+          "name": "Basic 4",
+          "strength": 157104
+        },
+        {
+          "id": 5,
+          "name": "Basic 5",
+          "strength": 228205
+        },
+        {
+          "id": 6,
+          "name": "Great 1",
+          "strength": 309675
+        },
+        {
+          "id": 7,
+          "name": "Great 2",
+          "strength": 418230
+        },
+        {
+          "id": 8,
+          "name": "Great 3",
+          "strength": 548434
+        },
+        {
+          "id": 9,
+          "name": "Great 4",
+          "strength": 698799
+        },
+        {
+          "id": 10,
+          "name": "Great 5",
+          "strength": 860468
+        },
+        {
+          "id": 11,
+          "name": "Ultra 1",
+          "strength": 1037612
+        },
+        {
+          "id": 12,
+          "name": "Ultra 2",
+          "strength": 1235275
+        },
+        {
+          "id": 13,
+          "name": "Ultra 3",
+          "strength": 1444644
+        },
+        {
+          "id": 14,
+          "name": "Ultra 4",
+          "strength": 1665846
+        },
+        {
+          "id": 15,
+          "name": "Ultra 5",
+          "strength": 1907355
+        },
+        {
+          "id": 16,
+          "name": "Master 1",
+          "strength": 2194292
+        },
+        {
+          "id": 17,
+          "name": "Master 2",
+          "strength": 2495790
+        },
+        {
+          "id": 18,
+          "name": "Master 3",
+          "strength": 2813784
+        },
+        {
+          "id": 19,
+          "name": "Master 4",
+          "strength": 3141221
+        },
+        {
+          "id": 20,
+          "name": "Master 5",
+          "strength": 3489192
+        },
+        {
+          "id": 21,
+          "name": "Master 6",
+          "strength": 3851643
+        },
+        {
+          "id": 22,
+          "name": "Master 7",
+          "strength": 4237798
+        },
+        {
+          "id": 23,
+          "name": "Master 8",
+          "strength": 4654094
+        },
+        {
+          "id": 24,
+          "name": "Master 9",
+          "strength": 5118523
+        },
+        {
+          "id": 25,
+          "name": "Master 10",
+          "strength": 5609891
+        },
+        {
+          "id": 26,
+          "name": "Master 11",
+          "strength": 6124856
+        },
+        {
+          "id": 27,
+          "name": "Master 12",
+          "strength": 6656321
+        },
+        {
+          "id": 28,
+          "name": "Master 13",
+          "strength": 7217801
+        },
+        {
+          "id": 29,
+          "name": "Master 14",
+          "strength": 7802011
+        },
+        {
+          "id": 30,
+          "name": "Master 15",
+          "strength": 8552888
+        },
+        {
+          "id": 31,
+          "name": "Master 16",
+          "strength": 9410567
+        },
+        {
+          "id": 32,
+          "name": "Master 17",
+          "strength": 10274627
+        },
+        {
+          "id": 33,
+          "name": "Master 18",
+          "strength": 11147108
+        },
+        {
+          "id": 34,
+          "name": "Master 19",
+          "strength": 12160074
+        },
+        {
+          "id": 35,
+          "name": "Master 20",
+          "strength": 14780152
+        }
+      ]
+    }
+  }
 }

@@ -15,7 +15,7 @@ def archive(root):
     roster = json.loads((root / 'roster.json').read_text())
     inventory = json.loads((root / 'inventory.json').read_text())
     check_keys(roster, 'captured_at count records')
-    check_keys(inventory, 'captured_at researcher_rank dream_shards entries pokemon_candies')
+    check_keys(inventory, 'captured_at researcher_rank island_bests dream_shards entries pokemon_candies')
     date = roster['captured_at']
     datetime.date.fromisoformat(date)
     if date != inventory['captured_at'] or not roster['records'] or roster['count'] != len(roster['records']):
@@ -29,6 +29,8 @@ def archive(root):
             check_keys(slot, 'name quantity unlock_level unlocked empty')
         for slot in mon['subskills']:
             check_keys(slot, 'name unlock_level unlocked empty')
+    for island in inventory.get('island_bests', []):
+        check_keys(island, 'name strength rank')
     for entry in inventory['entries']:
         check_keys(entry, 'name quantity category description needs_review unresolved_label')
     for key, candy in inventory['pokemon_candies'].items():

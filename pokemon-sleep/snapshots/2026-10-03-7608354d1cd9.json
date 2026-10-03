@@ -11201,6 +11201,48 @@
         "quantity": 1963
       }
     },
-    "researcher_rank": 66
+    "researcher_rank": 66,
+    "island_bests": [
+      {
+        "name": "Greengrass Isle",
+        "strength": 3987507,
+        "rank": "Master 20"
+      },
+      {
+        "name": "Cyan Beach",
+        "strength": 5322282,
+        "rank": "Master 20"
+      },
+      {
+        "name": "Taupe Hollow",
+        "strength": 4098265,
+        "rank": "Master 19"
+      },
+      {
+        "name": "Snowdrop Tundra",
+        "strength": 1249963,
+        "rank": "Master 7"
+      },
+      {
+        "name": "Lapis Lakeside",
+        "strength": 5280164,
+        "rank": "Master 20"
+      },
+      {
+        "name": "Old Gold Power Plant",
+        "strength": 3929974,
+        "rank": "Master 15"
+      },
+      {
+        "name": "Greengrass Isle (Expert)",
+        "strength": 696871,
+        "rank": "Great 4"
+      },
+      {
+        "name": "Amber Canyon",
+        "strength": 6051257,
+        "rank": "Master 17"
+      }
+    ]
   }
 }

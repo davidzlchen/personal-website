@@ -40,6 +40,22 @@ class InventoryTest(unittest.TestCase):
             self.assertIsNone(exporter.researcher_rank(exp, reference))
         self.assertIsNone(exporter.researcher_rank(103, {}))
 
+    def test_island_bests_use_recorded_rank_and_skip_unvisited(self):
+        reference = {'island_ranks': {'1': {'name': 'Greengrass Isle', 'ranks': [
+            {'id': 35, 'name': 'Master 20', 'strength': 9999999}]},
+            '2': {'name': 'Cyan Beach', 'ranks': []},
+            '3': {'name': 'Taupe Hollow', 'ranks': []}}}
+        source = {'UD': {'bestene': {'all': {
+            '1': {'ene': 3987507, 'snrnk': 35, 'vicnt': 28, 'private': 'secret'},
+            '2': {'ene': 0, 'snrnk': 1, 'vicnt': 0},
+            '3': {'ene': 500, 'snrnk': 999, 'vicnt': 1}}}}}
+        result = exporter.island_bests(source, reference)
+        self.assertEqual(result, [
+            {'name': 'Greengrass Isle', 'strength': 3987507, 'rank': 'Master 20'},
+            {'name': 'Taupe Hollow', 'strength': 500, 'rank': None}])
+        self.assertNotIn('secret', str(result))
+        self.assertEqual(exporter.island_bests({'UD': {}}, reference), [])
+
     def test_delta_is_not_a_full_inventory(self):
         with self.assertRaises(ValueError):
             exporter.sanitize({'UD': {'invent': {'add': []}}}, {}, '2026-10-02', {'records': []})
