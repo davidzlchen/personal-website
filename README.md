@@ -25,7 +25,7 @@ python3 scripts/export-sleep-roster.py /private/path/pokemon.json \
 The input must be the readable roster mapper's JSON (`records` array). Use the
 actual capture date, not the export date. The exporter uses an explicit allowlist
 and strips raw payloads, instance/account IDs, timestamps, and session material.
-Only `pokemon-sleep/roster.json` is published. Review the export before committing.
+Only sanitized public exports and their history archives are published. Review the export before committing.
 Refreshes are atomic through deployment, and the JSON must revalidate on reload.
 
 ### Periodic sync
@@ -39,6 +39,30 @@ API requests are configured by this website.** Credentials, capture files, and
 native game assets belong in the private worker, never this public repository.
 A Railway scheduled worker would fit the existing Python fetcher; it can publish
 sanitized snapshots to a separate store if redeploying per refresh becomes noisy.
+
+### Snapshot history
+
+The date selector loads a paired roster and item bag from `history.json` and
+`snapshots/`. The first real capture is October 2, 2026; earlier game progress
+cannot be reconstructed from this capture. Collection totals are compared with
+the previous saved snapshot, including added or removed helpers. Public row IDs
+are snapshot-local, so comparisons do not claim to track individual Pokémon.
+
+After exporting **both** a new roster and its matching inventory, run:
+
+```sh
+python3 scripts/archive-sleep-snapshot.py
+```
+
+Then commit and deploy `roster.json`, `inventory.json`, `history.json`, and the
+new `snapshots/*.json` together. Include this archive step in any future private
+sync worker, before deployment. Archives use the actual capture date plus a
+content hash: retries do not create duplicates, distinct captures on the same
+day are retained, and existing files are never replaced with different data.
+The command rejects mismatched dates, empty rosters, and fields outside the
+public export schema. Only run it on the reviewed sanitized exports; no API
+credentials or raw responses belong here. This adds retention, not scheduled
+API fetching or session renewal.
 
 Main skill defaults and specialties use species references where noted. Minted
 nature effects and certain individual main skills remain unresolved. Missing
