@@ -1087,10 +1087,14 @@ progress::-moz-progress-bar {
 .resource-item.locked { opacity: .55; }
 .card-subskills {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
     gap: 5px;
     margin-bottom: 13px;
 }
+.card-subskills::-webkit-scrollbar { display: none; }
+.card-subskills .subskill-badge { flex-shrink: 0; white-space: nowrap; }
 .subskill-badge {
     border: 1px solid;
     border-radius: 5px;
@@ -1196,6 +1200,7 @@ progress::-moz-progress-bar {
     .inventory-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-    .subskill-badge { font-size: 9px; }
+    .card-subskills { gap: 3px; }
+    .subskill-badge { font-size: 9px; padding: 4px 3px; }
     .nature-badge { font-size: 9px; }
 }
