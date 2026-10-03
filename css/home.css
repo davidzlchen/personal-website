@@ -1,0 +1,1105 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+:root {
+    --paper: #f7f8f2;
+    --ink: #203b40;
+    --muted: #78857c;
+    --line: #dce3da;
+    --dark: #172c32;
+    --sage: #a5b596;
+    --gold: #ead8ab;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 35px;
+}
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font:
+        15px "DM Sans",
+        sans-serif;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:focus-visible {
+    outline: 3px solid #819b70;
+    outline-offset: 5px;
+}
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+h1,
+h2,
+h3 {
+    font-family: Manrope, sans-serif;
+}
+.nav {
+    max-width: 1320px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 29px 48px;
+    border-bottom: 1px solid var(--line);
+}
+.wordmark {
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    font-weight: 600;
+}
+.wordmark-dot {
+    color: #8b9f78;
+}
+.nav nav {
+    display: flex;
+    gap: 30px;
+    font-size: 12px;
+}
+.nav nav a {
+    color: #6b7a70;
+}
+.nav nav a:hover {
+    color: var(--ink);
+}
+.nav nav span {
+    margin-left: 7px;
+}
+main {
+    max-width: 1320px;
+    margin: auto;
+    padding: 0 48px;
+}
+.hero {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 0 69px;
+}
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #7b8b75;
+    font-weight: 700;
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+h1 {
+    font-size: clamp(38px, 4.3vw, 58px);
+    letter-spacing: -2.5px;
+    line-height: 1.16;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.soft {
+    color: #7b8a74;
+}
+.intro {
+    max-width: 420px;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--muted);
+    margin-bottom: 31px;
+}
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 9px;
+    padding: 15px 21px;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+.button:hover {
+    background: #375e57;
+}
+.quiet-note {
+    font-size: 10px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+.desk {
+    height: 335px;
+    position: relative;
+    isolation: isolate;
+}
+.desk-ring {
+    height: 315px;
+    width: 315px;
+    position: absolute;
+    top: 9px;
+    left: calc(50% - 157px);
+    border-radius: 50%;
+    background: #e8eddf;
+    border: 1px solid #dfe6d7;
+}
+.desk-ring:after {
+    content: "";
+    position: absolute;
+    inset: 28px;
+    border-radius: 50%;
+    border: 1px solid #d6dfcd;
+}
+.mountain-postcard {
+    position: absolute;
+    background: #f0f1e8;
+    box-shadow: 0 12px 40px #223a3420;
+    width: 285px;
+    left: 0;
+    top: 30px;
+    border: 8px solid white;
+    border-radius: 3px;
+    transform: rotate(-9deg);
+    z-index: 2;
+}
+.postcard-label,
+.postcard-foot {
+    display: block;
+    text-align: center;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+    padding: 12px 0;
+    color: #7c8f72;
+}
+.mountain-postcard svg {
+    display: block;
+    width: 100%;
+}
+.postcard-foot {
+    padding: 12px 0 9px;
+    letter-spacing: 1px;
+}
+.night-card {
+    width: 145px;
+    height: 183px;
+    position: absolute;
+    background: var(--dark);
+    border-radius: 70px 70px 10px 10px;
+    right: 4px;
+    top: 9px;
+    transform: rotate(13deg);
+    z-index: 1;
+    box-shadow: 0 10px 30px #162c3215;
+}
+.moon {
+    background: var(--gold);
+    height: 66px;
+    width: 66px;
+    border-radius: 50%;
+    position: absolute;
+    top: 36px;
+    left: 37px;
+    overflow: hidden;
+}
+.moon:after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background: var(--dark);
+    border-radius: 50%;
+    position: absolute;
+    top: -16px;
+    left: 20px;
+}
+.night-stars {
+    position: absolute;
+    bottom: 53px;
+    left: 22px;
+    color: var(--gold);
+    font-size: 16px;
+}
+.night-caption {
+    position: absolute;
+    bottom: 18px;
+    left: 15px;
+    right: 15px;
+    text-align: center;
+    font-size: 6px;
+    letter-spacing: 0.9px;
+    color: #d7dfd1;
+}
+.climb-card {
+    position: absolute;
+    width: 154px;
+    height: 115px;
+    background: #efe0cd;
+    border: 7px solid #fcfaf3;
+    border-radius: 7px;
+    transform: rotate(7deg);
+    right: 15px;
+    bottom: 30px;
+    z-index: 3;
+    box-shadow: 0 10px 30px #233a341b;
+}
+.climb-card svg {
+    height: 77px;
+    width: 100%;
+}
+.climb-card span {
+    display: block;
+    font-size: 6px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #8b7b60;
+}
+.star {
+    position: absolute;
+    font-size: 27px;
+    color: #94a27f;
+}
+.star-one {
+    bottom: 47px;
+    left: 50px;
+    transform: rotate(10deg);
+}
+.star-two {
+    top: -12px;
+    right: 70px;
+    font-size: 20px;
+}
+.desk-label {
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    text-align: center;
+    font-size: 8px;
+    color: #85967b;
+    letter-spacing: 1.6px;
+}
+.chapter-line {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 0;
+    color: #89917f;
+    font-size: 9px;
+    letter-spacing: 1.6px;
+}
+.chapter-line > span:last-child {
+    font-size: 18px;
+}
+.projects {
+    padding-top: 59px;
+}
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+.section-heading .eyebrow {
+    margin-bottom: 12px;
+}
+h2 {
+    font-size: 31px;
+    letter-spacing: -1px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+}
+.section-heading > p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 5px;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+.project {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+.project:is(a):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #203b4010;
+}
+.cover {
+    position: relative;
+    height: 255px;
+    overflow: hidden;
+    isolation: isolate;
+}
+.mini-header {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 25px;
+    gap: 15px;
+}
+.mini-logo {
+    font-family: Manrope, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+.mini-status {
+    font-size: 8px;
+    letter-spacing: 0.2px;
+    opacity: 0.7;
+}
+.mini-status i {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #7c9870;
+    margin-right: 5px;
+}
+.ski-cover {
+    background: #e3ecd9;
+}
+.ski-mountains {
+    position: absolute;
+    bottom: 28px;
+    height: 170px;
+    width: 100%;
+    z-index: -1;
+}
+.condition-tiles {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 22px;
+    align-items: stretch;
+}
+.condition-tiles > div {
+    border-radius: 9px;
+    background: #ffffffd9;
+    padding: 14px 16px;
+    flex: 1;
+    box-shadow: 0 7px 15px #43634910;
+}
+.condition-tiles span {
+    display: block;
+    font-size: 8px;
+    color: #879581;
+    margin-bottom: 8px;
+}
+.condition-tiles strong {
+    font-size: 12px;
+    display: block;
+    font-weight: 600;
+}
+.condition-tiles > div.condition-note {
+    flex: 0 0 145px;
+    background: #203b40;
+    color: var(--paper);
+}
+.condition-note span {
+    color: #c2ceb7;
+}
+.mini-bars {
+    display: flex;
+    gap: 4px;
+    margin-top: 11px;
+}
+.mini-bars i {
+    height: 4px;
+    border-radius: 3px;
+    background: #a6c18b;
+    flex: 1;
+}
+.mini-bars i:last-child {
+    background: #d9dfd0;
+}
+.guess-cover {
+    background: #19343b;
+    color: #edf1e5;
+}
+.mini-logo-dot {
+    color: #a6ba83;
+}
+.guess-picture {
+    position: absolute;
+    top: 68px;
+    left: 25px;
+    right: 25px;
+    height: 142px;
+    border-radius: 7px;
+    overflow: hidden;
+    background: #35585f;
+}
+.guess-picture svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.guess-pin {
+    position: absolute;
+    left: 53%;
+    top: 28px;
+    background: #f0e4c1;
+    color: #335b59;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 7px #f0e4c140;
+    font:
+        600 21px Manrope,
+        sans-serif;
+}
+.guess-prompt {
+    position: absolute;
+    bottom: 17px;
+    left: 25px;
+    right: 25px;
+    text-align: center;
+    font-size: 8px;
+    letter-spacing: 0.4px;
+    color: #b8cac3;
+}
+.sleep-cover {
+    background: #e9e5f1;
+}
+.sleep-orbit {
+    border: 1px solid #d3cddd;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    bottom: -109px;
+    left: calc(50% - 150px);
+}
+.sleep-mon {
+    position: absolute;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 6px #74637e15);
+}
+.sleep-ampharos {
+    height: 190px;
+    left: calc(50% - 133px);
+    bottom: 21px;
+    z-index: 2;
+    transform: rotate(-7deg);
+}
+.sleep-latias {
+    height: 135px;
+    left: calc(50% + 20px);
+    top: 65px;
+    transform: rotate(15deg);
+    z-index: 1;
+}
+.sleep-aggron {
+    height: 140px;
+    left: calc(50% - 4px);
+    bottom: 15px;
+    z-index: 3;
+}
+.sleep-star {
+    position: absolute;
+    left: 70px;
+    top: 103px;
+    color: #aca079;
+    font-size: 26px;
+}
+.small-moon {
+    background: #d2c8e0;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    position: absolute;
+    top: 70px;
+    right: 65px;
+}
+.small-moon:after {
+    content: "";
+    background: #e9e5f1;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    left: 15px;
+}
+.sleep-caption {
+    position: absolute;
+    bottom: 16px;
+    left: 25px;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: #887694;
+}
+.climb-cover {
+    background: #f0e2cf;
+}
+.hangboard {
+    position: absolute;
+    left: calc(50% - 165px);
+    top: 80px;
+    width: 330px;
+    height: 130px;
+    background: #c9a982;
+    border-radius: 24px 24px 12px 12px;
+    border: 1px solid #bda080;
+    box-shadow:
+        0 9px 0 #b79a77,
+        0 16px 17px #8c725120;
+    padding: 16px 20px;
+}
+.holds {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+.holds i {
+    display: block;
+    border-radius: 6px;
+    background: #8d7458;
+    box-shadow: inset 0 4px 5px #68523960;
+    height: 18px;
+    flex: 1;
+}
+.holds-small {
+    gap: 11px;
+    margin-bottom: 10px;
+}
+.holds-small i {
+    height: 12px;
+    border-radius: 4px;
+}
+.holds-low {
+    gap: 44px;
+    width: 170px;
+    margin: auto;
+}
+.holds-low i {
+    height: 14px;
+}
+.hangboard > span {
+    display: block;
+    text-align: center;
+    font-size: 5px;
+    letter-spacing: 1.4px;
+    margin-top: 10px;
+    color: #846b50;
+}
+.climb-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+    right: 25px;
+    text-align: center;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: #9a8266;
+}
+.project-copy {
+    padding: 25px 25px 21px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.project-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+h3 {
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    margin: 0;
+    font-weight: 600;
+}
+.project-arrow {
+    font-size: 21px;
+    color: #8c9a83;
+}
+.project-copy > p {
+    font-size: 12px;
+    line-height: 1.85;
+    color: var(--muted);
+    margin-bottom: 23px;
+    max-width: 400px;
+    flex: 1;
+}
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 9px;
+    color: #919889;
+    padding-top: 15px;
+    border-top: 1px solid #edf0e6;
+}
+.category i {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #a7ba90;
+    margin-right: 5px;
+}
+.in-progress {
+    font-size: 9px;
+    background: #f0eee5;
+    padding: 6px 9px;
+    border-radius: 20px;
+    color: #8b866c;
+    white-space: nowrap;
+}
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    border-top: 1px solid var(--line);
+    margin-top: 65px;
+    padding: 52px 0;
+}
+.about .eyebrow {
+    margin-bottom: 13px;
+}
+.about-copy p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+.interest-tags span {
+    font-size: 10px;
+    padding: 7px 11px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    color: #7b8972;
+}
+.contact {
+    background: #e9eddf;
+    padding: 34px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-radius: 14px;
+    margin-bottom: 48px;
+}
+.contact .eyebrow {
+    margin-bottom: 10px;
+    font-size: 9px;
+}
+.contact h2 {
+    font-size: 26px;
+}
+.contact p {
+    font-size: 12px;
+    color: #7c8a74;
+    margin: 13px 0 0;
+}
+.contact-links {
+    display: flex;
+    gap: 10px;
+}
+.contact-links a {
+    border: 1px solid #c8d1be;
+    border-radius: 8px;
+    background: #f7f8f280;
+    padding: 13px 15px;
+    font-size: 11px;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+.contact-links a:hover {
+    background: white;
+}
+.contact-links span {
+    margin-left: 18px;
+    color: #87977c;
+}
+footer {
+    max-width: 1320px;
+    margin: auto;
+    border-top: 1px solid var(--line);
+    padding: 25px 48px 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #839078;
+    font-size: 10px;
+}
+.footer-star {
+    color: #a0ac85;
+    font-size: 13px;
+    padding-left: 9px;
+}
+@media (max-width: 1000px) {
+    .nav {
+        padding: 25px 30px;
+    }
+    main {
+        padding: 0 30px;
+    }
+    .hero {
+        gap: 25px;
+        padding: 65px 0 50px;
+        grid-template-columns: 1.2fr 1fr;
+    }
+    h1 {
+        font-size: 44px;
+        letter-spacing: -2px;
+    }
+    .desk {
+        height: 300px;
+    }
+    .mountain-postcard {
+        width: 240px;
+        top: 36px;
+        left: -8px;
+    }
+    .night-card {
+        width: 120px;
+        height: 150px;
+        right: -3px;
+    }
+    .moon {
+        width: 55px;
+        height: 55px;
+        left: 30px;
+        top: 25px;
+    }
+    .moon:after {
+        height: 48px;
+        width: 48px;
+    }
+    .night-caption {
+        font-size: 5px;
+        left: 7px;
+        right: 7px;
+    }
+    .night-stars {
+        bottom: 42px;
+        font-size: 13px;
+        left: 15px;
+    }
+    .climb-card {
+        width: 137px;
+        height: 108px;
+        right: 0;
+        bottom: 32px;
+    }
+    .desk-ring {
+        height: 270px;
+        width: 270px;
+        left: calc(50% - 135px);
+        top: 12px;
+    }
+    .hero .eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+    .intro {
+        font-size: 13px;
+    }
+    .hero-actions {
+        gap: 13px;
+    }
+    .button {
+        padding: 13px 15px;
+        gap: 15px;
+        font-size: 11px;
+    }
+    .quiet-note {
+        font-size: 9px;
+    }
+    .project-grid {
+        gap: 20px;
+    }
+    .cover {
+        height: 235px;
+    }
+    .project-copy {
+        padding: 22px;
+    }
+    .mini-header {
+        padding: 20px;
+    }
+    .condition-tiles {
+        left: 20px;
+        right: 20px;
+    }
+    .condition-tiles > div.condition-note {
+        flex-basis: 120px;
+    }
+    .condition-tiles strong {
+        font-size: 11px;
+    }
+    .project-footer {
+        font-size: 8px;
+    }
+    .sleep-caption {
+        font-size: 6px;
+        left: 20px;
+    }
+    .hangboard {
+        width: 275px;
+        left: calc(50% - 137px);
+    }
+    .sleep-star {
+        left: 35px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+}
+@media (max-width: 720px) {
+    .nav {
+        padding: 23px 22px;
+    }
+    .wordmark {
+        font-size: 13px;
+    }
+    .nav nav {
+        gap: 17px;
+        font-size: 10px;
+    }
+    .nav nav span {
+        margin-left: 3px;
+    }
+    main {
+        padding: 0 22px;
+    }
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 0 32px;
+        gap: 32px;
+    }
+    .hero .eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.3px;
+        margin-bottom: 20px;
+    }
+    h1 {
+        font-size: clamp(35px, 7.6vw, 48px);
+        letter-spacing: -1.7px;
+        line-height: 1.22;
+        margin-bottom: 22px;
+    }
+    .intro {
+        font-size: 14px;
+        max-width: 410px;
+        margin-bottom: 25px;
+    }
+    .hero-actions {
+        gap: 20px;
+    }
+    .button {
+        font-size: 11px;
+        padding: 14px 17px;
+        gap: 20px;
+    }
+    .desk {
+        width: 340px;
+        max-width: 100%;
+        height: 295px;
+        margin: 0 auto;
+    }
+    .mountain-postcard {
+        width: 235px;
+        left: 5px;
+        top: 35px;
+    }
+    .night-card {
+        right: 9px;
+        top: 8px;
+    }
+    .climb-card {
+        right: 9px;
+        bottom: 32px;
+    }
+    .star-one {
+        left: 35px;
+        bottom: 40px;
+    }
+    .chapter-line {
+        font-size: 7px;
+        letter-spacing: 1.1px;
+        padding: 16px 0;
+    }
+    .projects {
+        padding-top: 38px;
+    }
+    .section-heading {
+        display: block;
+        margin-bottom: 24px;
+    }
+    .section-heading .eyebrow {
+        font-size: 8px;
+        margin-bottom: 11px;
+    }
+    h2 {
+        font-size: 27px;
+        letter-spacing: -0.8px;
+    }
+    .section-heading > p {
+        font-size: 11px;
+        margin: 12px 0 0;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 21px;
+    }
+    .cover {
+        height: 238px;
+    }
+    .project-copy {
+        padding: 22px;
+    }
+    .project-copy > p {
+        font-size: 12px;
+        margin-bottom: 19px;
+    }
+    h3 {
+        font-size: 19px;
+    }
+    .project-footer {
+        font-size: 8px;
+        gap: 8px;
+    }
+    .mini-header {
+        padding: 20px 22px;
+    }
+    .mini-logo {
+        font-size: 12px;
+    }
+    .mini-status {
+        font-size: 7px;
+    }
+    .condition-tiles {
+        left: 22px;
+        right: 22px;
+        gap: 8px;
+    }
+    .condition-tiles > div {
+        padding: 12px;
+    }
+    .condition-tiles > div.condition-note {
+        flex-basis: 120px;
+    }
+    .guess-picture {
+        left: 22px;
+        right: 22px;
+    }
+    .sleep-ampharos {
+        height: 175px;
+        bottom: 21px;
+    }
+    .sleep-latias {
+        height: 120px;
+        top: 70px;
+        left: calc(50% + 8px);
+    }
+    .sleep-aggron {
+        height: 130px;
+        left: calc(50% - 10px);
+    }
+    .sleep-caption {
+        left: 22px;
+        font-size: 6px;
+    }
+    .small-moon {
+        right: 30px;
+        top: 71px;
+        width: 43px;
+        height: 43px;
+    }
+    .small-moon:after {
+        width: 40px;
+        height: 40px;
+    }
+    .hangboard {
+        width: 270px;
+        left: calc(50% - 135px);
+        top: 76px;
+    }
+    .about {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 40px;
+        padding: 38px 0;
+    }
+    .about .eyebrow {
+        font-size: 8px;
+    }
+    .about-copy p {
+        font-size: 12px;
+        line-height: 1.9;
+    }
+    .contact {
+        display: block;
+        padding: 26px 24px;
+        margin-bottom: 32px;
+    }
+    .contact h2 {
+        font-size: 24px;
+    }
+    .contact p {
+        font-size: 11px;
+    }
+    .contact-links {
+        margin-top: 24px;
+    }
+    .contact-links a {
+        font-size: 11px;
+    }
+    .contact-links span {
+        margin-left: 24px;
+    }
+    footer {
+        padding: 24px 22px;
+        gap: 15px;
+        font-size: 8px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    * {
+        transition: none !important;
+    }
+}

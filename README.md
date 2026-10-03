@@ -1,13 +1,19 @@
-# Resume Website
+# David Z. Chen
 
-Very simple, minimalist resume website. It contains the essential pieces of information that any candidate must provide - current job, resume, LinkedIn.
+A personal landing page and project collection, hosted on Vercel. The homepage
+features JustSkiing, SkiGuessr, Pokémon Sleep Collection, and Hangboard (in progress),
+with GitHub and LinkedIn contact links. No résumé is linked.
+
+Serve locally with `python3 -m http.server 8765` and open <http://localhost:8765/>.
+Homepage styles live in `css/home.css`; project artwork uses inline SVG/CSS.
+The site has no build step. Deploy the validated revision with `vercel --prod`.
 
 ## Pokémon Sleep collection
 
 `/pokemon-sleep/` is a static, public roster browser. Serve locally with
 `python3 -m http.server 8765` and open <http://localhost:8765/pokemon-sleep/>.
 No build step or account credentials are required. Vercel serves this repository
-as a static site; the original homepage is preserved.
+as a static site alongside the personal homepage.
 
 To refresh after fetching and mapping a new **private** snapshot:
 
