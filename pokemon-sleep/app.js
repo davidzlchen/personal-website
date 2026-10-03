@@ -436,77 +436,55 @@ function renderInventory() {
 }
 $("#inventory-search").addEventListener("input", renderInventory);
 $("#inventory-zero").addEventListener("change", renderInventory);
-fetch("/pokemon-sleep/inventory.json", { cache: "no-cache" })
-    .then((response) => {
-        if (!response.ok) throw new Error("Inventory unavailable");
-        return response.json();
-    })
-    .then((data) => {
-        inventory = data;
-        renderCandyBalance();
-        $("#inventory-date").textContent = `Supplies snapshot · ${dateLabel(data.captured_at)}. Counts change as items are used.`;
-        for (const [label, value] of [
-            ["Dream Shards", data.dream_shards],
-            ["Ingredients in the bag", data.entries.filter((entry) => entry.category === "Ingredients").reduce((sum, entry) => sum + (entry.quantity || 0), 0)],
-            ["Pokémon candy stacks", data.entries.filter((entry) => entry.category === "Pokémon candies" && entry.quantity > 0).length],
-        ]) {
-            const stat = node("div", "inventory-stat");
-            const caption = node("span", "inventory-stat-label");
-            appendIcon(caption, "items", label);
-            caption.append(document.createTextNode(label));
-            stat.append(node("strong", "", number(value)), caption);
-            $("#inventory-overview").append(stat);
-        }
-        renderInventory();
-    })
-    .catch(() => { $("#inventory-date").textContent = "Supplies unavailable. Reload to try again."; });
+function applyInventory(data) {
+    inventory = data;
+    $("#inventory-overview").replaceChildren();
+    $("#inventory-date").textContent = `Supplies snapshot · ${dateLabel(data.captured_at)}. Counts change as items are used.`;
+    for (const [label, value] of [
+        ["Dream Shards", data.dream_shards],
+        ["Ingredients in the bag", data.entries.filter((entry) => entry.category === "Ingredients").reduce((sum, entry) => sum + (entry.quantity || 0), 0)],
+        ["Pokémon candy stacks", data.entries.filter((entry) => entry.category === "Pokémon candies" && entry.quantity > 0).length],
+    ]) {
+        const stat = node("div", "inventory-stat");
+        const caption = node("span", "inventory-stat-label");
+        appendIcon(caption, "items", label);
+        caption.append(document.createTextNode(label));
+        stat.append(node("strong", "", number(value)), caption);
+        $("#inventory-overview").append(stat);
+    }
+    renderInventory();
+}
 document.querySelectorAll(".filter[data-specialty]").forEach((button) => {
     const icon = assetIcon("specialties", button.dataset.specialty);
     if (icon) button.prepend(icon);
 });
-fetch("/pokemon-sleep/roster.json", { cache: "no-cache" })
-    .then((response) => {
-        if (!response.ok) throw new Error("Roster unavailable");
-        return response.json();
-    })
-    .then((data) => {
-        roster = data.records;
-        snapshotDate = data.captured_at;
-        for (const [nickname, selector] of [
-            ["charge king", ".label-one span"],
-            ["sausage king", ".label-two span"],
-        ]) {
-            const featured = roster.find((mon) => mon.nickname === nickname);
-            $(selector).textContent = featured ? `Lv. ${featured.level}` : "";
-        }
-        $("#total").textContent = roster.length;
-        $("#species").textContent = new Set(
-            roster.map(
-                (mon) =>
-                    `${mon.national_dex}:${mon.variant === "Paldean" ? mon.variant : ""}`,
-            ),
-        ).size;
-        $("#shinies").textContent = roster.filter((mon) => mon.shiny).length;
-        $("#highest").textContent = Math.max(...roster.map((mon) => mon.level));
-        const date = new Date(
-            `${data.captured_at}T12:00:00Z`,
-        ).toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
-            timeZone: "UTC",
-        });
-        $("#snapshot").textContent = `Roster snapshot · ${date}`;
-        render();
-    })
-    .catch(() => {
-        $("#result-count").textContent = "Could not load the roster.";
-        $("#grid").append(
-            node(
-                "p",
-                "loading-error",
-                "The roster is temporarily unavailable. Please reload to try again.",
-            ),
-        );
-        $("#snapshot").textContent = "Snapshot unavailable";
+function applyRoster(data) {
+    roster = data.records;
+    snapshotDate = data.captured_at;
+    for (const [nickname, selector] of [
+        ["charge king", ".label-one span"],
+        ["sausage king", ".label-two span"],
+    ]) {
+        const featured = roster.find((mon) => mon.nickname === nickname);
+        $(selector).textContent = featured ? `Lv. ${featured.level}` : "";
+    }
+    $("#total").textContent = roster.length;
+    $("#species").textContent = new Set(
+        roster.map(
+            (mon) =>
+                `${mon.national_dex}:${mon.variant === "Paldean" ? mon.variant : ""}`,
+        ),
+    ).size;
+    $("#shinies").textContent = roster.filter((mon) => mon.shiny).length;
+    $("#highest").textContent = Math.max(0, ...roster.map((mon) => mon.level));
+    const date = new Date(
+        `${data.captured_at}T12:00:00Z`,
+    ).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        timeZone: "UTC",
     });
+    $("#snapshot").textContent = `Roster snapshot · ${date}`;
+    render();
+}

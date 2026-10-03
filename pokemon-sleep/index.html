@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="/pokemon-sleep/styles.css" />
         <script defer src="/pokemon-sleep/asset-data.js"></script>
         <script defer src="/pokemon-sleep/app.js"></script>
+        <script defer src="/pokemon-sleep/history.js"></script>
     </head>
     <body>
         <header class="nav">
@@ -92,6 +93,14 @@
                     <span id="highest">—</span>
                     <p>highest level</p>
                 </div>
+            </section>
+            <section class="history" aria-label="Snapshot history">
+                <div class="history-heading">
+                    <div><p class="eyebrow">OVER TIME</p><h2>Collection history.</h2></div>
+                    <label>Snapshot <select id="history-select" disabled><option>Loading history…</option></select></label>
+                </div>
+                <p id="history-status" role="status">Loading saved snapshots…</p>
+                <div id="history-progress" class="history-progress"></div>
             </section>
             <section id="supplies" class="supplies">
                 <p class="eyebrow">THE ITEM BAG</p>
@@ -195,8 +204,7 @@
                         costume.
                     </p>
                     <a href="/pokemon-sleep/roster.json" download="david-pokemon-sleep.json"
-                        >Download the public roster ↗</a
-                    >
+                        id="roster-download">Download the public roster ↗</a>
                 </div>
             </section>
         </main>

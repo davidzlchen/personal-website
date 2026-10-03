@@ -1160,6 +1160,17 @@ progress::-moz-progress-bar {
 .capture-row span { color: var(--muted); }
 .capture-row strong { text-align: right; font-weight: 600; }
 .supplies { margin: 60px 0; scroll-margin-top: 30px; }
+.history { margin: 35px 0 50px; padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: #edf0e5; }
+.history-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.history h2 { font-size: 24px; letter-spacing: -.5px; }
+.history .eyebrow { margin-bottom: 8px; }
+.history label { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+.history select { max-width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper, #fafbf5); color: var(--ink); font: inherit; }
+#history-status { font-size: 12px; color: var(--muted); line-height: 1.7; margin: 16px 0 0; }
+.history-progress { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 12px; }
+.history-stat { display: flex; flex-direction: column; gap: 7px; margin-top: 18px; font-size: 12px; }
+.history-stat strong { font-size: 22px; }
+.history-stat small { color: var(--muted); line-height: 1.6; }
 .supplies h2 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -1px; }
 #inventory-date, #inventory-count { color: var(--muted); font-size: 12px; }
 .inventory-overview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
