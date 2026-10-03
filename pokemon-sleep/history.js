@@ -1,7 +1,6 @@
 "use strict";
 let snapshots = [];
 let snapshotRequest = 0;
-let downloadURL = null;
 const savedSnapshots = new Map();
 
 async function readJSON(path) {
@@ -23,10 +22,6 @@ function showSnapshot(data) {
     selectedMon = null;
     applyRoster(data.roster);
     applyInventory(data.inventory);
-    if (downloadURL) URL.revokeObjectURL(downloadURL);
-    downloadURL = URL.createObjectURL(new Blob([JSON.stringify(data.roster, null, 2)], { type: "application/json" }));
-    $("#roster-download").href = downloadURL;
-    $("#roster-download").download = `pokemon-sleep-${data.roster.captured_at}.json`;
 }
 async function selectSnapshot(index) {
     const request = ++snapshotRequest;
@@ -61,7 +56,7 @@ async function initializeHistory() {
         for (let index = snapshots.length - 1; index >= 0; index--) {
             const entry = snapshots[index];
             const sameDay = snapshots.filter(item => item.captured_at === entry.captured_at);
-            const suffix = sameDay.length > 1 ? ` · Capture ${sameDay.indexOf(entry) + 1}` : "";
+            const suffix = sameDay.length > 1 ? ` · Update ${sameDay.indexOf(entry) + 1}` : "";
             const option = node("option", "", `${dateLabel(entry.captured_at)}${suffix}${index === snapshots.length - 1 ? " · Latest" : ""}`);
             option.value = String(index);
             select.append(option);

@@ -15,6 +15,10 @@ The site has no build step. Deploy the validated revision with `vercel --prod`.
 No build step or account credentials are required. Vercel serves this repository
 as a static site alongside the personal homepage.
 
+The collection has no roster download button or internal parsing notes. Its
+sanitized JSON remains public because the browser uses it to display the collection.
+Shared links use `pokemon-sleep/social-preview.jpg` for the launch preview.
+
 To refresh after fetching and mapping a new **private** snapshot:
 
 ```sh

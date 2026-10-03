@@ -8,12 +8,22 @@
             name="description"
             content="Meet David’s Pokémon Sleep collection. Browse Pokémon, ingredients, skills, and the little details that make each helper unique."
         />
+        <link rel="canonical" href="https://davidzlchen.com/pokemon-sleep/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="David’s Pokémon Sleep Collection" />
+        <meta property="og:description" content="A box full of helpers, a few familiar faces, and a whole lot of bean sausage. Meet the Pokémon keeping me company overnight." />
+        <meta property="og:url" content="https://davidzlchen.com/pokemon-sleep/" />
+        <meta property="og:image" content="https://davidzlchen.com/pokemon-sleep/social-preview.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="David’s Pokémon Sleep Collection, featuring Ampharos, Latias, and Aggron." />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="theme-color" content="#172c32" />
         <link rel="icon" href="/pokemon-sleep/moon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="/pokemon-sleep/styles.css" />
         <script defer src="/pokemon-sleep/asset-data.js"></script>
-        <script defer src="/pokemon-sleep/app.js"></script>
-        <script defer src="/pokemon-sleep/history.js"></script>
+        <script defer src="/pokemon-sleep/app.js?v=launch-1"></script>
+        <script defer src="/pokemon-sleep/history.js?v=launch-1"></script>
     </head>
     <body>
         <header class="nav">
@@ -43,7 +53,7 @@
                         >
                         <div class="snapshot-picker">
                             <label>
-                                <span id="snapshot" class="snapshot">Loading snapshot…</span>
+                                <span id="snapshot" class="snapshot">Loading collection…</span>
                                 <span class="snapshot-chevron" aria-hidden="true">⌄</span>
                                 <select id="history-select" aria-label="Roster snapshot" disabled><option>Loading snapshots…</option></select>
                             </label>
@@ -189,22 +199,6 @@
                 <p id="empty" class="empty" hidden>
                     No helpers found. Try another search or filter.
                 </p>
-            </section>
-            <section class="field-note">
-                <span class="note-icon">☾</span>
-                <div>
-                    <h3>A snapshot of the collection</h3>
-                    <p>
-                        These stats come from my Pokémon Sleep roster.
-                        Main-skill names and specialties use species references
-                        where noted. A few individual skills and mint effects
-                        are still being mapped; unresolved values stay unfilled.
-                        Artwork shows species, rather than every in-game
-                        costume.
-                    </p>
-                    <a href="/pokemon-sleep/roster.json" download="david-pokemon-sleep.json"
-                        id="roster-download">Download the public roster ↗</a>
-                </div>
             </section>
         </main>
         <footer>
