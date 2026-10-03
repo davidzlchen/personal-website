@@ -1,14 +1,14 @@
 # David Z. Chen
 
 A personal landing page and project collection, hosted on Vercel. The homepage
-features JustSkiing, SkiGuessr, Pokémon Sleep Collection, and Hangboard (in progress),
+features JustSkiing, SkiGuessr, Pokémon Sleep Field Notes, and Hangboard (in progress),
 with GitHub and LinkedIn contact links. No résumé is linked.
 
 Serve locally with `python3 -m http.server 8765` and open <http://localhost:8765/>.
 Homepage styles live in `css/home.css`; project artwork uses inline SVG/CSS.
 The site has no build step. Deploy the validated revision with `vercel --prod`.
 
-## Pokémon Sleep collection
+## Pokémon Sleep field notes
 
 `/pokemon-sleep/` is a static, public roster browser. Serve locally with
 `python3 -m http.server 8765` and open <http://localhost:8765/pokemon-sleep/>.
