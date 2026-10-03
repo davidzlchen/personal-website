@@ -12,11 +12,20 @@ function dateLabel(value) {
         month: "long", day: "numeric", year: "numeric", timeZone: "UTC",
     });
 }
-function natureBadges(mon) {
+const natureAbbreviations = {
+    "Speed of help": "SoH",
+    "Ingredient finding": "ING",
+    "Main skill chance": "MSC",
+    "Energy recovery": "ER",
+    "EXP gains": "EXP",
+};
+function natureBadges(mon, compact = false) {
     const badges = node("div", "nature-badges");
     for (const [effect, direction] of Object.entries(mon.nature_effects || {})) {
-        const badge = node("span", `nature-badge ${direction}`, `${direction === "up" ? "↑" : "↓"} ${effect}`);
+        const label = compact ? natureAbbreviations[effect] || effect : effect;
+        const badge = node("span", `nature-badge ${direction}`, `${direction === "up" ? "↑" : "↓"} ${label}`);
         badge.title = `${effect} ${direction === "up" ? "increased" : "decreased"}`;
+        badge.setAttribute("aria-label", badge.title);
         badges.append(badge);
     }
     if (!badges.childElementCount)
@@ -145,7 +154,7 @@ function render() {
             ),
         );
         const bottom = node("div", "card-nature");
-        bottom.append(node("span", "card-nature-name", mon.nature || "Nature unresolved"), natureBadges(mon));
+        bottom.append(node("span", "card-nature-name", mon.nature || "Nature unresolved"), natureBadges(mon, true));
         const resources = node("div", "card-resources");
         const berry = node("span", "resource-berry");
         berry.title = mon.berry || "Berry unknown";
