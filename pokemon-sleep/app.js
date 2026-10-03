@@ -6,6 +6,12 @@ let roster = [],
     specialty = "";
 let snapshotDate = null;
 let inventory = null;
+// Pick decorative summary icons once per page load, independent of snapshot changes.
+const randomAssetName = (names) => names[Math.floor(Math.random() * names.length)];
+const summaryIngredient = randomAssetName(Object.keys(sleepAssets.ingredients));
+const summaryCandy = randomAssetName(
+    Object.keys(sleepAssets.items).filter((name) => sleepAssets.items[name].startsWith("items/candy-")),
+);
 function dateLabel(value) {
     if (!value) return "Unknown";
     return new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", {
@@ -442,8 +448,8 @@ function applyInventory(data) {
     $("#inventory-date").textContent = `Supplies snapshot · ${dateLabel(data.captured_at)}. Counts change as items are used.`;
     for (const [label, value, iconCategory, iconName] of [
         ["Dream Shards", data.dream_shards, "items", "Dream Shards"],
-        ["Ingredients in the bag", data.entries.filter((entry) => entry.category === "Ingredients").reduce((sum, entry) => sum + (entry.quantity || 0), 0), "ingredients", "Bean Sausage"],
-        ["Pokémon candy stacks", data.entries.filter((entry) => entry.category === "Pokémon candies" && entry.quantity > 0).length, "items", "Mareep Candy"],
+        ["Ingredients in the bag", data.entries.filter((entry) => entry.category === "Ingredients").reduce((sum, entry) => sum + (entry.quantity || 0), 0), "ingredients", summaryIngredient],
+        ["Pokémon candy stacks", data.entries.filter((entry) => entry.category === "Pokémon candies" && entry.quantity > 0).length, "items", summaryCandy],
     ]) {
         const stat = node("div", "inventory-stat");
         const caption = node("span", "inventory-stat-label");
