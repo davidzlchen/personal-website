@@ -1154,6 +1154,33 @@ progress::-moz-progress-bar {
 .capture-row { display: flex; justify-content: space-between; gap: 15px; font-size: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); }
 .capture-row span { color: var(--muted); }
 .capture-row strong { text-align: right; font-weight: 600; }
+.supplies { margin: 60px 0; scroll-margin-top: 30px; }
+.supplies-link { font-size: 12px; font-weight: 600; }
+.supplies h2 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -1px; }
+#inventory-date, #inventory-count { color: var(--muted); font-size: 12px; }
+.inventory-overview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
+.inventory-stat { background: #e9eddf; border: 1px solid var(--line); border-radius: 15px; padding: 22px; }
+.inventory-stat strong { display: block; font-size: clamp(24px, 3vw, 36px); letter-spacing: -1px; }
+.inventory-stat span { display: block; margin-top: 8px; font-size: 12px; color: var(--muted); }
+.inventory-group { border-bottom: 1px solid var(--line); }
+.inventory-group summary { cursor: pointer; padding: 20px 0; font-size: 16px; font-weight: 600; }
+.inventory-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding-bottom: 20px; }
+.inventory-item { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 15px; }
+.inventory-item-text { flex: 1; min-width: 0; }
+.inventory-item strong { font-size: 12px; }
+.inventory-item p { font-size: 11px; color: var(--muted); margin: 5px 0 0; }
+.inventory-quantity { font-size: 18px; font-weight: 600; }
+.section-hint { color: var(--muted); font-size: 11px; }
+@media (max-width: 700px) {
+    .inventory-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .inventory-stat { padding: 15px; }
+}
+@media (max-width: 480px) {
+    .inventory-overview { grid-template-columns: 1fr; gap: 8px; }
+    .inventory-stat { display: flex; align-items: center; justify-content: space-between; }
+    .inventory-stat span { margin-top: 0; }
+    .inventory-list { grid-template-columns: 1fr; }
+}
 @media (max-width: 480px) {
     .subskill-badge { font-size: 9px; }
     .nature-badge { font-size: 9px; }

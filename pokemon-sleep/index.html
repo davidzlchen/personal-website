@@ -43,7 +43,7 @@
                             >Explore the collection <span>↗</span></a
                         ><span id="snapshot" class="snapshot"
                             >Loading snapshot…</span
-                        >
+                        ><a href="#supplies" class="supplies-link">Browse supplies ↗</a>
                     </div>
                 </div>
                 <div
@@ -169,6 +169,18 @@
                 <p id="empty" class="empty" hidden>
                     No helpers found. Try another search or filter.
                 </p>
+            </section>
+            <section id="supplies" class="supplies">
+                <p class="eyebrow">THE ITEM BAG</p>
+                <h2>Ready for the night.</h2>
+                <p id="inventory-date">Loading supplies…</p>
+                <div id="inventory-overview" class="inventory-overview"></div>
+                <div class="controls">
+                    <label class="search"><span aria-hidden="true">⌕</span><input type="search" id="inventory-search" placeholder="Find a biscuit, ingredient, or Pokémon candy…" aria-label="Search supplies" /></label>
+                    <label class="shiny-filter"><input type="checkbox" id="inventory-zero" /> Include empty stacks</label>
+                </div>
+                <p id="inventory-count" role="status" aria-live="polite"></p>
+                <div id="inventory-groups"></div>
             </section>
             <section class="field-note">
                 <span class="note-icon">☾</span>

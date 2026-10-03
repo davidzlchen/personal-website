@@ -46,3 +46,13 @@ values are displayed explicitly. Pokémon species/shiny artwork is served from
 [PokéAPI sprites](https://github.com/PokeAPI/sprites); in-game costumes may differ.
 
 Capture details expose only each Pokémon’s game island and date met, plus the existing roster snapshot date. `pokemon-sleep/areas.json` maps capture field IDs using the game’s `fields` master table and English `MD_fields` labels (master version 134). Date met uses America/New_York, matching the owner’s timezone. Raw capture timestamps, account IDs, and API payloads remain private. Unknown islands or dates stay unfilled.
+
+## Supplies snapshot
+
+The item bag includes Dream Shards, ingredients, consumable items, incense, and Pokémon candy balances from the same full snapshot. Candy balances are shared by an evolution family, not summed across individual Pokémon. Empty stacks are hidden by default. Unresolved names stay flagged; absent balances stay unknown. This is a dated snapshot, not a live account connection.
+
+```sh
+python3 scripts/export-sleep-inventory.py /private/roster-decoded.json --roster /private/mapped-pokemon.json --captured-at YYYY-MM-DD
+```
+
+`inventory-reference.json` contains public game references from master version 134 (`item_name_data`, `cooking_foods`, `species_candies`, `pokemon_incense`, `pokemons`) and their English Message Studio labels. Dynamic candy/incense labels substitute the explicitly linked target species/Pokémon name. `UD.main.all.coin` holds Dream Shards; `UD.invent.all` entries use `typ`, `id`, and `cnt`. Type 18 is species candy, joined via each Pokémon's `species_id` in the game master table. Only names, counts, descriptions, and local roster row keys are exported. Account fields, diamonds, timestamps, purchase data, and credentials are excluded.
