@@ -54,3 +54,9 @@
 .article-body .deploy-button { display: inline-flex; align-items: center; min-height: 44px; padding: 9px 18px; border-radius: 7px; background: var(--ink); color: var(--paper); font-size: 16px; font-weight: 600; text-decoration: none; }
 .article-body .deploy-button:hover { background: #375e57; }
 .deploy-template p { margin: 16px 0 0; color: #53675f; font-size: 16px; line-height: 1.7; }
+
+.article-figure { margin: 32px 0; }
+.article-figure a { display: block; }
+.article-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; }
+.article-figure figcaption { margin-top: 12px; color: #53675f; font-size: 14px; line-height: 1.7; }
+.article-figure--portrait { max-width: 500px; margin-inline: auto; }
