@@ -129,3 +129,5 @@ under `blog/<slug>/index.html` and add an entry to the blog index.
 Researcher rank uses the full response’s `UD.main.all.uExp` and cumulative `research_rank.need_user_exp` thresholds from game master version 134. Only the derived rank is published; missing or invalid EXP stays unavailable. The overview follows the selected snapshot and weekly sync exports the rank automatically.
 
 Island bests export only visited islands from `UD.bestene.all`: `ene` is best Snorlax Strength and `snrnk` maps to the game’s `snorlax_rank` row. This is not Drowsy Power. The captured rank is retained rather than recalculated against potentially changed thresholds; missing ranks stay unavailable.
+
+The area bonus column uses the saved island’s `sngm` multiplier: `(sngm - 10000) / 100` percent. The native client converts its field multiplier to a percentage above the 1.0 base. It reflects the selected capture, independent of when the personal best was achieved. Invalid or missing multipliers stay unavailable.

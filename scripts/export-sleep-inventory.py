@@ -18,6 +18,13 @@ def researcher_rank(exp, reference):
     return max(eligible) if eligible else None
 
 
+def area_bonus(value):
+    multiplier = count(value)
+    if multiplier is None or multiplier < 10000:
+        return None
+    return (multiplier - 10000) / 100
+
+
 def island_bests(source, reference):
     records = source.get('UD', {}).get('bestene', {}).get('all')
     if not isinstance(records, dict):
@@ -31,7 +38,8 @@ def island_bests(source, reference):
             continue
         rank = next((row for row in island['ranks'] if row['id'] == count(raw.get('snrnk'))), None)
         result.append({'name': island['name'], 'strength': strength,
-                       'rank': rank['name'] if rank else None})
+                       'rank': rank['name'] if rank else None,
+                       'area_bonus_percent': area_bonus(raw.get('sngm'))})
     return result
 
 

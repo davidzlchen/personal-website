@@ -30,7 +30,7 @@ def archive(root):
         for slot in mon['subskills']:
             check_keys(slot, 'name unlock_level unlocked empty')
     for island in inventory.get('island_bests', []):
-        check_keys(island, 'name strength rank')
+        check_keys(island, 'name strength rank area_bonus_percent')
     for entry in inventory['entries']:
         check_keys(entry, 'name quantity category description needs_review unresolved_label')
     for key, candy in inventory['pokemon_candies'].items():

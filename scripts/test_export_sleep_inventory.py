@@ -46,15 +46,21 @@ class InventoryTest(unittest.TestCase):
             '2': {'name': 'Cyan Beach', 'ranks': []},
             '3': {'name': 'Taupe Hollow', 'ranks': []}}}
         source = {'UD': {'bestene': {'all': {
-            '1': {'ene': 3987507, 'snrnk': 35, 'vicnt': 28, 'private': 'secret'},
+            '1': {'ene': 3987507, 'snrnk': 35, 'vicnt': 28, 'sngm': 18500, 'private': 'secret'},
             '2': {'ene': 0, 'snrnk': 1, 'vicnt': 0},
             '3': {'ene': 500, 'snrnk': 999, 'vicnt': 1}}}}}
         result = exporter.island_bests(source, reference)
         self.assertEqual(result, [
-            {'name': 'Greengrass Isle', 'strength': 3987507, 'rank': 'Master 20'},
-            {'name': 'Taupe Hollow', 'strength': 500, 'rank': None}])
+            {'name': 'Greengrass Isle', 'strength': 3987507, 'rank': 'Master 20', 'area_bonus_percent': 85},
+            {'name': 'Taupe Hollow', 'strength': 500, 'rank': None, 'area_bonus_percent': None}])
         self.assertNotIn('secret', str(result))
         self.assertEqual(exporter.island_bests({'UD': {}}, reference), [])
+
+    def test_area_bonus_multiplier_conversion(self):
+        for raw, expected in [(10000, 0), (13000, 30), (14300, 43), (16200, 62), (18500, 85), (10050, 0.5)]:
+            self.assertEqual(exporter.area_bonus(raw), expected)
+        for raw in [None, True, '18500', -1, 9999]:
+            self.assertIsNone(exporter.area_bonus(raw))
 
     def test_delta_is_not_a_full_inventory(self):
         with self.assertRaises(ValueError):

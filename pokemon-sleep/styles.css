@@ -1233,7 +1233,7 @@ progress::-moz-progress-bar {
 
 .detail-share { border: 0; background: transparent; padding: 6px 0; color: var(--muted); font: inherit; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 
-.island-bests { margin: -35px 0 45px; color: var(--muted); }
+.island-bests { margin: 0 0 45px; color: var(--muted); }
 .island-bests summary { cursor: pointer; font-size: 13px; }
 .island-bests summary span { margin-left: 10px; font-size: 11px; }
 .island-table-wrap { overflow-x: auto; }
@@ -1243,4 +1243,4 @@ progress::-moz-progress-bar {
 .island-table tbody th { font-weight: 500; color: var(--ink); }
 .island-table td { white-space: nowrap; }
 .island-table th:nth-child(n+2), .island-table td { text-align: right; padding-left: 16px; }
-@media (max-width: 600px) { .island-bests { margin-top: -15px; } .island-table { font-size: 11px; } }
+@media (max-width: 600px) { .island-table { font-size: 11px; } }
