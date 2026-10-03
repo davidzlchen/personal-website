@@ -148,14 +148,18 @@ function render() {
             else item.append(node("small", "", "?"));
             resources.append(item);
         }
-        const badges = node("div", "card-rarities");
-        for (const rarity of ["gold", "silver", "normal"]) {
-            const count = mon.subskills.filter(slot => sleepAssets.subskills[slot.name] === rarity).length;
-            if (count) {
-                const badge = node("span", `rarity-badge rarity-${rarity}`, `${count} ${rarity}`);
-                badge.title = `${count} ${rarity} subskill${count === 1 ? "" : "s"}, including locked skills`;
-                badges.append(badge);
-            }
+        const badges = node("div", "card-subskills");
+        for (const slot of mon.subskills) {
+            const rarity = sleepAssets.subskills[slot.name];
+            const abbreviation = subskillAbbreviations[slot.name] || "?";
+            const badge = node(
+                "span",
+                `subskill-badge${rarity ? ` rarity-${rarity}` : ""}${slot.unlocked ? "" : " locked"}`,
+                abbreviation,
+            );
+            badge.title = `${slot.name || "Subskill not yet mapped"} · ${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`;
+            badge.setAttribute("aria-label", badge.title);
+            badges.append(badge);
         }
         info.append(heading, skill, resources, badges, bottom);
         card.append(art, info);

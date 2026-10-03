@@ -1086,13 +1086,13 @@ progress::-moz-progress-bar {
 .card-resources small { font-size: 10px; color: var(--muted); }
 .resource-berry { border-right: 1px solid var(--line); padding-right: 8px; }
 .resource-item.locked { opacity: .55; }
-.card-rarities { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 13px; }
-.rarity-badge {
+.card-subskills { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 13px; }
+.subskill-badge {
     border: 1px solid;
     border-radius: 5px;
     padding: 3px 6px;
     font-size: 9px;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 .rarity-gold, .slot.locked.rarity-gold {
     background: linear-gradient(135deg, #fff7cf, #f7e5a0);
@@ -1119,7 +1119,7 @@ progress::-moz-progress-bar {
     .card-resources { gap: 3px; }
     .card-resources .asset-icon { width: 23px; height: 23px; }
     .card-resources small { font-size: 8px; }
-    .rarity-badge { font-size: 8px; padding: 3px 4px; }
+    .subskill-badge { font-size: 8px; padding: 3px 4px; }
     .slot-name { flex-wrap: wrap; }
 }
 
@@ -1132,3 +1132,12 @@ progress::-moz-progress-bar {
     .collection-toggles { width: 100%; }
     .collection-toggles .shiny-filter { padding-top: 0; }
 }
+
+.subskill-badge {
+    font-weight: 700;
+    min-width: 26px;
+    text-align: center;
+    line-height: 1.4;
+    cursor: help;
+}
+.subskill-badge.locked { opacity: .5; border-style: dashed; }
