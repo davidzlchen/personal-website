@@ -198,7 +198,18 @@ function section(title) {
     s.append(node("h3", "", title));
     return s;
 }
+let selectedMon = null;
+function renderCandyBalance() {
+    const box = dialog.querySelector(".candy-box");
+    if (!box || !selectedMon) return;
+    const candy = inventory?.captured_at === snapshotDate ? inventory.pokemon_candies[selectedMon.id] : null;
+    box.replaceChildren(
+        node("strong", "", candy?.name || "Candy balance unavailable"),
+        node("span", "", candy ? `${number(candy.quantity)} available` : "—"),
+    );
+}
 function showDetail(mon) {
+    selectedMon = mon;
     const header = node("div", "detail-header"),
         title = node("div");
     title.append(
@@ -223,6 +234,11 @@ function showDetail(mon) {
     meta.append(specialtyBadge(mon), berryBadge);
     if (mon.shiny) meta.append(node("span", "tag shiny-badge", "✦ Shiny"));
     body.append(meta);
+    const candySection = section("Pokémon candy");
+    candySection.append(node("div", "skill-box candy-box"));
+    candySection.append(node("p", "section-hint", "Shared by this Pokémon’s evolution family. Snapshot balance."));
+    body.append(candySection);
+
     const xp = section("Experience");
     const xpLabel = node("div", "xp-label");
     xpLabel.append(
@@ -249,11 +265,6 @@ function showDetail(mon) {
         ),
     );
     body.append(xp);
-    const candy = inventory?.captured_at === snapshotDate ? inventory.pokemon_candies[mon.id] : null;
-    const candySection = section("Pokémon candy");
-    candySection.append(node("p", "", candy ? `${candy.name || "Candy name unresolved"} · ${number(candy.quantity)} available` : "Candy balance unavailable"));
-    candySection.append(node("p", "section-hint", "Shared by this Pokémon’s evolution family. Snapshot balance."));
-    body.append(candySection);
     const main = section("Main skill"),
         box = node("div", "skill-box");
     box.append(
@@ -272,10 +283,6 @@ function showDetail(mon) {
         ["subskills", "Subskills"],
     ]) {
         const s = section(label);
-        if (key === "subskills") {
-            const legend = node("p", "rarity-legend", "Gold · Silver · Normal");
-            s.append(legend);
-        }
         for (const slot of mon[key]) {
             const row = node("div", `slot${slot.unlocked ? "" : " locked"}`),
                 name = node("span", "", slot.name || "Not yet mapped");
@@ -288,7 +295,7 @@ function showDetail(mon) {
             if (rarity) {
                 row.classList.add(`rarity-${rarity}`);
                 const text = node("span", "slot-label", slot.name || "Not yet mapped");
-                name.replaceChildren(text, node("span", "rarity-caption", rarity));
+                name.replaceChildren(text);
             }
             if (key === "ingredients" && slot.quantity != null)
                 name.append(node("em", "", `×${slot.quantity}`));
@@ -357,6 +364,7 @@ function showDetail(mon) {
     body.append(review);
     $("#detail-content").replaceChildren(header, body);
     dialog.setAttribute("aria-label", `${mon.nickname || mon.species} details`);
+    renderCandyBalance();
     dialog.showModal();
     dialog.scrollTop = 0;
 }
@@ -430,6 +438,7 @@ fetch("/pokemon-sleep/inventory.json", { cache: "no-cache" })
     })
     .then((data) => {
         inventory = data;
+        renderCandyBalance();
         $("#inventory-date").textContent = `Supplies snapshot · ${dateLabel(data.captured_at)}. Counts change as items are used.`;
         for (const [label, value] of [
             ["Dream Shards", data.dream_shards],

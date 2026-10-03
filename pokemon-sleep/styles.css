@@ -1117,9 +1117,7 @@ progress::-moz-progress-bar {
 .slot-name { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .slot-label { font-weight: 600; }
 .slot[class*="rarity-"] .slot-name { align-items: flex-start; flex-direction: column; gap: 3px; }
-.rarity-caption { font-size: 8px; text-transform: uppercase; letter-spacing: .7px; opacity: .8; }
 .slot.locked .slot-label { opacity: .7; }
-.rarity-legend { font-size: 10px; color: var(--muted); margin: -4px 0 10px; }
 @media (max-width: 480px) {
     .card-resources { gap: 3px; }
     .card-resources .asset-icon { width: 23px; height: 23px; }
@@ -1177,7 +1175,7 @@ progress::-moz-progress-bar {
 .inventory-item strong { font-size: 12px; }
 .inventory-item p { font-size: 11px; color: var(--muted); margin: 5px 0 0; }
 .inventory-quantity { font-size: 18px; font-weight: 600; }
-.section-hint { color: var(--muted); font-size: 11px; }
+.section-hint { color: var(--muted); font-size: 11px; margin: 8px 0 0; }
 @media (max-width: 700px) {
     .inventory-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .inventory-stat { padding: 15px; }
