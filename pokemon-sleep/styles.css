@@ -1275,3 +1275,12 @@ progress::-moz-progress-bar {
     .island-strength strong { font-size: clamp(19px, 5.4vw, 25px); }
     .island-bonus { font-size: 10px; }
 }
+
+.snapshot-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding: 22px 0 18px; }
+.snapshot-toolbar > .eyebrow { margin: 0; }
+.snapshot-toolbar .snapshot-picker label { min-height: 44px; padding: 10px 14px; gap: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.snapshot-toolbar .snapshot { font-size: 13px; max-width: none; color: var(--ink); }
+.snapshot-toolbar .snapshot-picker { max-width: 65%; }
+.snapshot-toolbar #history-status { font-size: 12px; line-height: 1.6; color: var(--muted); margin: 10px 0 0; }
+.snapshot-toolbar + .stats { border-top: 0; }
+@media (max-width: 600px) { .snapshot-toolbar { align-items: flex-start; } .snapshot-toolbar > .eyebrow { padding-top: 15px; font-size: 9px; letter-spacing: 1px; } }
