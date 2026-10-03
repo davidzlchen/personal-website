@@ -534,7 +534,14 @@ h2 {
     gap: 8px;
     line-height: 1.5;
 }
+.card-skill span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .card-skill strong {
+    flex-shrink: 0;
     font-size: 9px;
     white-space: nowrap;
     font-weight: 500;
@@ -990,7 +997,6 @@ progress::-moz-progress-bar {
     }
     .card-skill {
         font-size: 9px;
-        flex-wrap: wrap;
         gap: 2px;
     }
     .card .species-name {
