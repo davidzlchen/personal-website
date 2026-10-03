@@ -35,7 +35,7 @@ function natureBadges(mon, compact = false) {
         badges.append(badge);
     }
     if (!badges.childElementCount)
-        badges.append(node("span", "nature-badge neutral", mon.nature ? "No stat changes" : "Mint effects unknown"));
+        badges.append(node("span", "nature-badge neutral", mon.nature ? "No stat changes" : "Nature effects unavailable"));
     return badges;
 }
 const dialog = $("#detail");
@@ -72,7 +72,7 @@ function specialtyBadge(mon) {
     const badge = node("span", "tag specialty-badge");
     badge.dataset.specialty = mon.specialty || "";
     appendIcon(badge, "specialties", mon.specialty);
-    badge.append(document.createTextNode(mon.specialty ? `${mon.specialty} specialist` : "Specialty not yet mapped"));
+    badge.append(document.createTextNode(mon.specialty ? `${mon.specialty} specialist` : "Specialty unavailable"));
     return badge;
 }
 function artwork(mon) {
@@ -165,9 +165,9 @@ function render() {
         rp.append(node("small", "", "RP"));
         heading.append(names, rp);
         const skill = node("div", "card-skill");
-        skill.title = mon.main_skill.name || "Skill not yet mapped";
+        skill.title = mon.main_skill.name || "Skill unavailable";
         skill.append(
-            node("span", "", mon.main_skill.name || "Skill not yet mapped"),
+            node("span", "", mon.main_skill.name || "Skill unavailable"),
             node(
                 "strong",
                 "",
@@ -177,7 +177,7 @@ function render() {
             ),
         );
         const bottom = node("div", "card-nature");
-        bottom.append(node("span", "card-nature-name", mon.nature || "Nature unresolved"), natureBadges(mon, true));
+        bottom.append(node("span", "card-nature-name", mon.nature || "Nature unavailable"), natureBadges(mon, true));
         const resources = node("div", "card-resources");
         const berry = node("span", "resource-berry");
         berry.title = mon.berry || "Berry unknown";
@@ -202,7 +202,7 @@ function render() {
                 `subskill-badge${rarity ? ` rarity-${rarity}` : ""}${slot.unlocked ? "" : " locked"}`,
                 label,
             );
-            badge.title = `${slot.name || "Subskill not yet mapped"} · ${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`;
+            badge.title = `${slot.name || "Subskill unavailable"} · ${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`;
             badge.setAttribute("aria-label", badge.title);
             badges.append(badge);
         }
@@ -229,7 +229,7 @@ function renderCandyBalance() {
     box.replaceChildren();
     if (candy) appendIcon(box, "items", candy.name);
     box.append(document.createTextNode(candy ? `${candy.name} × ${number(candy.quantity)}` : "Candy unavailable"));
-    box.title = candy ? "Shared by this Pokémon’s evolution family. Snapshot balance." : "Candy balance unavailable for this roster snapshot.";
+    box.title = candy ? "Shared by this Pokémon’s evolution family." : "Candy count unavailable for this date.";
     box.setAttribute("aria-label", `${box.textContent}. ${box.title}`);
 }
 function showDetail(mon) {
@@ -289,7 +289,7 @@ function showDetail(mon) {
     const main = section("Main skill"),
         box = node("div", "skill-box");
     box.append(
-        node("strong", "", mon.main_skill.name || "Not yet mapped"),
+        node("strong", "", mon.main_skill.name || "Unavailable"),
         node(
             "span",
             "",
@@ -306,7 +306,7 @@ function showDetail(mon) {
         const s = section(label);
         for (const slot of mon[key]) {
             const row = node("div", `slot${slot.unlocked ? "" : " locked"}`),
-                name = node("span", "", slot.name || "Not yet mapped");
+                name = node("span", "", slot.name || "Unavailable");
             name.className = "slot-name";
             if (key === "ingredients") {
                 const icon = assetIcon("ingredients", slot.name);
@@ -315,7 +315,7 @@ function showDetail(mon) {
             const rarity = key === "subskills" ? sleepAssets.subskills[slot.name] : null;
             if (rarity) {
                 row.classList.add(`rarity-${rarity}`);
-                const text = node("span", "slot-label", slot.name || "Not yet mapped");
+                const text = node("span", "slot-label", slot.name || "Unavailable");
                 name.replaceChildren(text);
             }
             if (key === "ingredients" && slot.quantity != null)
@@ -331,13 +331,13 @@ function showDetail(mon) {
             s.append(row);
         }
         if (!mon[key].length)
-            s.append(node("p", "xp-caption", "Not yet mapped"));
+            s.append(node("p", "xp-caption", "Unavailable"));
         columns.append(s);
     }
     body.append(columns);
     const nature = section("Nature");
     nature.append(
-        node("div", "nature-name", mon.nature || "Mint effect not yet mapped"),
+        node("div", "nature-name", mon.nature || "Nature unavailable"),
     );
     if (!mon.nature)
         nature.append(
@@ -353,36 +353,13 @@ function showDetail(mon) {
     for (const [label, value] of [
         ["Area met", mon.met_area || "Unknown"],
         ["Date met", dateLabel(mon.met_date)],
-        ["Roster captured", dateLabel(snapshotDate)],
+        ["Collection updated", dateLabel(snapshotDate)],
     ]) {
         const row = node("div", "capture-row");
         row.append(node("span", "", label), node("strong", "", value));
         capture.append(row);
     }
     body.append(capture);
-    const review = node("details", "review");
-    review.append(node("summary", "", "About these stats"));
-    review.append(
-        node(
-            "p",
-            "",
-            "Level, RP, experience, ingredient slots, subskills, original nature, berry, and shiny status are mapped from the captured roster. Main-skill levels include active Skill Level Up bonuses.",
-        ),
-    );
-    review.append(
-        node(
-            "p",
-            "",
-            `Main skill: ${mon.main_skill.name_source || "unresolved"}. Specialty: species reference, where available. Artwork may differ from in-game costumes.`,
-        ),
-    );
-    if (mon.review_reasons.length) {
-        const list = node("ul");
-        for (const reason of mon.review_reasons)
-            list.append(node("li", "", reason));
-        review.append(list);
-    }
-    body.append(review);
     $("#detail-content").replaceChildren(header, body);
     dialog.setAttribute("aria-label", `${mon.nickname || mon.species} details`);
     renderCandyBalance();
@@ -422,12 +399,12 @@ function renderInventory() {
     const search = $("#inventory-search").value.trim().toLowerCase();
     const includeEmpty = $("#inventory-zero").checked;
     const entries = inventory.entries.filter((entry) =>
-        (includeEmpty || entry.quantity == null || entry.quantity > 0) &&
+        entry.category !== "Unmapped items" && (includeEmpty || entry.quantity == null || entry.quantity > 0) &&
         `${entry.name || entry.unresolved_label || ""} ${entry.category}`.toLowerCase().includes(search));
     const groups = $("#inventory-groups");
     const expanded = new Set([...groups.querySelectorAll("details[open]")].map((group) => group.dataset.category));
     groups.replaceChildren();
-    for (const category of ["Items", "Ingredients", "Pokémon candies", "Unmapped items"]) {
+    for (const category of ["Items", "Ingredients", "Pokémon candies"]) {
         const matching = entries.filter((entry) => entry.category === category);
         if (!matching.length) continue;
         const group = node("details", "inventory-group");
@@ -440,9 +417,9 @@ function renderInventory() {
             if (category === "Ingredients") appendIcon(item, "ingredients", entry.name);
             else appendIcon(item, "items", entry.name);
             const text = node("div", "inventory-item-text");
-            text.append(node("strong", "", entry.name || entry.unresolved_label || "Unmapped item"));
+            text.append(node("strong", "", entry.name || "Unknown item"));
             if (entry.description) text.append(node("p", "", entry.description));
-            if (entry.needs_review) text.append(node("p", "", "Needs review · name or count unresolved"));
+            if (entry.needs_review) text.append(node("p", "", "Some details unavailable"));
             item.append(text, node("span", "inventory-quantity", number(entry.quantity)));
             list.append(item);
         }
@@ -457,7 +434,7 @@ $("#inventory-zero").addEventListener("change", renderInventory);
 function applyInventory(data) {
     inventory = data;
     $("#inventory-overview").replaceChildren();
-    $("#inventory-date").textContent = `Supplies snapshot · ${dateLabel(data.captured_at)}. Counts change as items are used.`;
+    $("#inventory-date").textContent = `As of ${dateLabel(data.captured_at)}.`;
     for (const [label, value, iconCategory, iconName] of [
         ["Dream Shards", data.dream_shards, "items", "Dream Shards"],
         ["Ingredients in the bag", data.entries.filter((entry) => entry.category === "Ingredients").reduce((sum, entry) => sum + (entry.quantity || 0), 0), "ingredients", summaryIngredient],
