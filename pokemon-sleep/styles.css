@@ -1086,7 +1086,13 @@ progress::-moz-progress-bar {
 .card-resources small { font-size: 10px; color: var(--muted); }
 .resource-berry { border-right: 1px solid var(--line); padding-right: 8px; }
 .resource-item.locked { opacity: .55; }
-.card-subskills { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 13px; }
+.card-subskills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, 48px);
+    gap: 5px;
+    margin-bottom: 13px;
+}
 .subskill-badge {
     border: 1px solid;
     border-radius: 5px;
@@ -1142,8 +1148,16 @@ progress::-moz-progress-bar {
 }
 .subskill-badge.locked { opacity: .5; border-style: dashed; }
 
-.card-subskills { gap: 5px; }
-.subskill-badge { text-align: left; font-weight: 600; font-size: 10px; padding: 4px 6px; }
+.subskill-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 4px;
+}
 .card-nature { border-top: 1px solid var(--line); padding-top: 10px; }
 .card-nature-name { display: block; font-size: 11px; font-weight: 600; margin-bottom: 6px; }
 .nature-badges { display: flex; flex-wrap: wrap; gap: 5px; }
