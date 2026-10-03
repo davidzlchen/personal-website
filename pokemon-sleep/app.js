@@ -308,6 +308,13 @@ fetch("./roster.json", { cache: "no-cache" })
     })
     .then((data) => {
         roster = data.records;
+        for (const [nickname, selector] of [
+            ["charge king", ".label-one span"],
+            ["sausage king", ".label-two span"],
+        ]) {
+            const featured = roster.find((mon) => mon.nickname === nickname);
+            $(selector).textContent = featured ? `Lv. ${featured.level}` : "";
+        }
         $("#total").textContent = roster.length;
         $("#species").textContent = new Set(
             roster.map(
