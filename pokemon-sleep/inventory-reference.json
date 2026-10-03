@@ -1,0 +1,3095 @@
+{
+  "master_version": 134,
+  "items": {
+    "5:4": {
+      "name": "Focus Incense",
+      "category": "Items",
+      "description": null
+    },
+    "5:2": {
+      "name": "Luck Incense",
+      "category": "Items",
+      "description": null
+    },
+    "5:1": {
+      "name": "Growth Incense",
+      "category": "Items",
+      "description": null
+    },
+    "5:3": {
+      "name": "Recovery Incense",
+      "category": "Items",
+      "description": null
+    },
+    "22:1": {
+      "name": "Energy Pillow",
+      "category": "Items",
+      "description": null
+    },
+    "23:1": {
+      "name": "Helper Whistle",
+      "category": "Items",
+      "description": null
+    },
+    "20:1": {
+      "name": "E-Zzz Travel Ticket",
+      "category": "Items",
+      "description": null
+    },
+    "21:1": {
+      "name": "Good Camp Ticket",
+      "category": "Items",
+      "description": null
+    },
+    "9:1": {
+      "name": "Poké Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "9:3": {
+      "name": "Great Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "9:2": {
+      "name": "Master Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "10:1": {
+      "name": "Handy Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "10:2": {
+      "name": "Handy Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "10:3": {
+      "name": "Handy Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "17:1": {
+      "name": "Ingredient Ticket S",
+      "category": "Items",
+      "description": null
+    },
+    "17:2": {
+      "name": "Ingredient Ticket M",
+      "category": "Items",
+      "description": null
+    },
+    "17:3": {
+      "name": "Ingredient Ticket L",
+      "category": "Items",
+      "description": null
+    },
+    "25:1": {
+      "name": "Dream Cluster S",
+      "category": "Items",
+      "description": null
+    },
+    "25:2": {
+      "name": "Dream Cluster M",
+      "category": "Items",
+      "description": null
+    },
+    "25:3": {
+      "name": "Dream Cluster L",
+      "category": "Items",
+      "description": null
+    },
+    "28:1": {
+      "name": "Linking Cord",
+      "category": "Items",
+      "description": null
+    },
+    "28:2": {
+      "name": "Fire Stone",
+      "category": "Items",
+      "description": null
+    },
+    "28:3": {
+      "name": "Water Stone",
+      "category": "Items",
+      "description": null
+    },
+    "28:4": {
+      "name": "Thunder Stone",
+      "category": "Items",
+      "description": null
+    },
+    "28:5": {
+      "name": "Leaf Stone",
+      "category": "Items",
+      "description": null
+    },
+    "28:6": {
+      "name": "Ice Stone",
+      "category": "Items",
+      "description": null
+    },
+    "28:7": {
+      "name": "Moon Stone",
+      "category": "Items",
+      "description": null
+    },
+    "28:8": {
+      "name": "Shiny Stone",
+      "category": "Items",
+      "description": null
+    },
+    "28:9": {
+      "name": "Metal Coat",
+      "category": "Items",
+      "description": null
+    },
+    "28:10": {
+      "name": "Oval Stone",
+      "category": "Items",
+      "description": null
+    },
+    "28:11": {
+      "name": "King’s Rock",
+      "category": "Items",
+      "description": null
+    },
+    "26:1": {
+      "name": "Main Skill Seed",
+      "category": "Items",
+      "description": null
+    },
+    "27:1": {
+      "name": "Sub Skill Seed",
+      "category": "Items",
+      "description": null
+    },
+    "5:5": {
+      "name": "Friend Incense",
+      "category": "Items",
+      "description": null
+    },
+    "28:12": {
+      "name": "Dawn Stone",
+      "category": "Items",
+      "description": null
+    },
+    "32:1": {
+      "name": "Raikou Mane",
+      "category": "Items",
+      "description": null
+    },
+    "9:4": {
+      "name": "Raikou Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "33:1": {
+      "name": "Normal-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:4": {
+      "name": "Fire-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:7": {
+      "name": "Water-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:10": {
+      "name": "Electric-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:13": {
+      "name": "Grass-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:16": {
+      "name": "Ice-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:19": {
+      "name": "Fighting-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:22": {
+      "name": "Poison-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:25": {
+      "name": "Ground-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:28": {
+      "name": "Flying-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:31": {
+      "name": "Psychic-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:34": {
+      "name": "Bug-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:37": {
+      "name": "Rock-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:40": {
+      "name": "Ghost-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:43": {
+      "name": "Dragon-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:46": {
+      "name": "Dark-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:49": {
+      "name": "Steel-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:52": {
+      "name": "Fairy-Type Candy S",
+      "category": "Items",
+      "description": null
+    },
+    "33:2": {
+      "name": "Normal-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:5": {
+      "name": "Fire-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:8": {
+      "name": "Water-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:11": {
+      "name": "Electric-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:14": {
+      "name": "Grass-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:17": {
+      "name": "Ice-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:20": {
+      "name": "Fighting-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:23": {
+      "name": "Poison-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:26": {
+      "name": "Ground-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:29": {
+      "name": "Flying-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:32": {
+      "name": "Psychic-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:35": {
+      "name": "Bug-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:38": {
+      "name": "Rock-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:41": {
+      "name": "Ghost-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:44": {
+      "name": "Dragon-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:47": {
+      "name": "Dark-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:50": {
+      "name": "Steel-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:53": {
+      "name": "Fairy-Type Candy M",
+      "category": "Items",
+      "description": null
+    },
+    "33:3": {
+      "name": "Normal-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:6": {
+      "name": "Fire-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:9": {
+      "name": "Water-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:12": {
+      "name": "Electric-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:15": {
+      "name": "Grass-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:18": {
+      "name": "Ice-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:21": {
+      "name": "Fighting-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:24": {
+      "name": "Poison-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:27": {
+      "name": "Ground-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:30": {
+      "name": "Flying-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:33": {
+      "name": "Psychic-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:36": {
+      "name": "Bug-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:39": {
+      "name": "Rock-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:42": {
+      "name": "Ghost-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:45": {
+      "name": "Dragon-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:48": {
+      "name": "Dark-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:51": {
+      "name": "Steel-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "33:54": {
+      "name": "Fairy-Type Candy L",
+      "category": "Items",
+      "description": null
+    },
+    "9:5": {
+      "name": "Entei Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "32:2": {
+      "name": "Entei Mane",
+      "category": "Items",
+      "description": null
+    },
+    "9:6": {
+      "name": "Ultra Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "9:7": {
+      "name": "Suicune Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "32:3": {
+      "name": "Suicune Mane",
+      "category": "Items",
+      "description": null
+    },
+    "28:13": {
+      "name": "Razor Claw",
+      "category": "Items",
+      "description": null
+    },
+    "32:4": {
+      "name": "Dream Coin",
+      "category": "Items",
+      "description": null
+    },
+    "9:8": {
+      "name": "Cresselia Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "32:5": {
+      "name": "Cresselia Down",
+      "category": "Items",
+      "description": null
+    },
+    "34:1": {
+      "name": null,
+      "category": "Items",
+      "description": null
+    },
+    "28:14": {
+      "name": "Dusk Stone",
+      "category": "Items",
+      "description": null
+    },
+    "35:1": {
+      "name": "Neutralizing Mint",
+      "category": "Items",
+      "description": null
+    },
+    "36:1": {
+      "name": "Expert Ticket",
+      "category": "Items",
+      "description": null
+    },
+    "32:6": {
+      "name": "Pokémon material",
+      "category": "Items",
+      "description": null
+    },
+    "9:9": {
+      "name": "Premier Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "32:7": {
+      "name": "Dream Coin",
+      "category": "Items",
+      "description": null
+    },
+    "22:2": {
+      "name": "Berry Juice",
+      "category": "Items",
+      "description": null
+    },
+    "34:2": {
+      "name": null,
+      "category": "Items",
+      "description": null
+    },
+    "9:10": {
+      "name": "Latias Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "32:8": {
+      "name": "Latias Down",
+      "category": "Items",
+      "description": null
+    },
+    "9:11": {
+      "name": "Latias and Latios Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "32:9": {
+      "name": "Latios Down",
+      "category": "Items",
+      "description": null
+    },
+    "37:1": {
+      "name": "Relaxing Nap Ticket",
+      "category": "Items",
+      "description": null
+    },
+    "26:2": {
+      "name": null,
+      "category": "Items",
+      "description": null
+    },
+    "26:3": {
+      "name": null,
+      "category": "Items",
+      "description": null
+    },
+    "9:12": {
+      "name": "Mewtwo Biscuit",
+      "category": "Items",
+      "description": null
+    },
+    "32:10": {
+      "name": "Mewtwo DNA",
+      "category": "Items",
+      "description": null
+    },
+    "26:4": {
+      "name": null,
+      "category": "Items",
+      "description": null
+    },
+    "26:5": {
+      "name": null,
+      "category": "Items",
+      "description": null
+    },
+    "4:1": {
+      "name": "Large Leek",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2": {
+      "name": "Tasty Mushroom",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3": {
+      "name": "Fancy Egg",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:4": {
+      "name": "Soft Potato",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:5": {
+      "name": "Fancy Apple",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:6": {
+      "name": "Fiery Herb",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:7": {
+      "name": "Bean Sausage",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:8": {
+      "name": "Moomoo Milk",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:9": {
+      "name": "Honey",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:10": {
+      "name": "Pure Oil",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:11": {
+      "name": "Warming Ginger",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:12": {
+      "name": "Snoozy Tomato",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:13": {
+      "name": "Soothing Cacao",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:14": {
+      "name": "Slowpoke Tail",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:15": {
+      "name": "Greengrass Soybeans",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:16": {
+      "name": "Greengrass Corn",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:17": {
+      "name": "Rousing Coffee",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:18": {
+      "name": "Plump Pumpkin",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:19": {
+      "name": "Glossy Avocado",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1000": {
+      "name": "Mixed Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1001": {
+      "name": "Fancy Apple Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1002": {
+      "name": "Grilled Tail Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1003": {
+      "name": "“Solar Power” Tomato Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1004": {
+      "name": "“Dream Eater” Butter Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1005": {
+      "name": "Spicy Leek Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1006": {
+      "name": "“Spore” Mushroom Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1007": {
+      "name": "“Egg Bomb” Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1008": {
+      "name": "Hearty Cheeseburger Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1009": {
+      "name": "Soft Potato Chowder",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1010": {
+      "name": "Simple Chowder",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1011": {
+      "name": "Beanburger Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1012": {
+      "name": "Mild Honey Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1013": {
+      "name": "Ninja Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1014": {
+      "name": "“Drought” Katsu Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1015": {
+      "name": "Melty Omelette Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1016": {
+      "name": "“Bulk Up” Bean Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2000": {
+      "name": "Mixed Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2001": {
+      "name": "Slowpoke Tail Pepper Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2002": {
+      "name": "“Spore” Mushroom Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2003": {
+      "name": "“Snow Cloak” Caesar Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2004": {
+      "name": "“Gluttony” Potato Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2005": {
+      "name": "“Water Veil” Tofu Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2006": {
+      "name": "“Superpower” Extreme Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2007": {
+      "name": "Bean Ham Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2008": {
+      "name": "Snoozy Tomato Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2009": {
+      "name": "Moomoo Caprese Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2010": {
+      "name": "“Contrary” Chocolate Meat Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2011": {
+      "name": "“Overheat” Ginger Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2012": {
+      "name": "Fancy Apple Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2013": {
+      "name": "“Immunity” Leek Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2014": {
+      "name": "“Dazzling” Apple Cheese Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2015": {
+      "name": "Ninja Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2016": {
+      "name": "“Heat Wave” Tofu Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3000": {
+      "name": "Mixed Juice",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3001": {
+      "name": "“Fluffy” Sweet Potatoes",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3002": {
+      "name": "“Steadfast” Ginger Cookies",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3003": {
+      "name": "Fancy Apple Juice",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3004": {
+      "name": "Craft Soda Pop",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3005": {
+      "name": "“Ember” Ginger Tea",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3006": {
+      "name": "Jigglypuff’s Fruity Flan",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3007": {
+      "name": "“Lovely Kiss” Smoothie",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3008": {
+      "name": "“Lucky Chant” Apple Pie",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3009": {
+      "name": "Neroli’s Restorative Tea",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3010": {
+      "name": "“Sweet Scent” Chocolate Cake",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3011": {
+      "name": "Warm Moomoo Milk",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3012": {
+      "name": "“Cloud Nine” Soy Cake",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3013": {
+      "name": "“Hustle” Protein Smoothie",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3014": {
+      "name": "“Stalwart” Vegetable Juice",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3015": {
+      "name": "Big Malasada",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3016": {
+      "name": "“Huge Power” Soy Donuts",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1017": {
+      "name": "“Limber” Corn Stew",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1018": {
+      "name": "“Inferno” Corn Keema Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2017": {
+      "name": "Greengrass Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2018": {
+      "name": "“Calm Mind” Fruit Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2019": {
+      "name": "“Fury Attack” Corn Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3017": {
+      "name": "“Explosion” Popcorn",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3018": {
+      "name": "“Teatime” Corn Scones",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3019": {
+      "name": "“Petal Dance” Chocolate Tart",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3020": {
+      "name": "“Flower Gift” Macarons",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1019": {
+      "name": "“Dizzy Punch” Spicy Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1020": {
+      "name": "“Hidden Power” Perk-Up Stew",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2020": {
+      "name": "“Cross Chop” Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2021": {
+      "name": "“Defiant” Coffee-Dressed Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3021": {
+      "name": "“Early Bird” Coffee Jelly",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3022": {
+      "name": "“Zing Zap” Spiced Cola",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3023": {
+      "name": "“Mold Breaker” Corn Tiramisu",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3024": {
+      "name": "Clodsire Éclair",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2022": {
+      "name": "“Petal Blizzard” Layered Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2023": {
+      "name": "“Apple Acid” Yogurt-Dressed Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1021": {
+      "name": "“Cut” Sukiyaki Curry",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1022": {
+      "name": "“Role Play” Pumpkaboo Stew",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3025": {
+      "name": "“Scary Face” Pancakes",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1023": {
+      "name": "“Overgrow” Avocado Gratin",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2024": {
+      "name": "Luscious Avocado Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2025": {
+      "name": "“Bulldoze” Guacamole and Chips",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3026": {
+      "name": "“Leaf Tornado” Smoothie",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:3027": {
+      "name": "“Honey Gather” Chocolate Waffles",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:2026": {
+      "name": "“Scald” Chunky Salad",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1024": {
+      "name": "Greengrass Curry Bun",
+      "category": "Ingredients",
+      "description": null
+    },
+    "4:1025": {
+      "name": "“Bounce” Curry Udon",
+      "category": "Ingredients",
+      "description": null
+    },
+    "18:1": {
+      "name": "Pikachu Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:2": {
+      "name": "Eevee Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:3": {
+      "name": "Rattata Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:4": {
+      "name": "Meowth Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:6": {
+      "name": "Bulbasaur Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:8": {
+      "name": "Caterpie Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:11": {
+      "name": "Jigglypuff Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:12": {
+      "name": "Squirtle Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:14": {
+      "name": "Charmander Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:16": {
+      "name": "Slowpoke Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:17": {
+      "name": "Totodile Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:19": {
+      "name": "Diglett Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:23": {
+      "name": "Togepi Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:24": {
+      "name": "Geodude Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:26": {
+      "name": "Ekans Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:28": {
+      "name": "Cubone Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:29": {
+      "name": "Cyndaquil Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:32": {
+      "name": "Growlithe Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:35": {
+      "name": "Mankey Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:36": {
+      "name": "Bellsprout Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:39": {
+      "name": "Mareep Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:40": {
+      "name": "Sudowoodo Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:41": {
+      "name": "Psyduck Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:43": {
+      "name": "Doduo Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:44": {
+      "name": "Gastly Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:47": {
+      "name": "Chikorita Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:50": {
+      "name": "Wobbuffet Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:51": {
+      "name": "Gulpin Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:53": {
+      "name": "Swablu Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:56": {
+      "name": "Croagunk Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:65": {
+      "name": "Magnemite Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:69": {
+      "name": "Kangaskhan Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:70": {
+      "name": "Pinsir Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:71": {
+      "name": "Ditto Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:86": {
+      "name": "Heracross Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:87": {
+      "name": "Larvitar Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:91": {
+      "name": "Absol Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:94": {
+      "name": "Slakoth Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:101": {
+      "name": "Lucario Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:102": {
+      "name": "Spheal Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:105": {
+      "name": "Houndour Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:107": {
+      "name": "Sableye Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:110": {
+      "name": "Mr. Mime Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:112": {
+      "name": "Clefairy Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:114": {
+      "name": "Shuppet Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:116": {
+      "name": "Onix Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:118": {
+      "name": "Delibird Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:119": {
+      "name": "Snover Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:121": {
+      "name": "Dratini Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:124": {
+      "name": "Ralts Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:128": {
+      "name": "Stufful Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:130": {
+      "name": "Dedenne Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:131": {
+      "name": "Raikou Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:132": {
+      "name": "Comfey Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:133": {
+      "name": "Vulpix Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:135": {
+      "name": "Entei Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:136": {
+      "name": "Cramorant Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:137": {
+      "name": "Sprigatito Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:140": {
+      "name": "Fuecoco Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:143": {
+      "name": "Quaxly Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:146": {
+      "name": "Wooper Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:148": {
+      "name": "Suicune Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:149": {
+      "name": "Grubbin Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:152": {
+      "name": "Shinx Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:155": {
+      "name": "Aron Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:158": {
+      "name": "Drifloon Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:160": {
+      "name": "Mimikyu Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:161": {
+      "name": "Sneasel Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:163": {
+      "name": "Pawmi Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:166": {
+      "name": "Rufflet Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:169": {
+      "name": "Munna Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:171": {
+      "name": "Cresselia Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:172": {
+      "name": "Darkrai Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:174": {
+      "name": "Chansey Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:176": {
+      "name": "Murkrow Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:178": {
+      "name": "Mawile Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:179": {
+      "name": "Farfetch’d Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:180": {
+      "name": "Treecko Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:183": {
+      "name": "Torchic Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:186": {
+      "name": "Mudkip Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:189": {
+      "name": "Minun Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:190": {
+      "name": "Plusle Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:191": {
+      "name": "Toxel Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:193": {
+      "name": "Natu Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:195": {
+      "name": "Pumpkaboo Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:197": {
+      "name": "Bagon Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:200": {
+      "name": "Trapinch Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:203": {
+      "name": "Dwebble Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:205": {
+      "name": "Spiritomb Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:206": {
+      "name": "Togedemaru Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:207": {
+      "name": "Cetoddle Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:209": {
+      "name": "Shuckle Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:210": {
+      "name": "Cutiefly Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:212": {
+      "name": "Mew Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:213": {
+      "name": "Noibat Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:215": {
+      "name": "Latias Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:216": {
+      "name": "Sandshrew Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:218": {
+      "name": "Tyrunt Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:220": {
+      "name": "Drampa Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:221": {
+      "name": "Latios Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:222": {
+      "name": "Turtwig Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:225": {
+      "name": "Chimchar Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:228": {
+      "name": "Piplup Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:231": {
+      "name": "Hawlucha Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:232": {
+      "name": "Tinkatink Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:235": {
+      "name": "Mewtwo Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "18:236": {
+      "name": "Foongus Candy",
+      "category": "Pokémon candies",
+      "description": null
+    },
+    "29:1": {
+      "name": "Pikachu Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:2": {
+      "name": "Eevee Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:3": {
+      "name": "Rattata Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:4": {
+      "name": "Meowth Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:5": {
+      "name": "Pichu Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:6": {
+      "name": "Bulbasaur Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:7": {
+      "name": "Ivysaur Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:8": {
+      "name": "Caterpie Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:9": {
+      "name": "Metapod Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:10": {
+      "name": "Butterfree Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:11": {
+      "name": "Jigglypuff Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:12": {
+      "name": "Squirtle Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:13": {
+      "name": "Wartortle Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:14": {
+      "name": "Charmander Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:15": {
+      "name": "Charmeleon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:16": {
+      "name": "Slowpoke Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:17": {
+      "name": "Totodile Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:18": {
+      "name": "Croconaw Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:19": {
+      "name": "Diglett Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:20": {
+      "name": "Dugtrio Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:21": {
+      "name": "Wigglytuff Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:22": {
+      "name": "Venusaur Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:23": {
+      "name": "Togepi Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:24": {
+      "name": "Geodude Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:25": {
+      "name": "Graveler Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:26": {
+      "name": "Ekans Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:27": {
+      "name": "Arbok Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:28": {
+      "name": "Cubone Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:29": {
+      "name": "Cyndaquil Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:30": {
+      "name": "Quilava Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:31": {
+      "name": "Blastoise Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:32": {
+      "name": "Growlithe Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:33": {
+      "name": "Charizard Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:34": {
+      "name": "Raticate Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:35": {
+      "name": "Mankey Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:36": {
+      "name": "Bellsprout Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:37": {
+      "name": "Weepinbell Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:38": {
+      "name": "Igglybuff Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:39": {
+      "name": "Mareep Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:40": {
+      "name": "Sudowoodo Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:41": {
+      "name": "Psyduck Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:42": {
+      "name": "Slowbro Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:43": {
+      "name": "Doduo Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:44": {
+      "name": "Gastly Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:45": {
+      "name": "Haunter Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:46": {
+      "name": "Marowak Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:47": {
+      "name": "Chikorita Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:48": {
+      "name": "Bayleef Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:49": {
+      "name": "Flaaffy Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:50": {
+      "name": "Wobbuffet Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:51": {
+      "name": "Gulpin Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:52": {
+      "name": "Swalot Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:53": {
+      "name": "Swablu Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:54": {
+      "name": "Wynaut Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:55": {
+      "name": "Bonsly Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:56": {
+      "name": "Croagunk Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:57": {
+      "name": "Toxicroak Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:58": {
+      "name": "Raichu Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:59": {
+      "name": "Persian Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:60": {
+      "name": "Golduck Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:61": {
+      "name": "Primeape Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:62": {
+      "name": "Arcanine Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:63": {
+      "name": "Victreebel Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:64": {
+      "name": "Golem Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:65": {
+      "name": "Magnemite Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:66": {
+      "name": "Magneton Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:67": {
+      "name": "Dodrio Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:68": {
+      "name": "Gengar Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:69": {
+      "name": "Kangaskhan Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:70": {
+      "name": "Pinsir Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:71": {
+      "name": "Ditto Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:72": {
+      "name": "Vaporeon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:73": {
+      "name": "Jolteon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:74": {
+      "name": "Flareon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:78": {
+      "name": "Meganium Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:79": {
+      "name": "Typhlosion Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:80": {
+      "name": "Feraligatr Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:81": {
+      "name": "Togetic Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:82": {
+      "name": "Ampharos Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:83": {
+      "name": "Espeon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:84": {
+      "name": "Umbreon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:85": {
+      "name": "Slowking Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:86": {
+      "name": "Heracross Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:87": {
+      "name": "Larvitar Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:88": {
+      "name": "Pupitar Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:89": {
+      "name": "Tyranitar Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:90": {
+      "name": "Leafeon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:91": {
+      "name": "Absol Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:92": {
+      "name": "Sylveon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:93": {
+      "name": "Togekiss Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:94": {
+      "name": "Slakoth Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:95": {
+      "name": "Vigoroth Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:96": {
+      "name": "Slaking Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:97": {
+      "name": "Magnezone Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:98": {
+      "name": "Glaceon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:99": {
+      "name": "Altaria Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:100": {
+      "name": "Riolu Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:101": {
+      "name": "Lucario Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:102": {
+      "name": "Spheal Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:103": {
+      "name": "Sealeo Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:104": {
+      "name": "Walrein Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:105": {
+      "name": "Houndour Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:106": {
+      "name": "Houndoom Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:107": {
+      "name": "Sableye Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:109": {
+      "name": "Mime Jr. Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:110": {
+      "name": "Mr. Mime Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:111": {
+      "name": "Cleffa Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:112": {
+      "name": "Clefairy Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:113": {
+      "name": "Clefable Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:9001": {
+      "name": "Pikachu (Halloween) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:114": {
+      "name": "Shuppet Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:115": {
+      "name": "Banette Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:116": {
+      "name": "Onix Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:117": {
+      "name": "Steelix Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:118": {
+      "name": "Delibird Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:119": {
+      "name": "Snover Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:120": {
+      "name": "Abomasnow Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:9002": {
+      "name": "Pikachu (Holiday) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:121": {
+      "name": "Dratini Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:122": {
+      "name": "Dragonair Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:123": {
+      "name": "Dragonite Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:124": {
+      "name": "Ralts Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:125": {
+      "name": "Kirlia Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:126": {
+      "name": "Gardevoir Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:127": {
+      "name": "Gallade Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:128": {
+      "name": "Stufful Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:129": {
+      "name": "Bewear Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:130": {
+      "name": "Dedenne Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:131": {
+      "name": "Raikou Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:132": {
+      "name": "Comfey Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:133": {
+      "name": "Vulpix Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:134": {
+      "name": "Ninetales Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:135": {
+      "name": "Entei Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:136": {
+      "name": "Cramorant Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:137": {
+      "name": "Sprigatito Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:138": {
+      "name": "Floragato Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:139": {
+      "name": "Meowscarada Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:140": {
+      "name": "Fuecoco Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:141": {
+      "name": "Crocalor Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:142": {
+      "name": "Skeledirge Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:143": {
+      "name": "Quaxly Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:144": {
+      "name": "Quaxwell Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:145": {
+      "name": "Quaquaval Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:146": {
+      "name": "Wooper Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:147": {
+      "name": "Quagsire Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:148": {
+      "name": "Suicune Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:149": {
+      "name": "Grubbin Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:150": {
+      "name": "Charjabug Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:151": {
+      "name": "Vikavolt Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:152": {
+      "name": "Shinx Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:153": {
+      "name": "Luxio Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:154": {
+      "name": "Luxray Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:155": {
+      "name": "Aron Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:156": {
+      "name": "Lairon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:157": {
+      "name": "Aggron Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:158": {
+      "name": "Drifloon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:159": {
+      "name": "Drifblim Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:160": {
+      "name": "Mimikyu Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:9003": {
+      "name": "Pikachu (Halloween) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:161": {
+      "name": "Sneasel Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:162": {
+      "name": "Weavile Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:163": {
+      "name": "Pawmi Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:164": {
+      "name": "Pawmo Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:165": {
+      "name": "Pawmot Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:7006": {
+      "name": "Vulpix (Alolan Form) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:7007": {
+      "name": "Ninetales (Alolan Form) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:9004": {
+      "name": "Eevee (Holiday) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:166": {
+      "name": "Rufflet Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:167": {
+      "name": "Braviary Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:7054": {
+      "name": "Wooper (Paldean Form) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:168": {
+      "name": "Clodsire Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:169": {
+      "name": "Munna Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:170": {
+      "name": "Musharna Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:171": {
+      "name": "Cresselia Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:173": {
+      "name": "Happiny Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:174": {
+      "name": "Chansey Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:175": {
+      "name": "Blissey Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:176": {
+      "name": "Murkrow Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:177": {
+      "name": "Honchkrow Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:178": {
+      "name": "Mawile Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:179": {
+      "name": "Farfetch’d Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:180": {
+      "name": "Treecko Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:181": {
+      "name": "Grovyle Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:182": {
+      "name": "Sceptile Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:183": {
+      "name": "Torchic Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:184": {
+      "name": "Combusken Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:185": {
+      "name": "Blaziken Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:186": {
+      "name": "Mudkip Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:187": {
+      "name": "Marshtomp Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:188": {
+      "name": "Swampert Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:189": {
+      "name": "Minun Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:190": {
+      "name": "Plusle Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:191": {
+      "name": "Toxel Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:192": {
+      "name": "Toxtricity (Amped Form) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:8001": {
+      "name": "Toxtricity (Low Key Form) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:193": {
+      "name": "Natu Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:194": {
+      "name": "Xatu Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:195": {
+      "name": "Pumpkaboo Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:196": {
+      "name": "Gourgeist Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:9005": {
+      "name": "Eevee (Halloween) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:197": {
+      "name": "Bagon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:198": {
+      "name": "Shelgon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:199": {
+      "name": "Salamence Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:200": {
+      "name": "Trapinch Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:201": {
+      "name": "Vibrava Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:202": {
+      "name": "Flygon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:203": {
+      "name": "Dwebble Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:204": {
+      "name": "Crustle Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:205": {
+      "name": "Spiritomb Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:206": {
+      "name": "Togedemaru Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:207": {
+      "name": "Cetoddle Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:208": {
+      "name": "Cetitan Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:9006": {
+      "name": "Spheal (Holiday) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:209": {
+      "name": "Shuckle Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:210": {
+      "name": "Cutiefly Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:211": {
+      "name": "Ribombee Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:213": {
+      "name": "Noibat Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:214": {
+      "name": "Noivern Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:215": {
+      "name": "Latias Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:216": {
+      "name": "Sandshrew Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:217": {
+      "name": "Sandslash Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:218": {
+      "name": "Tyrunt Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:219": {
+      "name": "Tyrantrum Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:220": {
+      "name": "Drampa Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:221": {
+      "name": "Latios Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:222": {
+      "name": "Turtwig Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:223": {
+      "name": "Grotle Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:224": {
+      "name": "Torterra Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:225": {
+      "name": "Chimchar Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:226": {
+      "name": "Monferno Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:227": {
+      "name": "Infernape Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:228": {
+      "name": "Piplup Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:229": {
+      "name": "Prinplup Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:230": {
+      "name": "Empoleon Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:231": {
+      "name": "Hawlucha Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:232": {
+      "name": "Tinkatink Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:233": {
+      "name": "Tinkatuff Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:234": {
+      "name": "Tinkaton Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:9007": {
+      "name": "Pikachu (Captain) Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:235": {
+      "name": "Mewtwo Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:236": {
+      "name": "Foongus Incense",
+      "category": "Items",
+      "description": null
+    },
+    "29:237": {
+      "name": "Amoonguss Incense",
+      "category": "Items",
+      "description": null
+    }
+  },
+  "pokemon_candy_ids": {
+    "1": "1",
+    "2": "2",
+    "3": "3",
+    "4": "4",
+    "5": "1",
+    "6": "6",
+    "7": "6",
+    "8": "8",
+    "9": "8",
+    "10": "8",
+    "11": "11",
+    "12": "12",
+    "13": "12",
+    "14": "14",
+    "15": "14",
+    "16": "16",
+    "17": "17",
+    "18": "17",
+    "19": "19",
+    "20": "19",
+    "21": "11",
+    "22": "6",
+    "23": "23",
+    "24": "24",
+    "25": "24",
+    "26": "26",
+    "27": "26",
+    "28": "28",
+    "29": "29",
+    "30": "29",
+    "31": "12",
+    "32": "32",
+    "33": "14",
+    "34": "3",
+    "35": "35",
+    "36": "36",
+    "37": "36",
+    "38": "11",
+    "39": "39",
+    "40": "40",
+    "41": "41",
+    "42": "16",
+    "43": "43",
+    "44": "44",
+    "45": "44",
+    "46": "28",
+    "47": "47",
+    "48": "47",
+    "49": "39",
+    "50": "50",
+    "51": "51",
+    "52": "51",
+    "53": "53",
+    "54": "50",
+    "55": "40",
+    "56": "56",
+    "57": "56",
+    "58": "1",
+    "59": "4",
+    "60": "41",
+    "61": "35",
+    "62": "32",
+    "63": "36",
+    "64": "24",
+    "65": "65",
+    "66": "65",
+    "67": "43",
+    "68": "44",
+    "69": "69",
+    "70": "70",
+    "71": "71",
+    "72": "2",
+    "73": "2",
+    "74": "2",
+    "78": "47",
+    "79": "29",
+    "80": "17",
+    "81": "23",
+    "82": "39",
+    "83": "2",
+    "84": "2",
+    "85": "16",
+    "86": "86",
+    "87": "87",
+    "88": "87",
+    "89": "87",
+    "90": "2",
+    "91": "91",
+    "92": "2",
+    "93": "23",
+    "94": "94",
+    "95": "94",
+    "96": "94",
+    "97": "65",
+    "98": "2",
+    "99": "53",
+    "100": "101",
+    "101": "101",
+    "102": "102",
+    "103": "102",
+    "104": "102",
+    "105": "105",
+    "106": "105",
+    "107": "107",
+    "109": "110",
+    "110": "110",
+    "111": "112",
+    "112": "112",
+    "113": "112",
+    "9001": "1",
+    "114": "114",
+    "115": "114",
+    "116": "116",
+    "117": "116",
+    "118": "118",
+    "119": "119",
+    "120": "119",
+    "9002": "1",
+    "121": "121",
+    "122": "121",
+    "123": "121",
+    "124": "124",
+    "125": "124",
+    "126": "124",
+    "127": "124",
+    "128": "128",
+    "129": "128",
+    "130": "130",
+    "131": "131",
+    "132": "132",
+    "133": "133",
+    "134": "133",
+    "135": "135",
+    "136": "136",
+    "137": "137",
+    "138": "137",
+    "139": "137",
+    "140": "140",
+    "141": "140",
+    "142": "140",
+    "143": "143",
+    "144": "143",
+    "145": "143",
+    "146": "146",
+    "147": "146",
+    "148": "148",
+    "149": "149",
+    "150": "149",
+    "151": "149",
+    "152": "152",
+    "153": "152",
+    "154": "152",
+    "155": "155",
+    "156": "155",
+    "157": "155",
+    "158": "158",
+    "159": "158",
+    "160": "160",
+    "161": "161",
+    "162": "161",
+    "163": "163",
+    "164": "163",
+    "165": "163",
+    "7006": "133",
+    "7007": "133",
+    "9004": "2",
+    "166": "166",
+    "167": "166",
+    "7054": "146",
+    "168": "146",
+    "169": "169",
+    "170": "169",
+    "171": "171",
+    "172": "172",
+    "173": "174",
+    "174": "174",
+    "175": "174",
+    "176": "176",
+    "177": "176",
+    "178": "178",
+    "179": "179",
+    "180": "180",
+    "181": "180",
+    "182": "180",
+    "183": "183",
+    "184": "183",
+    "185": "183",
+    "186": "186",
+    "187": "186",
+    "188": "186",
+    "189": "189",
+    "190": "190",
+    "191": "191",
+    "192": "191",
+    "8001": "191",
+    "193": "193",
+    "194": "193",
+    "195": "195",
+    "196": "195",
+    "9005": "2",
+    "197": "197",
+    "198": "197",
+    "199": "197",
+    "200": "200",
+    "201": "200",
+    "202": "200",
+    "203": "203",
+    "204": "203",
+    "205": "205",
+    "206": "206",
+    "207": "207",
+    "208": "207",
+    "9006": "102",
+    "209": "209",
+    "210": "210",
+    "211": "210",
+    "212": "212",
+    "213": "213",
+    "214": "213",
+    "215": "215",
+    "216": "216",
+    "217": "216",
+    "218": "218",
+    "219": "218",
+    "220": "220",
+    "221": "221",
+    "222": "222",
+    "223": "222",
+    "224": "222",
+    "225": "225",
+    "226": "225",
+    "227": "225",
+    "228": "228",
+    "229": "228",
+    "230": "228",
+    "231": "231",
+    "232": "232",
+    "233": "232",
+    "234": "232",
+    "9007": "1",
+    "235": "235",
+    "236": "236",
+    "237": "236"
+  }
+}

@@ -1,0 +1,57 @@
+"""Export only game item names/counts from an existing full API snapshot."""
+import argparse
+import datetime
+import json
+from pathlib import Path
+
+
+def count(value):
+    return value if isinstance(value, int) and not isinstance(value, bool) and value >= 0 else None
+
+
+def sanitize(source, reference, captured_at, roster):
+    ud = source['UD']
+    if not isinstance(ud.get('invent', {}).get('all'), dict):
+        raise ValueError('A full inventory snapshot is required, not a delta.')
+    entries = []
+    candies = {}
+    for raw in ud['invent']['all'].values():
+        key = f"{raw.get('typ')}:{raw.get('id')}"
+        lookup = reference['items'].get(key, {})
+        name = lookup.get('name')
+        entry = {'name': name, 'quantity': count(raw.get('cnt')),
+                 'category': lookup.get('category', 'Unmapped items'),
+                 'description': lookup.get('description'),
+                 'needs_review': not name or count(raw.get('cnt')) is None}
+        if not name:
+            entry['unresolved_label'] = f"Item type {raw.get('typ')}, ID {raw.get('id')}"
+        entries.append(entry)
+        if raw.get('typ') == 18:
+            candies[str(raw.get('id'))] = entry
+    pokemon_candies = {}
+    for index, mon in enumerate(roster['records'], 1):
+        candy_id = reference['pokemon_candy_ids'].get(str(mon.get('species_id')))
+        if candy_id in candies:
+            pokemon_candies[f'mon-{index}'] = {k: candies[candy_id][k] for k in ('name', 'quantity')}
+    return {'captured_at': captured_at,
+            'dream_shards': count(ud.get('main', {}).get('all', {}).get('coin')),
+            'entries': sorted(entries, key=lambda x: (x['category'], x['name'] or x.get('unresolved_label', ''))),
+            'pokemon_candies': pokemon_candies}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('input', type=Path)
+    parser.add_argument('--roster', required=True, type=Path, help='Private mapped roster from the same snapshot')
+    parser.add_argument('--captured-at', required=True)
+    parser.add_argument('--output', type=Path, default=Path('pokemon-sleep/inventory.json'))
+    args = parser.parse_args()
+    datetime.date.fromisoformat(args.captured_at)
+    reference = json.loads((Path(__file__).resolve().parents[1] / 'pokemon-sleep/inventory-reference.json').read_text())
+    result = sanitize(json.loads(args.input.read_text()), reference, args.captured_at, json.loads(args.roster.read_text()))
+    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+    print(f'Exported {len(result["entries"])} inventory entries.')
+
+
+if __name__ == '__main__':
+    main()

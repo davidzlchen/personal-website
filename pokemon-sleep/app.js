@@ -5,6 +5,7 @@ const number = (value) =>
 let roster = [],
     specialty = "";
 let snapshotDate = null;
+let inventory = null;
 function dateLabel(value) {
     if (!value) return "Unknown";
     return new Date(`${value}T12:00:00Z`).toLocaleDateString("en-US", {
@@ -239,6 +240,11 @@ function showDetail(mon) {
         ),
     );
     body.append(xp);
+    const candy = inventory?.captured_at === snapshotDate ? inventory.pokemon_candies[mon.id] : null;
+    const candySection = section("Pokémon candy");
+    candySection.append(node("p", "", candy ? `${candy.name || "Candy name unresolved"} · ${number(candy.quantity)} available` : "Candy balance unavailable"));
+    candySection.append(node("p", "section-hint", "Shared by this Pokémon’s evolution family. Snapshot balance."));
+    body.append(candySection);
     const main = section("Main skill"),
         box = node("div", "skill-box");
     box.append(
@@ -373,6 +379,61 @@ document.querySelectorAll(".filter").forEach((button) =>
         render();
     }),
 );
+function renderInventory() {
+    if (!inventory) return;
+    const search = $("#inventory-search").value.trim().toLowerCase();
+    const includeEmpty = $("#inventory-zero").checked;
+    const entries = inventory.entries.filter((entry) =>
+        (includeEmpty || entry.quantity == null || entry.quantity > 0) &&
+        `${entry.name || entry.unresolved_label || ""} ${entry.category}`.toLowerCase().includes(search));
+    const groups = $("#inventory-groups");
+    const expanded = new Set([...groups.querySelectorAll("details[open]")].map((group) => group.dataset.category));
+    groups.replaceChildren();
+    for (const category of ["Items", "Ingredients", "Pokémon candies", "Unmapped items"]) {
+        const matching = entries.filter((entry) => entry.category === category);
+        if (!matching.length) continue;
+        const group = node("details", "inventory-group");
+        group.dataset.category = category;
+        group.open = !!search || expanded.has(category);
+        group.append(node("summary", "", `${category} · ${matching.length} ${matching.length === 1 ? "stack" : "stacks"}`));
+        const list = node("div", "inventory-list");
+        for (const entry of matching) {
+            const item = node("div", "inventory-item");
+            if (category === "Ingredients") appendIcon(item, "ingredients", entry.name);
+            const text = node("div", "inventory-item-text");
+            text.append(node("strong", "", entry.name || entry.unresolved_label || "Unmapped item"));
+            if (entry.description) text.append(node("p", "", entry.description));
+            if (entry.needs_review) text.append(node("p", "", "Needs review · name or count unresolved"));
+            item.append(text, node("span", "inventory-quantity", number(entry.quantity)));
+            list.append(item);
+        }
+        group.append(list);
+        groups.append(group);
+    }
+    $("#inventory-count").textContent = entries.length ? `${entries.length} ${entries.length === 1 ? "stack" : "stacks"} shown` : "No supplies found. Try another search or include empty stacks.";
+}
+$("#inventory-search").addEventListener("input", renderInventory);
+$("#inventory-zero").addEventListener("change", renderInventory);
+fetch("/pokemon-sleep/inventory.json", { cache: "no-cache" })
+    .then((response) => {
+        if (!response.ok) throw new Error("Inventory unavailable");
+        return response.json();
+    })
+    .then((data) => {
+        inventory = data;
+        $("#inventory-date").textContent = `Supplies snapshot · ${dateLabel(data.captured_at)}. Counts change as items are used.`;
+        for (const [label, value] of [
+            ["Dream Shards", data.dream_shards],
+            ["Ingredients in the bag", data.entries.filter((entry) => entry.category === "Ingredients").reduce((sum, entry) => sum + (entry.quantity || 0), 0)],
+            ["Pokémon candy stacks", data.entries.filter((entry) => entry.category === "Pokémon candies" && entry.quantity > 0).length],
+        ]) {
+            const stat = node("div", "inventory-stat");
+            stat.append(node("strong", "", number(value)), node("span", "", label));
+            $("#inventory-overview").append(stat);
+        }
+        renderInventory();
+    })
+    .catch(() => { $("#inventory-date").textContent = "Supplies unavailable. Reload to try again."; });
 document.querySelectorAll(".filter[data-specialty]").forEach((button) => {
     const icon = assetIcon("specialties", button.dataset.specialty);
     if (icon) button.prepend(icon);
