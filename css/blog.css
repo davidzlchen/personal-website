@@ -1,7 +1,5 @@
 .blog-page { font-size: 16px; }
-.blog-page .nav nav { font-size: 14px; }
-.blog-page .nav { gap: 24px; }
-.blog-main { max-width: 1050px; padding-top: 72px; padding-bottom: 80px; }
+.blog-main { max-width: 1320px; padding-top: 72px; padding-bottom: 80px; }
 .blog-main .eyebrow { font-size: 12px; color: #52664f; }
 .blog-main h1 { max-width: 800px; font-size: clamp(36px, 5vw, 62px); line-height: 1.15; }
 .blog-deck { max-width: 640px; color: #53675f; font-size: 19px; line-height: 1.7; }
@@ -33,14 +31,11 @@
 .blog-page footer { font-size: 14px; }
 .blog-page .skip-link { position: absolute; top: -80px; left: 20px; padding: 12px 16px; background: var(--ink); color: white; z-index: 10; }
 .blog-page .skip-link:focus { top: 12px; }
-.home-writing { padding: 38px 0; border-top: 1px solid var(--line); }
-.home-writing h2 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.home-writing { padding: 48px 0; }
 .home-writing h2 { font-size: 27px; max-width: 720px; line-height: 1.4; }
 .home-writing .eyebrow { font-size: 12px; }
 .home-writing p { color: #53675f; font-size: 16px; line-height: 1.8; max-width: 650px; }
 @media(max-width: 740px) {
- .blog-page .nav { padding: 22px; flex-wrap: wrap; }
- .blog-page .nav nav { gap: 20px; }
  .blog-main { padding: 42px 22px 60px; }
  .blog-main h1 { letter-spacing: -1.4px; }
  .post-card, .article-layout { grid-template-columns: 1fr; gap: 18px; }
@@ -60,3 +55,19 @@
 .article-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; }
 .article-figure figcaption { margin-top: 12px; color: #53675f; font-size: 14px; line-height: 1.7; }
 .article-figure--portrait { max-width: 500px; margin-inline: auto; }
+
+.writing-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: white; transition: border-color 180ms ease; }
+.writing-card:hover { border-color: #a5b596; }
+.writing-card:focus-visible { outline: 3px solid #6b8a72; outline-offset: 5px; }
+.writing-card > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.writing-card-copy { padding: 32px 36px; align-self: center; }
+.home-writing .writing-meta { font-size: 12px; margin-bottom: 16px; }
+.writing-card h2 { margin-bottom: 12px; }
+.writing-card-copy > p { margin-bottom: 20px; }
+.writing-card-link { display: inline-flex; align-items: center; gap: 14px; font-size: 14px; font-weight: 500; }
+@media (max-width: 740px) {
+ .writing-card { grid-template-columns: 1fr; }
+ .writing-card > img { height: auto; aspect-ratio: 1200 / 630; }
+ .writing-card-copy { padding: 24px; }
+ .writing-card h2 { font-size: 24px; }
+}

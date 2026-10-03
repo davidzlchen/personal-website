@@ -12,17 +12,13 @@
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="/css/home.css" />
         <link rel="stylesheet" href="/css/blog.css" />
+        <link rel="stylesheet" href="/css/site-header.css" />
     </head>
     <body>
-        <header class="nav">
-            <a class="wordmark" href="/" aria-label="David Z. Chen home"
-                >david z. chen<span class="wordmark-dot">.</span></a
-            >
+        <header class="nav site-header">
+            <a class="wordmark" href="/" aria-label="David Z. Chen home">david z. chen<span class="wordmark-dot">.</span></a>
             <nav aria-label="Main navigation">
-                <a href="#projects">Projects</a><a href="/blog/">Blog</a><a href="#about">About</a
-                ><a href="#contact"
-                    >Say hello <span aria-hidden="true">↗</span></a
-                >
+                <a href="/#projects">Projects</a><a href="/blog/">Blog</a><a href="/#about">About</a>
             </nav>
         </header>
         <main>
@@ -372,7 +368,18 @@
                     </article>
                 </div>
             </section>
-            <section class="home-writing" aria-labelledby="writing-title"><p class="eyebrow">LATEST WRITING</p><h2 id="writing-title"><a href="/blog/pokemon-sleep-repository/">From a Pokémon box to a personal database</a></h2><p>How I built the Pokémon Sleep field notes with Codex, and a template for making your own.</p><a class="read-post" href="/blog/pokemon-sleep-repository/">Read the build story</a></section>
+            <section class="home-writing" id="writing" aria-labelledby="writing-title">
+                <p class="eyebrow">LATEST WRITING</p>
+                <a class="writing-card" href="/blog/pokemon-sleep-repository/">
+                    <img src="/pokemon-sleep/social-preview.jpg?v=field-notes" alt="Pokémon Sleep Field Notes, illustrated with Ampharos, Latias, and Aggron" width="1200" height="630" loading="lazy" />
+                    <div class="writing-card-copy">
+                        <p class="writing-meta"><time datetime="2026-10-03">October 3, 2026</time> · Build story</p>
+                        <h2 id="writing-title">From a Pokémon box to a personal database</h2>
+                        <p>How I built the Pokémon Sleep field notes with Codex, and a template for making your own.</p>
+                        <span class="writing-card-link">Read the build story <span aria-hidden="true">↗</span></span>
+                    </div>
+                </a>
+            </section>
             <section id="about" class="about" aria-labelledby="about-title">
                 <div class="about-intro">
                     <p class="eyebrow">A LITTLE ABOUT THIS CORNER</p>
