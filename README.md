@@ -83,3 +83,38 @@ python3 scripts/export-sleep-inventory.py /private/roster-decoded.json --roster 
 ```
 
 `inventory-reference.json` contains public game references from master version 134 (`item_name_data`, `cooking_foods`, `species_candies`, `pokemon_incense`, `pokemons`) and their English Message Studio labels. Dynamic candy/incense labels substitute the explicitly linked target species/Pokémon name. `UD.main.all.coin` holds Dream Shards; `UD.invent.all` entries use `typ`, `id`, and `cnt`. Type 18 is species candy, joined via each Pokémon's `species_id` in the game master table. Only names, counts, descriptions, and local roster row keys are exported. Account fields, diamonds, timestamps, purchase data, and credentials are excluded.
+
+### Special Pokémon and share links
+
+The offline mapper is now in `scripts/map_api_roster.py`, with the public game
+reference in `scripts/api-reference.json`. Darkrai and Mew use their official
+All specialty and base skills. The client uses Mew's `skPm.exSkId` as its selected
+skill ID, but caps its displayed level using the base Versatile skill. Mint type
+1 neutralizes nature effects while retaining the original nature. Explicit zero
+slots on these Mythical Pokémon require Eureka Seeds; unknown IDs remain unknown.
+
+Sources: [Mew](https://www.pokemonsleep.net/en/news/333832393735353631373931373030393934/),
+[Darkrai](https://www.pokemonsleep.net/en/news/323536313935333735313839313936383031/),
+[Neutralizing Mints](https://www.pokemonsleep.net/en/news/323930363034393439313037313133393835/).
+Client v3.8.2 methods checked offline: `GetMainSkillId` at `0x56f2c2c`,
+`get_SkillInfoExSkillId` at `0x56f2cd8`, and `GetMainSkillLevel` at `0x56f4c0c`.
+
+Copy link in each detail view creates a URL pinned to its saved snapshot and
+public row ID. This avoids assuming row IDs identify the same Pokémon in future
+captures. A missing snapshot displays a notice instead of opening another row.
+
+### Validated local sync
+
+From this repository on the configured Mac:
+
+```sh
+python3 scripts/sync_sleep_collection.py --fetch
+```
+
+This uses the existing private `.research/refresh_and_fetch.py` helper in the
+parent workspace. It validates the full response, maps and sanitizes both roster
+and supplies, and archives them together before updating public source files.
+Raw responses and credentials remain outside this repository. A failed fetch or
+validation preserves the published snapshot. Commit and deploy validated outputs
+through the normal branch/PR workflow. The Mac needs internet and its private
+session runtime; this is not a credential-bearing Vercel endpoint.

@@ -6,6 +6,7 @@ let roster = [],
     specialty = "";
 let snapshotDate = null;
 let inventory = null;
+let activeSnapshotId = null;
 // Pick decorative summary icons once per page load, independent of snapshot changes.
 const randomAssetName = (names) => names[Math.floor(Math.random() * names.length)];
 const summaryIngredient = randomAssetName(Object.keys(sleepAssets.ingredients));
@@ -35,7 +36,7 @@ function natureBadges(mon, compact = false) {
         badges.append(badge);
     }
     if (!badges.childElementCount)
-        badges.append(node("span", "nature-badge neutral", mon.nature ? "No stat changes" : "Nature effects unavailable"));
+        badges.append(node("span", "nature-badge neutral", mon.nature_neutralized ? "Mint · Neutral" : mon.nature ? "No stat changes" : "Nature effects unavailable"));
     return badges;
 }
 const dialog = $("#detail");
@@ -120,7 +121,7 @@ function render() {
     const query = $("#search").value.trim().toLocaleLowerCase();
     const shown = roster.filter(
         (mon) =>
-            (!specialty || mon.specialty === specialty) &&
+            (!specialty || mon.specialty === specialty || mon.specialty === "All") &&
             (!$("#shiny").checked || mon.shiny) &&
             (!$("#favorite").checked || mon.favorite === true) &&
             (!$("#legendary").checked || legendarySpecies.has(mon.national_dex)) &&
@@ -186,23 +187,23 @@ function render() {
         resources.append(berry);
         for (const slot of mon.ingredients) {
             const item = node("span", `resource-item${slot.unlocked ? "" : " locked"}`);
-            item.title = `${slot.name || "Ingredient unknown"} ×${slot.quantity ?? "?"} · ${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`;
+            item.title = slot.empty ? `Eureka Seed needed · Lv. ${slot.unlock_level ?? "?"}` : `${slot.name || "Ingredient unknown"} ×${slot.quantity ?? "?"} · ${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`;
             item.setAttribute("aria-label", item.title);
             appendIcon(item, "ingredients", slot.name);
             if (slot.name) item.append(node("small", "", `×${slot.quantity ?? "?"}`));
-            else item.append(node("small", "", "?"));
+            else item.append(node("small", "", slot.empty ? "—" : "?"));
             resources.append(item);
         }
         const badges = node("div", "card-subskills");
         for (const slot of mon.subskills) {
             const rarity = sleepAssets.subskills[slot.name];
-            const label = subskillAbbreviations[slot.name] || "?";
+            const label = subskillAbbreviations[slot.name] || (slot.empty ? "—" : "?");
             const badge = node(
                 "span",
                 `subskill-badge${rarity ? ` rarity-${rarity}` : ""}${slot.unlocked ? "" : " locked"}`,
                 label,
             );
-            badge.title = `${slot.name || "Subskill unavailable"} · ${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`;
+            badge.title = `${slot.empty ? "Eureka Seed needed" : slot.name || "Subskill unavailable"} · ${slot.unlocked ? "" : "Locked · "}Lv. ${slot.unlock_level ?? "?"}`;
             badge.setAttribute("aria-label", badge.title);
             badges.append(badge);
         }
@@ -250,6 +251,24 @@ function showDetail(mon) {
         ),
     );
     if (mon.favorite === true) title.querySelector("h2").append(favoriteStar());
+    if (activeSnapshotId) {
+        const link = node("button", "detail-share", "Copy link");
+        link.type = "button";
+        link.addEventListener("click", async () => {
+            const url = new URL("https://davidzlchen.com/pokemon-sleep/");
+            url.searchParams.set("snapshot", activeSnapshotId);
+            url.searchParams.set("pokemon", mon.id);
+            url.hash = "collection";
+            try {
+                await navigator.clipboard.writeText(url.href);
+                link.textContent = "Link copied";
+            } catch {
+                window.history.replaceState(null, "", `${url.search}${url.hash}`);
+                link.textContent = "Copy the address bar link";
+            }
+        });
+        title.append(link);
+    }
     header.append(artwork(mon), title);
     const body = node("div", "detail-body"),
         meta = node("div", "detail-meta");
@@ -306,7 +325,7 @@ function showDetail(mon) {
         const s = section(label);
         for (const slot of mon[key]) {
             const row = node("div", `slot${slot.unlocked ? "" : " locked"}`),
-                name = node("span", "", slot.name || "Unavailable");
+                name = node("span", "", slot.empty ? "Eureka Seed needed" : slot.name || "Unavailable");
             name.className = "slot-name";
             if (key === "ingredients") {
                 const icon = assetIcon("ingredients", slot.name);
@@ -348,6 +367,7 @@ function showDetail(mon) {
             ),
         );
     nature.append(natureBadges(mon));
+    if (mon.nature_neutralized) nature.append(node("p", "xp-caption", "Neutralizing Mint applied · Nature bonuses and penalties removed."));
     body.append(nature);
     const capture = section("Capture details");
     for (const [label, value] of [

@@ -7,7 +7,7 @@ from zoneinfo import ZoneInfo
 
 FIELDS = ('species', 'national_dex', 'nickname', 'level', 'rp', 'xp_total',
           'xp_in_level', 'xp_level_required', 'xp_to_next_level', 'nature',
-          'original_nature', 'nature_effects', 'berry', 'specialty', 'shiny')
+          'original_nature', 'nature_effects', 'nature_neutralized', 'berry', 'specialty', 'shiny')
 
 def sanitize(source, captured_at, areas=None):
     areas = areas or {}
@@ -28,8 +28,8 @@ def sanitize(source, captured_at, areas=None):
         result['variant'] = 'Paldean' if record.get('region_id') == '4' else ('Costume' if record.get('form_id') else None)
         skill = record.get('main_skill') or {}
         result['main_skill'] = {key: skill.get(key) for key in ('name', 'level', 'name_source')}
-        for field, keys in [('ingredients', ('name', 'quantity', 'unlock_level', 'unlocked')),
-                            ('subskills', ('name', 'unlock_level', 'unlocked'))]:
+        for field, keys in [('ingredients', ('name', 'quantity', 'unlock_level', 'unlocked', 'empty')),
+                            ('subskills', ('name', 'unlock_level', 'unlocked', 'empty'))]:
             result[field] = [{key: slot.get(key) for key in keys} for slot in record.get(field, [])]
         result['review_reasons'] = record.get('review_reasons', [])
         result['needs_review'] = bool(result['review_reasons'])

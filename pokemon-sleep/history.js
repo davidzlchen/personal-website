@@ -31,6 +31,7 @@ async function selectSnapshot(index) {
     try {
         const current = await readSnapshot(entry);
         if (request !== snapshotRequest) return;
+        activeSnapshotId = entry.id;
         showSnapshot(current);
         $("#history-select").dataset.loaded = String(index);
         return true;
@@ -62,7 +63,17 @@ async function initializeHistory() {
             select.append(option);
         }
         select.disabled = false;
-        if (!await selectSnapshot(snapshots.length - 1)) throw new Error("Latest archive unavailable");
+        const params = new URLSearchParams(window.location.search);
+        const requested = snapshots.findIndex(entry => entry.id === params.get("snapshot"));
+        if (!await selectSnapshot(requested >= 0 ? requested : snapshots.length - 1)) throw new Error("Archive unavailable");
+        if (params.has("snapshot") && requested < 0) {
+            $("#history-status").textContent = "That saved collection is unavailable. Showing the latest instead.";
+            $("#history-status").hidden = false;
+        } else if (params.has("pokemon")) {
+            const mon = roster.find(mon => mon.id === params.get("pokemon"));
+            if (mon) showDetail(mon);
+            else $("#result-count").textContent = "That Pokémon is unavailable in this saved collection.";
+        }
     } catch {
         $("#history-status").textContent = "History unavailable. Showing the latest published snapshot.";
         $("#history-status").hidden = false;
