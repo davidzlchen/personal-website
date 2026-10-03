@@ -449,7 +449,8 @@ function renderInventory() {
         group.append(list);
         groups.append(group);
     }
-    $("#inventory-count").textContent = entries.length ? `${entries.length} ${entries.length === 1 ? "stack" : "stacks"} shown` : "No supplies found. Try another search or include empty stacks.";
+    $("#inventory-count").hidden = entries.length > 0;
+    $("#inventory-count").textContent = entries.length ? "" : "No supplies found. Try another search or include empty stacks.";
 }
 $("#inventory-search").addEventListener("input", renderInventory);
 $("#inventory-zero").addEventListener("change", renderInventory);
