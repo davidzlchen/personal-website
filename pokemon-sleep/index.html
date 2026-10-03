@@ -22,7 +22,7 @@
         <link rel="icon" href="/pokemon-sleep/moon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="/pokemon-sleep/styles.css" />
         <script defer src="/pokemon-sleep/asset-data.js"></script>
-        <script defer src="/pokemon-sleep/app.js?v=area-bonus-1"></script>
+        <script defer src="/pokemon-sleep/app.js?v=island-cards-1"></script>
         <script defer src="/pokemon-sleep/history.js?v=special-1"></script>
     </head>
     <body>
@@ -112,6 +112,16 @@
                     <p>researcher rank</p>
                 </div>
             </section>
+            <section class="island-bests" id="island-bests" aria-labelledby="island-heading" hidden>
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">THE RESEARCH JOURNEY</p>
+                        <h2 id="island-heading">Every island, a milestone.</h2>
+                    </div>
+                    <p>Personal bests, one good night at a time.</p>
+                </div>
+                <div id="island-cards" class="island-grid"></div>
+            </section>
             <section id="supplies" class="supplies">
                 <p class="eyebrow">THE ITEM BAG</p>
                 <h2>Ready for the night.</h2>
@@ -124,16 +134,6 @@
                 <p id="inventory-count" role="status" aria-live="polite" hidden></p>
                 <div id="inventory-groups"></div>
             </section>
-            <details class="island-bests" id="island-bests" hidden>
-                <summary>Island bests <span>Strength, rank &amp; area bonus</span></summary>
-                <div class="island-table-wrap">
-                    <table class="island-table">
-                        <caption>Personal bests as of the selected snapshot.</caption>
-                        <thead><tr><th scope="col">Island</th><th scope="col">Best Strength</th><th scope="col">Rank</th><th scope="col">Area bonus</th></tr></thead>
-                        <tbody id="island-bests-rows"></tbody>
-                    </table>
-                </div>
-            </details>
             <section id="collection" class="collection">
                 <div class="section-heading">
                     <div>
@@ -223,7 +223,7 @@
                 <a href="https://github.com/PokeAPI/sprites">PokéAPI</a>.
                 Candy and item artwork via
                 <a href="https://pks.raenonx.cc/en/item/overview">RaenonX</a>.
-                Berry, ingredient, and specialty icons via
+                Island artwork and berry, ingredient, and specialty icons via
                 <a href="https://github.com/nerolis-lab/nerolis-lab">Neroli’s Lab</a>.
             </p>
         </footer>

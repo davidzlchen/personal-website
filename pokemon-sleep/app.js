@@ -451,17 +451,52 @@ function renderInventory() {
 }
 $("#inventory-search").addEventListener("input", renderInventory);
 $("#inventory-zero").addEventListener("change", renderInventory);
+const islandArtwork = {
+    "Greengrass Isle": "greengrass", "Cyan Beach": "cyan",
+    "Taupe Hollow": "taupe", "Snowdrop Tundra": "snowdrop",
+    "Lapis Lakeside": "lapis", "Old Gold Power Plant": "powerplant",
+    "Amber Canyon": "amber", "Greengrass Isle (Expert)": "greengrass",
+    "Cyan Beach (Expert)": "cyan",
+};
+function renderIslands(islands) {
+    $("#island-bests").hidden = islands.length === 0;
+    const grid = $("#island-cards");
+    grid.replaceChildren();
+    for (const island of islands) {
+        const artwork = islandArtwork[island.name];
+        const expert = island.name.endsWith(" (Expert)");
+        const card = node("article", `island-card island-${artwork || "unknown"}${expert ? " island-expert" : ""}`);
+        const scene = node("div", "island-scene");
+        if (artwork) {
+            const image = node("img", "island-art");
+            image.src = `/pokemon-sleep/assets/islands/${artwork}.png`;
+            image.alt = "";
+            image.width = 244;
+            image.height = 244;
+            image.loading = "lazy";
+            image.decoding = "async";
+            scene.append(image);
+        }
+        if (island.rank) {
+            const rank = node("span", `island-rank${island.rank.startsWith("Master") ? " island-rank-master" : ""}`, island.rank);
+            scene.append(rank);
+        }
+        const content = node("div", "island-card-content");
+        const title = node("div", "island-title");
+        title.append(node("h3", "", island.name.replace(" (Expert)", "")));
+        if (expert) title.append(node("span", "island-expert-label", "Expert"));
+        const strength = node("div", "island-strength");
+        strength.append(node("span", "island-stat-label", "Best Snorlax Strength"), node("strong", "", number(island.strength)));
+        const bonus = node("div", "island-bonus");
+        bonus.append(node("span", "", "Area bonus"), node("strong", "", island.area_bonus_percent == null ? "—" : `+${island.area_bonus_percent}%`));
+        content.append(title, strength, bonus);
+        card.append(scene, content);
+        grid.append(card);
+    }
+}
 function applyInventory(data) {
     inventory = data;
-    const islands = data.island_bests || [];
-    $("#island-bests").hidden = islands.length === 0;
-    $("#island-bests-rows").replaceChildren();
-    for (const island of islands) {
-        const row = node("tr");
-        row.append(node("th", "", island.name), node("td", "", number(island.strength)), node("td", "", island.rank || "—"), node("td", "", island.area_bonus_percent == null ? "—" : `${island.area_bonus_percent}%`));
-        row.firstChild.scope = "row";
-        $("#island-bests-rows").append(row);
-    }
+    renderIslands(data.island_bests || []);
     $("#researcher-rank").textContent = number(data.researcher_rank);
     $("#inventory-overview").replaceChildren();
     $("#inventory-date").textContent = `As of ${dateLabel(data.captured_at)}.`;

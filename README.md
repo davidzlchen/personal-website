@@ -131,3 +131,5 @@ Researcher rank uses the full response’s `UD.main.all.uExp` and cumulative `re
 Island bests export only visited islands from `UD.bestene.all`: `ene` is best Snorlax Strength and `snrnk` maps to the game’s `snorlax_rank` row. This is not Drowsy Power. The captured rank is retained rather than recalculated against potentially changed thresholds; missing ranks stay unavailable.
 
 The area bonus column uses the saved island’s `sngm` multiplier: `(sngm - 10000) / 100` percent. The native client converts its field multiplier to a percentage above the 1.0 base. It reflects the selected capture, independent of when the personal best was achieved. Invalid or missing multipliers stay unavailable.
+
+Island achievements appear as illustrated cards above the item bag. The seven local map assets are from Neroli’s Lab; `assets/island-sources.json` records their source URLs and hashes. Expert cards reuse their base island artwork and carry an explicit Expert label.

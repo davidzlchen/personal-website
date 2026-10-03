@@ -1233,14 +1233,45 @@ progress::-moz-progress-bar {
 
 .detail-share { border: 0; background: transparent; padding: 6px 0; color: var(--muted); font: inherit; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 
-.island-bests { margin: 0 0 45px; color: var(--muted); }
-.island-bests summary { cursor: pointer; font-size: 13px; }
-.island-bests summary span { margin-left: 10px; font-size: 11px; }
-.island-table-wrap { overflow-x: auto; }
-.island-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
-.island-table caption { text-align: left; font-size: 11px; padding-bottom: 12px; }
-.island-table th, .island-table td { text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); }
-.island-table tbody th { font-weight: 500; color: var(--ink); }
-.island-table td { white-space: nowrap; }
-.island-table th:nth-child(n+2), .island-table td { text-align: right; padding-left: 16px; }
-@media (max-width: 600px) { .island-table { font-size: 11px; } }
+.island-bests { margin: 0 0 70px; }
+.island-bests h2 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -1px; }
+.island-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.island-card { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fffefa; }
+.island-scene { height: 170px; display: grid; place-items: center; position: relative; background: #e7edda; }
+.island-scene::before { content: ""; position: absolute; width: 128px; height: 128px; border: 1px solid #ffffff80; border-radius: 50%; }
+.island-art { width: 145px; height: 145px; object-fit: contain; position: relative; filter: drop-shadow(0 9px 7px #203b3520); }
+.island-cyan .island-scene { background: #ddeef0; }
+.island-taupe .island-scene { background: #e9e0d4; }
+.island-snowdrop .island-scene { background: #e6eaf3; }
+.island-lapis .island-scene { background: #e0ebe8; }
+.island-powerplant .island-scene { background: #e8e4d8; }
+.island-amber .island-scene { background: #f1e3d0; }
+.island-expert .island-scene { background: #dce5cd; }
+.island-rank { position: absolute; right: 12px; top: 12px; padding: 5px 9px; border-radius: 20px; background: #fffef6ed; font-size: 10px; font-weight: 600; color: #567264; }
+.island-rank-master { background: #fff5d7; color: #8a6826; border: 1px solid #d9c58b; }
+.island-card-content { padding: 20px; }
+.island-title { min-height: 51px; }
+.island-title h3 { margin: 0; font: 600 16px Manrope, sans-serif; letter-spacing: -.4px; }
+.island-expert-label { display: inline-block; margin-top: 4px; color: var(--muted); font-size: 10px; letter-spacing: .8px; text-transform: uppercase; }
+.island-strength { margin: 12px 0 20px; }
+.island-stat-label { display: block; color: var(--muted); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; }
+.island-strength strong { display: block; margin-top: 5px; font: 500 clamp(22px, 2.3vw, 30px) Manrope, sans-serif; letter-spacing: -1px; }
+.island-bonus { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 13px; color: var(--muted); font-size: 11px; }
+.island-bonus strong { color: #536c48; font-weight: 600; background: #edf2e6; padding: 4px 7px; border-radius: 6px; }
+@media (max-width: 1000px) { .island-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+    .island-bests { margin-bottom: 45px; }
+    .island-bests .section-heading { flex-direction: column; gap: 8px; }
+    .island-bests .section-heading > p { max-width: none; margin: 0; font-size: 11px; }
+    .island-grid { gap: 12px; }
+    .island-scene { height: 135px; }
+    .island-art { width: 112px; height: 112px; }
+    .island-scene::before { width: 100px; height: 100px; }
+    .island-rank { top: 8px; right: 8px; padding: 4px 7px; font-size: 9px; }
+    .island-card-content { padding: 14px; }
+    .island-title { min-height: 48px; }
+    .island-title h3 { font-size: 14px; }
+    .island-stat-label { font-size: 8px; letter-spacing: .5px; }
+    .island-strength strong { font-size: clamp(19px, 5.4vw, 25px); }
+    .island-bonus { font-size: 10px; }
+}
