@@ -7,6 +7,11 @@ exporter = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(exporter)
 
 class ExportTest(unittest.TestCase):
+    def test_favorite_flags_and_unknowns(self):
+        source = {'records': [{'raw': {'favfl': flag}} for flag in (0, 1, None, 2, '1')]}
+        records = exporter.sanitize(source, '2026-10-02')['records']
+        self.assertEqual([r['favorite'] for r in records], [False, True, None, None, None])
+
     def test_allowlist_and_unresolved_fields(self):
         private = {'species': 'Mew', 'instance_id': 'secret', 'token': 'secret',
                    'raw': {'sid': 'secret', 'capfi': 6}, 'met_at_utc': '2025-07-06T13:05:04+00:00', 'nature': None, 'original_nature': 'Quirky',
