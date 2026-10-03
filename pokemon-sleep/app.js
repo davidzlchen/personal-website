@@ -453,6 +453,7 @@ $("#inventory-search").addEventListener("input", renderInventory);
 $("#inventory-zero").addEventListener("change", renderInventory);
 function applyInventory(data) {
     inventory = data;
+    $("#researcher-rank").textContent = number(data.researcher_rank);
     $("#inventory-overview").replaceChildren();
     $("#inventory-date").textContent = `As of ${dateLabel(data.captured_at)}.`;
     for (const [label, value, iconCategory, iconName] of [

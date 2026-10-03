@@ -9,6 +9,15 @@ def count(value):
     return value if isinstance(value, int) and not isinstance(value, bool) and value >= 0 else None
 
 
+def researcher_rank(exp, reference):
+    exp = count(exp)
+    thresholds = reference.get('research_ranks', [])
+    if exp is None or not thresholds:
+        return None
+    eligible = [row['rank'] for row in thresholds if row['total_exp'] <= exp]
+    return max(eligible) if eligible else None
+
+
 def sanitize(source, reference, captured_at, roster):
     ud = source['UD']
     if not isinstance(ud.get('invent', {}).get('all'), dict):
@@ -34,6 +43,7 @@ def sanitize(source, reference, captured_at, roster):
         if candy_id in candies:
             pokemon_candies[f'mon-{index}'] = {k: candies[candy_id][k] for k in ('name', 'quantity')}
     return {'captured_at': captured_at,
+            'researcher_rank': researcher_rank(ud.get('main', {}).get('all', {}).get('uExp'), reference),
             'dream_shards': count(ud.get('main', {}).get('all', {}).get('coin')),
             'entries': sorted(entries, key=lambda x: (x['category'], x['name'] or x.get('unresolved_label', ''))),
             'pokemon_candies': pokemon_candies}
