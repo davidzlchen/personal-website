@@ -81,7 +81,7 @@ def markdown(node, url):
         if '\n' in text.strip():
             label = next((plain(n).strip() for n in nodes(node) if n.tag in {'h2', 'h3'}), 'Read more')
             return text.strip() + '\n\n[' + label + '](' + link + ')\n\n'
-        return '[' + text.strip() + '](' + link + ')' 
+        return '[' + text.strip() + '](' + link + ')'
     if node.tag == 'img':
         return '![' + node.attrs.get('alt', '') + '](' + urljoin(url, node.attrs['src']) + ')'
     if node.tag == 'span':
@@ -117,6 +117,7 @@ def generate():
         if relative == 'pokemon-sleep/':
             main = next(n for n in doc if 'hero-copy' in n.attrs.get('class', '').split())
         content = re.sub(r'\n[ \t]+', '\n', markdown(main, url))
+        content = '\n'.join(line.rstrip() for line in content.splitlines())
         content = re.sub(r'\n{3,}', '\n\n', content).strip()
         date = next((n.attrs['datetime'] for n in doc if n.tag == 'time' and 'datetime' in n.attrs), None)
         post = relative.startswith('blog/') and relative != 'blog/'
@@ -148,7 +149,7 @@ def generate():
     outputs['robots.txt'] = 'User-agent: *\nDisallow:\n\nSitemap: ' + ORIGIN + '/sitemap.xml\n'
     outputs['search-index.json'] = json.dumps({'version': 1, 'site': ORIGIN, 'pages': pages}, ensure_ascii=False, indent=2) + '\n'
     outputs['llms.txt'] = '# David Z. Chen\n\n> Software, side projects, and writing by David Z. Chen.\n\nCanonical HTML URLs are the sources for citations. Markdown copies are generated from published HTML. Field Notes is a dated public journal; its interactive account collection is not included in this text index.\n\n## Website and writing\n\n' + '\n'.join(f"- [{p['title']}]({p['markdown_url']}): {p['description']}" for p in pages) + '\n\n## Content feeds\n\n- [Full text](https://davidzlchen.com/llms-full.txt): All indexed page text in one file.\n- [Search index](https://davidzlchen.com/search-index.json): Titles, descriptions, URLs, and full page text for client-side search or ingestion.\n- [Sitemap](https://davidzlchen.com/sitemap.xml): Canonical public pages.\n- [Blog feed](https://davidzlchen.com/blog/feed.xml): Published posts in Atom format.\n'
-    outputs['llms-full.txt'] = '\n\n---\n\n'.join(outputs[p['markdown_url'].removeprefix(ORIGIN + '/')] for p in pages) + '\n'
+    outputs['llms-full.txt'] = '\n\n---\n\n'.join(outputs[p['markdown_url'].removeprefix(ORIGIN + '/')] for p in pages).rstrip() + '\n'
     posts = [p for p in pages if 'date_published' in p]
     def timestamp(date):
         return datetime.fromisoformat(date).replace(tzinfo=ZoneInfo('America/New_York')).isoformat()

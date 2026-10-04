@@ -8,7 +8,7 @@ FIELD NOTES
 
 The stories behind the projects, including the parts that took a few tries.
 
-![Pokémon Sleep Field Notes, illustrated with Ampharos, Latias, and Aggron](https://davidzlchen.com/pokemon-sleep/social-preview.jpg?v=field-notes) 
+![Pokémon Sleep Field Notes, illustrated with Ampharos, Latias, and Aggron](https://davidzlchen.com/pokemon-sleep/social-preview.jpg?v=field-notes)
 
 October 3, 2026 · Build story
 

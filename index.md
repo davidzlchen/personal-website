@@ -50,7 +50,7 @@ Probability · Daily puzzles thinkinodds.com
 
 LATEST WRITING
 
-![Pokémon Sleep Field Notes, illustrated with Ampharos, Latias, and Aggron](https://davidzlchen.com/pokemon-sleep/social-preview.jpg?v=field-notes) 
+![Pokémon Sleep Field Notes, illustrated with Ampharos, Latias, and Aggron](https://davidzlchen.com/pokemon-sleep/social-preview.jpg?v=field-notes)
 
 October 3, 2026 · Build story
 
