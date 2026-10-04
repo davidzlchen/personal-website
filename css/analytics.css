@@ -1,0 +1,9 @@
+/* Compact footer choices share the site's existing type and colors. */
+.analytics-settings{max-width:72rem;margin:1rem auto;padding:0 1.5rem;font:inherit;color:inherit}
+.analytics-settings summary{cursor:pointer;font-size:.8rem}
+.analytics-settings p{font-size:.85rem;max-width:42rem;line-height:1.6}
+.analytics-settings button{font:inherit;font-size:.8rem;color:inherit;background:transparent;border:1px solid currentColor;border-radius:5px;padding:.45rem .75rem;margin:0 .5rem .5rem 0;cursor:pointer}
+.analytics-settings button:focus-visible,.analytics-settings summary:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.analytics-settings [role=status]{display:block;font-size:.8rem;margin-bottom:1rem}
+.privacy-content p{max-width:70ch;line-height:1.7}
+.privacy-content h2{margin:1.5rem 0 .75rem;font-size:1.4rem}

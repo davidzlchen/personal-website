@@ -38,7 +38,7 @@ A little geography game for skiers. Explore the photos, follow the clues, and na
 
 Skiing · Little games Play a round
 
-[SkiGuessr](https://skiguessr.vercel.app)
+[SkiGuessr](https://skiguessr.com)
 
 ### Think in Odds
 
