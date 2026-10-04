@@ -158,8 +158,29 @@ python3 scripts/build-discovery.py --check
 The generator discovers blog posts under `blog/**/index.html`. Posts must include
 a title, description, main content, and a publication `<time datetime="YYYY-MM-DD">`.
 Publication dates in the feed use midnight in America/New_York. No inferred
-modification dates are emitted. The generator reads only the four public page
-areas; it never reads account JSON, saved snapshots, captures, or private files.
+modification dates are emitted. The generator reads only the editorial public page
+areas, including the privacy page; it never reads account JSON, saved snapshots, captures, or private files.
 The Field Notes text copy includes its static introduction; collection data is
 read through the interactive website. Deleted pages require removing their old
 Markdown copies as well. The site continues to deploy as static files.
+
+
+## Optional analytics
+
+All public HTML pages share `/js/analytics.js` and compact footer privacy choices.
+GA4 stream `G-E4D48915NT` is consent-based, limited to the production domain, and disabled by GPC/DNT.
+Page URLs omit queries/hashes and referrers retain only origins. Automatic
+measurement must remain disabled in the GA4 stream, alongside advertising and
+Google Signals. The only custom events are `project_click` with a fixed `project`
+label, and `field_notes_use` with a fixed `action` label; user text and account or
+roster fields are never event parameters. Search actions are counted on committed
+change, not per keystroke. Copy-link events count requests, not clipboard success.
+
+Bookmark `https://davidzlchen.com/?analytics=off` for maintainer/test browsing.
+This saves “No thanks” before loading a tag, even after previous consent. It
+persists per browser/host until Allow analytics is clicked or site data is reset.
+Preview and localhost hosts never load GA. Use a deliberately consenting browser
+for validating real events. Test with `node scripts/test-analytics.cjs` and
+regenerate discovery after public page changes. Measure project visits and broad
+Field Notes interaction before interpreting return rates; only consenting visits
+are represented.
