@@ -1,7 +1,7 @@
 # David Z. Chen
 
 A personal landing page and project collection, hosted on Vercel. The homepage
-features JustSkiing, SkiGuessr, Pokémon Sleep Field Notes, and Hangboard (in progress),
+features JustSkiing, SkiGuessr, Pokémon Sleep Field Notes, and Think in Odds,
 with GitHub and LinkedIn contact links. No résumé is linked.
 
 Serve locally with `python3 -m http.server 8765` and open <http://localhost:8765/>.
@@ -133,3 +133,33 @@ Island bests export only visited islands from `UD.bestene.all`: `ene` is best Sn
 The area bonus column uses the saved island’s `sngm` multiplier: `(sngm - 10000) / 100` percent. The native client converts its field multiplier to a percentage above the 1.0 base. It reflects the selected capture, independent of when the personal best was achieved. Invalid or missing multipliers stay unavailable.
 
 Island achievements appear as illustrated cards above the item bag. The seven local map assets are from Neroli’s Lab; `assets/island-sources.json` records their source URLs and hashes. Expert cards reuse their base island artwork and carry an explicit Expert label.
+
+## Search and AI discovery
+
+The public site permits crawlers through `robots.txt` and advertises its canonical
+pages in `/sitemap.xml`. Each page includes Schema.org JSON-LD, a canonical URL,
+and alternate links to Markdown, the Atom blog feed, and `/llms.txt`.
+
+`/llms.txt` links to Markdown copies of the homepage, blog, posts, and the
+Field Notes introduction. `/llms-full.txt` combines those copies;
+`/search-index.json` supplies titles, descriptions, canonical URLs, and full
+text for clients to search or ingest. `/blog/feed.xml` lists published posts.
+These are public static files, with no API key or JavaScript needed to read them.
+They improve discovery and ingestion but do not guarantee search engine indexing
+or citations by an AI service. `llms.txt` is a community convention.
+
+After adding or editing a page, regenerate and commit the discovery artifacts:
+
+```sh
+python3 scripts/build-discovery.py
+python3 scripts/build-discovery.py --check
+```
+
+The generator discovers blog posts under `blog/**/index.html`. Posts must include
+a title, description, main content, and a publication `<time datetime="YYYY-MM-DD">`.
+Publication dates in the feed use midnight in America/New_York. No inferred
+modification dates are emitted. The generator reads only the four public page
+areas; it never reads account JSON, saved snapshots, captures, or private files.
+The Field Notes text copy includes its static introduction; collection data is
+read through the interactive website. Deleted pages require removing their old
+Markdown copies as well. The site continues to deploy as static files.

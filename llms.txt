@@ -1,0 +1,19 @@
+# David Z. Chen
+
+> Software, side projects, and writing by David Z. Chen.
+
+Canonical HTML URLs are the sources for citations. Markdown copies are generated from published HTML. Field Notes is a dated public journal; its interactive account collection is not included in this text index.
+
+## Website and writing
+
+- [David Z. Chen · Software & side projects](https://davidzlchen.com/index.md): A little corner of the internet for David Z. Chen’s software, side projects, and interests. Explore JustSkiing, SkiGuessr, and Pokémon Sleep Field Notes.
+- [Blog · David Z. Chen](https://davidzlchen.com/blog/index.md): Notes on building useful tools, little games, and personal projects.
+- [How I built Pokémon Sleep Field Notes with Codex · David Z. Chen](https://davidzlchen.com/blog/pokemon-sleep-repository/index.md): How I built Pokémon Sleep Field Notes with Codex: a personal research journal for island milestones, investment decisions, and progress over time.
+- [David’s Pokémon Sleep Field Notes](https://davidzlchen.com/pokemon-sleep/index.md): David’s Pokémon Sleep Field Notes: island milestones, researcher rank, familiar helpers, and supplies for the next good night.
+
+## Content feeds
+
+- [Full text](https://davidzlchen.com/llms-full.txt): All indexed page text in one file.
+- [Search index](https://davidzlchen.com/search-index.json): Titles, descriptions, URLs, and full page text for client-side search or ingestion.
+- [Sitemap](https://davidzlchen.com/sitemap.xml): Canonical public pages.
+- [Blog feed](https://davidzlchen.com/blog/feed.xml): Published posts in Atom format.
