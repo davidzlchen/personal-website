@@ -258,6 +258,7 @@ function showDetail(mon) {
             const url = new URL("https://davidzlchen.com/pokemon-sleep/");
             url.searchParams.set("snapshot", activeSnapshotId);
             url.searchParams.set("pokemon", mon.id);
+            if (SleepDetailProduction.selectedIsland() !== "custom") url.searchParams.set("island", SleepDetailProduction.selectedIsland());
             url.hash = "collection";
             try {
                 await navigator.clipboard.writeText(url.href);
@@ -463,6 +464,10 @@ function renderIslands(islands) {
     $("#island-bests").hidden = islands.length === 0;
     const grid = $("#island-cards");
     grid.replaceChildren();
+    if (!islands.some(i=>i.name===SleepIslands.get(SleepDetailProduction.selectedIsland()).name)) SleepDetailProduction.selectIsland('custom');
+    const selected=SleepDetailProduction.selectedIsland();
+    $("#island-analysis-status").textContent=selected==='custom' ? 'Choose an island card to use its area bonus and favorite berries in Pokémon analysis.' : `Analyzing at ${SleepIslands.get(selected).name}. Open any Pokémon to see its estimates.`;
+    $("#clear-island").hidden=selected==='custom';
     for (const island of islands) {
         const artwork = islandArtwork[island.name];
         const expert = island.name.endsWith(" (Expert)");
@@ -492,9 +497,27 @@ function renderIslands(islands) {
         bonus.append(node("span", "", "Area bonus"), node("strong", "", island.area_bonus_percent == null ? "—" : `+${island.area_bonus_percent}%`));
         content.append(title, strength, bonus);
         card.append(scene, content);
+        const field=SleepIslands.islands.find(i=>i.name===island.name);
+        if (field) {
+            const select=node('button','island-select'); select.type='button';
+            select.setAttribute('aria-label',`Analyze Pokémon at ${island.name}`);
+            select.setAttribute('aria-pressed',String(selected===field.id));
+            card.classList.toggle('island-selected',selected===field.id);
+            content.append(node('span','island-selection',selected===field.id?'✓ Selected for analysis':'Use for Pokémon analysis'));
+            select.addEventListener('click',()=>{SleepDetailProduction.selectIsland(field.id);renderIslands(islands); $("#island-cards").querySelector(`[aria-label="Analyze Pokémon at ${island.name}"]`).focus({preventScroll:true});});
+            card.append(select);
+        } else {
+            content.append(node('span','island-selection','Expert weekly effects not modeled'));
+        }
         grid.append(card);
     }
 }
+$("#clear-island").addEventListener('click',()=>{SleepDetailProduction.selectIsland('custom');renderIslands(inventory?.island_bests || []);});
+document.addEventListener('sleep:choose-island',()=>{
+    dialog.close();
+    $("#island-bests").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth",block:"start"});
+    $("#island-cards button")?.focus({preventScroll:true});
+});
 function applyInventory(data) {
     inventory = data;
     renderIslands(data.island_bests || []);

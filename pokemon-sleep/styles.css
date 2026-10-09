@@ -1348,3 +1348,16 @@ progress::-moz-progress-bar {
 .detail-island-controls select,.detail-island-controls input[type=number] { display:block; width:100%; box-sizing:border-box; margin-top:5px; padding:9px; border:1px solid #bbc9bc; border-radius:8px; background:#fff; font:inherit; }
 .detail-island-controls .detail-island-favorite { grid-column:1/-1; display:flex; align-items:center; gap:8px; }
 .detail-island-controls p { grid-column:1/-1; margin:0; }
+
+.island-card { position:relative; }
+.island-select { position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:18px; background:transparent; cursor:pointer; }
+.island-select:hover { box-shadow:inset 0 0 0 2px #9aae91; }
+.island-select:focus-visible { outline:3px solid #395c40; outline-offset:-4px; }
+.island-selected { border-color:#395c40; box-shadow:0 0 0 2px #395c40; }
+.island-selection { display:block; margin-top:12px; font-size:11px; color:#596b63; }
+.island-selected .island-selection { font-weight:700; color:#395c40; }
+.island-analysis-choice { display:flex; align-items:baseline; flex-wrap:wrap; gap:12px; margin-bottom:20px; font-size:13px; color:#596b63; }
+.island-analysis-choice p { margin:0; }
+.island-analysis-choice button,.detail-change-island { background:none; border:0; padding:0; font:inherit; text-decoration:underline; color:inherit; cursor:pointer; }
+.detail-selected-island span,.detail-selected-island strong { display:block; font-size:12px; margin-bottom:5px; }
+.detail-change-island { font-size:11px; }

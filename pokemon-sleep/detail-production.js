@@ -3,7 +3,7 @@
     'use strict';
     let catalog;
     const results = new WeakMap();
-    let selectedIsland = 'custom';
+    let selectedIsland = SleepIslands.get(new URLSearchParams(location.search).get('island')).id;
     const make = (tag, text, className) => {
         const element = document.createElement(tag);
         if (text != null) element.textContent = text;
@@ -32,32 +32,33 @@
         link.href = url.pathname + url.search;
         link.title = 'Adjust this helper’s build and production assumptions';
         const controls = make('div', null, 'detail-island-controls');
-        const islandLabel=make('label','Island'), island=make('select');
-        island.id='detail-island'; SleepIslands.fill(island); island.value=selectedIsland; islandLabel.append(island);
+        const islandId=selectedIsland;
+        const islandLabel=make('div',null,'detail-selected-island');
+        islandLabel.append(make('span','Analyzing at'),make('strong',SleepIslands.get(islandId).name));
+        const changeIsland=make('button','Change island','detail-change-island'); changeIsland.type='button';
+        changeIsland.addEventListener('click',()=>document.dispatchEvent(new CustomEvent('sleep:choose-island')));
+        islandLabel.append(changeIsland);
         const areaLabel=make('label','Area bonus (%)'), area=make('input');
-        area.id='detail-area'; area.type='number'; area.min=0;area.max=100;area.step=1; area.value=SleepIslands.savedBonus(island.value,inventory) ?? 0;areaLabel.append(area);
+        area.id='detail-area'; area.type='number'; area.min=0;area.max=100;area.step=1; area.value=SleepIslands.savedBonus(islandId,inventory) ?? 0;areaLabel.append(area);
         const favoriteLabel=make('label',null,'detail-island-favorite'), favorite=make('input');
         favorite.id='detail-favorite'; favorite.type='checkbox';favoriteLabel.append(favorite,make('span','This helper’s berry is a weekly favorite (×2)'));
         const islandNote=make('p',null,'detail-production-note');
         controls.append(islandLabel,areaLabel,favoriteLabel,islandNote);
         section.append(heading,controls,status,link);
         let render;
-        function updateIsland(resetBonus) {
-            selectedIsland=island.value;
-            if(resetBonus) area.value=SleepIslands.savedBonus(island.value,inventory) ?? 0;
-            const fixed=SleepIslands.favorite(island.value,mon.berry);
+        function updateIsland() {
+            const fixed=SleepIslands.favorite(islandId,mon.berry);
             favorite.disabled=fixed!==null;
             if(fixed!==null) favorite.checked=fixed;
-            islandNote.textContent=SleepIslands.note(island.value,inventory,area.value);
-            url.searchParams.set('island',island.value);url.searchParams.set('area',area.value);
+            islandNote.textContent=SleepIslands.note(islandId,inventory,area.value);
+            url.searchParams.set('island',islandId);url.searchParams.set('area',area.value);
             url.searchParams.set('favorite-berry',favorite.checked?'1':'0');
             link.href=url.pathname+url.search;
             if(render) render();
         }
-        island.addEventListener('change',()=>{favorite.checked=false;updateIsland(true);});
-        area.addEventListener('input',()=>updateIsland(false));
-        favorite.addEventListener('change',()=>updateIsland(false));
-        updateIsland(false);
+        area.addEventListener('input',()=>updateIsland());
+        favorite.addEventListener('change',()=>updateIsland());
+        updateIsland();
         loadCatalog().then(data => {
             if (!section.isConnected) return; // A different helper or snapshot may already be selected.
             const build = SleepAnalyzer.fromRoster(data, mon);
@@ -69,7 +70,7 @@
             render=()=>{
             section.querySelectorAll('.detail-production-cards,.detail-production-ingredients,.detail-production-assumptions,.practical-output,.practical-cards').forEach(n=>n.remove());
             if(area.value==='' || !area.checkValidity()) { status.textContent='Enter an area bonus from 0 to 100%.'; return; }
-            const conditions={...SleepAnalyzer.defaultConditions,areaBonus:+area.value,favoriteBerry:favorite.checked,islandName:island.value==='custom'?'':SleepIslands.get(island.value).name};
+            const conditions={...SleepAnalyzer.defaultConditions,areaBonus:+area.value,favoriteBerry:favorite.checked,islandName:islandId==='custom'?'':SleepIslands.get(islandId).name};
             const outcome = SleepOutcomes.evaluate(build, result, conditions);
             const cards = make('div', null, 'detail-production-cards');
             for (const [label, value, category, name] of [
@@ -109,5 +110,5 @@
         });
         return section;
     }
-    root.SleepDetailProduction = { panel };
+    root.SleepDetailProduction = { panel, selectedIsland:()=>selectedIsland, selectIsland:id=>{selectedIsland=SleepIslands.get(id).id;} };
 })(globalThis);
