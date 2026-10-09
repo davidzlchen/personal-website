@@ -8,6 +8,6 @@ POKÉMON SLEEP · GROWING ROOM
 
 # Best opportunities to level up✦
 
-Spend on a bottleneck, not just another level. Compare recipe coverage and existing team roles before committing scarce shards and family candy.
+Plan around specialist milestones: ingredients at 30/60, skills at 25/50, and continued levels for strong berry helpers. Compare costs before spending.
 
 Loading your saved collection…

@@ -41,8 +41,10 @@ credited source commit. `priorities.js` independently implements a bounded
 recipe-rotation LP and resource ledger. See research.md for sources, dated
 account observations, and which heuristics are planning choices.
 
-Practical ranking uses recipe coverage and meaningful replacements for existing
-role leads. Auto mode considers leading recipes by category, excluding lower
+Default ranking uses specialist milestones: ingredient 30/60, skill 25/50,
+and staged berry investment through the cap. Strong BFS + speed berry builds
+rank first. Funding availability is a separate optional filter, off by default.
+Recipe coverage is supporting context rather than an eligibility gate. Auto mode considers leading recipes by category, excluding lower
 three-meal ceilings than current equal-level benchmarks. Ordinary output sorts
 remain available. A default 20% shard envelope and 20% family-candy reserve are
 editable; a spending plan shares the same shard balance and candy stacks.
