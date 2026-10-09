@@ -1,0 +1,10 @@
+Neroli's Lab
+Copyright The Neroli's Lab Authors
+
+This analyzer's data.json adapts species, nature, subskill names, ingredient options,
+and pity thresholds from Neroli's Lab. The source commit and import date are in
+data.json. The fields were renamed and reduced for a static browser calculator.
+Upstream credits the Mathcord RP data project for base skill and ingredient rates:
+https://docs.google.com/spreadsheets/d/1kBrPl0pdAO8gjOf_NrTgAPseFtqQA27fdfEbMBBeAhs/edit
+
+The simulation and interface are independently implemented for Field Notes.
