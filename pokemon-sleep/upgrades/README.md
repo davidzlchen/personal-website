@@ -53,3 +53,15 @@ Run `node scripts/test_sleep_priorities.cjs` for solver, shared resource,
 evolution-review, recipe data, and marginal shard payback checks. Browser checks
 should exercise automatic/manual recipe targets, pot access, plan add/remove,
 budget changes, raw fallback, and narrow layouts. Unknown pot size is explicit.
+
+
+## AAA and existing investments
+
+Default ingredient targets require the same named ingredient in all three saved
+slots, including locked slots. Existing mixed farmers still count toward current
+coverage. Default ranking groups continued useful investment, uncovered roles,
+possible replacements, then duplicate covered roles. Within a group, existing
+build signals and remaining shard cost apply. Investments are identified from
+saved levels (ingredient 30, skill 25, berry 40); these are explicit heuristics,
+not historical spending. Main skill levels are compared without guessing seed
+spend. The existing-investment panel includes completed AAA builds at 60.

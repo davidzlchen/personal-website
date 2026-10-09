@@ -46,3 +46,23 @@ assert.equal(P.milestone(specialist('skill',25),70).kind,'skill');
 assert.equal(P.milestone(specialist('skill',50),70).kind,'skill');
 assert.equal(P.milestone(specialist('skill',60),70).kind,'hold');
 console.log('Specialist breakpoints and strong unfunded Salamence investment targets pass.');
+// AAA checks include the locked third slot; AAB is not a future mono farmer.
+assert.equal(P.ingredientLine({ingredients:[{name:'A'},{name:'A'},{name:'B'}]}).aaa,false);
+assert.equal(P.ingredientLine({ingredients:[{name:'A'},{name:'A'},{name:'A'}]}).aaa,true);
+const farmer=(id,level,amount,names=['A','A','A'])=>({mon:{id,species:id,level,ingredients:names.map(name=>({name}))},current:{build:{species:{specialty:'ingredient',remainingEvolutions:0},skillLevel:1},result:{ingredients:{A:amount}}},output:{}});
+const established=farmer('Established AAA',60,100),starter=farmer('New AAA',20,10),continued=farmer('Invested AAA',40,50);
+const candidate=p=>({mon:p.mon,current:p.current,p:{...p.current,level:60,result:{ingredients:{A:60}}},afterOutput:{}});
+assert.equal(P.accountFit(candidate(starter),[established,starter]).tier,3);
+assert.match(P.accountFit(candidate(starter),[established,starter]).reason,/Established AAA/);
+assert.equal(P.accountFit(candidate(continued),[continued]).tier,0);
+assert.equal(P.accountFit(candidate(starter),[starter]).tier,1);
+assert.equal(P.accountFit({...candidate(starter),p:{...starter.current,result:{ingredients:{A:120}}}},[established,starter]).tier,2);
+// An already-built mixed farmer still counts as existing ingredient coverage.
+assert.equal(P.accountFit(candidate(starter),[farmer('Mixed invested',40,100,['A','A','B'])]).tier,3);
+const magnet=(id,skillLevel,triggers)=>({mon:{id,species:id,level:38},current:{build:{species:{specialty:'skill',remainingEvolutions:0,effect:{name:'Ingredient Magnet S'}},skillLevel},result:{triggers}},output:{effect:{extraIngredients:100}}});
+const seedLead=magnet('Skill Lv7',7,3),lowSkill=magnet('Skill Lv4',4,5);
+assert.equal(P.accountFit({mon:lowSkill.mon,current:lowSkill.current,p:lowSkill.current,afterOutput:{effect:{extraIngredients:200}}},[seedLead,lowSkill]).tier,3);
+console.log('AAA locked slots, invested incumbents, existing mixed coverage, continuation, role gaps, replacements, and main-skill investment pass.');
+
+assert.equal(P.ingredientLine({ingredients:[{name:'A'},{name:'A'},{name:'B'}]}).label,'AAB');
+assert.equal(P.ingredientLine({ingredients:[{name:'A'},{name:'B'},{name:'A'}]}).label,'ABA');

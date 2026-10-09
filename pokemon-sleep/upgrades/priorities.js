@@ -111,6 +111,41 @@
             (signal('Skill Trigger M')?2:signal('Skill Trigger S')?1:0)+(buildSpeed?1:0);
         return {kind,reason,impact,quality};
     }
-    const api={milestone,maximize,rotation,leadingRecipes,ledger,resources,utility,assess};
+    function ingredientLine(mon){
+        const names=(mon.ingredients||[]).map(i=>i?.empty?null:i?.name);
+        const aaa=names.length===3&&names.every(n=>n&&n===names[0]);
+        return {aaa,name:names[0],label:aaa?'AAA':names.length===3&&names.every(Boolean)?names.map(n=>String.fromCharCode(65+[...new Set(names)].indexOf(n))).join(''):'Unknown'};
+    }
+    function invested(mon,role){return mon.level>=(role==='ingredient'?30:role==='berry'?40:25);}
+    function skillValue(projection,out){
+        const u=utility(projection);if(u.kind)return u.value;
+        if(out?.effect?.dreamShards>0)return out.effect.dreamShards;
+        if(out?.effect?.extraIngredients>0)return out.effect.extraIngredients;
+        if(out?.effect?.skillStrength>0)return out.effect.skillStrength;
+        return null;
+    }
+    function accountFit(row,peers){
+        const role=row.p.build.species.specialty,line=ingredientLine(row.mon),name=row.mon.nickname||row.mon.species;
+        const source=p=>p.build.species;
+        const key=p=>role==='ingredient'?line.name:role==='berry'?source(p).berry:source(p).effect.name+'|'+(source(p).effect.modifier||'');
+        const roleKey=key(row.p);
+        const matching=peers.filter(p=>(role==='ingredient'||p.current.build.species.specialty===role)&&p.current.build.species.remainingEvolutions===0&&invested(p.mon,role)&&
+            (role==='ingredient'?(p.current.result.ingredients[line.name]||0)>0:key(p.current)===roleKey));
+        const value=(p,o)=>role==='ingredient'?(p.result.ingredients[line.name]||0):role==='berry'?o.effect.berryStrength:skillValue(p,o);
+        const ranked=matching.map(p=>({...p,value:value(p.current,p.output)})).sort((a,b)=>(b.value??-1)-(a.value??-1)||b.current.build.skillLevel-a.current.build.skillLevel||b.mon.level-a.mon.level);
+        const incumbent=ranked[0],own=invested(row.mon,role),next=value(row.p,row.afterOutput);
+        let tier=own?0:1,label=own?'Continue existing investment':'Fill a roster gap',reason=own?`${name} is already Lv. ${row.mon.level}${role==='skill'?', main skill Lv. '+row.current.build.skillLevel:''}. Costs below cover only the remaining levels.`:'No invested final-form helper currently covers this role.';
+        if(incumbent&&incumbent.mon.id!==row.mon.id){
+            const lead=incumbent.mon.nickname||incumbent.mon.species;
+            const lowerSkill=role==='skill'&&row.p.build.skillLevel<incumbent.current.build.skillLevel;
+            const improves=next!==null&&incumbent.value!==null&&next>incumbent.value*1.01&&!lowerSkill;
+            tier=improves?2:3;label=improves?'Potential replacement':'Already covered';
+            reason=`Already invested: ${lead}, Lv. ${incumbent.mon.level}`+(role==='skill'?`, main skill Lv. ${incumbent.current.build.skillLevel}`:'')+'. '+
+                (lowerSkill?'This candidate has a lower main skill level; leveling alone does not replace that investment.':next===null||incumbent.value===null?'This skill effect cannot be compared reliably; review before duplicating the role.':
+                `${role==='ingredient'?line.name+' production':role==='berry'?'Same-berry strength':'Daily skill output'}: existing ${incumbent.value.toFixed(1)} → candidate ${next.toFixed(1)}. `+(improves?'Can improve the current role; compare the remaining cost.':'The existing helper still covers this role; lower priority for new spending.'));
+        }
+        return {tier,label,reason,line,incumbent};
+    }
+    const api={ingredientLine,invested,accountFit,milestone,maximize,rotation,leadingRecipes,ledger,resources,utility,assess};
     if(typeof module==='object')module.exports=api;else root.SleepPriorities=api;
 })(globalThis);
