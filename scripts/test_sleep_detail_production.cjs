@@ -25,7 +25,8 @@ const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDi
   assert.equal(await page.locator('.detail-ingredient-card img').count(),Object.keys(expected.ingredients).length);
   const power=await page.locator('#detail .practical-card strong').allTextContents();
   assert.equal(power[0],effect.directStrength.toLocaleString('en-US',{maximumFractionDigits:0}));
-  assert.equal(power[1],'0');
+  assert.equal(power.length,1); // Zero Dream Shard rewards are hidden.
+  assert.equal(await page.locator('.detail-production > .practical-cards + .detail-production-cards').count(),1);
   assert.equal(await page.locator('#detail .practical-output, #detail .detail-production-assumptions').count(),0);
   assert.equal(await page.getByRole('link',{name:'Analyze this helper →'}).isVisible(),true);
  }

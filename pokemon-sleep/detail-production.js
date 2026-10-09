@@ -80,6 +80,7 @@
                 // Random skill ingredients cannot be assigned to a particular ingredient.
                 if(outcome.extraIngredients) entries.splice(entries.length-1,0,['Random skill ingredients',outcome.extraIngredients,'specialties','Ingredients']);
                 for (const [label, value, category, name] of entries) {
+                    if(name==='Skills' && Number(decimal(value).replaceAll(',', ''))===0) continue;
                     const card = make('div', null, 'detail-production-card');
                     card.classList.add(category==='ingredients'?'detail-ingredient-card':category==='specialties'&&name==='Skills'?'detail-skill-card':'detail-berry-card');
                     const path = sleepAssets[category]?.[name];
@@ -89,12 +90,13 @@
                 }
                 const rewards=make('div',null,'practical-cards');
                 for(const [label,value] of [[outcome.directComplete?'Direct Snorlax strength':'Berry strength only',outcome.directStrength],['Skill Dream Shards',outcome.dreamShards]]) {
+                    if(label==='Skill Dream Shards' && value!==null && Math.round(value)===0) continue;
                     const card=make('div',null,'practical-card');
                     card.append(make('strong',value===null?'Not modeled':value.toLocaleString('en-US',{maximumFractionDigits:0})),make('span',label+' / day'));
                     rewards.append(card);
                 }
                 section.insertBefore(cards,status);
-                section.insertBefore(rewards,status);
+                section.insertBefore(rewards,cards);
                 status.hidden=true;
             };
             render();
