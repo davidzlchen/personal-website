@@ -82,6 +82,35 @@
         if(kind==='shards'&&payback>180){kind='hold';reason=`About ${Math.ceil(payback)} days of additional skill shards to recover this shard spend; your existing shard farmer remains usable.`;}
         return {kind,reason,impact,mealGain,slotGain,next,payback};
     }
-    const api={maximize,rotation,leadingRecipes,ledger,resources,utility,assess};
+    // User strategy: specialist breakpoints first; resource availability is separate.
+    function milestone(row,cap){
+        const species=row.p.build.species,role=species.specialty,target=row.p.level,mon=row.mon;
+        const active=name=>mon.subskills.some(s=>s.name===name&&s.unlock_level<=target);
+        const speed=active('Helping Speed M')||active('Helping Speed S')||active('Helping Bonus');
+        const bfs=active('Berry Finding S');
+        let kind='hold',reason='Explore this level in a raw comparison.',impact=0,quality=0;
+        if(species.remainingEvolutions>0)return {kind,reason:'Review evolution before committing to this level-only investment.',impact,quality};
+        if(role==='ingredient'&&[30,60].includes(target)){
+            kind='ingredient';reason=`Ingredient specialist: Lv. ${target} unlocks the ${target===30?'second':'third'} ingredient slot. Check the saved ingredient mix before investing.`;
+            impact=Math.max(0,row.p.result.totalIngredients/Math.max(row.current.result.totalIngredients,1)-1);
+        }else if(role==='skill'&&[25,50].includes(target)){
+            kind='skill';const skill=mon.subskills.find(s=>s.unlock_level===target)?.name;
+            reason=`Skill specialist: Lv. ${target} unlocks ${skill||'a subskill'}. `+(skill&&/Skill Trigger|Skill Level Up|Helping Speed|Helping Bonus/.test(skill)?'This supports skill output.':'This is a review point; the unlocked subskill may not improve skill output.');
+            impact=Math.max(0,row.p.result.triggers/Math.max(row.current.result.triggers,.01)-1);
+        }else if(role==='berry'&&(target===Math.min(mon.level+5,cap)||target===cap||mon.subskills.some(s=>s.unlock_level===target&&['Berry Finding S','Helping Speed M','Helping Speed S','Helping Bonus'].includes(s.name)))){
+            kind='berry';
+            reason=(bfs&&speed?'Strong berry build: Berry Finding S plus helping speed. ':bfs?'Berry Finding S makes this a berry investment candidate. ':'Berry specialist: review the build before a large investment. ')+`Berry strength grows with level; ${target===cap?'Lv. '+cap+' is the long-term target.':'Lv. '+target+' is a staged investment.'}`;
+            impact=Math.max(0,row.afterOutput.effect.berryStrength/Math.max(row.beforeOutput.effect.berryStrength,1)-1);
+        }
+        // Use one build score across this helper's targets so an expensive
+        // later unlock cannot outrank its cheaper first milestone.
+        const signal=name=>mon.subskills.some(s=>s.name===name&&s.unlock_level<=cap);
+        const buildSpeed=signal('Helping Speed M')||signal('Helping Speed S')||signal('Helping Bonus');
+        quality=role==='berry'?(signal('Berry Finding S')?3:0)+(buildSpeed?2:0):
+            role==='ingredient'?(signal('Ingredient Finder M')?2:signal('Ingredient Finder S')?1:0)+(buildSpeed?1:0):
+            (signal('Skill Trigger M')?2:signal('Skill Trigger S')?1:0)+(buildSpeed?1:0);
+        return {kind,reason,impact,quality};
+    }
+    const api={milestone,maximize,rotation,leadingRecipes,ledger,resources,utility,assess};
     if(typeof module==='object')module.exports=api;else root.SleepPriorities=api;
 })(globalThis);

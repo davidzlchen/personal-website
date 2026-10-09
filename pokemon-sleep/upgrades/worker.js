@@ -1,4 +1,4 @@
-importScripts('../analyzer/engine.js','engine.js');
+importScripts('../analyzer/engine.js','engine.js?v=2');
 self.onmessage=({data:{catalog,roster,cap}})=>{
     const results=[],skipped=[];
     for(const [i,mon] of roster.entries()) {

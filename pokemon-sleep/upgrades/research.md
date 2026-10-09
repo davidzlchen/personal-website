@@ -93,3 +93,18 @@ assume a future event or multiply normal production by temporary bonuses.
    up to three meals/day, preferring fewer farmer slots when coverage is equal.
    The existing modeled healer lead is reserved outside the farmer pool. Switching, energy recovery, random skill ingredient mixes, recipe levels,
    cooking crits, fillers, and support effects are not modeled.
+
+## Strategy correction after account review
+
+The default ranking now follows the owner's specialist strategy: ingredient
+slots at 30/60, skill subskills at 25/50, and continued investment in strong berry
+builds. Berry targets include the next five levels, useful saved berry/speed
+subskill unlocks, and the cap. Recipe improvement and beating an account-wide
+lead are no longer eligibility requirements. The funding filter defaults off;
+resource limits still prevent adding an unfunded target to the spending plan.
+
+The October 4 Salamence is Lv. 50 with Berry Finding S, Helping Bonus, and
+Helping Speed M active, but only 1 Bagon Candy. The prior checked funding filter
+hid it. It now appears as a strong long-term berry target with explicit candy
+shortfalls. Helping Bonus uses the existing self-only 5% speed benefit; team
+benefits remain outside these projections.

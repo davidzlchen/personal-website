@@ -22,7 +22,7 @@ assert.ok(unlock);assert.equal(U.project(D,unlock,25).skillLevel,Math.min(unlock
 const dragon=R.records.find(m=>m.species==='Dragonite');assert.equal(U.curveFor(dragon,L),L.cumulativeXP.pseudo);
 const raikou=R.records.find(m=>m.species==='Raikou');assert.equal(U.curveFor(raikou,L),L.cumulativeXP.legendary);
 const one=U.cost({...raikou,xp_in_level:raikou.xp_level_required-1,xp_total:raikou.xp_total-raikou.xp_in_level+raikou.xp_level_required-1},51,L);assert.deepEqual(one,{candy:1,shards:309});
-assert.deepEqual(U.thresholds(mon,70),[60,70]);
+assert.deepEqual(U.thresholds(mon,70),[58,60,70]);
 assert.throws(()=>U.project(D,{...mon,ingredients:[mon.ingredients[0],mon.ingredients[1],{name:'Unknown',quantity:1}]},60));
 for(const m of R.records) assert.ok(U.cost(m,70,L).shards>0);
 console.log('Level-up costs, EXP overflow, natures, growth curves, caps, and saved unlock projections pass.');

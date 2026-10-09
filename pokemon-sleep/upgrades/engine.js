@@ -51,7 +51,7 @@
         return build;
     }
     function thresholds(mon, cap) {
-        const levels=new Set([30,60,cap,...mon.subskills.map(s=>s.unlock_level)]);
+        const levels=new Set([25,30,50,60,Math.min(mon.level+5,cap),cap,...mon.subskills.map(s=>s.unlock_level)]);
         return [...levels].filter(l=>l>mon.level&&l<=cap).sort((a,b)=>a-b);
     }
     function unlocks(mon,target,cap) {

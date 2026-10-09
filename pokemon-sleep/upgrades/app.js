@@ -95,6 +95,7 @@
                 const gain=after===null||before===null?0:after-before;
                 const row={r,mon,p,current,before,after,gain,costs,candy,affordable,resource,beforeOutput:output(current),afterOutput:output(p),efficiency:gain/costs.shards*10000};
                 row.priority=SleepPriorities.assess(row,context);
+                row.milestone=SleepPriorities.milestone(row,cap);
                 row.priority.recipe=context.recipe;
                 if($('recipe').value==='auto'&&$('sort').value==='practical'){
                     const options=context.metaRecipes.map(recipe=>{
@@ -106,14 +107,12 @@
                 }
                 if(row.priority.kind==='recipe'&&context.config.pot!==null&&context.config.pot<row.priority.recipe.size){row.priority.kind='hold';row.priority.reason='The target recipe does not fit your entered pot size.';}
 
-                const shares=costs.shards/Math.max(context.config.budget,1)+costs.candy/Math.max(resource.allowance,1);
-                row.practicalScore=row.priority.impact*(row.priority.kind==='recipe'?row.priority.recipe.baseStrength/25539:1)/Math.max(shares,.001);
-                if($('sort').value==='practical'){if(row.priority.kind==='hold')continue;}
+                if($('sort').value==='practical'){if(row.milestone.kind==='hold')continue;}
                 else if(gain<=0 || Number(gain.toFixed(['ingredients','triggers'].includes(metric)?1:0))===0)continue;
                 rows.push(row);
             }
         }
-        rows.sort((a,b)=>$('sort').value==='practical'?((a.priority.kind==='recipe'?0:1)-(b.priority.kind==='recipe'?0:1)||b.practicalScore-a.practicalScore):$('sort').value==='cost'?a.costs.shards-b.costs.shards:$('sort').value==='gain'?b.gain-a.gain:b.efficiency-a.efficiency);
+        rows.sort((a,b)=>$('sort').value==='practical'?(b.milestone.quality-a.milestone.quality||a.costs.shards-b.costs.shards):$('sort').value==='cost'?a.costs.shards-b.costs.shards:$('sort').value==='gain'?b.gain-a.gain:b.efficiency-a.efficiency);
         $('count').textContent=`${rows.length} opportunities · ${results.length} of ${roster.length} helpers modeled · ranked by ${$('sort').selectedOptions[0].textContent.toLowerCase()}.`;
         const list=$('opportunities');list.replaceChildren();
         for(const row of rows.slice(0,limit)){
@@ -121,17 +120,28 @@
             const header=make('div',undefined,'opportunity-head');const portrait=make('img');portrait.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${mon.national_dex}.png`;portrait.alt=mon.species;header.append(portrait);
             const title=make('div');title.append(make('h3',mon.nickname||mon.species),make('p',`${mon.species} · Lv. ${mon.level} → ${p.level}`));header.append(title);card.append(header);
             card.append(make('div',SleepUpgrades.unlocks(mon,p.level,cap).join(' · '),'milestone'));
-            card.append(make('span',row.priority.kind==='recipe'?'Recipe bottleneck':row.priority.kind==='hold'?'Defer / review':'Existing role upgrade','priority-tag'),make('p',row.priority.reason,'priority-reason'));
+            if($('sort').value==='practical')card.append(make('span',row.milestone.kind==='berry'?'Berry investment':row.milestone.kind==='ingredient'?'Ingredient unlock':'Skill subskill milestone','priority-tag'),make('p',row.milestone.reason,'priority-reason'));
+            else card.append(make('span',row.priority.kind==='recipe'?'Recipe bottleneck':row.priority.kind==='hold'?'Defer / review':'Existing role upgrade','priority-tag'),make('p',row.priority.reason,'priority-reason'));
             if($('sort').value==='practical'&&row.priority.kind==='recipe')card.append(make('p',row.priority.mealGain>=.02?'+'+row.priority.mealGain.toFixed(2)+' meals / day':row.priority.slotGain.toFixed(2)+' slots freed','gain'),make('p',row.priority.recipe.name,'gain-label'));
-            else if(before!==null&&after!==null)card.append(make('p',(gain>=0?'+':'')+fmt(gain)+' / day','gain'+(gain<0?' negative':'')),make('p',`${labels[metric]} · ${fmt(before)} → ${fmt(after)}${before>0?' ('+(gain>=0?'+':'')+(gain/before*100).toFixed(1)+'%)':''}`,'gain-label'));
+            else if($('sort').value!=='practical'&&before!==null&&after!==null)card.append(make('p',(gain>=0?'+':'')+fmt(gain)+' / day','gain'+(gain<0?' negative':'')),make('p',`${labels[metric]} · ${fmt(before)} → ${fmt(after)}${before>0?' ('+(gain>=0?'+':'')+(gain/before*100).toFixed(1)+'%)':''}`,'gain-label'));
+            if($('sort').value==='practical'){
+                const role=row.milestone.kind;
+                const first=role==='berry'?row.beforeOutput.effect.berryStrength:role==='skill'?row.current.result.triggers:row.current.result.totalIngredients;
+                const last=role==='berry'?row.afterOutput.effect.berryStrength:role==='skill'?p.result.triggers:p.result.totalIngredients;
+                const unit=role==='berry'?'berry Snorlax strength':role==='skill'?'skill triggers':'gathered ingredients';
+                const precision=role==='berry'?'strength':role==='skill'?'triggers':'ingredients';
+                card.append(make('p',`${fmt(first,precision)} → ${fmt(last,precision)} ${unit} / day`,'gain-label'));
+                if(role==='skill')card.append(make('p',`Main skill level ${row.current.build.skillLevel} → ${p.build.skillLevel}`,'gain-label'));
+                if(role==='berry'&&mon.subskills.some(s=>s.name==='Helping Bonus'&&s.unlock_level<=p.level))card.append(make('p','Helping Bonus includes this helper’s own 5% speed benefit; benefits to teammates are not counted.','resource-share'));
+            }
             const costBox=make('div',undefined,'costs');
             for(const [text,name,value] of [[candy?.name||'Family candy',candy?.name,costs.candy],['Dream Shards','Dream Shards',costs.shards]]){const c=make('span',undefined,'cost');const image=icon('items',name);if(image)c.append(image);c.append(make('span',`${int(value)} ${text}`));costBox.append(c);}card.append(costBox);
             const availability=candy?`${int(candy.quantity)} family candy saved${costs.candy>candy.quantity?' · need '+int(costs.candy-candy.quantity)+' more':''}${costs.shards>inventory.dream_shards?' · need '+int(costs.shards-inventory.dream_shards)+' more shards':''}`:'Family candy unavailable for this helper.';
-            card.append(make('p',row.affordable?'Within budget + candy reserve · '+availability:availability+' · exceeds spending budget or candy reserve','availability'+(row.affordable?'':' short')));
+            card.append(make('p',row.affordable?'Within budget + candy reserve · '+availability:'Save toward this target · '+availability+' · outside current budget or candy reserve','availability'+(row.affordable?'':' short')));
             if(row.priority.kind==='recipe'&&context.config.pot===null)card.append(make('p',`Recipe needs ${row.priority.recipe.size} pot slots; pot access unconfirmed.`,'resource-share'));
-            card.append(make('p',`${(row.resource.shardShare*100).toFixed(1)}% of all saved shards · ${Number.isFinite(row.resource.candyShare)?(row.resource.candyShare*100).toFixed(1)+'% of this candy family':'family candy unavailable'}`,'resource-share'));
+            card.append(make('p',`${(row.resource.shardShare*100).toFixed(1)}% of all saved shards · ${Number.isFinite(row.resource.candyShare)?(row.resource.candyShare<=1?(row.resource.candyShare*100).toFixed(1)+'% of this candy family':'needs '+int(costs.candy-(row.resource.saved||0))+' more family candy'):'family candy unavailable'}`,'resource-share'));
             if(row.priority.payback)card.append(make('p',`${Math.ceil(row.priority.payback)} days of additional skill Dream Shards to recover the shard cost, assuming full-time use.`,'resource-share'));
-            if(metric==='ingredients'||row.priority.kind==='recipe'){
+            if(metric==='ingredients'||row.milestone.kind==='ingredient'||row.priority.kind==='recipe'){
                 const changes=make('div',undefined,'ingredient-changes');const names=new Set([...Object.keys(row.current.result.ingredients),...Object.keys(p.result.ingredients)]);
                 for(const name of names){const span=make('span');const image=icon('ingredients',name);if(image)span.append(image);span.append(make('span',`${name}: ${fmt(row.current.result.ingredients[name]||0,'ingredients')} → ${fmt(p.result.ingredients[name]||0,'ingredients')}`));changes.append(span);}
                 const skillBefore=output(row.current).effect.extraIngredients,skillAfter=output(p).effect.extraIngredients;
@@ -144,7 +154,7 @@
             const add=make('button',plan.some(item=>item.id===mon.id)?'Update spending plan':'Add to spending plan','add-plan');add.type='button';add.disabled=!affordable;add.addEventListener('click',()=>{plan=plan.filter(item=>item.id!==mon.id);plan.push({id:mon.id,level:p.level,costs,family:candy.name});render();});card.append(add);
             const link=make('a','View Pokémon details →');link.href=url('/pokemon-sleep/',mon);card.append(link);list.append(card);
         }
-        if(!rows.length)list.append(make('p','No practical upgrade fits these guardrails. Save your resources, change the recipe goal, or explore a raw sort with the budget filter off.'));
+        if(!rows.length)list.append(make('p','No specialist milestone matches these filters. Turn off the budget filter to see longer-term investment targets.'));
         $('more').hidden=rows.length<=limit;
     }
     async function loadSnapshot(){
@@ -158,7 +168,7 @@
             if(roster.some(m=>m.level>cap))throw Error('Saved research rank and helper levels do not match.');
             $('supplies').textContent=`Saved ${entry.captured_at} · ${int(inventory.dream_shards)} Dream Shards · Research rank ${inventory.researcher_rank} · Trainable cap Lv. ${cap}`;
             render();
-            worker=new Worker('worker.js?v=1');
+            worker=new Worker('worker.js?v=2');
             worker.onmessage=({data})=>{if(token!==request)return;if(data.results){results=data.results;skipped=data.skipped;$('load-status').hidden=true;worker.terminate();$('skipped').textContent=skipped.length?'Excluded helpers: '+skipped.map(s=>`${roster.find(m=>m.id===s.id)?.nickname||roster.find(m=>m.id===s.id)?.species}: ${s.reason}`).join(' · '):'All helpers have supported production projections.';render();if(!results.length){$('load-status').hidden=false;$('load-status').textContent='No helpers have enough supported data to compare.';}}else $('load-status').textContent=`Comparing daily production… ${data.progress} of ${data.total} helpers`;};
             worker.onerror=()=>{if(token!==request)return;worker.terminate();$('load-status').textContent='The comparison could not finish. Retry to calculate again.';$('retry').hidden=false;};
             worker.postMessage({catalog,roster,cap});

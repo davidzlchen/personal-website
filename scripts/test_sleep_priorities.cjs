@@ -29,3 +29,20 @@ assert.equal(recipes.find(r=>r.id==='HONEY_GATHER_CHOCOLATE_WAFFLES').size,115);
 for(const r of recipes){assert.equal(Object.values(r.ingredients).reduce((s,n)=>s+n,0),r.size);assert.ok(r.baseStrength>0);}
 assert.equal(new Set(recipes.map(r=>r.id)).size,recipes.length);
 console.log('Recipe rotation, slot limits, mixed output, missing ingredients, shared resource ledger, evolution review, shard payback, and recipe catalog pass.');
+
+// Specialist strategy does not require replacing another helper or being funded.
+const snapshot=require('../pokemon-sleep/snapshots/2026-10-04-1c3647d40662.json'),U=require('../pokemon-sleep/upgrades/engine.js'),catalog=require('../pokemon-sleep/analyzer/data.json');
+const salamence=snapshot.roster.records.find(m=>m.species==='Salamence');
+const berryRow={mon:salamence,p:{level:55,build:U.project(catalog,salamence,55)},current:{result:{berries:100}},beforeOutput:{effect:{berryStrength:100}},afterOutput:{effect:{berryStrength:125}}};
+assert.equal(P.milestone(berryRow,70).kind,'berry');assert.equal(P.milestone(berryRow,70).quality,5);
+assert.equal(P.resources({shards:1,candy:2},'Bagon Candy',snapshot.inventory,{budget:1000,candyReserve:20}).fits,false);
+assert.equal(P.milestone({...berryRow,p:{...berryRow.p,level:60}},70).kind,'hold');
+assert.equal(P.milestone({...berryRow,p:{...berryRow.p,level:70}},70).kind,'berry');
+const specialist=(role,target)=>({...berryRow,mon:{...salamence,level:20,subskills:[{name:'Skill Trigger M',unlock_level:25}]},p:{level:target,build:{species:{specialty:role,remainingEvolutions:0}},result:{triggers:5,totalIngredients:30}},current:{result:{triggers:2,totalIngredients:10}}});
+assert.equal(P.milestone(specialist('ingredient',30),70).kind,'ingredient');
+assert.equal(P.milestone(specialist('ingredient',50),70).kind,'hold');
+assert.equal(P.milestone(specialist('ingredient',60),70).kind,'ingredient');
+assert.equal(P.milestone(specialist('skill',25),70).kind,'skill');
+assert.equal(P.milestone(specialist('skill',50),70).kind,'skill');
+assert.equal(P.milestone(specialist('skill',60),70).kind,'hold');
+console.log('Specialist breakpoints and strong unfunded Salamence investment targets pass.');
