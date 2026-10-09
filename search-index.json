@@ -29,7 +29,14 @@
       "markdown_url": "https://davidzlchen.com/pokemon-sleep/index.md",
       "title": "David’s Pokémon Sleep Field Notes",
       "description": "David’s Pokémon Sleep Field Notes: island milestones, researcher rank, familiar helpers, and supplies for the next good night.",
-      "content": "POKÉMON SLEEP · FIELD NOTES\n\n# Pokémon Sleep Field Notes✦\n\nA record of quiet progress: island milestones, familiar helpers, and a little preparation for the next good night.\n\n[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection)"
+      "content": "POKÉMON SLEEP · FIELD NOTES\n\n# Pokémon Sleep Field Notes✦\n\nA record of quiet progress: island milestones, familiar helpers, and a little preparation for the next good night.\n\n[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection) [Try the Pokémon analyzer →](https://davidzlchen.com/pokemon-sleep/analyzer/)"
+    },
+    {
+      "url": "https://davidzlchen.com/pokemon-sleep/analyzer/",
+      "markdown_url": "https://davidzlchen.com/pokemon-sleep/analyzer/index.md",
+      "title": "Pokémon Sleep Production Analyzer · Field Notes",
+      "description": "Estimate daily berries, ingredients, and main skill triggers for Pokémon Sleep. Start with a saved helper or explore a custom build, nature, and subskills.",
+      "content": "[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/)\n\nPOKÉMON SLEEP · THE DAILY HAUL\n\n# A little help, a whole day’s worth✦\n\nHow much can one helper bring in? Explore their berries, ingredients, and skill triggers over a typical day.\n\nLoading species and saved helpers…\n\nThis analyzer needs JavaScript to calculate production in your browser."
     },
     {
       "url": "https://davidzlchen.com/privacy/",

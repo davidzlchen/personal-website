@@ -1304,3 +1304,12 @@ progress::-moz-progress-bar {
     .snapshot-trigger .snapshot { font-size: 12px; }
     .snapshot-icon { display: none; }
 }
+
+/* Production analyzer entry points */
+.hero-analyzer-link { margin-left: 18px; font-size: 13px; text-underline-offset: 4px; }
+.analyzer-invitation { display: flex; align-items: center; justify-content: space-between; gap: 30px; background: var(--green); border-radius: 24px; padding: 32px; margin: 50px 0; }
+.analyzer-invitation h2 { margin: 10px 0; font-size: 28px; letter-spacing: -.7px; }
+.analyzer-invitation p:last-child { max-width: 590px; color: #526a59; line-height: 1.7; margin-bottom: 0; }
+.analyzer-invitation .button { flex-shrink: 0; }
+.detail-analyze { display: inline-block; margin: 14px 0 4px; font-weight: 600; font-size: 14px; text-underline-offset: 4px; }
+@media (max-width: 750px) { .analyzer-invitation { align-items: flex-start; flex-direction: column; padding: 24px; } .hero-analyzer-link { display: block; margin: 16px 0 0; } }

@@ -184,3 +184,48 @@ for validating real events. Test with `node scripts/test-analytics.cjs` and
 regenerate discovery after public page changes. Measure project visits and broad
 Field Notes interaction before interpreting return rates; only consenting visits
 are represented.
+
+## Pokémon Sleep production analyzer
+
+`/pokemon-sleep/analyzer/` estimates berries, individually named ingredients, and
+collected skill triggers per 24 hours. Links from Field Notes and helper details
+load the selected sanitized snapshot. Visitors can also build any of the 247
+supported species, edit level/nature/ingredients/subskills, choose an energy and
+collection scenario, pin a comparison, and copy a reproducible build URL.
+Nothing writes back to the collection or connects to the game account.
+
+The independent, seeded simulation averages 4,000 days after a 20-day warmup.
+It models level and nature speed, additive subskills, the 35% Helping Bonus cap,
+Good Camp, ribbons, ingredient slot unlocks, inventory clipping, sneaky snacking,
+pity thresholds, and one/two stored skill procs. Energy is integrated at one-minute
+resolution under the selected explicit scenario. It does not model meals, naps,
+main skill effects (including extra ingredients/healing/help), events, strength,
+or percentile ratings. Darkrai and Mew's customizable All builds are excluded.
+Level 75/100 custom subskills are future projections; saved helpers retain their
+snapshot's recorded unlock levels. Carry and ribbons are missing from the public
+roster and need user input; evolution history is never inferred.
+
+Run `node scripts/test_sleep_analyzer.cjs` for mechanics and species coverage.
+With Playwright available, run `node scripts/test_sleep_analyzer_browser.cjs`
+against the local server on port 8769, or set `SLEEP_TEST_ORIGIN` to another
+server. It verifies the real helper flow, share URLs, mobile layout, failure
+handling, and analytics opt-out.
+The analyzer has no build step, backend, or runtime dependency. Data is adapted
+from Apache-2.0-licensed [Neroli's Lab](https://github.com/nerolis-lab/nerolis-lab),
+with source SHA and import date recorded in `analyzer/data.json`. Upstream license,
+notice, and rate attribution are included beside it.
+
+To update the species catalog from a reviewed upstream checkout, bundle an entry
+exporting `COMPLETE_POKEDEX` from `common/src/types/pokemon/pokedex`, `NATURES` from
+`common/src/types/nature/nature`, and `subskills` as a namespace from
+`common/src/types/subskill/subskills` using esbuild's `--bundle --platform=node
+--format=cjs`. Then run:
+
+```sh
+node scripts/import-sleep-analyzer-data.cjs /tmp/bundled-data.cjs UPSTREAM_COMMIT_SHA
+node scripts/test_sleep_analyzer.cjs
+python3 scripts/build-discovery.py
+```
+
+Review the data diff and upstream mechanics before publishing. Only that public
+species catalog is imported; no account captures or credentials are involved.
