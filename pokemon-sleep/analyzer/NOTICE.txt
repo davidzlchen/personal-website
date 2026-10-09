@@ -8,3 +8,7 @@ Upstream credits the Mathcord RP data project for base skill and ingredient rate
 https://docs.google.com/spreadsheets/d/1kBrPl0pdAO8gjOf_NrTgAPseFtqQA27fdfEbMBBeAhs/edit
 
 The simulation and interface are independently implemented for Field Notes.
+
+Regular island favorite-berry sets in island-settings.js are adapted from:
+https://github.com/nerolis-lab/nerolis-lab/tree/47f1ff33f4637ceb2bd357b7d778c8df0a94200a/common/src/types/island/islands
+The interface uses snapshot-local area bonuses; Expert mode is unavailable.

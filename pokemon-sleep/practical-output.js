@@ -16,7 +16,7 @@
         const breakdown=make('dl',null,'practical-breakdown');
         const rows=[['From regular berries',fmt(outcome.berryStrength)],['From main skill',outcome.skillStrength===null?'Not modeled':fmt(outcome.skillStrength)]];
         for(const [label,value] of rows){const row=make('div');row.append(make('dt',label),make('dd',value));breakdown.append(row);}
-        section.append(breakdown,make('p',`Strength assumes ${conditions.areaBonus || 0}% area bonus and ${conditions.favoriteBerry?'favorite berries (×2)':'no favorite-berry bonus'}. Cooking strength and teammates’ production are excluded.`,'practical-note'));
+        section.append(breakdown,make('p',`${conditions.islandName ? conditions.islandName + ": strength" : "Strength"} assumes ${conditions.areaBonus || 0}% area bonus and ${conditions.favoriteBerry?'favorite berries (×2)':'no favorite-berry bonus'}. Cooking strength and teammates’ production are excluded.`,'practical-note'));
         section.append(make('h3',`${outcome.skillName}${outcome.skillLevel?' · Lv. '+outcome.skillLevel:''}`),make('p',outcome.perTrigger,'practical-effect'));
         if(outcome.perDay)section.append(make('p',outcome.perDay,'practical-daily'));
         if(outcome.caveat)section.append(make('p',outcome.caveat,'practical-note'));

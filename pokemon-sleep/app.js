@@ -278,7 +278,7 @@ function showDetail(mon) {
     meta.append(specialtyBadge(mon), berryBadge, node("span", "tag candy-badge"));
     if (mon.shiny) meta.append(node("span", "tag shiny-badge", "✦ Shiny"));
     body.append(meta);
-    body.append(SleepDetailProduction.panel(mon, activeSnapshotId));
+    body.append(SleepDetailProduction.panel(mon, activeSnapshotId, inventory));
 
     const xp = section("Experience");
     const xpLabel = node("div", "xp-label");
