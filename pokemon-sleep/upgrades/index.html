@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Best opportunities to level up · Pokémon Sleep Field Notes</title>
+<meta name="description" content="Find useful level milestones for your saved Pokémon Sleep helpers. Compare candy and Dream Shard costs, daily production gains, and current versus level-cap potential.">
+<link rel="canonical" href="https://davidzlchen.com/pokemon-sleep/upgrades/">
+<meta name="theme-color" content="#172c32"><link rel="icon" href="/pokemon-sleep/moon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/pokemon-sleep/styles.css?v=priority-totals-1"><link rel="stylesheet" href="/css/site-header.css"><link rel="stylesheet" href="/css/analytics.css"><link rel="stylesheet" href="styles.css?v=1">
+<script defer src="/js/analytics.js"></script><script defer src="/pokemon-sleep/asset-data.js"></script><script defer src="/pokemon-sleep/analyzer/engine.js"></script><script defer src="/pokemon-sleep/analyzer/outcomes.js"></script><script defer src="/pokemon-sleep/island-settings.js"></script><script defer src="engine.js?v=1"></script><script defer src="app.js?v=1"></script>
+<!-- discovery:start -->
+<link rel="alternate" type="text/markdown" href="/pokemon-sleep/upgrades/index.md" title="Markdown">
+<link rel="alternate" type="application/atom+xml" href="/blog/feed.xml" title="David Z. Chen’s blog">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="AI content index">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://davidzlchen.com/#author", "name": "David Z. Chen", "url": "https://davidzlchen.com/", "sameAs": ["https://github.com/davidzlchen", "https://linkedin.com/in/davidzlchen"]}, {"@type": "WebSite", "@id": "https://davidzlchen.com/#website", "url": "https://davidzlchen.com/", "name": "David Z. Chen", "inLanguage": "en", "publisher": {"@id": "https://davidzlchen.com/#author"}}, {"@type": "WebPage", "@id": "https://davidzlchen.com/pokemon-sleep/upgrades/#page", "url": "https://davidzlchen.com/pokemon-sleep/upgrades/", "name": "Best opportunities to level up · Pokémon Sleep Field Notes", "description": "Find useful level milestones for your saved Pokémon Sleep helpers. Compare candy and Dream Shard costs, daily production gains, and current versus level-cap potential.", "inLanguage": "en", "isPartOf": {"@id": "https://davidzlchen.com/#website"}, "author": {"@id": "https://davidzlchen.com/#author"}}]}</script>
+<!-- discovery:end -->
+</head>
+<body>
+<header class="nav site-header"><a class="wordmark" href="/" aria-label="David Z. Chen home">david z. chen<span class="wordmark-dot">.</span></a><nav aria-label="Main navigation"><a href="/pokemon-sleep/">Field Notes</a><a href="/blog/">Blog</a><a href="/#about">About</a></nav></header>
+<main class="upgrade-main">
+<a class="back-link" id="back" href="/pokemon-sleep/">← Back to the Field Notes</a>
+<section class="upgrade-intro"><p class="eyebrow">POKÉMON SLEEP · GROWING ROOM</p><h1>Best opportunities<br>to level up<span class="spark">✦</span></h1><p>Put candy where it makes a difference. Find the next ingredient or subskill unlock for the helpers already in your collection.</p></section>
+<p id="load-status" role="status">Loading your saved collection…</p><button id="retry" hidden type="button">Retry loading</button>
+<div id="workspace" hidden>
+<div class="upgrade-controls">
+<label>Saved collection<select id="snapshot"></select></label>
+<label>Island<select id="island"></select></label>
+<label>Compare by<select id="metric"><option value="strength">Direct Snorlax strength</option><option value="ingredients">Ingredients gathered</option><option value="triggers">Skill triggers</option><option value="shards">Skill Dream Shards</option></select></label>
+</div>
+<p id="supplies" class="muted"></p><p id="island-note" class="muted"></p>
+<section class="ceiling-panel" aria-labelledby="ceiling-heading"><div class="section-heading"><p class="eyebrow">THE ROOM TO GROW</p><h2 id="ceiling-heading">Current vs. possible theoretical max</h2></div><p class="muted" id="ceiling-note"></p><div id="ceiling" class="ceiling-grid"></div></section>
+<section aria-labelledby="opportunities-heading">
+<div class="section-heading"><p class="eyebrow">THE NEXT GOOD INVESTMENT</p><h2 id="opportunities-heading">Useful milestones</h2></div>
+<div class="upgrade-controls filters"><label>Find a helper<input type="search" id="search" placeholder="Name or species"></label><label>Rank opportunities<select id="sort"><option value="efficiency">Gain per 10,000 Dream Shards</option><option value="gain">Largest daily gain</option><option value="cost">Fewest Dream Shards</option></select></label><label class="check"><input id="affordable" type="checkbox">Within saved supplies</label></div>
+<p class="muted">Costs are from the saved level and EXP to each target, using ordinary candy. Candy is shared by evolution family; each opportunity is considered separately. Rankings show gains in the selected metric.</p>
+<p id="count" role="status"></p><div id="opportunities" class="opportunity-list"></div><button id="more" hidden type="button">Show more opportunities</button>
+</section>
+<details class="model-notes"><summary>How these comparisons work</summary><p>“Max” means the strongest individual helper for the selected metric, first at its saved level and then with every supported helper at your trainable level cap. This is a level-only ceiling, not a perfect new Pokémon or a team prediction. Evolutions, seeds, nature changes, ribbons, and Candy Boost are excluded.</p><p>Daily output uses the same analyzer as Pokémon details: 8.5 hours of sleep, collection every 3 hours, fading energy, and no additional Helping Bonus teammates or camp. Main-skill recovery and teammate effects are not fed back into production. Ingredients have no cooking strength assigned. Helpers with unmodeled direct skill effects are excluded from strength ranking.</p><p>Locked saved ingredient slots are used when they unlock. Skill Level Up subskills increase the effective main skill level when newly unlocked. Production is an estimate; small differences can reflect simulation sampling. Cost estimates preserve captured EXP progress and next-level requirements, then follow the public growth tables. Handy Candy, type candy, clusters, and sleep EXP are not spent automatically.</p><p>Level and candy rules checked October 9, 2026. Sources: <a href="https://candy.blspnm.com/">Candy EXP and Dream Shard tables</a>, <a href="https://www.pokemonsleep.net/de/news/343133383535303430313232333838343833/">official level-cap and candy update</a>, and <a href="/pokemon-sleep/analyzer/">production analyzer references</a>.</p><p id="skipped"></p></details>
+</div>
+</main>
+</body></html>
