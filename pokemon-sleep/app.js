@@ -278,7 +278,6 @@ function showDetail(mon) {
     meta.append(specialtyBadge(mon), berryBadge, node("span", "tag candy-badge"));
     if (mon.shiny) meta.append(node("span", "tag shiny-badge", "✦ Shiny"));
     body.append(meta);
-    body.append(SleepDetailProduction.panel(mon, activeSnapshotId, inventory));
 
     const xp = section("Experience");
     const xpLabel = node("div", "xp-label");
@@ -381,6 +380,7 @@ function showDetail(mon) {
         capture.append(row);
     }
     body.append(capture);
+    body.append(SleepDetailProduction.panel(mon, activeSnapshotId, inventory));
     $("#detail-content").replaceChildren(header, body);
     dialog.setAttribute("aria-label", `${mon.nickname || mon.species} details`);
     renderCandyBalance();
