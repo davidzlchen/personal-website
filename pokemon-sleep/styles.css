@@ -1361,3 +1361,5 @@ progress::-moz-progress-bar {
 .island-analysis-choice button,.detail-change-island { background:none; border:0; padding:0; font:inherit; text-decoration:underline; color:inherit; cursor:pointer; }
 .detail-selected-island span,.detail-selected-island strong { display:block; font-size:12px; margin-bottom:5px; }
 .detail-change-island { font-size:11px; }
+
+.detail-production > .practical-cards { grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); margin:0 0 10px; }
