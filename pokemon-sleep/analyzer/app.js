@@ -14,7 +14,7 @@
         if (value !== undefined && entries.some(([v]) => String(v) === String(value))) select.value = value;
     };
     const params = new URLSearchParams(location.search);
-    let data, roster = [], capturedAt, species, result, resultOutcome, resultLabel, comparison, timer;
+    let inventory, data, roster = [], capturedAt, species, result, resultOutcome, resultLabel, comparison, timer;
     let unlocks = [10,25,50,75,100];
     let snapshotFailed = false;
 
@@ -91,10 +91,18 @@
             subskills: Array.from({length:5},(_,i)=>({name:$('subskill-'+i).value,unlock:unlocks[i]}))
         };
     }
+    function updateIsland(resetBonus=false) {
+        const id=$('island').value;
+        if(resetBonus) $('area').value=SleepIslands.savedBonus(id,inventory) ?? 0;
+        const fixed=SleepIslands.favorite(id,species.berry);
+        $('favorite-berry').disabled=fixed!==null;
+        if(fixed!==null) $('favorite-berry').checked=fixed;
+        $('island-note').textContent=SleepIslands.note(id,inventory,$('area').value);
+    }
     function conditions() {
         return { sleepHours:+$('sleep').value, collectHours:+$('collect').value, energy:$('energy').value,
             helpingBonus:+$('bonus').value, ribbon:+$('ribbon').value, camp:$('camp').checked,
-            areaBonus:+$('area').value, favoriteBerry:$('favorite-berry').checked };
+            islandName:$('island').value==='custom'?'':SleepIslands.get($('island').value).name, areaBonus:+$('area').value, favoriteBerry:$('favorite-berry').checked };
     }
     function paintHeading(build) {
         const image=el('img'); image.alt='';
@@ -145,20 +153,22 @@
     }
     function calculate() {
         clearTimeout(timer);
+        updateIsland();
         try {
             const build=readBuild(); paintHeading(build);
             const active = +$('level').value;
             for(let i=0;i<3;i++) $('ingredient-'+i).parentElement.classList.toggle('slot-inactive', active<[1,30,60][i]);
             for(let i=0;i<5;i++) $('subskill-'+i).parentElement.classList.toggle('slot-inactive', active<unlocks[i]);
             result=SleepAnalyzer.simulate(build,conditions());
-            resultLabel=`${species.name} · Lv. ${build.level} · ${build.nature.name} · Skill Lv. ${build.skillLevel}`;
+            resultLabel=`${species.name} · Lv. ${build.level} · ${build.nature.name} · Skill Lv. ${build.skillLevel} · ${SleepIslands.get($('island').value).name}`;
             $('calculation-status').textContent=''; paintResults();
         } catch(error) { $('calculation-status').textContent=error.message; $('results').hidden=true; }
     }
     function buildUrl() {
         const url=new URL('https://davidzlchen.com/pokemon-sleep/analyzer/');
         url.searchParams.set('species',species.key);
-        for(const id of ['level','skill-level','carry','nature','sleep','collect','energy','bonus','ribbon','area']) url.searchParams.set(id,$(id).value);
+        if(params.has('snapshot') && !snapshotFailed) url.searchParams.set('snapshot',params.get('snapshot'));
+        for(const id of ['level','skill-level','carry','nature','sleep','collect','energy','bonus','ribbon','area','island']) url.searchParams.set(id,$(id).value);
         url.searchParams.set('camp',$('camp').checked?'1':'0');
         url.searchParams.set('favorite-berry',$('favorite-berry').checked?'1':'0');
         url.searchParams.set('ingredients',Array.from({length:3},(_,i)=>$('ingredient-'+i).value).join(','));
@@ -172,6 +182,7 @@
         if (!p) throw Error('This shared build has an unknown species.');
         $('species').value=p.key; resetSpecies();
         for(const id of ['level','skill-level','carry','nature','sleep','collect','energy','bonus','ribbon','area']) if(params.has(id)) $(id).value=params.get(id);
+        if(SleepIslands.islands.some(i=>i.id===params.get('island'))) $('island').value=params.get('island');
         $('camp').checked=params.get('camp')==='1';
         $('favorite-berry').checked=params.get('favorite-berry')==='1';
         const thresholds=params.get('unlocks')?.split(',').map(Number);
@@ -186,9 +197,11 @@
     }
     async function init() {
         try {
-            const results=await Promise.allSettled([getJson('/pokemon-sleep/analyzer/data.json'),getJson('/pokemon-sleep/roster.json')]);
+            const results=await Promise.allSettled([getJson('/pokemon-sleep/analyzer/data.json'),getJson('/pokemon-sleep/roster.json'),getJson('/pokemon-sleep/inventory.json')]);
             if(results[0].status==='rejected')throw results[0].reason;
             data=results[0].value;
+            inventory=results[2].status==='fulfilled'?results[2].value:null;
+            SleepIslands.fill($('island'));
             let savedData=results[1].status==='fulfilled'?results[1].value:null;
             if(params.has('snapshot')) {
                 try {
@@ -197,7 +210,8 @@
                     if(!snap || !/^snapshots\/[a-z0-9-]+\.json$/.test(snap.file))throw Error('Snapshot unavailable.');
                     const archived=await getJson('/pokemon-sleep/'+snap.file);
                     savedData=archived.roster;
-                } catch { snapshotFailed=true; $('load-status').textContent='That snapshot could not be loaded. Choose a helper from the latest collection, or try a custom build.'; }
+                    inventory=archived.inventory;
+                } catch { inventory=null; snapshotFailed=true; $('load-status').textContent='That snapshot could not be loaded. Choose a helper from the latest collection, or try a custom build.'; }
             }
             roster=savedData?.records || []; capturedAt=savedData?.captured_at;
             options($('species'),data.species.map(p=>[p.key,p.name]),'AMPHAROS');
@@ -208,6 +222,12 @@
             if(params.has('species'))restoreUrl();
             else if(!snapshotFailed&&params.has('pokemon')&&roster.some(m=>m.id===params.get('pokemon'))) { $('saved').value=params.get('pokemon'); applySaved(); }
             else calculate();
+            if(!params.has('species')) {
+                if(SleepIslands.islands.some(i=>i.id===params.get('island'))) $('island').value=params.get('island');
+                updateIsland(true);
+                if(params.has('area')) $('area').value=params.get('area');
+                $('favorite-berry').checked=params.get('favorite-berry')==='1';
+            }
             if(!$('load-status').textContent.startsWith('That snapshot')) $('load-status').textContent=roster.length?'': 'Saved helpers are unavailable. Custom builds still work.';
             $('analyzer-workspace').hidden=false;
             calculate();
@@ -221,6 +241,7 @@
     $('build-form').addEventListener('change',event=>{
         if(event.target.id==='saved') { applySaved(); return; }
         if(event.target.id==='species')resetSpecies();
+        if(event.target.id==='island') { $('favorite-berry').checked=false; updateIsland(true); }
         calculate();
     });
     $('build-form').addEventListener('input',event=>{

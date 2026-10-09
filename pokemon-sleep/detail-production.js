@@ -3,6 +3,7 @@
     'use strict';
     let catalog;
     const results = new WeakMap();
+    let selectedIsland = 'custom';
     const make = (tag, text, className) => {
         const element = document.createElement(tag);
         if (text != null) element.textContent = text;
@@ -17,7 +18,7 @@
         }).catch(error => { catalog = null; throw error; });
         return catalog;
     }
-    function panel(mon, snapshotId) {
+    function panel(mon, snapshotId, inventory) {
         const section = make('section', null, 'detail-production');
         const heading = make('div', null, 'detail-production-heading');
         heading.append(make('h3', 'Expected daily production'), make('span', 'Per 24 hours', 'detail-production-period'));
@@ -30,7 +31,33 @@
         if (new URLSearchParams(location.search).get('analytics') === 'off') url.searchParams.set('analytics', 'off');
         link.href = url.pathname + url.search;
         link.title = 'Adjust this helper’s build and production assumptions';
-        section.append(heading, status, link);
+        const controls = make('div', null, 'detail-island-controls');
+        const islandLabel=make('label','Island'), island=make('select');
+        island.id='detail-island'; SleepIslands.fill(island); island.value=selectedIsland; islandLabel.append(island);
+        const areaLabel=make('label','Area bonus (%)'), area=make('input');
+        area.id='detail-area'; area.type='number'; area.min=0;area.max=100;area.step=1; area.value=SleepIslands.savedBonus(island.value,inventory) ?? 0;areaLabel.append(area);
+        const favoriteLabel=make('label',null,'detail-island-favorite'), favorite=make('input');
+        favorite.id='detail-favorite'; favorite.type='checkbox';favoriteLabel.append(favorite,make('span','This helper’s berry is a weekly favorite (×2)'));
+        const islandNote=make('p',null,'detail-production-note');
+        controls.append(islandLabel,areaLabel,favoriteLabel,islandNote);
+        section.append(heading,controls,status,link);
+        let render;
+        function updateIsland(resetBonus) {
+            selectedIsland=island.value;
+            if(resetBonus) area.value=SleepIslands.savedBonus(island.value,inventory) ?? 0;
+            const fixed=SleepIslands.favorite(island.value,mon.berry);
+            favorite.disabled=fixed!==null;
+            if(fixed!==null) favorite.checked=fixed;
+            islandNote.textContent=SleepIslands.note(island.value,inventory,area.value);
+            url.searchParams.set('island',island.value);url.searchParams.set('area',area.value);
+            url.searchParams.set('favorite-berry',favorite.checked?'1':'0');
+            link.href=url.pathname+url.search;
+            if(render) render();
+        }
+        island.addEventListener('change',()=>{favorite.checked=false;updateIsland(true);});
+        area.addEventListener('input',()=>updateIsland(false));
+        favorite.addEventListener('change',()=>updateIsland(false));
+        updateIsland(false);
         loadCatalog().then(data => {
             if (!section.isConnected) return; // A different helper or snapshot may already be selected.
             const build = SleepAnalyzer.fromRoster(data, mon);
@@ -39,7 +66,11 @@
                 result = SleepAnalyzer.simulate(build, SleepAnalyzer.defaultConditions);
                 results.set(mon, result);
             }
-            const outcome = SleepOutcomes.evaluate(build, result, SleepAnalyzer.defaultConditions);
+            render=()=>{
+            section.querySelectorAll('.detail-production-cards,.detail-production-ingredients,.detail-production-assumptions,.practical-output,.practical-cards').forEach(n=>n.remove());
+            if(area.value==='' || !area.checkValidity()) { status.textContent='Enter an area bonus from 0 to 100%.'; return; }
+            const conditions={...SleepAnalyzer.defaultConditions,areaBonus:+area.value,favoriteBerry:favorite.checked,islandName:island.value==='custom'?'':SleepIslands.get(island.value).name};
+            const outcome = SleepOutcomes.evaluate(build, result, conditions);
             const cards = make('div', null, 'detail-production-cards');
             for (const [label, value, category, name] of [
                 ['Berries', result.berries + outcome.skillBerries, 'berries', mon.berry],
@@ -66,11 +97,13 @@
             status.textContent = 'Estimated from this saved build · includes modeled skill rewards';
             section.insertBefore(cards, status);
             section.insertBefore(ingredients, status);
-            const practical = SleepPracticalOutput.panel(build, result, SleepAnalyzer.defaultConditions);
+            const practical = SleepPracticalOutput.panel(build, result, conditions);
             // Keep all five daily totals together; explain their components below.
             section.insertBefore(practical.querySelector('.practical-cards'), ingredients);
             section.insertBefore(practical, link);
             section.insertBefore(assumptions, link);
+            };
+            render();
         }).catch(error => {
             if (section.isConnected) status.textContent = error.message;
         });

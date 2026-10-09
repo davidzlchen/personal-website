@@ -68,3 +68,10 @@ Recorded live values are in `scripts/raenonx-reference.json`. Reproduce the loca
 comparison with `node scripts/test_raenonx_reference.cjs`. The baseline and ordinary
 skill-roll matches do not certify every species, real routine, or full RaenonX
 model. Public mechanics/data are credited in the analyzer's notice and sources.
+
+Regular-island selection applies the selected snapshot's recorded area bonus
+and fixed favorite-berry sets (Greengrass favorites are entered manually).
+These settings scale berry and strength-skill rewards, not help counts or
+Dream Shard skill rewards. Expert islands are disabled because weekly main
+and sub-favorites, speed modifiers, and weekly effects are not modeled.
+See the [official Expert Mode description](https://www.pokemonsleep.net/en/news/323932383138363132393037393333363937/).

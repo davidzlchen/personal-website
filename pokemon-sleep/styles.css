@@ -1342,3 +1342,9 @@ progress::-moz-progress-bar {
 .practical-effect, .practical-daily { font-size: 13px; line-height: 1.65; margin: 8px 0; }
 .practical-daily { font-weight: 600; }
 .detail-production > .practical-cards { margin-top: 10px; }
+
+.detail-island-controls { display:grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap:10px; margin-bottom:14px; }
+.detail-island-controls label { font-size:12px; font-weight:600; }
+.detail-island-controls select,.detail-island-controls input[type=number] { display:block; width:100%; box-sizing:border-box; margin-top:5px; padding:9px; border:1px solid #bbc9bc; border-radius:8px; background:#fff; font:inherit; }
+.detail-island-controls .detail-island-favorite { grid-column:1/-1; display:flex; align-items:center; gap:8px; }
+.detail-island-controls p { grid-column:1/-1; margin:0; }
