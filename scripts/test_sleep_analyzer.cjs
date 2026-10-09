@@ -41,3 +41,14 @@ for(const p of data.species) {
     assert.ok(r.fullHours<=24); assert.ok(r.sneaky<=r.berries);
 }
 console.log(`Production mechanics, caps, boundary collection, inventory overflow, reproducibility, and ${data.species.length} species verified.`);
+// Saved-build adaptation must respect active slots and fail closed for unknown forms.
+const roster=require('../pokemon-sleep/roster.json').records;
+const helper=roster.find(p=>p.nickname==='charge king');
+const adapted=engine.fromRoster(data,helper);
+assert.equal(adapted.level,helper.level);
+assert.equal(adapted.carry,adapted.species.carry);
+assert.throws(()=>engine.fromRoster(data,{...helper,variant:'Costume'}),/form/);
+assert.throws(()=>engine.fromRoster(data,{...helper,nature:null}),/nature/);
+assert.throws(()=>engine.fromRoster(data,{...helper,ingredients:[{name:null,quantity:null}]}),/ingredient/);
+assert.doesNotThrow(()=>engine.fromRoster(data,{...helper,level:10,ingredients:[helper.ingredients[0]],subskills:[]}));
+assert.equal(engine.fromRoster(data,{...helper,nature_neutralized:true}).nature.name,'Hardy');

@@ -17,7 +17,7 @@
     let data, roster = [], capturedAt, species, result, resultLabel, comparison, timer;
     let unlocks = [10,25,50,75,100];
     let snapshotFailed = false;
-    
+
     function icon(category, name) {
         const path = sleepAssets[category]?.[name];
         if (!path) return null;
@@ -25,11 +25,7 @@
         image.addEventListener('error',()=>image.hidden=true,{once:true});
         return image;
     }
-    function speciesMatch(mon) {
-        if (mon.variant === 'Costume') return null; // The roster does not identify which costume.
-        return data.species.find(p => p.dex === mon.national_dex && (mon.variant === 'Paldean'
-            ? p.key.endsWith('_PALDEAN') : p.name === mon.species));
-    }
+    const speciesMatch = mon => SleepAnalyzer.matchSpecies(data, mon);
     function fields() {
         $('ingredient-fields').replaceChildren();
         for (let i=0; i<3; i++) {
@@ -187,7 +183,7 @@
                     const snap=history.snapshots.find(s=>s.id===params.get('snapshot'));
                     if(!snap || !/^snapshots\/[a-z0-9-]+\.json$/.test(snap.file))throw Error('Snapshot unavailable.');
                     const archived=await getJson('/pokemon-sleep/'+snap.file);
-                    savedData=archived.roster; 
+                    savedData=archived.roster;
                 } catch { snapshotFailed=true; $('load-status').textContent='That snapshot could not be loaded. Choose a helper from the latest collection, or try a custom build.'; }
             }
             roster=savedData?.records || []; capturedAt=savedData?.captured_at;
