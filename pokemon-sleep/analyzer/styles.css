@@ -5,7 +5,7 @@
 .analyzer-intro > p:last-child { font-size: 18px; color: var(--muted); max-width: 580px; line-height: 1.6; }
 .analyzer-layout { display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; align-items: start; }
 .build-panel, .results-panel { background: #fffefa; border: 1px solid var(--line); border-radius: 24px; padding: 28px; }
-.results-panel { position: sticky; top: 24px; background: #eef3e9; }
+.results-panel { position: static; background: #eef3e9; }
 .form-section + .form-section { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 24px; }
 .panel-heading { display: flex; gap: 12px; align-items: center; margin-bottom: 22px; }
 .panel-heading h2 { font-size: 21px; letter-spacing: -.5px; margin: 0; }

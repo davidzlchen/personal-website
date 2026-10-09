@@ -1,0 +1,23 @@
+const assert=require('node:assert/strict');
+const e=require('../pokemon-sleep/analyzer/engine'),o=require('../pokemon-sleep/analyzer/outcomes'),d=require('../pokemon-sleep/analyzer/data.json');
+const b=key=>{const p=d.species.find(p=>p.key===key);return {species:p,level:53,carry:p.carry,nature:d.natures.find(n=>n.name==='Hardy'),ingredients:p.ingredients.map(s=>s[0]),subskills:[],skillLevel:p.effect.maxLevel};};
+const production={berries:100,triggers:4,ingredients:{'Fiery Herb':5}};
+const amp=b('AMPHAROS'),r=o.evaluate(amp,production,{});
+assert.equal(r.berryValue,90);assert.equal(r.berryStrength,9000);assert.equal(r.skillStrength,4*6858);
+assert.equal(r.directStrength,9000+4*6858);assert.equal(r.dreamShards,0);assert.equal(r.ingredientBaseValue,650);
+const bonus=o.evaluate(amp,production,{areaBonus:50,favoriteBerry:true});
+assert.equal(bonus.berryStrength,27000);assert.equal(bonus.skillStrength,4*6858*1.5,'favorite berry must not double skill strength');
+const swalot=b('SWALOT');swalot.skillLevel=8;
+const shards=o.evaluate(swalot,production,{areaBonus:50});
+assert.equal(shards.dreamShards,4*2875,'area bonus does not multiply Dream Shards');
+assert.match(shards.perTrigger,/1,150–4,600/);
+const lucario=o.evaluate(b('LUCARIO'),production,{});assert.equal(lucario.dreamShards,4*2500);assert.equal(lucario.skillStrength,4*2042);
+const random=o.evaluate(b('BAYLEEF'),production,{});assert.equal(random.skillStrength,4*b('BAYLEEF').species.effect.strengthAmountsMean.at(-1));
+const magnet=o.evaluate(b('BLASTOISE'),production,{});assert.equal(magnet.extraIngredients,4*24);
+const energy=o.evaluate(b('DRAGONITE'),production,{});assert.equal(energy.skillStrength,0);assert.match(energy.caveat,/not fed back/);
+const unknown=o.evaluate({...amp,skillLevel:null},production,{});assert.equal(unknown.skillStrength,null);assert.equal(unknown.dreamShards,null);
+const copy=o.evaluate(b('DITTO'),production,{});assert.equal(copy.directComplete,false);assert.equal(copy.dreamShards,null);
+for(const p of d.species){const build=b(p.key), result=e.simulate(build,e.defaultConditions,10), effect=o.evaluate(build,result,{});
+ for(const k of ['directStrength','ingredientBaseValue','extraIngredients'])assert.ok(Number.isFinite(effect[k])&&effect[k]>=0,p.key+' '+k);
+}
+console.log('Direct power, range means, skill levels, area/favorite bonuses, shards, skill ingredients, healing caveats, and unknown-effect handling verified.');

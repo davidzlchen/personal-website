@@ -14,7 +14,7 @@
         if (value !== undefined && entries.some(([v]) => String(v) === String(value))) select.value = value;
     };
     const params = new URLSearchParams(location.search);
-    let data, roster = [], capturedAt, species, result, resultLabel, comparison, timer;
+    let data, roster = [], capturedAt, species, result, resultOutcome, resultLabel, comparison, timer;
     let unlocks = [10,25,50,75,100];
     let snapshotFailed = false;
 
@@ -27,6 +27,7 @@
     }
     const speciesMatch = mon => SleepAnalyzer.matchSpecies(data, mon);
     function fields() {
+        $('skill-level').max = species.effect.maxLevel;
         $('ingredient-fields').replaceChildren();
         for (let i=0; i<3; i++) {
             const label = el('label', `Ingredient · Lv. ${[1,30,60][i]}`, 'field field-wide');
@@ -49,6 +50,7 @@
         species = data.species.find(p=>p.key===$('species').value);
         unlocks = [10,25,50,75,100];
         $('carry').value = species.carry;
+        $('skill-level').value = 1;
         fields();
         $('saved').value = '';
         $('saved-note').textContent = 'Custom build. Set the base carry limit to match your helper before calculating.';
@@ -62,6 +64,7 @@
         $('nature').value=mon.nature_neutralized ? 'Hardy' : mon.nature;
         // Carry and ribbon are absent from the public export; do not infer evolution history.
         $('carry').value=match.carry;
+        $('skill-level').value=mon.main_skill?.level ?? '';
         unlocks = mon.subskills.length === 5 ? mon.subskills.map(s=>s.unlock_level) : [10,25,50,75,100];
         fields();
         const missing = [];
@@ -78,11 +81,11 @@
     function readBuild() {
         const saved = roster.find(m=>m.id===$('saved').value);
         if (saved && !speciesMatch(saved)) throw Error('Choose the exact form for this helper before calculating.');
-        if (!$('build-form').checkValidity()) throw Error('Enter valid values for level, carry limit, and sleep hours.');
+        if (!$('build-form').checkValidity()) throw Error('Enter valid values for level, skill level, carry limit, sleep hours, and area bonus.');
         const names = Array.from({length:5},(_,i)=>$('subskill-'+i).value).filter(Boolean);
         if (new Set(names).size !== names.length) throw Error('Each subskill can appear only once.');
         return {
-            species, level: +$('level').value, carry: +$('carry').value,
+            species, skillLevel: +$('skill-level').value, level: +$('level').value, carry: +$('carry').value,
             nature: data.natures.find(n=>n.name===$('nature').value),
             ingredients: species.ingredients.map((s,i)=>$('ingredient-'+i).value==='' ? null : s[+$('ingredient-'+i).value]),
             subskills: Array.from({length:5},(_,i)=>({name:$('subskill-'+i).value,unlock:unlocks[i]}))
@@ -90,7 +93,8 @@
     }
     function conditions() {
         return { sleepHours:+$('sleep').value, collectHours:+$('collect').value, energy:$('energy').value,
-            helpingBonus:+$('bonus').value, ribbon:+$('ribbon').value, camp:$('camp').checked };
+            helpingBonus:+$('bonus').value, ribbon:+$('ribbon').value, camp:$('camp').checked,
+            areaBonus:+$('area').value, favoriteBerry:$('favorite-berry').checked };
     }
     function paintHeading(build) {
         const image=el('img'); image.alt='';
@@ -99,9 +103,12 @@
         $('result-heading').replaceChildren(image,title);
     }
     function paintResults() {
+        const outcome = SleepOutcomes.evaluate(readBuild(), result, conditions());
+        resultOutcome = outcome;
+        $('practical-results').replaceChildren(SleepPracticalOutput.panel(readBuild(), result, conditions()));
         const cards=$('production-cards'); cards.replaceChildren();
-        for (const [name,value,category,key] of [['Berries',result.berries,'berries',species.berry],
-            ['Ingredients',result.totalIngredients,'specialties','Ingredients'],['Skill triggers',result.triggers,'specialties','Skills']]) {
+        for (const [name,value,category,key] of [['Berries',result.berries + outcome.skillBerries,'berries',species.berry],
+            ['Ingredients',result.totalIngredients + outcome.extraIngredients,'specialties','Ingredients'],['Skill triggers',result.triggers,'specialties','Skills']]) {
             const card=el('div',undefined,'production-card'),image=icon(category,key);
             if (image) card.append(image);
             card.append(el('strong',decimal(value)),el('span',name)); cards.append(card);
@@ -115,7 +122,7 @@
         $('mechanics-results').replaceChildren();
         const s=result.stats;
         for (const [name,value] of [['Help interval at 0 energy',`${Math.floor(s.frequency/60)}m ${s.frequency%60}s`],
-            ['Helps per day',integer(result.helps)],['Ingredient chance / help',decimal(s.ingredientRate*100)+'%'],
+            ['Helps per day',decimal(result.helps)],['Ingredient chance / help',decimal(s.ingredientRate*100)+'%'],
             ['Skill chance / eligible help',decimal(s.skillRate*100)+'%'],['Effective carry limit',integer(s.capacity)],
             ['Berries from sneaky snacking',decimal(result.sneaky)],['Time with full inventory',decimal(result.fullHours)+' h'],
             ['Skills that can be stored',s.bankLimit]]) {
@@ -128,7 +135,11 @@
         if(!comparison)return;
         const delta=n=>(n>=0?'+':'')+decimal(n);
         $('comparison').replaceChildren(el('h3','Compared with '+comparison.label),
-            el('p',`Berries ${delta(result.berries-comparison.berries)} · Ingredients ${delta(result.totalIngredients-comparison.totalIngredients)} · Skill triggers ${delta(result.triggers-comparison.triggers)} per day`));
+            el('p',`Berries ${delta((result.berries+resultOutcome.skillBerries)-(comparison.berries+comparison.outcome.skillBerries))} · Ingredients ${delta((result.totalIngredients+resultOutcome.extraIngredients)-(comparison.totalIngredients+comparison.outcome.extraIngredients))} · Skill triggers ${delta(result.triggers-comparison.triggers)} per day`));
+        if (resultOutcome.directComplete && comparison.outcome.directComplete)
+            $('comparison').append(el('p',`Direct strength ${delta(resultOutcome.directStrength-comparison.outcome.directStrength)} per day`));
+        if (resultOutcome.dreamShards !== null && comparison.outcome.dreamShards !== null)
+            $('comparison').append(el('p',`Skill Dream Shards ${delta(resultOutcome.dreamShards-comparison.outcome.dreamShards)} per day`));
         const clear=el('button','Clear comparison','text-button'); clear.type='button';
         clear.addEventListener('click',()=>{comparison=null;paintComparison();}); $('comparison').append(clear);
     }
@@ -140,15 +151,16 @@
             for(let i=0;i<3;i++) $('ingredient-'+i).parentElement.classList.toggle('slot-inactive', active<[1,30,60][i]);
             for(let i=0;i<5;i++) $('subskill-'+i).parentElement.classList.toggle('slot-inactive', active<unlocks[i]);
             result=SleepAnalyzer.simulate(build,conditions());
-            resultLabel=`${species.name} · Lv. ${build.level} · ${build.nature.name}`;
+            resultLabel=`${species.name} · Lv. ${build.level} · ${build.nature.name} · Skill Lv. ${build.skillLevel}`;
             $('calculation-status').textContent=''; paintResults();
         } catch(error) { $('calculation-status').textContent=error.message; $('results').hidden=true; }
     }
     function buildUrl() {
         const url=new URL('https://davidzlchen.com/pokemon-sleep/analyzer/');
         url.searchParams.set('species',species.key);
-        for(const id of ['level','carry','nature','sleep','collect','energy','bonus','ribbon']) url.searchParams.set(id,$(id).value);
+        for(const id of ['level','skill-level','carry','nature','sleep','collect','energy','bonus','ribbon','area']) url.searchParams.set(id,$(id).value);
         url.searchParams.set('camp',$('camp').checked?'1':'0');
+        url.searchParams.set('favorite-berry',$('favorite-berry').checked?'1':'0');
         url.searchParams.set('ingredients',Array.from({length:3},(_,i)=>$('ingredient-'+i).value).join(','));
         url.searchParams.set('subskills',Array.from({length:5},(_,i)=>$('subskill-'+i).value).join(','));
         url.searchParams.set('unlocks',unlocks.join(','));
@@ -159,8 +171,9 @@
         const p=data.species.find(s=>s.key===params.get('species'));
         if (!p) throw Error('This shared build has an unknown species.');
         $('species').value=p.key; resetSpecies();
-        for(const id of ['level','carry','nature','sleep','collect','energy','bonus','ribbon']) if(params.has(id)) $(id).value=params.get(id);
+        for(const id of ['level','skill-level','carry','nature','sleep','collect','energy','bonus','ribbon','area']) if(params.has(id)) $(id).value=params.get(id);
         $('camp').checked=params.get('camp')==='1';
+        $('favorite-berry').checked=params.get('favorite-berry')==='1';
         const thresholds=params.get('unlocks')?.split(',').map(Number);
         if(thresholds && [[10,25,50,75,100],[10,25,50,70,80]].some(a=>a.every((n,i)=>n===thresholds[i])&&thresholds.length===5)) { unlocks=thresholds; fields(); }
         params.get('ingredients')?.split(',').forEach((v,i)=>{if(i<3)$('ingredient-'+i).value=v;});
@@ -218,7 +231,7 @@
     $('reset-build').addEventListener('click',()=>{
         $('build-form').reset(); $('species').value='AMPHAROS'; $('nature').value='Hardy'; resetSpecies(); calculate();
     });
-    $('pin').addEventListener('click',()=>{comparison={...result,label:resultLabel};paintComparison();});
+    $('pin').addEventListener('click',()=>{comparison={...result,label:resultLabel,outcome:resultOutcome};paintComparison();});
     $('share').addEventListener('click',async()=>{
         try{await navigator.clipboard.writeText(buildUrl().href);$('share').textContent='Link copied';}
         catch{const url=buildUrl(); if(params.get('analytics')==='off')url.searchParams.set('analytics','off'); history.replaceState(null,'',url.pathname+url.search);$('share').textContent='Copy the address bar link';}

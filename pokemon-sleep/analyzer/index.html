@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pokémon Sleep Production Analyzer · Field Notes</title>
-    <meta name="description" content="Estimate daily berries, ingredients, and main skill triggers for Pokémon Sleep. Start with a saved helper or explore a custom build, nature, and subskills.">
+    <meta name="description" content="Estimate daily berries, ingredients, skill triggers, Snorlax strength, and Dream Shards for Pokémon Sleep. Start with a saved helper or explore a custom build, nature, and subskills.">
     <link rel="canonical" href="https://davidzlchen.com/pokemon-sleep/analyzer/">
     <meta property="og:title" content="Pokémon Sleep Production Analyzer">
     <meta property="og:description" content="Get to know your helpers: daily berries, ingredients, and skill triggers, with editable builds and collection schedules.">
@@ -12,19 +12,21 @@
     <meta property="og:url" content="https://davidzlchen.com/pokemon-sleep/analyzer/">
     <meta name="theme-color" content="#172c32">
     <link rel="icon" href="/pokemon-sleep/moon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/pokemon-sleep/styles.css">
+    <link rel="stylesheet" href="/pokemon-sleep/styles.css?v=outcomes-2">
     <link rel="stylesheet" href="/css/site-header.css">
     <link rel="stylesheet" href="/css/analytics.css">
-    <link rel="stylesheet" href="/pokemon-sleep/analyzer/styles.css">
+    <link rel="stylesheet" href="/pokemon-sleep/analyzer/styles.css?v=outcomes-2">
     <script defer src="/js/analytics.js"></script>
     <script defer src="/pokemon-sleep/asset-data.js"></script>
-    <script defer src="/pokemon-sleep/analyzer/engine.js?v=detail-1"></script>
-    <script defer src="/pokemon-sleep/analyzer/app.js?v=detail-1"></script>
+    <script defer src="/pokemon-sleep/analyzer/engine.js?v=outcomes-2"></script>
+    <script defer src="/pokemon-sleep/analyzer/outcomes.js?v=outcomes-2"></script>
+    <script defer src="/pokemon-sleep/practical-output.js?v=outcomes-2"></script>
+    <script defer src="/pokemon-sleep/analyzer/app.js?v=outcomes-2"></script>
 <!-- discovery:start -->
 <link rel="alternate" type="text/markdown" href="/pokemon-sleep/analyzer/index.md" title="Markdown">
 <link rel="alternate" type="application/atom+xml" href="/blog/feed.xml" title="David Z. Chen’s blog">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="AI content index">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://davidzlchen.com/#author", "name": "David Z. Chen", "url": "https://davidzlchen.com/", "sameAs": ["https://github.com/davidzlchen", "https://linkedin.com/in/davidzlchen"]}, {"@type": "WebSite", "@id": "https://davidzlchen.com/#website", "url": "https://davidzlchen.com/", "name": "David Z. Chen", "inLanguage": "en", "publisher": {"@id": "https://davidzlchen.com/#author"}}, {"@type": "WebPage", "@id": "https://davidzlchen.com/pokemon-sleep/analyzer/#page", "url": "https://davidzlchen.com/pokemon-sleep/analyzer/", "name": "Pokémon Sleep Production Analyzer · Field Notes", "description": "Estimate daily berries, ingredients, and main skill triggers for Pokémon Sleep. Start with a saved helper or explore a custom build, nature, and subskills.", "inLanguage": "en", "isPartOf": {"@id": "https://davidzlchen.com/#website"}, "author": {"@id": "https://davidzlchen.com/#author"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://davidzlchen.com/#author", "name": "David Z. Chen", "url": "https://davidzlchen.com/", "sameAs": ["https://github.com/davidzlchen", "https://linkedin.com/in/davidzlchen"]}, {"@type": "WebSite", "@id": "https://davidzlchen.com/#website", "url": "https://davidzlchen.com/", "name": "David Z. Chen", "inLanguage": "en", "publisher": {"@id": "https://davidzlchen.com/#author"}}, {"@type": "WebPage", "@id": "https://davidzlchen.com/pokemon-sleep/analyzer/#page", "url": "https://davidzlchen.com/pokemon-sleep/analyzer/", "name": "Pokémon Sleep Production Analyzer · Field Notes", "description": "Estimate daily berries, ingredients, skill triggers, Snorlax strength, and Dream Shards for Pokémon Sleep. Start with a saved helper or explore a custom build, nature, and subskills.", "inLanguage": "en", "isPartOf": {"@id": "https://davidzlchen.com/#website"}, "author": {"@id": "https://davidzlchen.com/#author"}}]}</script>
 <!-- discovery:end -->
 </head>
 <body>
@@ -37,7 +39,7 @@
         <section class="analyzer-intro">
             <p class="eyebrow">POKÉMON SLEEP · THE DAILY HAUL</p>
             <h1>A little help,<br>a whole day’s worth<span class="spark">✦</span></h1>
-            <p>How much can one helper bring in? Explore their berries, ingredients, and skill triggers over a typical day.</p>
+            <p>How much can one helper bring in? Explore their berries, ingredients, skill triggers, Snorlax strength, and Dream Shards over a typical day.</p>
         </section>
         <p id="load-status" role="status">Loading species and saved helpers…</p>
         <div class="analyzer-layout" id="analyzer-workspace" hidden>
@@ -50,9 +52,10 @@
                         <label class="field field-wide">Pokémon<select id="species"></select></label>
                         <label class="field">Level<input id="level" type="number" min="1" max="100" step="1" value="30" required></label>
                         <label class="field">Base carry limit<input id="carry" type="number" min="1" max="200" step="1" required></label>
+                        <label class="field field-wide">Effective main skill level<input id="skill-level" type="number" min="1" max="8" step="1" value="1" required></label>
                         <label class="field field-wide">Nature<select id="nature"></select></label>
                     </div>
-                    <p class="field-note">Base carry includes +5 for each evolution this helper actually underwent. Inventory subskills, ribbons, and camp are added below.</p>
+                    <p class="field-note">Skill level includes seeds, evolution, and Skill Level Up bonuses already shown in-game. Base carry includes +5 for each evolution this helper actually underwent. Inventory subskills, ribbons, and camp are added below.</p>
                 </section>
                 <section class="form-section">
                     <div class="panel-heading"><span class="step-number">02</span><h2>What’s in their toolkit?</h2></div>
@@ -68,9 +71,11 @@
                         <label class="field">Collect while awake<select id="collect"><option value="0.5">Every 30 minutes</option><option value="1">Every hour</option><option value="3" selected>Every 3 hours</option><option value="6">Every 6 hours</option><option value="24">Only at bedtime / waking</option></select></label>
                         <label class="field field-wide">Energy scenario<select id="energy"><option value="natural">100 on waking → fades, no recovery</option><option value="high">Maintained at 80+ all day and night</option><option value="zero">0 all day and night</option></select></label>
                         <label class="field">Other Helping Bonus users<select id="bonus"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+                        <label class="field">Area bonus (%)<input id="area" type="number" min="0" max="100" step="1" value="0" required></label>
                         <label class="field">Sleep ribbon<select id="ribbon"><option value="0">None</option><option value="200">200 hours</option><option value="500">500 hours</option><option value="1000">1,000 hours</option><option value="2000">2,000 hours</option></select></label>
                     </div>
                     <label class="check-field"><input type="checkbox" id="camp"> Good Camp Ticket</label>
+                    <label class="check-field"><input type="checkbox" id="favorite-berry"> Snorlax’s favorite berry (×2 berry strength)</label>
                     <p class="field-note">Collect once before bed and on waking. No collections during sleep. The fading scenario loses 10 energy per hour; meals and healer skills are excluded.</p>
                 </section>
                 <div class="form-actions"><button class="button" type="submit">Calculate the daily haul <span>↗</span></button><button class="text-button" type="button" id="reset-build">Reset build</button></div>
@@ -81,15 +86,16 @@
                 <div id="results" hidden>
                     <p class="eyebrow">EXPECTED PER 24 HOURS</p>
                     <div class="production-cards" id="production-cards"></div>
-                    <div class="result-block"><h3>The ingredient basket</h3><div id="ingredient-results"></div><p class="field-note">Gathered through regular helps. Ingredients from main skills are excluded.</p></div>
+                    <div class="result-block"><h3>The ingredient basket</h3><div id="ingredient-results"></div><p class="field-note">Named ingredients come from regular helps. Any modeled skill ingredients are shown separately below.</p></div>
+                    <div id="practical-results"></div>
                     <div class="result-block"><h3>Behind the numbers</h3><dl id="mechanics-results"></dl></div>
                     <div class="result-actions"><button class="text-button" type="button" id="pin">Keep as comparison</button><button class="text-button" type="button" id="share">Copy build link</button></div>
                     <div class="comparison" id="comparison" hidden></div>
-                    <p class="result-footnote">An average across 4,000 simulated days, not a guaranteed daily yield. Skill triggers count activations collected, including the pity rule and the one / two skill storage limit.</p>
+                    <p class="result-footnote">An average across 4,000 simulated days, not a guaranteed daily yield. Skill triggers count activations collected, including guaranteed triggers after repeated misses (pity) and the one / two skill storage limit. Ordinary-roll calculators can give lower skill estimates.</p>
                 </div>
                 <details class="method-notes"><summary>Assumptions & sources</summary>
                     <p>This is an independent, simplified production estimator inspired by RaenonX. Level, nature, active subskills, Helping Bonus (35% speed cap), Good Camp, ribbon, carry limit, inventory overflow, and skill storage are modeled. Full inventories switch to berry-only sneaky snacking; ingredients and new skill rolls stop.</p>
-                    <p>Energy uses the selected scenario, with no meals, naps, teammate or self-healing skills. Main skill effects, bonus activations, event bonuses, strength, cooking, and percentile ratings are excluded. Darkrai and Mew’s customizable All specialty builds are not supported. Future levels are projections. A helper’s real routine can give different results.</p>
+                    <p>Energy uses the selected scenario, with no meals, naps, teammate or self-healing skills. Direct strength, Dream Shards, and supported skill effects use the effective skill level. Skill healing does not feed back into production. Team-dependent skill outcomes, bonus activations, event bonuses, cooking totals, and percentile ratings are excluded. Darkrai and Mew’s customizable All specialty builds are not supported. Future levels are projections. A helper’s real routine can give different results.</p>
                     <p>Species data and nature modifiers are adapted from <a href="https://github.com/nerolis-lab/nerolis-lab" target="_blank" rel="noopener">Neroli’s Lab</a>, under <a href="/pokemon-sleep/analyzer/LICENSE-nerolis-lab.txt">Apache 2.0</a>. Upstream credits the <a href="https://docs.google.com/spreadsheets/d/1kBrPl0pdAO8gjOf_NrTgAPseFtqQA27fdfEbMBBeAhs/edit">Mathcord RP data project</a> for base rates. <a href="/pokemon-sleep/analyzer/NOTICE.txt">Attribution</a>. <span id="data-version"></span></p>
                     <p>Further reading: RaenonX’s <a href="https://hackmd.io/@raenonx-pokemon-sleep/rJaoFoEe-x">helping frequency</a> and <a href="https://hackmd.io/@raenonx-pokemon-sleep/B1Rhup7l-x">production rate</a> explanations. No game login is needed; all calculations run in your browser.</p>
                 </details>

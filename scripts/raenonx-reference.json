@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-10-09",
+  "calculator": "https://pks.raenonx.cc/en/production",
+  "scenario": "Public default Simple mode; Always Max Energy; Infinite inventory; ideal daytime collection; 8.5-hour sleep; no Helping Bonus, camp, ribbon, area, or favorite-berry bonus. Reference skill totals use ordinary per-help rolls without the simulator pity rule.",
+  "cases": [
+    {
+      "id": "mon-50",
+      "species": "Ampharos",
+      "level": 53,
+      "skillLevel": 7,
+      "helps": 110.79,
+      "berries": 96.39,
+      "ingredients": {
+        "Fiery Herb": 7.2,
+        "Fancy Egg": 21.6
+      },
+      "triggers": 6.91,
+      "berryStrength": 8675,
+      "skillStrength": 47412,
+      "dreamShards": 0
+    },
+    {
+      "id": "mon-52",
+      "species": "Dragonite",
+      "level": 60,
+      "skillLevel": 3,
+      "helps": 98.61,
+      "berries": 56.13,
+      "ingredients": {
+        "Fiery Herb": 198.27
+      },
+      "triggers": 2.26,
+      "berryStrength": 8419,
+      "skillStrength": 0,
+      "dreamShards": 0
+    },
+    {
+      "id": "mon-17",
+      "species": "Swalot",
+      "level": 51,
+      "skillLevel": 8,
+      "helps": 60.95,
+      "berries": 96.3,
+      "ingredients": {
+        "Greengrass Soybeans": 19.2
+      },
+      "triggers": 6.15,
+      "berryStrength": 10594,
+      "skillStrength": 0,
+      "dreamShards": 17675
+    }
+  ],
+  "snapshot": "2026-10-04-1c3647d40662"
+}
