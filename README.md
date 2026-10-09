@@ -187,8 +187,13 @@ are represented.
 
 ## Pokémon Sleep production analyzer
 
-`/pokemon-sleep/analyzer/` estimates berries, individually named ingredients, and
-collected skill triggers per 24 hours. Links from Field Notes and helper details
+Each helper's detail dialog automatically displays estimated berries, individually
+named ingredients, and collected skill triggers per 24 hours. Estimates use the
+selected snapshot's saved build with the default energy/collection scenario.
+The species catalog loads on the first detail open, with per-helper caching and
+safe handling for unavailable data or unsupported forms. The assumptions panel
+explains missing carry/ribbon data. The link beneath it opens
+`/pokemon-sleep/analyzer/` to adjust the build or scenario. Links from Field Notes and helper details
 load the selected sanitized snapshot. Visitors can also build any of the 247
 supported species, edit level/nature/ingredients/subskills, choose an energy and
 collection scenario, pin a comparison, and copy a reproducible build URL.
@@ -207,6 +212,7 @@ roster and need user input; evolution history is never inferred.
 
 Run `node scripts/test_sleep_analyzer.cjs` for mechanics and species coverage.
 With Playwright available, run `node scripts/test_sleep_analyzer_browser.cjs`
+and `node scripts/test_sleep_detail_production.cjs`
 against the local server on port 8769, or set `SLEEP_TEST_ORIGIN` to another
 server. It verifies the real helper flow, share URLs, mobile layout, failure
 handling, and analytics opt-out.

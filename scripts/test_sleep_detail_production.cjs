@@ -1,0 +1,54 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+const engine=require('../pokemon-sleep/analyzer/engine.js');
+const data=require('../pokemon-sleep/analyzer/data.json');
+const origin=process.env.SLEEP_TEST_ORIGIN||'http://localhost:8769';
+const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});
+(async()=>{
+ const browser=await chromium.launch({headless:true});
+ const context=await browser.newContext({viewport:{width:1280,height:1000}});
+ const page=await context.newPage(),errors=[],tracking=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ page.on('request',r=>{if(/google-analytics|googletagmanager/.test(r.url()))tracking.push(r.url());});
+ const history=await (await context.request.get(origin+'/pokemon-sleep/history.json')).json();
+ for(const snapshot of [history.snapshots[0],history.snapshots.at(-1)]) {
+  const capture=await (await context.request.get(origin+'/pokemon-sleep/'+snapshot.file)).json();
+  const mon=capture.roster.records.find(p=>p.nickname==='charge king');
+  const expected=engine.simulate(engine.fromRoster(data,mon),engine.defaultConditions);
+  await page.goto(origin+`/pokemon-sleep/?snapshot=${snapshot.id}&pokemon=${mon.id}&analytics=off`);
+  await page.waitForSelector('#detail .detail-production-card');
+  assert.deepEqual(await page.locator('#detail .detail-production-card strong').allTextContents(),[expected.berries,expected.totalIngredients,expected.triggers].map(fmt));
+  assert.match(await page.locator('#detail .detail-production-ingredients').innerText(),/Fiery Herb/);
+  await page.locator('.detail-production-assumptions summary').click();
+  assert.match(await page.locator('#detail .detail-production-assumptions').innerText(),/8.5 hours/);
+  await page.locator('.detail-production-assumptions summary').click();
+ }
+ await page.screenshot({path:'/tmp/sleep-detail-production-desktop.png'});
+ await page.setViewportSize({width:390,height:844});
+ await page.screenshot({path:'/tmp/sleep-detail-production-mobile.png'});
+ assert.equal(await page.locator('#detail').evaluate(n=>n.scrollWidth<=n.clientWidth),true);
+ await page.locator('#close-detail').click();
+ await page.getByRole('button',{name:/View Mew,/}).click();
+ await page.waitForFunction(()=>document.querySelector('.detail-production-note')?.textContent.includes('unsupported'));
+ assert.equal(await page.locator('.detail-production-card').count(),0);
+ assert.equal(await page.getByRole('link',{name:'Analyze this helper →'}).isVisible(),true);
+ // Delayed catalog responses must not paint a previously selected helper.
+ const race=await context.newPage();
+ await race.route('**/analyzer/data.json',async route=>{await new Promise(r=>setTimeout(r,350));await route.continue();});
+ await race.goto(origin+'/pokemon-sleep/?analytics=off');await race.waitForSelector('#grid .card');
+ await race.getByRole('button',{name:/View charge king,/}).click();await race.locator('#close-detail').click();
+ await race.getByRole('button',{name:/View sausage king,/}).click();await race.waitForSelector('.detail-production-card');
+ assert.match(await race.locator('.detail-header h2').innerText(),/sausage king/);
+ assert.equal(await race.locator('.detail-production-card').count(),3);
+ // A catalog outage is recoverable on the next detail open.
+ const failure=await context.newPage();let requests=0;
+ await failure.route('**/analyzer/data.json',route=>++requests===1?route.fulfill({status:503,body:'Unavailable'}):route.continue());
+ await failure.goto(origin+'/pokemon-sleep/?analytics=off');await failure.waitForSelector('#grid .card');
+ await failure.getByRole('button',{name:/View charge king,/}).click();
+ await failure.waitForFunction(()=>document.querySelector('.detail-production-note')?.textContent.includes('could not load'));
+ await failure.locator('#close-detail').click();await failure.getByRole('button',{name:/View charge king,/}).click();
+ await failure.waitForSelector('.detail-production-card');assert.equal(requests,2);
+ assert.deepEqual(errors,[]);assert.deepEqual(tracking,[]);
+ await browser.close();
+ console.log('Automatic detail estimates, archived/current builds, ingredient breakdown, mobile, unsupported forms, stale requests, recovery, and analytics opt-out verified.');
+})().catch(e=>{console.error(e);process.exit(1);});

@@ -278,13 +278,7 @@ function showDetail(mon) {
     meta.append(specialtyBadge(mon), berryBadge, node("span", "tag candy-badge"));
     if (mon.shiny) meta.append(node("span", "tag shiny-badge", "✦ Shiny"));
     body.append(meta);
-    const analyze = node("a", "detail-analyze", "Analyze this helper →");
-    const analyzeUrl = new URL("/pokemon-sleep/analyzer/", location.origin);
-    analyzeUrl.searchParams.set("pokemon", mon.id);
-    if (activeSnapshotId) analyzeUrl.searchParams.set("snapshot", activeSnapshotId);
-    if (new URLSearchParams(location.search).get("analytics") === "off") analyzeUrl.searchParams.set("analytics", "off");
-    analyze.href = analyzeUrl.pathname + analyzeUrl.search;
-    body.append(analyze);
+    body.append(SleepDetailProduction.panel(mon, activeSnapshotId));
 
     const xp = section("Experience");
     const xpLabel = node("div", "xp-label");

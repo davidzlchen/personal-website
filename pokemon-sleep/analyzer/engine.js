@@ -97,7 +97,32 @@
         for (const k of Object.keys(totals.ingredients)) totals.ingredients[k] /= days;
         return { ...totals, totalIngredients: Object.values(totals.ingredients).reduce((a,b)=>a+b,0), helps: times.helps.length, stats: s, days };
     }
-    const api = { stats, simulate, energyFactor, schedule };
+    const defaultConditions = Object.freeze({ sleepHours: 8.5, collectHours: 3, energy: 'natural', helpingBonus: 0, ribbon: 0, camp: false });
+    function matchSpecies(data, mon) {
+        if (mon.variant === 'Costume') return null;
+        return data.species.find(p => p.dex === mon.national_dex && (mon.variant === 'Paldean'
+            ? p.key.endsWith('_PALDEAN') : p.name.replace(/’/g, "'") === mon.species.replace(/’/g, "'"))) || null;
+    }
+    function fromRoster(data, mon) {
+        const species = matchSpecies(data, mon);
+        if (!species) throw Error('This helper’s exact form is unavailable or unsupported. Choose a form in the analyzer.');
+        const nature = data.natures.find(n => n.name === (mon.nature_neutralized ? 'Hardy' : mon.nature));
+        if (!nature) throw Error('This helper’s nature is unavailable. Choose a nature in the analyzer.');
+        const ingredients = [1, 30, 60].map((unlock, i) => {
+            if (mon.level < unlock) return species.ingredients[i][0]; // Unused until this slot unlocks.
+            const slot = mon.ingredients[i];
+            const known = species.ingredients[i].find(s => s.name === slot?.name && s.quantity === slot?.quantity);
+            if (!known) throw Error('An unlocked ingredient slot is unavailable. Confirm it in the analyzer.');
+            return known;
+        });
+        const subskills = mon.subskills.map(s => {
+            if (s.unlock_level <= mon.level && !data.subskills.includes(s.name))
+                throw Error('An unlocked subskill is unavailable. Confirm it in the analyzer.');
+            return { name: s.name, unlock: s.unlock_level };
+        });
+        return { species, level: mon.level, carry: species.carry, nature, ingredients, subskills };
+    }
+    const api = { stats, simulate, energyFactor, schedule, defaultConditions, matchSpecies, fromRoster };
     if (typeof module !== 'undefined') module.exports = api;
     else root.SleepAnalyzer = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
