@@ -188,7 +188,8 @@ are represented.
 ## Pokémon Sleep production analyzer
 
 Each helper's detail dialog automatically displays estimated berries, individually
-named ingredients, and collected skill triggers per 24 hours. Estimates use the
+named ingredients, collected skill triggers, direct Snorlax strength, and
+skill-generated Dream Shards per 24 hours. Estimates use the
 selected snapshot's saved build with the default energy/collection scenario.
 The species catalog loads on the first detail open, with per-helper caching and
 safe handling for unavailable data or unsupported forms. The assumptions panel
@@ -203,14 +204,26 @@ The independent, seeded simulation averages 4,000 days after a 20-day warmup.
 It models level and nature speed, additive subskills, the 35% Helping Bonus cap,
 Good Camp, ribbons, ingredient slot unlocks, inventory clipping, sneaky snacking,
 pity thresholds, and one/two stored skill procs. Energy is integrated at one-minute
-resolution under the selected explicit scenario. It does not model meals, naps,
-main skill effects (including extra ingredients/healing/help), events, strength,
-or percentile ratings. Darkrai and Mew's customizable All builds are excluded.
+resolution under the selected explicit scenario. Supported main skill effects are
+described per trigger and per day using the
+effective skill level. Direct strength separates berries and skills from uncooked
+ingredient base value. Area/favorite-berry settings affect strength; Dream Shards
+from skills are separate from sleep-research rewards. Skill Level Up bonuses are
+already included in a saved helper's effective skill level and are not added twice.
+Healing feedback, complex/team-dependent effects, meals, naps, events, cooking
+totals, and percentile ratings are not modeled. Darkrai and Mew's customizable All
+builds are excluded.
 Level 75/100 custom subskills are future projections; saved helpers retain their
 snapshot's recorded unlock levels. Carry and ribbons are missing from the public
 roster and need user input; evolution history is never inferred.
 
-Run `node scripts/test_sleep_analyzer.cjs` for mechanics and species coverage.
+Run `node scripts/test_sleep_analyzer.cjs` for mechanics and species coverage,
+`node scripts/test_sleep_outcomes.cjs` for practical effect arithmetic, and
+`node scripts/test_raenonx_reference.cjs` for the recorded live RaenonX baseline.
+[The comparison audit](docs/raenonx-verification.md) distinguishes observed parity
+from unresolved model differences: daily help progress now carries across days,
+but the default pity-aware skill model differs from RaenonX's observed ordinary-roll
+counts. Full real-routine parity is not claimed.
 With Playwright available, run `node scripts/test_sleep_analyzer_browser.cjs`
 and `node scripts/test_sleep_detail_production.cjs`
 against the local server on port 8769, or set `SLEEP_TEST_ORIGIN` to another

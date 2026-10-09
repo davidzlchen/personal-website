@@ -1327,3 +1327,18 @@ progress::-moz-progress-bar {
 .detail-production-assumptions p { margin: 10px 0; }
 .detail-production .detail-analyze { font-size: 12px; margin-top: 12px; }
 @media(max-width: 520px) { .detail-production { padding: 16px; } .detail-production-heading { flex-wrap: wrap; gap: 6px; } .detail-production-cards { gap: 6px; } .detail-production-card strong { font-size: 23px; } }
+
+.practical-output { border-top: 1px solid #d4decc; margin-top: 18px; padding-top: 18px; }
+.practical-output h3 { margin: 0 0 12px; font-size: 14px; line-height: 1.5; }
+.practical-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.practical-card { padding: 14px 10px; background: #e3eadb; border-radius: 12px; text-align: center; }
+.practical-card:nth-child(2) { background: #eee5d0; }
+.practical-card strong { display: block; font: 800 24px Manrope,sans-serif; letter-spacing: -.5px; }
+.practical-card span { font-size: 10px; display: block; margin-top: 6px; }
+.practical-breakdown { margin: 0; font-size: 12px; }
+.practical-breakdown > div { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; }
+.practical-breakdown dd { margin: 0; font-weight: 600; }
+.practical-note { font-size: 11px; color: #596b63; line-height: 1.65; margin: 10px 0 16px; }
+.practical-effect, .practical-daily { font-size: 13px; line-height: 1.65; margin: 8px 0; }
+.practical-daily { font-weight: 600; }
+.detail-production > .practical-cards { margin-top: 10px; }

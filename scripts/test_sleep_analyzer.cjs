@@ -29,6 +29,7 @@ const rates=engine.stats({...build,level:60,species:{...fixture,ingredientRate:.
 assert.ok(Math.abs(rates.ingredientRate-.2*1.2*1.54)<1e-10);
 assert.ok(Math.abs(rates.skillRate-.136)<1e-10);
 assert.deepEqual([0,1,40,60,80,150].map(engine.energyFactor),[1,.66,.58,.52,.45,.45]);
+assert.equal(engine.energyFactor(.5),1,'sub-1 energy uses the exhausted tier from the reference mechanics');
 assert.ok(engine.stats(build,{...conditions,camp:true}).frequency < engine.stats(build,conditions).frequency);
 assert.equal(engine.stats({...build,carry:10},{...conditions,camp:true,ribbon:2000}).capacity,22);
 const pity=engine.simulate({...build,species:{...fixture,skillRate:0,pity:2}},conditions,100);

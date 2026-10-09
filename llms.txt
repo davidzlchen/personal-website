@@ -10,7 +10,7 @@ Canonical HTML URLs are the sources for citations. Markdown copies are generated
 - [Blog · David Z. Chen](https://davidzlchen.com/blog/index.md): Notes on building useful tools, little games, and personal projects.
 - [How I built Pokémon Sleep Field Notes with Codex · David Z. Chen](https://davidzlchen.com/blog/pokemon-sleep-repository/index.md): How I built Pokémon Sleep Field Notes with Codex: a personal research journal for island milestones, investment decisions, and progress over time.
 - [David’s Pokémon Sleep Field Notes](https://davidzlchen.com/pokemon-sleep/index.md): David’s Pokémon Sleep Field Notes: island milestones, researcher rank, familiar helpers, and supplies for the next good night.
-- [Pokémon Sleep Production Analyzer · Field Notes](https://davidzlchen.com/pokemon-sleep/analyzer/index.md): Estimate daily berries, ingredients, and main skill triggers for Pokémon Sleep. Start with a saved helper or explore a custom build, nature, and subskills.
+- [Pokémon Sleep Production Analyzer · Field Notes](https://davidzlchen.com/pokemon-sleep/analyzer/index.md): Estimate daily berries, ingredients, skill triggers, Snorlax strength, and Dream Shards for Pokémon Sleep. Start with a saved helper or explore a custom build, nature, and subskills.
 - [Privacy — David Z. Chen](https://davidzlchen.com/privacy/index.md): Optional analytics and browser storage on David Z. Chen’s website and Pokémon Sleep Field Notes.
 
 ## Content feeds

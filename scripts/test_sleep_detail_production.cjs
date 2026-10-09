@@ -2,6 +2,7 @@ const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const engine=require('../pokemon-sleep/analyzer/engine.js');
 const data=require('../pokemon-sleep/analyzer/data.json');
+const outcomes=require('../pokemon-sleep/analyzer/outcomes');
 const origin=process.env.SLEEP_TEST_ORIGIN||'http://localhost:8769';
 const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});
 (async()=>{
@@ -14,11 +15,17 @@ const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDi
  for(const snapshot of [history.snapshots[0],history.snapshots.at(-1)]) {
   const capture=await (await context.request.get(origin+'/pokemon-sleep/'+snapshot.file)).json();
   const mon=capture.roster.records.find(p=>p.nickname==='charge king');
-  const expected=engine.simulate(engine.fromRoster(data,mon),engine.defaultConditions);
+  const build=engine.fromRoster(data,mon);
+  const expected=engine.simulate(build,engine.defaultConditions);
+  const effect=outcomes.evaluate(build,expected,{});
   await page.goto(origin+`/pokemon-sleep/?snapshot=${snapshot.id}&pokemon=${mon.id}&analytics=off`);
   await page.waitForSelector('#detail .detail-production-card');
   assert.deepEqual(await page.locator('#detail .detail-production-card strong').allTextContents(),[expected.berries,expected.totalIngredients,expected.triggers].map(fmt));
   assert.match(await page.locator('#detail .detail-production-ingredients').innerText(),/Fiery Herb/);
+  const power=await page.locator('#detail .practical-card strong').allTextContents();
+  assert.equal(power[0],effect.directStrength.toLocaleString('en-US',{maximumFractionDigits:0}));
+  assert.equal(power[1],'0');
+  assert.match(await page.locator('#detail .practical-effect').innerText(),/6,858/);
   await page.locator('.detail-production-assumptions summary').click();
   assert.match(await page.locator('#detail .detail-production-assumptions').innerText(),/8.5 hours/);
   await page.locator('.detail-production-assumptions summary').click();

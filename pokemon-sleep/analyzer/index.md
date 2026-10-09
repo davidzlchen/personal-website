@@ -8,7 +8,7 @@ POKÉMON SLEEP · THE DAILY HAUL
 
 # A little help, a whole day’s worth✦
 
-How much can one helper bring in? Explore their berries, ingredients, and skill triggers over a typical day.
+How much can one helper bring in? Explore their berries, ingredients, skill triggers, Snorlax strength, and Dream Shards over a typical day.
 
 Loading species and saved helpers…
 

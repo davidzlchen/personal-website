@@ -2,7 +2,7 @@
 (function (root) {
     'use strict';
     const clamp = (x, low, high) => Math.min(high, Math.max(low, x));
-    const energyFactor = e => e >= 80 ? .45 : e >= 60 ? .52 : e >= 40 ? .58 : e > 0 ? .66 : 1;
+    const energyFactor = e => e >= 80 ? .45 : e >= 60 ? .52 : e >= 40 ? .58 : e >= 1 ? .66 : 1;
     function stats(build, conditions) {
         const p = build.species;
         const skills = new Set(build.subskills.filter(s => s.unlock <= build.level).map(s => s.name));
@@ -30,22 +30,30 @@
     }
     // Integrate one day in one-minute steps. Energy presets describe a scenario,
     // not a prediction of healer skills, meals, sleep recovery, or the player's routine.
-    function schedule(s, c) {
+    function prepareSchedule(s, c) {
         const bedtime = (24 - c.sleepHours) * 60;
-        const helps = [], collections = [];
+        const collections = [];
         for (let t = c.collectHours * 60; t < bedtime; t += c.collectHours * 60) collections.push(t);
-        if (bedtime > 0) collections.push(bedtime); // Empty inventory immediately before bed.
-        collections.push(1440); // Collect everything on waking.
-        let progress = 0;
+        if (bedtime > 0 && bedtime < 1440) collections.push(bedtime);
+        collections.push(1440);
+        const cumulative = [0];
         for (let minute = 0; minute < 1440; minute++) {
             const e = c.energy === 'high' ? 100 : c.energy === 'zero' ? 0 : Math.max(0, 100 - minute / 6);
-            const rate = 60 / (s.frequency * energyFactor(e));
-            const next = progress + rate;
-            for (let n = 1; n <= Math.floor(next); n++) helps.push(minute + (n - progress) / rate);
-            progress = next % 1;
+            cumulative.push(cumulative[minute] + 60 / (s.frequency * energyFactor(e)));
         }
-        return { helps, collections };
+        return { collections, cumulative };
     }
+    function helpTimes(prepared, phase) {
+        const helps = [], total = prepared.cumulative[1440] + phase;
+        let minute = 0;
+        for (let n = 1; n <= Math.floor(total + 1e-9); n++) {
+            while (minute < 1439 && prepared.cumulative[minute + 1] + phase < n - 1e-9) minute++;
+            const rate = prepared.cumulative[minute + 1] - prepared.cumulative[minute];
+            helps.push(Math.min(1440, minute + (n - prepared.cumulative[minute] - phase) / rate));
+        }
+        return { helps, collections: prepared.collections, phase: Math.max(0, total - Math.floor(total + 1e-9)) };
+    }
+    function schedule(s, c, phase = 0) { return helpTimes(prepareSchedule(s, c), phase); }
     function rng(seed) {
         return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0;
             let n = Math.imul(seed ^ seed >>> 15, 1 | seed);
@@ -54,23 +62,27 @@
         };
     }
     function simulate(build, conditions, days = 4000) {
-        const s = stats(build, conditions), times = schedule(s, conditions);
+        const s = stats(build, conditions), prepared = prepareSchedule(s, conditions);
         const random = rng(0x534c4545);
-        const totals = { berries: 0, sneaky: 0, triggers: 0, ingredients: {}, fullHours: 0 };
+        const totals = { helps: 0, berries: 0, sneaky: 0, triggers: 0, ingredients: {}, fullHours: 0 };
         for (const slot of s.ingredients) totals.ingredients[slot.name] = 0;
+        let phase = 0;
         let misses = 0; // Pity persists across collections and day boundaries.
         for (let day = -20; day < days; day++) {
+            const times = helpTimes(prepared, phase);
+            phase = times.phase;
             let carried = 0, bank = 0, collection = 0, fullSince = null;
             const count = day >= 0;
+            if (count) totals.helps += times.helps.length;
             function collect(t) {
                 if (count) {
                     totals.triggers += bank;
-                    if (fullSince !== null) totals.fullHours += (t - fullSince) / 60;
+                    if (fullSince !== null) totals.fullHours += Math.max(0, t - fullSince) / 60;
                 }
                 carried = 0; bank = 0; fullSince = null;
             }
             for (const time of times.helps) {
-                while (time > times.collections[collection]) collect(times.collections[collection++]);
+                while (time > times.collections[collection] + 1e-7) collect(times.collections[collection++]);
                 if (carried >= s.capacity) {
                     if (count) { totals.berries += s.berriesPerHelp; totals.sneaky += s.berriesPerHelp; }
                     continue;
@@ -87,15 +99,15 @@
                 }
                 if (bank < s.bankLimit) {
                     misses++;
-                    if (misses > s.pity || random() < s.skillRate) { bank++; misses = 0; }
+                    if ((conditions.pity !== false && misses > s.pity) || random() < s.skillRate) { bank++; misses = 0; }
                 }
                 if (carried >= s.capacity && fullSince === null) fullSince = time;
             }
             while (collection < times.collections.length) collect(times.collections[collection++]);
         }
-        for (const k of ['berries','sneaky','triggers','fullHours']) totals[k] /= days;
+        for (const k of ['helps','berries','sneaky','triggers','fullHours']) totals[k] /= days;
         for (const k of Object.keys(totals.ingredients)) totals.ingredients[k] /= days;
-        return { ...totals, totalIngredients: Object.values(totals.ingredients).reduce((a,b)=>a+b,0), helps: times.helps.length, stats: s, days };
+        return { ...totals, totalIngredients: Object.values(totals.ingredients).reduce((a,b)=>a+b,0), stats: s, days };
     }
     const defaultConditions = Object.freeze({ sleepHours: 8.5, collectHours: 3, energy: 'natural', helpingBonus: 0, ribbon: 0, camp: false });
     function matchSpecies(data, mon) {
@@ -120,7 +132,7 @@
                 throw Error('An unlocked subskill is unavailable. Confirm it in the analyzer.');
             return { name: s.name, unlock: s.unlock_level };
         });
-        return { species, level: mon.level, carry: species.carry, nature, ingredients, subskills };
+        return { species, level: mon.level, carry: species.carry, nature, ingredients, subskills, skillLevel: mon.main_skill?.level ?? null };
     }
     const api = { stats, simulate, energyFactor, schedule, defaultConditions, matchSpecies, fromRoster };
     if (typeof module !== 'undefined') module.exports = api;
