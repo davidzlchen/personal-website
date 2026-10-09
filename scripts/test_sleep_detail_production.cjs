@@ -20,15 +20,14 @@ const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDi
   const effect=outcomes.evaluate(build,expected,{});
   await page.goto(origin+`/pokemon-sleep/?snapshot=${snapshot.id}&pokemon=${mon.id}&analytics=off`);
   await page.waitForSelector('#detail .detail-production-card');
-  assert.deepEqual(await page.locator('#detail .detail-production-card strong').allTextContents(),[expected.berries,expected.totalIngredients,expected.triggers].map(fmt));
-  assert.match(await page.locator('#detail .detail-production-ingredients').innerText(),/Fiery Herb/);
+  assert.deepEqual(await page.locator('#detail .detail-production-card strong').allTextContents(),[expected.berries,...Object.values(expected.ingredients),expected.triggers].map(fmt));
+  assert.match(await page.locator('#detail .detail-production-cards').innerText(),/Fiery Herb/);
+  assert.equal(await page.locator('.detail-ingredient-card img').count(),Object.keys(expected.ingredients).length);
   const power=await page.locator('#detail .practical-card strong').allTextContents();
   assert.equal(power[0],effect.directStrength.toLocaleString('en-US',{maximumFractionDigits:0}));
   assert.equal(power[1],'0');
-  assert.match(await page.locator('#detail .practical-effect').innerText(),/6,858/);
-  await page.locator('.detail-production-assumptions summary').click();
-  assert.match(await page.locator('#detail .detail-production-assumptions').innerText(),/8.5 hours/);
-  await page.locator('.detail-production-assumptions summary').click();
+  assert.equal(await page.locator('#detail .practical-output, #detail .detail-production-assumptions').count(),0);
+  assert.equal(await page.getByRole('link',{name:'Analyze this helper →'}).isVisible(),true);
  }
  await page.screenshot({path:'/tmp/sleep-detail-production-desktop.png'});
  await page.setViewportSize({width:390,height:844});
@@ -36,7 +35,7 @@ const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDi
  assert.equal(await page.locator('#detail').evaluate(n=>n.scrollWidth<=n.clientWidth),true);
  await page.locator('#close-detail').click();
  await page.getByRole('button',{name:/View Mew,/}).click();
- await page.waitForFunction(()=>document.querySelector('.detail-production-note')?.textContent.includes('unsupported'));
+ await page.waitForFunction(()=>document.querySelector('.detail-production [role=status]')?.textContent.includes('unsupported'));
  assert.equal(await page.locator('.detail-production-card').count(),0);
  assert.equal(await page.getByRole('link',{name:'Analyze this helper →'}).isVisible(),true);
  // Delayed catalog responses must not paint a previously selected helper.
@@ -46,13 +45,13 @@ const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDi
  await race.getByRole('button',{name:/View charge king,/}).click();await race.locator('#close-detail').click();
  await race.getByRole('button',{name:/View sausage king,/}).click();await race.waitForSelector('.detail-production-card');
  assert.match(await race.locator('.detail-header h2').innerText(),/sausage king/);
- assert.equal(await race.locator('.detail-production-card').count(),3);
+ assert.equal(await race.locator('.detail-production-card').count(),4);
  // A catalog outage is recoverable on the next detail open.
  const failure=await context.newPage();let requests=0;
  await failure.route('**/analyzer/data.json',route=>++requests===1?route.fulfill({status:503,body:'Unavailable'}):route.continue());
  await failure.goto(origin+'/pokemon-sleep/?analytics=off');await failure.waitForSelector('#grid .card');
  await failure.getByRole('button',{name:/View charge king,/}).click();
- await failure.waitForFunction(()=>document.querySelector('.detail-production-note')?.textContent.includes('could not load'));
+ await failure.waitForFunction(()=>document.querySelector('.detail-production [role=status]')?.textContent.includes('could not load'));
  await failure.locator('#close-detail').click();await failure.getByRole('button',{name:/View charge king,/}).click();
  await failure.waitForSelector('.detail-production-card');assert.equal(requests,2);
  assert.deepEqual(errors,[]);assert.deepEqual(tracking,[]);
