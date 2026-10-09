@@ -40,24 +40,17 @@
         islandLabel.append(changeIsland);
         const areaLabel=make('label','Area bonus (%)'), area=make('input');
         area.id='detail-area'; area.type='number'; area.min=0;area.max=100;area.step=1; area.value=SleepIslands.savedBonus(islandId,inventory) ?? 0;areaLabel.append(area);
-        const favoriteLabel=make('label',null,'detail-island-favorite'), favorite=make('input');
-        favorite.id='detail-favorite'; favorite.type='checkbox';favoriteLabel.append(favorite,make('span','This helper’s berry is a weekly favorite (×2)'));
-        const islandNote=make('p',null,'detail-production-note');
-        controls.append(islandLabel,areaLabel,favoriteLabel,islandNote);
+        const favoriteBerry=SleepIslands.favorite(islandId,mon.berry) ?? false;
+        controls.append(islandLabel,areaLabel);
         section.append(heading,controls,status,link);
         let render;
         function updateIsland() {
-            const fixed=SleepIslands.favorite(islandId,mon.berry);
-            favorite.disabled=fixed!==null;
-            if(fixed!==null) favorite.checked=fixed;
-            islandNote.textContent=SleepIslands.note(islandId,inventory,area.value);
             url.searchParams.set('island',islandId);url.searchParams.set('area',area.value);
-            url.searchParams.set('favorite-berry',favorite.checked?'1':'0');
+            url.searchParams.set('favorite-berry',favoriteBerry?'1':'0');
             link.href=url.pathname+url.search;
             if(render) render();
         }
         area.addEventListener('input',()=>updateIsland());
-        favorite.addEventListener('change',()=>updateIsland());
         updateIsland();
         loadCatalog().then(data => {
             if (!section.isConnected) return; // A different helper or snapshot may already be selected.
@@ -71,7 +64,7 @@
                 section.querySelectorAll('.detail-production-cards,.practical-cards').forEach(n=>n.remove());
                 status.hidden=false;
                 if(area.value==='' || !area.checkValidity()) { status.textContent='Enter an area bonus from 0 to 100%.'; return; }
-                const conditions={...SleepAnalyzer.defaultConditions,areaBonus:+area.value,favoriteBerry:favorite.checked,islandName:islandId==='custom'?'':SleepIslands.get(islandId).name};
+                const conditions={...SleepAnalyzer.defaultConditions,areaBonus:+area.value,favoriteBerry,islandName:islandId==='custom'?'':SleepIslands.get(islandId).name};
                 const outcome = SleepOutcomes.evaluate(build, result, conditions);
                 const cards = make('div', null, 'detail-production-cards');
                 const entries=[['Berries', result.berries + outcome.skillBerries, 'berries', mon.berry],
@@ -89,11 +82,16 @@
                     cards.append(card);
                 }
                 const rewards=make('div',null,'practical-cards');
-                for(const [label,value] of [[outcome.directComplete?'Direct Snorlax strength':'Berry strength only',outcome.directStrength],['Skill Dream Shards',outcome.dreamShards]]) {
-                    if(label==='Skill Dream Shards' && value!==null && Math.round(value)===0) continue;
-                    const card=make('div',null,'practical-card');
-                    card.append(make('strong',value===null?'Not modeled':value.toLocaleString('en-US',{maximumFractionDigits:0})),make('span',label+' / day'));
-                    rewards.append(card);
+                const strength=make('div',null,'practical-card');
+                const strengthIcon=make('img',null,'detail-strength-icon');
+                strengthIcon.src='/pokemon-sleep/assets/badges/snorlax-strength.png'; strengthIcon.alt='';
+                strength.append(strengthIcon,make('strong',outcome.directStrength.toLocaleString('en-US',{maximumFractionDigits:0})),make('span',(outcome.directComplete?'Direct Snorlax strength':'Berry strength only')+' / day'));
+                rewards.append(strength);
+                if(outcome.dreamShards===null || Math.round(outcome.dreamShards)!==0) {
+                    const shard=make('div',null,'detail-production-card detail-shard-card');
+                    const shardIcon=make('img');shardIcon.src='/pokemon-sleep/assets/'+sleepAssets.items['Dream Shards'];shardIcon.alt='';
+                    shard.append(shardIcon,make('strong',outcome.dreamShards===null?'Not modeled':outcome.dreamShards.toLocaleString('en-US',{maximumFractionDigits:0})),make('span','Skill Dream Shards / day'));
+                    cards.append(shard);
                 }
                 section.insertBefore(cards,status);
                 section.insertBefore(rewards,cards);

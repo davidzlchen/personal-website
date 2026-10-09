@@ -25,11 +25,25 @@ const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDi
   assert.equal(await page.locator('.detail-ingredient-card img').count(),Object.keys(expected.ingredients).length);
   const power=await page.locator('#detail .practical-card strong').allTextContents();
   assert.equal(power[0],effect.directStrength.toLocaleString('en-US',{maximumFractionDigits:0}));
-  assert.equal(power.length,1); // Zero Dream Shard rewards are hidden.
+  assert.equal(power.length,1); // Strength always occupies its own first row.
+  assert.equal(await page.locator('.detail-strength-icon').count(),1);
+  assert.equal(await page.locator('#detail-favorite, .detail-shard-card').count(),0);
+  assert.doesNotMatch(await page.locator('.detail-production').innerText(),/Favorites:|weekly favorite|Saved area bonus/);
   assert.equal(await page.locator('.detail-production > .practical-cards + .detail-production-cards').count(),1);
   assert.equal(await page.locator('#detail .practical-output, #detail .detail-production-assumptions').count(),0);
   assert.equal(await page.getByRole('link',{name:'Analyze this helper →'}).isVisible(),true);
  }
+ const latest=history.snapshots.at(-1);
+ const saved=await (await context.request.get(origin+'/pokemon-sleep/'+latest.file)).json();
+ const swalot=saved.roster.records.find(m=>m.species==='Swalot' && m.level===51);
+ const shardBuild=engine.fromRoster(data,swalot), shardResult=engine.simulate(shardBuild,engine.defaultConditions);
+ const shardEffect=outcomes.evaluate(shardBuild,shardResult,{});
+ await page.goto(origin+`/pokemon-sleep/?snapshot=${latest.id}&pokemon=${swalot.id}&analytics=off`);
+ await page.waitForSelector('.detail-shard-card');
+ assert.equal(await page.locator('#detail .practical-card').count(),1);
+ assert.equal(await page.locator('.detail-shard-card img').count(),1);
+ assert.equal(await page.locator('.detail-shard-card strong').innerText(),shardEffect.dreamShards.toLocaleString('en-US',{maximumFractionDigits:0}));
+ assert.equal(await page.locator('.detail-production-cards .detail-shard-card').count(),1);
  await page.screenshot({path:'/tmp/sleep-detail-production-desktop.png'});
  await page.setViewportSize({width:390,height:844});
  await page.screenshot({path:'/tmp/sleep-detail-production-mobile.png'});
