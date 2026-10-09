@@ -101,7 +101,7 @@ def markdown(node, url):
 
 def generate():
     # Only editorial/public page HTML is read. No account exports or snapshots.
-    paths = [ROOT / 'index.html', *sorted((ROOT / 'blog').rglob('index.html')), ROOT / 'pokemon-sleep/index.html', ROOT / 'pokemon-sleep/analyzer/index.html', ROOT / 'privacy/index.html']
+    paths = [ROOT / 'index.html', *sorted((ROOT / 'blog').rglob('index.html')), ROOT / 'pokemon-sleep/index.html', ROOT / 'pokemon-sleep/analyzer/index.html', ROOT / 'pokemon-sleep/upgrades/index.html', ROOT / 'privacy/index.html']
     outputs = {}
     pages = []
     for path in paths:

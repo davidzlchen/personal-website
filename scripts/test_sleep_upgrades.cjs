@@ -1,0 +1,28 @@
+const assert=require('node:assert/strict');
+const U=require('../pokemon-sleep/upgrades/engine.js'), L=require('../pokemon-sleep/upgrades/levels.json');
+const D=require('../pokemon-sleep/analyzer/data.json'), R=require('../pokemon-sleep/roster.json');
+const A=require('../pokemon-sleep/analyzer/engine.js');
+const fixture=(level,progress=0,effect)=>({level,xp_total:L.cumulativeXP.standard[level-1]+progress,xp_in_level:progress,xp_level_required:L.cumulativeXP.standard[level]-L.cumulativeXP.standard[level-1],nature_effects:{'EXP gains':effect}});
+assert.equal(U.capForRank(66),70); assert.equal(U.capForRank(64),65);assert.equal(U.capForRank(9),20);assert.throws(()=>U.capForRank(null));
+assert.deepEqual(U.cost(fixture(14,0,'down'),15,L),{candy:13,shards:767});
+assert.deepEqual(U.cost(fixture(14,0,'up'),15,L),{candy:10,shards:590});
+assert.deepEqual(U.cost(fixture(1),2,L),{candy:2,shards:28});
+assert.equal(U.candyXP(30,{nature_neutralized:true,nature_effects:{'EXP gains':'down'}}),25);
+assert.equal(U.candyXP(24,fixture(24)),40);assert.equal(U.candyXP(25,fixture(25)),35);assert.equal(U.candyXP(30,fixture(30,0,'down')),21);assert.equal(U.candyXP(30,fixture(30,0,'up')),30);
+const almost=fixture(24,L.cumulativeXP.standard[24]-L.cumulativeXP.standard[23]-1);
+// One candy crosses 25, then uses the new EXP rate and shard price; overflow is retained.
+const remainder=L.cumulativeXP.standard[25]-L.cumulativeXP.standard[24]-39;
+const additional=Math.ceil(remainder/35);
+assert.deepEqual(U.cost(almost,26,L),{candy:1+additional,shards:92+additional*95});
+assert.deepEqual(U.cost(fixture(30),30,L),{candy:0,shards:0});assert.throws(()=>U.cost(fixture(30),80,L));
+const mon=R.records.find(m=>m.id==='mon-50'),before=JSON.stringify(mon),project=U.project(D,mon,60);
+assert.equal(project.ingredients[2].name,'Fancy Egg'); assert.equal(project.ingredients[2].quantity,4);assert.equal(JSON.stringify(mon),before);
+const unlock=R.records.find(m=>m.level<25&&m.subskills.some(s=>s.unlock_level===25&&s.name==='Skill Level Up M'));
+assert.ok(unlock);assert.equal(U.project(D,unlock,25).skillLevel,Math.min(unlock.main_skill.level+2,A.matchSpecies(D,unlock).effect.maxLevel));
+const dragon=R.records.find(m=>m.species==='Dragonite');assert.equal(U.curveFor(dragon,L),L.cumulativeXP.pseudo);
+const raikou=R.records.find(m=>m.species==='Raikou');assert.equal(U.curveFor(raikou,L),L.cumulativeXP.legendary);
+const one=U.cost({...raikou,xp_in_level:raikou.xp_level_required-1,xp_total:raikou.xp_total-raikou.xp_in_level+raikou.xp_level_required-1},51,L);assert.deepEqual(one,{candy:1,shards:309});
+assert.deepEqual(U.thresholds(mon,70),[60,70]);
+assert.throws(()=>U.project(D,{...mon,ingredients:[mon.ingredients[0],mon.ingredients[1],{name:'Unknown',quantity:1}]},60));
+for(const m of R.records) assert.ok(U.cost(m,70,L).shards>0);
+console.log('Level-up costs, EXP overflow, natures, growth curves, caps, and saved unlock projections pass.');

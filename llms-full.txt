@@ -215,7 +215,7 @@ POKÉMON SLEEP · FIELD NOTES
 
 A record of quiet progress: island milestones, familiar helpers, and a little preparation for the next good night.
 
-[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection)
+[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection) [Best opportunities to level up ↗](https://davidzlchen.com/pokemon-sleep/upgrades/)
 
 
 ---
@@ -235,6 +235,23 @@ How much can one helper bring in? Explore their berries, ingredients, skill trig
 Loading species and saved helpers…
 
 This analyzer needs JavaScript to calculate production in your browser.
+
+
+---
+
+# Best opportunities to level up · Pokémon Sleep Field Notes
+
+Source: https://davidzlchen.com/pokemon-sleep/upgrades/
+
+[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/)
+
+POKÉMON SLEEP · GROWING ROOM
+
+# Best opportunities to level up✦
+
+Put candy where it makes a difference. Find the next ingredient or subskill unlock for the helpers already in your collection.
+
+Loading your saved collection…
 
 
 ---

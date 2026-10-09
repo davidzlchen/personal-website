@@ -135,6 +135,7 @@ h1 {
 }
 .hero-footer {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 23px;
 }

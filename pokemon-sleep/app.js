@@ -466,6 +466,11 @@ function renderIslands(islands) {
     grid.replaceChildren();
     if (!islands.some(i=>i.name===SleepIslands.get(SleepDetailProduction.selectedIsland()).name)) SleepDetailProduction.selectIsland('custom');
     const selected=SleepDetailProduction.selectedIsland();
+    const upgradeURL = new URL("/pokemon-sleep/upgrades/", location.origin);
+    if (activeSnapshotId) upgradeURL.searchParams.set("snapshot", activeSnapshotId);
+    upgradeURL.searchParams.set("island", selected);
+    if (new URLSearchParams(location.search).get("analytics") === "off") upgradeURL.searchParams.set("analytics", "off");
+    $("#upgrade-link").href = upgradeURL.href;
     $("#island-analysis-status").textContent=selected==='custom' ? 'Choose an island card to use its area bonus and favorite berries in Pokémon analysis.' : `Analyzing at ${SleepIslands.get(selected).name}. Open any Pokémon to see its estimates.`;
     $("#clear-island").hidden=selected==='custom';
     for (const island of islands) {

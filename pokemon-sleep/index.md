@@ -8,4 +8,4 @@ POKÉMON SLEEP · FIELD NOTES
 
 A record of quiet progress: island milestones, familiar helpers, and a little preparation for the next good night.
 
-[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection)
+[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection) [Best opportunities to level up ↗](https://davidzlchen.com/pokemon-sleep/upgrades/)
