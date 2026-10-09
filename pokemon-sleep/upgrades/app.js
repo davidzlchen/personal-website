@@ -50,6 +50,11 @@
         box.append(make('p','Current rotation: '+(baseline.farmers.map(f=>`${roster.find(m=>m.id===f.id)?.nickname||roster.find(m=>m.id===f.id)?.species} ${(f.fraction*100).toFixed(0)}% of a day`).join(' · ')||'No supported ingredient source.')));
         $('pot-note').textContent=config.pot===null?`Pot size unconfirmed. This recipe needs ${recipe.size} slots; check access before spending.`:config.pot<recipe.size?`This recipe needs ${recipe.size} slots; your entered pot has ${config.pot}. Budget for pot expansion or choose a smaller recipe.`:`Fits your entered ${config.pot}-slot pot. Ingredient coverage excludes event boosts.`;
     }
+    function renderInvested(peers){
+        const box=$('invested');box.replaceChildren();
+        const list=peers.filter(p=>SleepPriorities.invested(p.mon,p.current.build.species.specialty)&&p.current.build.species.remainingEvolutions===0).sort((a,b)=>b.mon.level-a.mon.level);
+        for(const p of list){const role=p.current.build.species.specialty,line=SleepPriorities.ingredientLine(p.mon),text=`${p.mon.nickname||p.mon.species} · Lv. ${p.mon.level} · `+(role==='ingredient'?`${line.label}: ${p.mon.ingredients.map(i=>i.name).join(' / ')}`:role==='skill'?`${p.current.build.species.effect.name} · main skill Lv. ${p.current.build.skillLevel}`:`${p.current.build.species.berry} · berry specialist`);const item=make('p',text,'muted');box.append(item);}
+    }
     function renderPlan(){
         const used=SleepPriorities.ledger(plan,inventory),config=settings(),box=$('plan');box.replaceChildren();
         if(!plan.length)box.append(make('p','No upgrades selected. Keeping your resources is a valid outcome.','muted'));
@@ -79,6 +84,8 @@
         $('metric').disabled=$('sort').value==='practical';
         renderCeiling();
         const context=planningContext();renderAccount(context);renderPlan();
+        const peers=results.map(r=>({mon:roster.find(m=>m.id===r.id),current:r.projections[0],output:output(r.projections[0])}));
+        renderInvested(peers);
         const metric=$('metric').value,search=$('search').value.trim().toLowerCase(),rows=[];
         for(const r of results){
             const mon=roster.find(m=>m.id===r.id);
@@ -96,6 +103,8 @@
                 const row={r,mon,p,current,before,after,gain,costs,candy,affordable,resource,beforeOutput:output(current),afterOutput:output(p),efficiency:gain/costs.shards*10000};
                 row.priority=SleepPriorities.assess(row,context);
                 row.milestone=SleepPriorities.milestone(row,cap);
+                row.fit=SleepPriorities.accountFit(row,peers);
+                if($('sort').value==='practical'&&row.milestone.kind==='ingredient'&&!row.fit.line.aaa)continue;
                 row.priority.recipe=context.recipe;
                 if($('recipe').value==='auto'&&$('sort').value==='practical'){
                     const options=context.metaRecipes.map(recipe=>{
@@ -112,7 +121,7 @@
                 rows.push(row);
             }
         }
-        rows.sort((a,b)=>$('sort').value==='practical'?(b.milestone.quality-a.milestone.quality||a.costs.shards-b.costs.shards):$('sort').value==='cost'?a.costs.shards-b.costs.shards:$('sort').value==='gain'?b.gain-a.gain:b.efficiency-a.efficiency);
+        rows.sort((a,b)=>$('sort').value==='practical'?(a.fit.tier-b.fit.tier||b.milestone.quality-a.milestone.quality||a.costs.shards-b.costs.shards):$('sort').value==='cost'?a.costs.shards-b.costs.shards:$('sort').value==='gain'?b.gain-a.gain:b.efficiency-a.efficiency);
         $('count').textContent=`${rows.length} opportunities · ${results.length} of ${roster.length} helpers modeled · ranked by ${$('sort').selectedOptions[0].textContent.toLowerCase()}.`;
         const list=$('opportunities');list.replaceChildren();
         for(const row of rows.slice(0,limit)){
@@ -122,6 +131,8 @@
             card.append(make('div',SleepUpgrades.unlocks(mon,p.level,cap).join(' · '),'milestone'));
             if($('sort').value==='practical')card.append(make('span',row.milestone.kind==='berry'?'Berry investment':row.milestone.kind==='ingredient'?'Ingredient unlock':'Skill subskill milestone','priority-tag'),make('p',row.milestone.reason,'priority-reason'));
             else card.append(make('span',row.priority.kind==='recipe'?'Recipe bottleneck':row.priority.kind==='hold'?'Defer / review':'Existing role upgrade','priority-tag'),make('p',row.priority.reason,'priority-reason'));
+            if($('sort').value==='practical')card.append(make('strong',row.fit.label,'priority-reason'),make('p',row.fit.reason,'resource-share'));
+            if(row.milestone.kind==='ingredient')card.append(make('p',`${row.fit.line.label} · ${mon.ingredients.map(i=>i.name).join(' / ')}`,'gain-label'));
             if($('sort').value==='practical'&&row.priority.kind==='recipe')card.append(make('p',row.priority.mealGain>=.02?'+'+row.priority.mealGain.toFixed(2)+' meals / day':row.priority.slotGain.toFixed(2)+' slots freed','gain'),make('p',row.priority.recipe.name,'gain-label'));
             else if($('sort').value!=='practical'&&before!==null&&after!==null)card.append(make('p',(gain>=0?'+':'')+fmt(gain)+' / day','gain'+(gain<0?' negative':'')),make('p',`${labels[metric]} · ${fmt(before)} → ${fmt(after)}${before>0?' ('+(gain>=0?'+':'')+(gain/before*100).toFixed(1)+'%)':''}`,'gain-label'));
             if($('sort').value==='practical'){
@@ -154,7 +165,7 @@
             const add=make('button',plan.some(item=>item.id===mon.id)?'Update spending plan':'Add to spending plan','add-plan');add.type='button';add.disabled=!row.affordable;add.addEventListener('click',()=>{if(!SleepPriorities.resources(costs,candy?.name,inventory,settings(),plan,mon.id).fits)return;plan=plan.filter(item=>item.id!==mon.id);plan.push({id:mon.id,level:p.level,costs,family:candy.name});render();});card.append(add);
             const link=make('a','View Pokémon details →');link.href=url('/pokemon-sleep/',mon);card.append(link);list.append(card);
         }
-        if(!rows.length)list.append(make('p','No specialist milestone matches these filters. Turn off the budget filter to see longer-term investment targets.'));
+        if(!rows.length)list.append(make('p','No eligible specialist milestone matches these filters. Ingredient targets require AAA. Try a raw sort to explore other builds, or turn off the funding filter for longer-term targets.'));
         $('more').hidden=rows.length<=limit;
     }
     async function loadSnapshot(){

@@ -108,3 +108,21 @@ Helping Speed M active, but only 1 Bagon Candy. The prior checked funding filter
 hid it. It now appears as a strong long-term berry target with explicit candy
 shortfalls. Helping Bonus uses the existing self-only 5% speed benefit; team
 benefits remain outside these projections.
+
+## AAA and account investment correction
+
+The owner prefers AAA ingredient lines. Default ingredient recommendations now
+require the same ingredient across all three saved slots; AAB/ABB targets are
+available in raw exploration but do not rank as new ingredient investments.
+Existing mixed farmers still contribute to coverage. Completed AAA farmers
+remain visible in the existing-investment panel: Clodsire (cacao), Dragonite
+(herbs), Vikavolt (coffee), Flygon (avocado), and Blastoise (milk), all Lv. 60.
+
+Saved levels and effective main skill levels are investment evidence, not a
+record of past currency/seed spending. Default grouping favors useful existing
+builds, gaps, replacements, then covered roles. Comparison uses named ingredient
+output, the same berry, or the same skill effect (including modifier). Candidates
+with lower main skill levels are marked as potential duplication even when their
+trigger rate is high. Unknown skill effects require review. Cutoffs are 30 for
+ingredients, 25 for skills, and 40 for berries; replacement output must exceed
+the invested current producer by 1%. These are transparent planning heuristics.
