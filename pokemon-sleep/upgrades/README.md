@@ -33,3 +33,21 @@ Run `node scripts/test_sleep_upgrades.cjs` for cost, nature, growth-curve,
 overflow, and unlock checks. Browser verification should cover main-page
 entry/snapshot/island context, metric and supply filters, historical resource
 counts, helper detail links, worker completion, and a narrow viewport.
+
+## Account priorities (October 9 research update)
+
+`recipes.json` adapts the Apache-2.0 Neroli's Lab recipe catalog at the existing
+credited source commit. `priorities.js` independently implements a bounded
+recipe-rotation LP and resource ledger. See research.md for sources, dated
+account observations, and which heuristics are planning choices.
+
+Practical ranking uses recipe coverage and meaningful replacements for existing
+role leads. Auto mode considers leading recipes by category, excluding lower
+three-meal ceilings than current equal-level benchmarks. Ordinary output sorts
+remain available. A default 20% shard envelope and 20% family-candy reserve are
+editable; a spending plan shares the same shard balance and candy stacks.
+
+Run `node scripts/test_sleep_priorities.cjs` for solver, shared resource,
+evolution-review, recipe data, and marginal shard payback checks. Browser checks
+should exercise automatic/manual recipe targets, pot access, plan add/remove,
+budget changes, raw fallback, and narrow layouts. Unknown pot size is explicit.

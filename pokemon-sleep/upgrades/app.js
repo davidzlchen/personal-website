@@ -3,7 +3,7 @@
     const $=id=>document.getElementById(id), make=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
     const params=new URLSearchParams(location.search);
     const labels={strength:'direct Snorlax strength',ingredients:'ingredients',triggers:'skill triggers',shards:'skill Dream Shards'};
-    let catalog,levels,manifest,inventory,roster,results=[],skipped=[],worker,request=0,limit=12,cap;
+    let recipes,plan=[],rotationCache=new Map(),catalog,levels,manifest,inventory,roster,results=[],skipped=[],worker,request=0,limit=12,cap;
     const fmt=(n,metric=$('metric').value)=>n.toLocaleString('en-US',{maximumFractionDigits:['ingredients','triggers'].includes(metric)?1:0});
     const int=n=>n.toLocaleString('en-US');
     function icon(category,name){const path=sleepAssets[category]?.[name];if(!path)return null;const img=make('img');img.src='/pokemon-sleep/assets/'+path;img.alt='';return img;}
@@ -12,6 +12,52 @@
     function setting(build){const island=$('island').value;return {...SleepAnalyzer.defaultConditions,areaBonus:SleepIslands.savedBonus(island,inventory)||0,favoriteBerry:SleepIslands.favorite(island,build.species.berry)||false};}
     function output(projection){const effect=SleepOutcomes.evaluate(projection.build,projection.result,setting(projection.build));return {effect,strength:effect.directComplete?effect.directStrength:null,ingredients:projection.result.totalIngredients+effect.extraIngredients,triggers:projection.result.triggers,shards:effect.dreamShards};}
     function comparisonText(projection){const o=output(projection);return `${o.strength===null?'Direct strength partially modeled':fmt(o.strength,'strength')+' strength'} · ${fmt(o.ingredients,'ingredients')} ingredients · ${fmt(o.triggers,'triggers')} triggers${o.shards? ' · '+fmt(o.shards,'shards')+' Dream Shards':''} / day`;}
+    function settings(){
+        return {budget:Math.max(0,Math.min(inventory.dream_shards,Number($('budget').value)||0)),candyReserve:Math.max(0,Math.min(100,Number($('candy-reserve').value)||0)),slots:Number($('slots').value),pot:$('pot').value?Number($('pot').value):null};
+    }
+    function cachedRotation(pool,recipe,slots,override,level){
+        const key=[recipe.id,slots,override?.id||'base',level||0].join('|');
+        if(!rotationCache.has(key))rotationCache.set(key,SleepPriorities.rotation(pool,recipe,slots,override));
+        return rotationCache.get(key);
+    }
+    function planningContext(){
+        const leads=results.map(r=>{const mon=roster.find(m=>m.id===r.id),projection=r.projections[0];return {id:r.id,name:mon.nickname||mon.species,projection,output:output(projection),utility:SleepPriorities.utility(projection)};});
+        const healer=leads.filter(l=>l.utility.kind==='healer').sort((a,b)=>b.utility.value-a.utility.value)[0];
+        const config=settings(),pool=results.filter(r=>r.id!==healer?.id).map(r=>({id:r.id,ingredients:r.projections[0].result.ingredients}));
+        const candidates=recipes.filter(r=>config.pot===null||r.size<=config.pot);
+        const recipe=$('recipe').value==='auto'?(candidates.map(r=>({r,coverage:cachedRotation(pool,r,config.slots)})).sort((a,b)=>b.coverage.meals*b.r.baseStrength-a.coverage.meals*a.r.baseStrength)[0]?.r||recipes[0]):recipes.find(r=>r.id===$('recipe').value);
+        const baseline=cachedRotation(pool,recipe,config.slots);
+
+        const best=(key)=>{const lead=leads.filter(l=>l.output[key]!==null).sort((a,b)=>b.output[key]-a.output[key])[0];return {name:lead?.name||'none',value:lead?.output[key]||0};};
+        const bestUtility={};for(const kind of ['healer','pot','crit']){const lead=leads.filter(l=>l.utility.kind===kind).sort((a,b)=>b.utility.value-a.utility.value)[0];bestUtility[kind]={name:lead?.name||'none',value:lead?.utility.value||0};}
+        const metaRecipes=$('recipe').value==='auto'?SleepPriorities.leadingRecipes(recipes,pool,config.slots,config.pot,r=>cachedRotation(pool,r,config.slots)):[recipe];
+        return {pool,recipe,baseline,metaRecipes,slots:config.slots,bestStrength:best('strength'),bestShards:best('shards'),bestUtility,config,rotationFor:row=>cachedRotation(pool,recipe,config.slots,{id:row.mon.id,ingredients:row.p.result.ingredients},row.p.level)};
+    }
+    function renderAccount(context){
+        const {recipe,baseline,config,bestShards,bestUtility}=context;
+        $('budget-note').textContent=`Budget: ${int(config.budget)} shards (${(config.budget/inventory.dream_shards*100).toFixed(1)}% of saved balance). Default reserves 80% of shards; keep ${config.candyReserve}% of each candy family. Adjust these guardrails to your goals.`;
+        const brief=$('account-brief');brief.replaceChildren(make('span',`Existing healer lead: ${bestUtility.healer.name}`),make('span',`Existing pot support: ${bestUtility.pot.name}`),make('span',`Existing shard lead: ${bestShards.name} · ${fmt(bestShards.value,'shards')} / day`));
+        const stock=Object.fromEntries(inventory.entries.filter(e=>e.category==='Ingredients').map(e=>[e.name,e.quantity]));
+        const ready=Math.min(...Object.entries(recipe.ingredients).map(([name,amount])=>Math.floor((stock[name]||0)/amount)));
+        const box=$('recipe-coverage');box.replaceChildren(make('strong',recipe.name),make('p',`${recipe.size} ingredients per meal · ${baseline.meals.toFixed(2)} / 3 meals per day covered using up to ${config.slots} ingredient slots.`));
+        box.append(make('p',`${ready} meals’ worth in the saved ingredient bag. Stock is separate from recurring daily supply; pot access still applies.`));
+        if($('recipe').value==='auto')box.append(make('p','This is a Lv. 1 recipe benchmark. Auto priorities examine leading recipes in all categories; each opportunity names the recipe it helps. Select a target to focus on your usual dish.'));
+        const ingredients=make('div',undefined,'coverage-ingredients');for(const [name,amount] of Object.entries(recipe.ingredients)){
+            const span=make('span'),image=icon('ingredients',name);if(image)span.append(image);
+            const lead=context.pool.slice().sort((a,b)=>(b.ingredients[name]||0)-(a.ingredients[name]||0))[0];
+            const mon=roster.find(m=>m.id===lead?.id);span.append(make('span',`${name}: bag ${stock[name]||0} · need ${amount*3}/day · best ${fmt(lead?.ingredients[name]||0,'ingredients')} (${mon?.nickname||mon?.species||'none'})`));ingredients.append(span);
+        }box.append(ingredients);
+        box.append(make('p','Current rotation: '+(baseline.farmers.map(f=>`${roster.find(m=>m.id===f.id)?.nickname||roster.find(m=>m.id===f.id)?.species} ${(f.fraction*100).toFixed(0)}% of a day`).join(' · ')||'No supported ingredient source.')));
+        $('pot-note').textContent=config.pot===null?`Pot size unconfirmed. This recipe needs ${recipe.size} slots; check access before spending.`:config.pot<recipe.size?`This recipe needs ${recipe.size} slots; your entered pot has ${config.pot}. Budget for pot expansion or choose a smaller recipe.`:`Fits your entered ${config.pot}-slot pot. Ingredient coverage excludes event boosts.`;
+    }
+    function renderPlan(){
+        const used=SleepPriorities.ledger(plan,inventory),config=settings(),box=$('plan');box.replaceChildren();
+        if(!plan.length)box.append(make('p','No upgrades selected. Keeping your resources is a valid outcome.','muted'));
+        for(const item of plan){const mon=roster.find(m=>m.id===item.id),line=make('div',undefined,'plan-item');line.append(make('span',`${mon.nickname||mon.species} → Lv. ${item.level} · ${int(item.costs.shards)} shards · ${int(item.costs.candy)} ${item.family}`));const remove=make('button','Remove');remove.type='button';remove.setAttribute('aria-label',`Remove ${mon.nickname||mon.species} from plan`);remove.addEventListener('click',()=>{plan=plan.filter(p=>p.id!==item.id);render();});line.append(remove);box.append(line);}
+        box.append(make('p',`${int(used.shards)} / ${int(config.budget)} shard budget · ${int(used.remaining)} shards left in the account`,'plan-total'));
+        for(const [family,amount] of Object.entries(used.candy)){const saved=Object.values(inventory.pokemon_candies).find(c=>c.name===family)?.quantity||0;box.append(make('p',`${family}: ${int(amount)} planned · ${int(saved-amount)} left`,'muted'));}
+        if(used.shards>config.budget||plan.some(p=>!SleepPriorities.resources(p.costs,p.family,inventory,config,plan,p.id).fits))box.append(make('p','This plan exceeds the current budget or candy reserve. Remove an upgrade or adjust the guardrails.','plan-warning'));
+    }
     function renderCeiling(){
         const metric=$('metric').value,container=$('ceiling');container.replaceChildren();
         const eligible=results.filter(r=>output(r.projections[0])[metric]!==null&&output(r.projections.at(-1))[metric]!==null);
@@ -27,28 +73,47 @@
     function render(){
         if(!inventory)return;
         $('back').href=url('/pokemon-sleep/');
-        const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('island',$('island').value);u.searchParams.set('metric',$('metric').value);history.replaceState(null,'',u);
+        const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('island',$('island').value);u.searchParams.set('metric',$('metric').value);for(const [key,id] of [['recipe','recipe'],['pot','pot'],['budget','budget'],['candy-reserve','candy-reserve'],['slots','slots']]){if($(id).value)u.searchParams.set(key,$(id).value);else u.searchParams.delete(key);}history.replaceState(null,'',u);
         $('island-note').textContent=SleepIslands.note($('island').value,inventory,SleepIslands.savedBonus($('island').value,inventory)||0)+(['custom','greengrass'].includes($('island').value)?' No favorite berries assumed in this view.':'');
         if(!results.length)return;
+        $('metric').disabled=$('sort').value==='practical';
         renderCeiling();
+        const context=planningContext();renderAccount(context);renderPlan();
         const metric=$('metric').value,search=$('search').value.trim().toLowerCase(),rows=[];
         for(const r of results){
             const mon=roster.find(m=>m.id===r.id);
             if(!`${mon.nickname||''} ${mon.species}`.toLowerCase().includes(search))continue;
             const current=r.projections[0],before=output(current)[metric];
-            if(before===null)continue;
+            if(before===null && $('sort').value!=='practical')continue;
             for(const p of r.projections.slice(1)){
-                const after=output(p)[metric];if(after===null)continue;
+                const after=output(p)[metric];if(after===null && $('sort').value!=='practical')continue;
                 let costs;try{costs=SleepUpgrades.cost(mon,p.level,levels);}catch{continue;}
                 const candy=inventory.pokemon_candies?.[mon.id];
-                const affordable=candy&&candy.quantity>=costs.candy&&inventory.dream_shards>=costs.shards;
+                const resource=SleepPriorities.resources(costs,candy?.name,inventory,context.config,plan,mon.id);
+                const affordable=resource.fits;
                 if($('affordable').checked&&!affordable)continue;
-                const gain=after-before;
-                if(gain<=0 || Number(gain.toFixed(['ingredients','triggers'].includes(metric)?1:0))===0)continue;
-                rows.push({r,mon,p,current,before,after,gain,costs,candy,affordable,efficiency:gain/costs.shards*10000});
+                const gain=after===null||before===null?0:after-before;
+                const row={r,mon,p,current,before,after,gain,costs,candy,affordable,resource,beforeOutput:output(current),afterOutput:output(p),efficiency:gain/costs.shards*10000};
+                row.priority=SleepPriorities.assess(row,context);
+                row.priority.recipe=context.recipe;
+                if($('recipe').value==='auto'&&$('sort').value==='practical'){
+                    const options=context.metaRecipes.map(recipe=>{
+                        const goal={...context,recipe,baseline:cachedRotation(context.pool,recipe,context.slots),rotationFor:candidate=>cachedRotation(context.pool,recipe,context.slots,{id:candidate.mon.id,ingredients:candidate.p.result.ingredients},candidate.p.level)};
+                        return {...SleepPriorities.assess(row,goal),recipe};
+                    });
+                    const useful=options.filter(p=>p.kind==='recipe').sort((a,b)=>b.impact*b.recipe.baseStrength-a.impact*a.recipe.baseStrength);
+                    if(useful.length)row.priority=useful[0];
+                }
+                if(row.priority.kind==='recipe'&&context.config.pot!==null&&context.config.pot<row.priority.recipe.size){row.priority.kind='hold';row.priority.reason='The target recipe does not fit your entered pot size.';}
+
+                const shares=costs.shards/Math.max(context.config.budget,1)+costs.candy/Math.max(resource.allowance,1);
+                row.practicalScore=row.priority.impact*(row.priority.kind==='recipe'?row.priority.recipe.baseStrength/25539:1)/Math.max(shares,.001);
+                if($('sort').value==='practical'){if(row.priority.kind==='hold')continue;}
+                else if(gain<=0 || Number(gain.toFixed(['ingredients','triggers'].includes(metric)?1:0))===0)continue;
+                rows.push(row);
             }
         }
-        rows.sort((a,b)=>$('sort').value==='cost'?a.costs.shards-b.costs.shards:$('sort').value==='gain'?b.gain-a.gain:b.efficiency-a.efficiency);
+        rows.sort((a,b)=>$('sort').value==='practical'?((a.priority.kind==='recipe'?0:1)-(b.priority.kind==='recipe'?0:1)||b.practicalScore-a.practicalScore):$('sort').value==='cost'?a.costs.shards-b.costs.shards:$('sort').value==='gain'?b.gain-a.gain:b.efficiency-a.efficiency);
         $('count').textContent=`${rows.length} opportunities · ${results.length} of ${roster.length} helpers modeled · ranked by ${$('sort').selectedOptions[0].textContent.toLowerCase()}.`;
         const list=$('opportunities');list.replaceChildren();
         for(const row of rows.slice(0,limit)){
@@ -56,12 +121,17 @@
             const header=make('div',undefined,'opportunity-head');const portrait=make('img');portrait.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${mon.national_dex}.png`;portrait.alt=mon.species;header.append(portrait);
             const title=make('div');title.append(make('h3',mon.nickname||mon.species),make('p',`${mon.species} · Lv. ${mon.level} → ${p.level}`));header.append(title);card.append(header);
             card.append(make('div',SleepUpgrades.unlocks(mon,p.level,cap).join(' · '),'milestone'));
-            card.append(make('p',(gain>=0?'+':'')+fmt(gain)+' / day','gain'+(gain<0?' negative':'')),make('p',`${labels[metric]} · ${fmt(before)} → ${fmt(after)}${before>0?' ('+(gain>=0?'+':'')+(gain/before*100).toFixed(1)+'%)':''}`,'gain-label'));
+            card.append(make('span',row.priority.kind==='recipe'?'Recipe bottleneck':row.priority.kind==='hold'?'Defer / review':'Existing role upgrade','priority-tag'),make('p',row.priority.reason,'priority-reason'));
+            if($('sort').value==='practical'&&row.priority.kind==='recipe')card.append(make('p',row.priority.mealGain>=.02?'+'+row.priority.mealGain.toFixed(2)+' meals / day':row.priority.slotGain.toFixed(2)+' slots freed','gain'),make('p',row.priority.recipe.name,'gain-label'));
+            else if(before!==null&&after!==null)card.append(make('p',(gain>=0?'+':'')+fmt(gain)+' / day','gain'+(gain<0?' negative':'')),make('p',`${labels[metric]} · ${fmt(before)} → ${fmt(after)}${before>0?' ('+(gain>=0?'+':'')+(gain/before*100).toFixed(1)+'%)':''}`,'gain-label'));
             const costBox=make('div',undefined,'costs');
             for(const [text,name,value] of [[candy?.name||'Family candy',candy?.name,costs.candy],['Dream Shards','Dream Shards',costs.shards]]){const c=make('span',undefined,'cost');const image=icon('items',name);if(image)c.append(image);c.append(make('span',`${int(value)} ${text}`));costBox.append(c);}card.append(costBox);
             const availability=candy?`${int(candy.quantity)} family candy saved${costs.candy>candy.quantity?' · need '+int(costs.candy-candy.quantity)+' more':''}${costs.shards>inventory.dream_shards?' · need '+int(costs.shards-inventory.dream_shards)+' more shards':''}`:'Family candy unavailable for this helper.';
-            card.append(make('p',row.affordable?'Within saved supplies · '+availability:availability,'availability'+(row.affordable?'':' short')));
-            if(metric==='ingredients'){
+            card.append(make('p',row.affordable?'Within budget + candy reserve · '+availability:availability+' · exceeds spending budget or candy reserve','availability'+(row.affordable?'':' short')));
+            if(row.priority.kind==='recipe'&&context.config.pot===null)card.append(make('p',`Recipe needs ${row.priority.recipe.size} pot slots; pot access unconfirmed.`,'resource-share'));
+            card.append(make('p',`${(row.resource.shardShare*100).toFixed(1)}% of all saved shards · ${Number.isFinite(row.resource.candyShare)?(row.resource.candyShare*100).toFixed(1)+'% of this candy family':'family candy unavailable'}`,'resource-share'));
+            if(row.priority.payback)card.append(make('p',`${Math.ceil(row.priority.payback)} days of additional skill Dream Shards to recover the shard cost, assuming full-time use.`,'resource-share'));
+            if(metric==='ingredients'||row.priority.kind==='recipe'){
                 const changes=make('div',undefined,'ingredient-changes');const names=new Set([...Object.keys(row.current.result.ingredients),...Object.keys(p.result.ingredients)]);
                 for(const name of names){const span=make('span');const image=icon('ingredients',name);if(image)span.append(image);span.append(make('span',`${name}: ${fmt(row.current.result.ingredients[name]||0,'ingredients')} → ${fmt(p.result.ingredients[name]||0,'ingredients')}`));changes.append(span);}
                 const skillBefore=output(row.current).effect.extraIngredients,skillAfter=output(p).effect.extraIngredients;
@@ -71,19 +141,20 @@
             const details=make('details'),summary=make('summary',`Now, this milestone, and Lv. ${cap}`);details.append(summary,make('p','Now: '+comparisonText(row.current)),make('p',`Lv. ${p.level}: `+comparisonText(p)),make('p',`Lv. ${cap}: `+comparisonText(r.projections.at(-1))));
             if(p.level!==cap){try{const maxCost=SleepUpgrades.cost(mon,cap,levels);details.append(make('p',`To Lv. ${cap}: ${int(maxCost.candy)} candy + ${int(maxCost.shards)} Dream Shards from the saved level.`));}catch{details.append(make('p','Level-cap cost unavailable.'));}}
             details.append(make('p',`${fmt(row.efficiency)} extra ${labels[metric]} per day per 10,000 Dream Shards invested.`));card.append(details);
+            const add=make('button',plan.some(item=>item.id===mon.id)?'Update spending plan':'Add to spending plan','add-plan');add.type='button';add.disabled=!affordable;add.addEventListener('click',()=>{plan=plan.filter(item=>item.id!==mon.id);plan.push({id:mon.id,level:p.level,costs,family:candy.name});render();});card.append(add);
             const link=make('a','View Pokémon details →');link.href=url('/pokemon-sleep/',mon);card.append(link);list.append(card);
         }
-        if(!rows.length)list.append(make('p','No opportunities match these filters. Try another metric or include helpers needing more supplies.'));
+        if(!rows.length)list.append(make('p','No practical upgrade fits these guardrails. Save your resources, change the recipe goal, or explore a raw sort with the budget filter off.'));
         $('more').hidden=rows.length<=limit;
     }
     async function loadSnapshot(){
-        const token=++request;worker?.terminate();results=[];skipped=[];limit=12;$('retry').hidden=true;$('workspace').hidden=false;$('ceiling').replaceChildren();$('opportunities').replaceChildren();$('count').textContent='';
+        const token=++request;worker?.terminate();results=[];skipped=[];plan=[];rotationCache.clear();limit=12;$('retry').hidden=true;$('workspace').hidden=false;$('ceiling').replaceChildren();$('opportunities').replaceChildren();$('count').textContent='';
         $('load-status').textContent='Loading saved helpers and supplies…';$('load-status').hidden=false;
         try{
             const entry=manifest.snapshots.find(s=>s.id===$('snapshot').value);if(!entry)throw Error('Snapshot unavailable.');
             const paired=await json('/pokemon-sleep/'+entry.file);if(token!==request)return;
             if(paired.roster.captured_at!==entry.captured_at||paired.inventory.captured_at!==entry.captured_at)throw Error('Snapshot dates do not match.');
-            roster=paired.roster.records;inventory=paired.inventory;cap=SleepUpgrades.capForRank(inventory.researcher_rank,levels.cap);
+            roster=paired.roster.records;inventory=paired.inventory;$('budget').value=params.get('budget')??Math.floor(inventory.dream_shards*.2);cap=SleepUpgrades.capForRank(inventory.researcher_rank,levels.cap);
             if(roster.some(m=>m.level>cap))throw Error('Saved research rank and helper levels do not match.');
             $('supplies').textContent=`Saved ${entry.captured_at} · ${int(inventory.dream_shards)} Dream Shards · Research rank ${inventory.researcher_rank} · Trainable cap Lv. ${cap}`;
             render();
@@ -95,7 +166,10 @@
     }
     async function initialize(){
         try{
-            [catalog,levels,manifest]=await Promise.all([json('/pokemon-sleep/analyzer/data.json'),json('levels.json'),json('/pokemon-sleep/history.json')]);
+            [catalog,levels,manifest,recipes]=await Promise.all([json('/pokemon-sleep/analyzer/data.json'),json('levels.json'),json('/pokemon-sleep/history.json'),json('recipes.json')]);recipes=recipes.recipes;
+            $('recipe').replaceChildren(make('option','Across leading recipes (auto)'));$('recipe').firstElementChild.value='auto';
+            for(const recipe of recipes.slice().sort((a,b)=>a.type.localeCompare(b.type)||b.baseStrength-a.baseStrength)){const option=make('option',`${recipe.type} · ${recipe.name} · ${recipe.size} slots`);option.value=recipe.id;$('recipe').append(option);}
+            for(const [key,id] of [['recipe','recipe'],['pot','pot'],['candy-reserve','candy-reserve'],['slots','slots']])if(params.has(key))$(id).value=params.get(key);
             $('snapshot').replaceChildren(...manifest.snapshots.map(s=>{const option=make('option',s.captured_at);option.value=s.id;return option;}));
             if(params.has('snapshot')&&!manifest.snapshots.some(s=>s.id===params.get('snapshot')))throw Error('That saved snapshot is unavailable.');
             $('snapshot').value=params.get('snapshot')||manifest.snapshots.at(-1).id;
@@ -105,7 +179,8 @@
         }catch(error){$('load-status').textContent=error.message;$('retry').hidden=false;}
     }
     $('snapshot').addEventListener('change',loadSnapshot);$('retry').addEventListener('click',()=>manifest?loadSnapshot():initialize());
-    for(const id of ['island','metric','sort','affordable'])$(id).addEventListener('change',()=>{limit=12;render();});
+    for(const id of ['island','metric','sort','affordable','recipe','slots'])$(id).addEventListener('change',()=>{limit=12;render();});
+    for(const id of ['pot','budget','candy-reserve'])$(id).addEventListener('input',()=>{limit=12;render();});
     $('search').addEventListener('input',()=>{limit=12;render();});$('more').addEventListener('click',()=>{limit+=12;render();});
     initialize();
 })();
