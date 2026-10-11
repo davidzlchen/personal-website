@@ -1,0 +1,19 @@
+Neroli's Lab
+Copyright The Neroli's Lab Authors
+
+This analyzer's data.json adapts species, nature, subskill names, ingredient options,
+and pity thresholds from Neroli's Lab. The source commit and import date are in
+data.json. The fields were renamed and reduced for a static browser calculator.
+Upstream credits the Mathcord RP data project for base skill and ingredient rates:
+https://docs.google.com/spreadsheets/d/1kBrPl0pdAO8gjOf_NrTgAPseFtqQA27fdfEbMBBeAhs/edit
+
+The simulation and interface are independently implemented for Field Notes.
+
+Regular island favorite-berry sets in island-settings.js are adapted from:
+https://github.com/nerolis-lab/nerolis-lab/tree/47f1ff33f4637ceb2bd357b7d778c8df0a94200a/common/src/types/island/islands
+The interface uses snapshot-local area bonuses; Expert mode is unavailable.
+
+The upgrade planner's recipes.json adapts the public recipe tables from the same
+credited Neroli's Lab source commit. It preserves names, required ingredients,
+recipe sizes, and base/max strength. The planning heuristic and rotation solver
+are independently implemented; see upgrades/README.md and research.md.

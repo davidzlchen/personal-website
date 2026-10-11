@@ -1,0 +1,1016 @@
+{
+  "source": {
+    "name": "Neroli’s Lab",
+    "commit": "47f1ff33f4637ceb2bd357b7d778c8df0a94200a",
+    "checked_at": "2026-10-09",
+    "url": "https://github.com/nerolis-lab/nerolis-lab/tree/47f1ff33f4637ceb2bd357b7d778c8df0a94200a/common/src/types/recipe",
+    "license": "Apache-2.0"
+  },
+  "recipes": [
+    {
+      "id": "FANCY_APPLE_CURRY",
+      "name": "Fancy Apple Curry",
+      "type": "curry",
+      "baseStrength": 748,
+      "maxStrength": 2677,
+      "ingredients": {
+        "Fancy Apple": 7
+      },
+      "size": 7
+    },
+    {
+      "id": "SIMPLE_CHOWDER",
+      "name": "Simple Chowder",
+      "type": "curry",
+      "baseStrength": 814,
+      "maxStrength": 2915,
+      "ingredients": {
+        "Moomoo Milk": 7
+      },
+      "size": 7
+    },
+    {
+      "id": "MILD_HONEY_CURRY",
+      "name": "Mild Honey Curry",
+      "type": "curry",
+      "baseStrength": 839,
+      "maxStrength": 3004,
+      "ingredients": {
+        "Honey": 7
+      },
+      "size": 7
+    },
+    {
+      "id": "BEANBURGER_CURRY",
+      "name": "Beanburger Curry",
+      "type": "curry",
+      "baseStrength": 856,
+      "maxStrength": 3064,
+      "ingredients": {
+        "Bean Sausage": 7
+      },
+      "size": 7
+    },
+    {
+      "id": "HEARTY_CHEESEBURGER_CURRY",
+      "name": "Hearty Cheeseburger Curry",
+      "type": "curry",
+      "baseStrength": 1910,
+      "maxStrength": 6837,
+      "ingredients": {
+        "Moomoo Milk": 8,
+        "Bean Sausage": 8
+      },
+      "size": 16
+    },
+    {
+      "id": "DROUGHT_KATSU_CURRY",
+      "name": "\"Drought\" Katsu Curry",
+      "type": "curry",
+      "baseStrength": 1942,
+      "maxStrength": 6952,
+      "ingredients": {
+        "Bean Sausage": 10,
+        "Pure Oil": 5
+      },
+      "size": 15
+    },
+    {
+      "id": "SOLAR_POWER_TOMATO_CURRY",
+      "name": "\"Solar Power\" Tomato Curry",
+      "type": "curry",
+      "baseStrength": 2078,
+      "maxStrength": 7441,
+      "ingredients": {
+        "Snoozy Tomato": 10,
+        "Fiery Herb": 5
+      },
+      "size": 15
+    },
+    {
+      "id": "MELTY_OMELETTE_CURRY",
+      "name": "Melty Omelette Curry",
+      "type": "curry",
+      "baseStrength": 2150,
+      "maxStrength": 7696,
+      "ingredients": {
+        "Fancy Egg": 10,
+        "Snoozy Tomato": 6
+      },
+      "size": 16
+    },
+    {
+      "id": "SOFT_POTATO_CHOWDER",
+      "name": "Soft Potato Chowder",
+      "type": "curry",
+      "baseStrength": 3181,
+      "maxStrength": 11390,
+      "ingredients": {
+        "Moomoo Milk": 10,
+        "Soft Potato": 8,
+        "Tasty Mushroom": 4
+      },
+      "size": 22
+    },
+    {
+      "id": "BULK_UP_BEAN_CURRY",
+      "name": "\"Bulk Up\" Bean Curry",
+      "type": "curry",
+      "baseStrength": 3372,
+      "maxStrength": 12071,
+      "ingredients": {
+        "Greengrass Soybeans": 12,
+        "Bean Sausage": 6,
+        "Fiery Herb": 4,
+        "Fancy Egg": 4
+      },
+      "size": 26
+    },
+    {
+      "id": "SPORE_MUSHROOM_CURRY",
+      "name": "\"Spore\" Mushroom Curry",
+      "type": "curry",
+      "baseStrength": 4162,
+      "maxStrength": 14901,
+      "ingredients": {
+        "Tasty Mushroom": 14,
+        "Soft Potato": 9
+      },
+      "size": 23
+    },
+    {
+      "id": "EGG_BOMB_CURRY",
+      "name": "\"Egg Bomb\" Curry",
+      "type": "curry",
+      "baseStrength": 4523,
+      "maxStrength": 16191,
+      "ingredients": {
+        "Honey": 12,
+        "Fancy Apple": 11,
+        "Fancy Egg": 8,
+        "Soft Potato": 4
+      },
+      "size": 35
+    },
+    {
+      "id": "LIMBER_CORN_STEW",
+      "name": "\"Limber\" Corn Stew",
+      "type": "curry",
+      "baseStrength": 4670,
+      "maxStrength": 16719,
+      "ingredients": {
+        "Greengrass Corn": 14,
+        "Moomoo Milk": 8,
+        "Soft Potato": 8
+      },
+      "size": 30
+    },
+    {
+      "id": "DIZZY_PUNCH_SPICY_CURRY",
+      "name": "\"Dizzy Punch\" Spicy Curry",
+      "type": "curry",
+      "baseStrength": 5702,
+      "maxStrength": 20415,
+      "ingredients": {
+        "Rousing Coffee": 11,
+        "Fiery Herb": 11,
+        "Honey": 11
+      },
+      "size": 33
+    },
+    {
+      "id": "SPICY_LEEK_CURRY",
+      "name": "Spicy Leek Curry",
+      "type": "curry",
+      "baseStrength": 5900,
+      "maxStrength": 21122,
+      "ingredients": {
+        "Large Leek": 14,
+        "Warming Ginger": 10,
+        "Fiery Herb": 8
+      },
+      "size": 32
+    },
+    {
+      "id": "NINJA_CURRY",
+      "name": "Ninja Curry",
+      "type": "curry",
+      "baseStrength": 9445,
+      "maxStrength": 33814,
+      "ingredients": {
+        "Greengrass Soybeans": 24,
+        "Bean Sausage": 9,
+        "Large Leek": 12,
+        "Tasty Mushroom": 5
+      },
+      "size": 50
+    },
+    {
+      "id": "GRILLED_TAIL_CURRY",
+      "name": "Grilled Tail Curry",
+      "type": "curry",
+      "baseStrength": 7483,
+      "maxStrength": 26787,
+      "ingredients": {
+        "Slowpoke Tail": 8,
+        "Fiery Herb": 25
+      },
+      "size": 33
+    },
+    {
+      "id": "DREAM_EATER_BUTTER_CURRY",
+      "name": "\"Dream Eater\" Butter Curry",
+      "type": "curry",
+      "baseStrength": 9010,
+      "maxStrength": 32255,
+      "ingredients": {
+        "Soft Potato": 18,
+        "Snoozy Tomato": 15,
+        "Soothing Cacao": 12,
+        "Moomoo Milk": 10
+      },
+      "size": 55
+    },
+    {
+      "id": "INFERNO_CORN_KEEMA_CURRY",
+      "name": "\"Inferno\" Corn Keema Curry",
+      "type": "curry",
+      "baseStrength": 13690,
+      "maxStrength": 49010,
+      "ingredients": {
+        "Fiery Herb": 27,
+        "Bean Sausage": 24,
+        "Greengrass Corn": 14,
+        "Warming Ginger": 12
+      },
+      "size": 77
+    },
+    {
+      "id": "HIDDEN_POWER_PERK_UP_STEW",
+      "name": "\"Hidden Power\" Perk-Up Stew",
+      "type": "curry",
+      "baseStrength": 19061,
+      "maxStrength": 68238,
+      "ingredients": {
+        "Greengrass Soybeans": 28,
+        "Snoozy Tomato": 25,
+        "Tasty Mushroom": 23,
+        "Rousing Coffee": 16
+      },
+      "size": 92
+    },
+    {
+      "id": "CUT_SUKIYAKI_CURRY",
+      "name": "\"Cut\" Sukiyaki Curry",
+      "type": "curry",
+      "baseStrength": 20655,
+      "maxStrength": 73944,
+      "ingredients": {
+        "Large Leek": 27,
+        "Bean Sausage": 26,
+        "Honey": 26,
+        "Fancy Egg": 22
+      },
+      "size": 101
+    },
+    {
+      "id": "ROLE_PLAY_PUMPKABOO_STEW",
+      "name": "\"Role Play\" Pumpkaboo Stew",
+      "type": "curry",
+      "baseStrength": 15621,
+      "maxStrength": 55925,
+      "ingredients": {
+        "Plump Pumpkin": 10,
+        "Bean Sausage": 16,
+        "Soft Potato": 18,
+        "Tasty Mushroom": 25
+      },
+      "size": 69
+    },
+    {
+      "id": "OVERGROW_AVOCADO_GRATIN",
+      "name": "\"Overgrow\" Avocado Gratin",
+      "type": "curry",
+      "baseStrength": 24803,
+      "maxStrength": 88793,
+      "ingredients": {
+        "Glossy Avocado": 22,
+        "Soft Potato": 20,
+        "Moomoo Milk": 41,
+        "Pure Oil": 32
+      },
+      "size": 115
+    },
+    {
+      "id": "GREENGRASS_CURRY_BUN",
+      "name": "Greengrass Curry Bun",
+      "type": "curry",
+      "baseStrength": 10945,
+      "maxStrength": 39182,
+      "ingredients": {
+        "Warming Ginger": 20,
+        "Fiery Herb": 20,
+        "Greengrass Soybeans": 8,
+        "Pure Oil": 15
+      },
+      "size": 63
+    },
+    {
+      "id": "BOUNCE_CURRY_UDON",
+      "name": "\"Bounce\" Curry Udon",
+      "type": "curry",
+      "baseStrength": 25539,
+      "maxStrength": 91431,
+      "ingredients": {
+        "Warming Ginger": 39,
+        "Tasty Mushroom": 31,
+        "Fiery Herb": 22,
+        "Bean Sausage": 20
+      },
+      "size": 112
+    },
+    {
+      "id": "FANCY_APPLE_SALAD",
+      "name": "Fancy Apple Salad",
+      "type": "salad",
+      "baseStrength": 855,
+      "maxStrength": 3060,
+      "ingredients": {
+        "Fancy Apple": 8
+      },
+      "size": 8
+    },
+    {
+      "id": "BEAN_HAM_SALAD",
+      "name": "Bean Ham Salad",
+      "type": "salad",
+      "baseStrength": 978,
+      "maxStrength": 3502,
+      "ingredients": {
+        "Bean Sausage": 8
+      },
+      "size": 8
+    },
+    {
+      "id": "SNOOZY_TOMATO_SALAD",
+      "name": "Snoozy Tomato Salad",
+      "type": "salad",
+      "baseStrength": 1045,
+      "maxStrength": 3740,
+      "ingredients": {
+        "Snoozy Tomato": 8
+      },
+      "size": 8
+    },
+    {
+      "id": "SNOW_CLOAK_CAESAR_SALAD",
+      "name": "\"Snow Cloak\" Caesar Salad",
+      "type": "salad",
+      "baseStrength": 1898,
+      "maxStrength": 6795,
+      "ingredients": {
+        "Moomoo Milk": 10,
+        "Bean Sausage": 6
+      },
+      "size": 16
+    },
+    {
+      "id": "WATER_VEIL_TOFU_SALAD",
+      "name": "\"Water Veil\" Tofu Salad",
+      "type": "salad",
+      "baseStrength": 3113,
+      "maxStrength": 11143,
+      "ingredients": {
+        "Greengrass Soybeans": 15,
+        "Snoozy Tomato": 9
+      },
+      "size": 24
+    },
+    {
+      "id": "HEAT_WAVE_TOFU_SALAD",
+      "name": "\"Heat Wave\" Tofu Salad",
+      "type": "salad",
+      "baseStrength": 2114,
+      "maxStrength": 7568,
+      "ingredients": {
+        "Greengrass Soybeans": 10,
+        "Fiery Herb": 6
+      },
+      "size": 16
+    },
+    {
+      "id": "FURY_ATTACK_CORN_SALAD",
+      "name": "\"Fury Attack\" Corn Salad",
+      "type": "salad",
+      "baseStrength": 2785,
+      "maxStrength": 9970,
+      "ingredients": {
+        "Greengrass Corn": 9,
+        "Pure Oil": 8
+      },
+      "size": 17
+    },
+    {
+      "id": "DAZZLING_APPLE_CHEESE_SALAD",
+      "name": "\"Dazzling\" Apple Cheese Salad",
+      "type": "salad",
+      "baseStrength": 2655,
+      "maxStrength": 9504,
+      "ingredients": {
+        "Fancy Apple": 15,
+        "Moomoo Milk": 5,
+        "Pure Oil": 3
+      },
+      "size": 23
+    },
+    {
+      "id": "MOOMOO_CAPRESE_SALAD",
+      "name": "Moomoo Caprese Salad",
+      "type": "salad",
+      "baseStrength": 2942,
+      "maxStrength": 10531,
+      "ingredients": {
+        "Moomoo Milk": 12,
+        "Snoozy Tomato": 6,
+        "Pure Oil": 5
+      },
+      "size": 23
+    },
+    {
+      "id": "IMMUNITY_LEEK_SALAD",
+      "name": "\"Immunity\" Leek Salad",
+      "type": "salad",
+      "baseStrength": 2845,
+      "maxStrength": 10183,
+      "ingredients": {
+        "Large Leek": 10,
+        "Warming Ginger": 5
+      },
+      "size": 15
+    },
+    {
+      "id": "SUPERPOWER_EXTREME_SALAD",
+      "name": "\"Superpower\" Extreme Salad",
+      "type": "salad",
+      "baseStrength": 3046,
+      "maxStrength": 10906,
+      "ingredients": {
+        "Bean Sausage": 9,
+        "Warming Ginger": 6,
+        "Fancy Egg": 5,
+        "Soft Potato": 3
+      },
+      "size": 23
+    },
+    {
+      "id": "CONTRARY_CHOCOLATE_MEAT_SALAD",
+      "name": "\"Contrary\" Chocolate Meat Salad",
+      "type": "salad",
+      "baseStrength": 3665,
+      "maxStrength": 13120,
+      "ingredients": {
+        "Soothing Cacao": 14,
+        "Bean Sausage": 9
+      },
+      "size": 23
+    },
+    {
+      "id": "GLUTTONY_POTATO_SALAD",
+      "name": "\"Gluttony\" Potato Salad",
+      "type": "salad",
+      "baseStrength": 5040,
+      "maxStrength": 18043,
+      "ingredients": {
+        "Soft Potato": 14,
+        "Fancy Egg": 9,
+        "Bean Sausage": 7,
+        "Fancy Apple": 6
+      },
+      "size": 36
+    },
+    {
+      "id": "OVERHEAT_GINGER_SALAD",
+      "name": "\"Overheat\" Ginger Salad",
+      "type": "salad",
+      "baseStrength": 5225,
+      "maxStrength": 18706,
+      "ingredients": {
+        "Fiery Herb": 17,
+        "Warming Ginger": 10,
+        "Snoozy Tomato": 8
+      },
+      "size": 35
+    },
+    {
+      "id": "SPORE_MUSHROOM_SALAD",
+      "name": "\"Spore\" Mushroom Salad",
+      "type": "salad",
+      "baseStrength": 5859,
+      "maxStrength": 20974,
+      "ingredients": {
+        "Tasty Mushroom": 17,
+        "Snoozy Tomato": 8,
+        "Pure Oil": 8
+      },
+      "size": 33
+    },
+    {
+      "id": "CALM_MIND_FRUIT_SALAD",
+      "name": "\"Calm Mind\" Fruit Salad",
+      "type": "salad",
+      "baseStrength": 7675,
+      "maxStrength": 27478,
+      "ingredients": {
+        "Fancy Apple": 21,
+        "Honey": 16,
+        "Greengrass Corn": 12
+      },
+      "size": 49
+    },
+    {
+      "id": "SLOWPOKE_TAIL_PEPPER_SALAD",
+      "name": "Slowpoke Tail Pepper Salad",
+      "type": "salad",
+      "baseStrength": 8169,
+      "maxStrength": 29244,
+      "ingredients": {
+        "Slowpoke Tail": 10,
+        "Fiery Herb": 10,
+        "Pure Oil": 15
+      },
+      "size": 35
+    },
+    {
+      "id": "CROSS_CHOP_SALAD",
+      "name": "\"Cross Chop\" Salad",
+      "type": "salad",
+      "baseStrength": 8755,
+      "maxStrength": 31342,
+      "ingredients": {
+        "Fancy Egg": 20,
+        "Bean Sausage": 15,
+        "Greengrass Corn": 11,
+        "Snoozy Tomato": 10
+      },
+      "size": 56
+    },
+    {
+      "id": "GREENGRASS_SALAD",
+      "name": "Greengrass Salad",
+      "type": "salad",
+      "baseStrength": 11393,
+      "maxStrength": 40787,
+      "ingredients": {
+        "Pure Oil": 22,
+        "Greengrass Corn": 17,
+        "Snoozy Tomato": 14,
+        "Soft Potato": 9
+      },
+      "size": 62
+    },
+    {
+      "id": "NINJA_SALAD",
+      "name": "Ninja Salad",
+      "type": "salad",
+      "baseStrength": 11659,
+      "maxStrength": 41741,
+      "ingredients": {
+        "Large Leek": 15,
+        "Greengrass Soybeans": 19,
+        "Tasty Mushroom": 12,
+        "Warming Ginger": 11
+      },
+      "size": 57
+    },
+    {
+      "id": "PETAL_BLIZZARD_LAYERED_SALAD",
+      "name": "\"Petal Blizzard\" Layered Salad",
+      "type": "salad",
+      "baseStrength": 11881,
+      "maxStrength": 42536,
+      "ingredients": {
+        "Fancy Egg": 25,
+        "Pure Oil": 17,
+        "Soft Potato": 15,
+        "Bean Sausage": 12
+      },
+      "size": 69
+    },
+    {
+      "id": "APPLE_ACID_YOGURT_DRESSED_SALAD",
+      "name": "\"Apple Acid\" Yogurt-Dressed Salad",
+      "type": "salad",
+      "baseStrength": 19293,
+      "maxStrength": 69070,
+      "ingredients": {
+        "Fancy Egg": 35,
+        "Fancy Apple": 28,
+        "Snoozy Tomato": 23,
+        "Moomoo Milk": 18
+      },
+      "size": 104
+    },
+    {
+      "id": "DEFIANT_COFFEE_DRESSED_SALAD",
+      "name": "\"Defiant\" Coffee-Dressed Salad",
+      "type": "salad",
+      "baseStrength": 20218,
+      "maxStrength": 72382,
+      "ingredients": {
+        "Rousing Coffee": 28,
+        "Bean Sausage": 28,
+        "Pure Oil": 22,
+        "Soft Potato": 22
+      },
+      "size": 100
+    },
+    {
+      "id": "LUSCIOUS_AVOCADO_SALAD",
+      "name": "Luscious Avocado Salad",
+      "type": "salad",
+      "baseStrength": 7125,
+      "maxStrength": 25509,
+      "ingredients": {
+        "Glossy Avocado": 14,
+        "Greengrass Soybeans": 18,
+        "Pure Oil": 10
+      },
+      "size": 42
+    },
+    {
+      "id": "BULLDOZE_GUACAMOLE_AND_CHIPS",
+      "name": "\"Bulldoze\" Guacamole and Chips",
+      "type": "salad",
+      "baseStrength": 25162,
+      "maxStrength": 90080,
+      "ingredients": {
+        "Glossy Avocado": 28,
+        "Greengrass Corn": 25,
+        "Fiery Herb": 30,
+        "Greengrass Soybeans": 22
+      },
+      "size": 105
+    },
+    {
+      "id": "SCALD_CHUNKY_SALAD",
+      "name": "\"Scald\" Chunky Salad",
+      "type": "salad",
+      "baseStrength": 25356,
+      "maxStrength": 90774,
+      "ingredients": {
+        "Plump Pumpkin": 20,
+        "Soft Potato": 30,
+        "Greengrass Corn": 18,
+        "Tasty Mushroom": 27
+      },
+      "size": 95
+    },
+    {
+      "id": "WARM_MOOMOO_MILK",
+      "name": "Warm Moomoo Milk",
+      "type": "dessert",
+      "baseStrength": 814,
+      "maxStrength": 2915,
+      "ingredients": {
+        "Moomoo Milk": 7
+      },
+      "size": 7
+    },
+    {
+      "id": "FANCY_APPLE_JUICE",
+      "name": "Fancy Apple Juice",
+      "type": "dessert",
+      "baseStrength": 855,
+      "maxStrength": 3060,
+      "ingredients": {
+        "Fancy Apple": 8
+      },
+      "size": 8
+    },
+    {
+      "id": "CRAFT_SODA_POP",
+      "name": "Craft Soda Pop",
+      "type": "dessert",
+      "baseStrength": 1079,
+      "maxStrength": 3863,
+      "ingredients": {
+        "Honey": 9
+      },
+      "size": 9
+    },
+    {
+      "id": "LUCKY_CHANT_APPLE_PIE",
+      "name": "\"Lucky Chant\" Apple Pie",
+      "type": "dessert",
+      "baseStrength": 1748,
+      "maxStrength": 6259,
+      "ingredients": {
+        "Fancy Apple": 12,
+        "Moomoo Milk": 4
+      },
+      "size": 16
+    },
+    {
+      "id": "FLUFFY_SWEET_POTATOES",
+      "name": "\"Fluffy\" Sweet Potatoes",
+      "type": "dessert",
+      "baseStrength": 1907,
+      "maxStrength": 6829,
+      "ingredients": {
+        "Soft Potato": 9,
+        "Moomoo Milk": 5
+      },
+      "size": 14
+    },
+    {
+      "id": "EMBER_GINGER_TEA",
+      "name": "\"Ember\" Ginger Tea",
+      "type": "dessert",
+      "baseStrength": 1913,
+      "maxStrength": 6850,
+      "ingredients": {
+        "Warming Ginger": 9,
+        "Fancy Apple": 7
+      },
+      "size": 16
+    },
+    {
+      "id": "CLOUD_NINE_SOY_CAKE",
+      "name": "\"Cloud Nine\" Soy Cake",
+      "type": "dessert",
+      "baseStrength": 1924,
+      "maxStrength": 6888,
+      "ingredients": {
+        "Fancy Egg": 8,
+        "Greengrass Soybeans": 7
+      },
+      "size": 15
+    },
+    {
+      "id": "STALWART_VEGETABLE_JUICE",
+      "name": "\"Stalwart\" Vegetable Juice",
+      "type": "dessert",
+      "baseStrength": 1924,
+      "maxStrength": 6888,
+      "ingredients": {
+        "Snoozy Tomato": 9,
+        "Fancy Apple": 7
+      },
+      "size": 16
+    },
+    {
+      "id": "BIG_MALASADA",
+      "name": "Big Malasada",
+      "type": "dessert",
+      "baseStrength": 3015,
+      "maxStrength": 10794,
+      "ingredients": {
+        "Pure Oil": 10,
+        "Moomoo Milk": 7,
+        "Honey": 6
+      },
+      "size": 23
+    },
+    {
+      "id": "HUSTLE_PROTEIN_SMOOTHIE",
+      "name": "\"Hustle\" Protein Smoothie",
+      "type": "dessert",
+      "baseStrength": 3263,
+      "maxStrength": 11683,
+      "ingredients": {
+        "Greengrass Soybeans": 15,
+        "Soothing Cacao": 8
+      },
+      "size": 23
+    },
+    {
+      "id": "HUGE_POWER_SOY_DONUTS",
+      "name": "\"Huge Power\" Soy Donuts",
+      "type": "dessert",
+      "baseStrength": 5547,
+      "maxStrength": 19859,
+      "ingredients": {
+        "Pure Oil": 12,
+        "Greengrass Soybeans": 16,
+        "Soothing Cacao": 7
+      },
+      "size": 35
+    },
+    {
+      "id": "SWEET_SCENT_CHOCOLATE_CAKE",
+      "name": "\"Sweet Scent\" Chocolate Cake",
+      "type": "dessert",
+      "baseStrength": 3378,
+      "maxStrength": 12093,
+      "ingredients": {
+        "Honey": 9,
+        "Soothing Cacao": 8,
+        "Moomoo Milk": 7
+      },
+      "size": 24
+    },
+    {
+      "id": "PETAL_DANCE_CHOCOLATE_TART",
+      "name": "\"Petal Dance\" Chocolate Tart",
+      "type": "dessert",
+      "baseStrength": 3314,
+      "maxStrength": 11863,
+      "ingredients": {
+        "Fancy Apple": 11,
+        "Soothing Cacao": 11
+      },
+      "size": 22
+    },
+    {
+      "id": "LOVELY_KISS_SMOOTHIE",
+      "name": "\"Lovely Kiss\" Smoothie",
+      "type": "dessert",
+      "baseStrength": 4734,
+      "maxStrength": 16947,
+      "ingredients": {
+        "Fancy Apple": 11,
+        "Moomoo Milk": 9,
+        "Honey": 7,
+        "Soothing Cacao": 8
+      },
+      "size": 35
+    },
+    {
+      "id": "STEADFAST_GINGER_COOKIES",
+      "name": "\"Steadfast\" Ginger Cookies",
+      "type": "dessert",
+      "baseStrength": 4921,
+      "maxStrength": 17618,
+      "ingredients": {
+        "Honey": 14,
+        "Warming Ginger": 12,
+        "Soothing Cacao": 5,
+        "Fancy Egg": 4
+      },
+      "size": 35
+    },
+    {
+      "id": "NEROLIS_RESTORATIVE_TEA",
+      "name": "Neroli's Restorative Tea",
+      "type": "dessert",
+      "baseStrength": 5065,
+      "maxStrength": 18133,
+      "ingredients": {
+        "Warming Ginger": 11,
+        "Fancy Apple": 15,
+        "Tasty Mushroom": 9
+      },
+      "size": 35
+    },
+    {
+      "id": "EXPLOSION_POPCORN",
+      "name": "\"Explosion\" Popcorn",
+      "type": "dessert",
+      "baseStrength": 6048,
+      "maxStrength": 21652,
+      "ingredients": {
+        "Greengrass Corn": 15,
+        "Pure Oil": 14,
+        "Moomoo Milk": 7
+      },
+      "size": 36
+    },
+    {
+      "id": "EARLY_BIRD_COFFEE_JELLY",
+      "name": "\"Early Bird\" Coffee Jelly",
+      "type": "dessert",
+      "baseStrength": 6793,
+      "maxStrength": 24320,
+      "ingredients": {
+        "Rousing Coffee": 16,
+        "Moomoo Milk": 14,
+        "Honey": 12
+      },
+      "size": 42
+    },
+    {
+      "id": "MOLD_BREAKER_CORN_TIRAMISU",
+      "name": "\"Mold Breaker\" Corn Tiramisu",
+      "type": "dessert",
+      "baseStrength": 7125,
+      "maxStrength": 25509,
+      "ingredients": {
+        "Rousing Coffee": 14,
+        "Greengrass Corn": 14,
+        "Moomoo Milk": 12
+      },
+      "size": 40
+    },
+    {
+      "id": "JIGGLYPUFFS_FRUITY_FLAN",
+      "name": "Jigglypuff's Fruity Flan",
+      "type": "dessert",
+      "baseStrength": 7594,
+      "maxStrength": 27186,
+      "ingredients": {
+        "Honey": 20,
+        "Fancy Egg": 15,
+        "Moomoo Milk": 10,
+        "Fancy Apple": 10
+      },
+      "size": 55
+    },
+    {
+      "id": "TEATIME_CORN_SCONES",
+      "name": "\"Teatime\" Corn Scones",
+      "type": "dessert",
+      "baseStrength": 10925,
+      "maxStrength": 39113,
+      "ingredients": {
+        "Fancy Apple": 20,
+        "Warming Ginger": 20,
+        "Greengrass Corn": 18,
+        "Moomoo Milk": 9
+      },
+      "size": 67
+    },
+    {
+      "id": "FLOWER_GIFT_MACARONS",
+      "name": "\"Flower Gift\" Macarons",
+      "type": "dessert",
+      "baseStrength": 13834,
+      "maxStrength": 49524,
+      "ingredients": {
+        "Soothing Cacao": 25,
+        "Fancy Egg": 25,
+        "Honey": 17,
+        "Moomoo Milk": 10
+      },
+      "size": 77
+    },
+    {
+      "id": "ZING_ZAP_SPICED_COLA",
+      "name": "\"Zing Zap\" Spiced Cola",
+      "type": "dessert",
+      "baseStrength": 17494,
+      "maxStrength": 62629,
+      "ingredients": {
+        "Fancy Apple": 35,
+        "Warming Ginger": 20,
+        "Large Leek": 20,
+        "Rousing Coffee": 12
+      },
+      "size": 87
+    },
+    {
+      "id": "CLODSIRE_ECLAIR",
+      "name": "Clodsire Éclair",
+      "type": "dessert",
+      "baseStrength": 20885,
+      "maxStrength": 74768,
+      "ingredients": {
+        "Soothing Cacao": 30,
+        "Moomoo Milk": 26,
+        "Rousing Coffee": 24,
+        "Honey": 22
+      },
+      "size": 102
+    },
+    {
+      "id": "HONEY_GATHER_CHOCOLATE_WAFFLES",
+      "name": "\"Honey Gather\" Chocolate Waffles",
+      "type": "dessert",
+      "baseStrength": 25484,
+      "maxStrength": 91234,
+      "ingredients": {
+        "Honey": 38,
+        "Greengrass Corn": 28,
+        "Pure Oil": 28,
+        "Soothing Cacao": 21
+      },
+      "size": 115
+    },
+    {
+      "id": "SCARY_FACE_PANCAKES",
+      "name": "\"Scary Face\" Pancakes",
+      "type": "dessert",
+      "baseStrength": 24354,
+      "maxStrength": 87187,
+      "ingredients": {
+        "Plump Pumpkin": 18,
+        "Fancy Egg": 24,
+        "Honey": 32,
+        "Snoozy Tomato": 29
+      },
+      "size": 103
+    },
+    {
+      "id": "LEAF_TORNADO_SMOOTHIE",
+      "name": "\"Leaf Tornado\" Smoothie",
+      "type": "dessert",
+      "baseStrength": 8165,
+      "maxStrength": 29230,
+      "ingredients": {
+        "Glossy Avocado": 18,
+        "Snoozy Tomato": 16,
+        "Moomoo Milk": 14
+      },
+      "size": 48
+    }
+  ]
+}

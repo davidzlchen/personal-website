@@ -215,7 +215,43 @@ POKÉMON SLEEP · FIELD NOTES
 
 A record of quiet progress: island milestones, familiar helpers, and a little preparation for the next good night.
 
-[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection)
+[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection) [Best opportunities to level up ↗](https://davidzlchen.com/pokemon-sleep/upgrades/)
+
+
+---
+
+# Pokémon Sleep Production Analyzer · Field Notes
+
+Source: https://davidzlchen.com/pokemon-sleep/analyzer/
+
+[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/)
+
+POKÉMON SLEEP · THE DAILY HAUL
+
+# A little help, a whole day’s worth✦
+
+How much can one helper bring in? Explore their berries, ingredients, skill triggers, Snorlax strength, and Dream Shards over a typical day.
+
+Loading species and saved helpers…
+
+This analyzer needs JavaScript to calculate production in your browser.
+
+
+---
+
+# Best opportunities to level up · Pokémon Sleep Field Notes
+
+Source: https://davidzlchen.com/pokemon-sleep/upgrades/
+
+[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/)
+
+POKÉMON SLEEP · GROWING ROOM
+
+# Best opportunities to level up✦
+
+Plan around specialist milestones: ingredients at 30/60, skills at 25/50, and continued levels for strong berry helpers. Compare costs before spending.
+
+Loading your saved collection…
 
 
 ---

@@ -184,3 +184,67 @@ for validating real events. Test with `node scripts/test-analytics.cjs` and
 regenerate discovery after public page changes. Measure project visits and broad
 Field Notes interaction before interpreting return rates; only consenting visits
 are represented.
+
+## Pokémon Sleep production analyzer
+
+Each helper's detail dialog automatically displays estimated berries, individually
+named ingredients, collected skill triggers, direct Snorlax strength, and
+skill-generated Dream Shards per 24 hours. Estimates use the
+selected snapshot's saved build with the default energy/collection scenario.
+The species catalog loads on the first detail open, with per-helper caching and
+safe handling for unavailable data or unsupported forms. The assumptions panel
+explains missing carry/ribbon data. The link beneath it opens
+`/pokemon-sleep/analyzer/` to adjust the build or scenario. Links from Field Notes and helper details
+load the selected sanitized snapshot. Visitors can also build any of the 247
+supported species, edit level/nature/ingredients/subskills, choose an energy and
+collection scenario, pin a comparison, and copy a reproducible build URL.
+Nothing writes back to the collection or connects to the game account.
+
+The independent, seeded simulation averages 4,000 days after a 20-day warmup.
+It models level and nature speed, additive subskills, the 35% Helping Bonus cap,
+Good Camp, ribbons, ingredient slot unlocks, inventory clipping, sneaky snacking,
+pity thresholds, and one/two stored skill procs. Energy is integrated at one-minute
+resolution under the selected explicit scenario. Supported main skill effects are
+described per trigger and per day using the
+effective skill level. Direct strength separates berries and skills from uncooked
+ingredient base value. Area/favorite-berry settings affect strength; Dream Shards
+from skills are separate from sleep-research rewards. Skill Level Up bonuses are
+already included in a saved helper's effective skill level and are not added twice.
+Healing feedback, complex/team-dependent effects, meals, naps, events, cooking
+totals, and percentile ratings are not modeled. Darkrai and Mew's customizable All
+builds are excluded.
+Level 75/100 custom subskills are future projections; saved helpers retain their
+snapshot's recorded unlock levels. Carry and ribbons are missing from the public
+roster and need user input; evolution history is never inferred.
+
+Run `node scripts/test_sleep_analyzer.cjs` for mechanics and species coverage,
+`node scripts/test_sleep_outcomes.cjs` for practical effect arithmetic, and
+`node scripts/test_raenonx_reference.cjs` for the recorded live RaenonX baseline.
+[The comparison audit](docs/raenonx-verification.md) distinguishes observed parity
+from unresolved model differences: daily help progress now carries across days,
+but the default pity-aware skill model differs from RaenonX's observed ordinary-roll
+counts. Full real-routine parity is not claimed.
+With Playwright available, run `node scripts/test_sleep_analyzer_browser.cjs`
+and `node scripts/test_sleep_detail_production.cjs`
+against the local server on port 8769, or set `SLEEP_TEST_ORIGIN` to another
+server. It verifies the real helper flow, share URLs, mobile layout, failure
+handling, and analytics opt-out.
+The analyzer has no build step, backend, or runtime dependency. Data is adapted
+from Apache-2.0-licensed [Neroli's Lab](https://github.com/nerolis-lab/nerolis-lab),
+with source SHA and import date recorded in `analyzer/data.json`. Upstream license,
+notice, and rate attribution are included beside it.
+
+To update the species catalog from a reviewed upstream checkout, bundle an entry
+exporting `COMPLETE_POKEDEX` from `common/src/types/pokemon/pokedex`, `NATURES` from
+`common/src/types/nature/nature`, and `subskills` as a namespace from
+`common/src/types/subskill/subskills` using esbuild's `--bundle --platform=node
+--format=cjs`. Then run:
+
+```sh
+node scripts/import-sleep-analyzer-data.cjs /tmp/bundled-data.cjs UPSTREAM_COMMIT_SHA
+node scripts/test_sleep_analyzer.cjs
+python3 scripts/build-discovery.py
+```
+
+Review the data diff and upstream mechanics before publishing. Only that public
+species catalog is imported; no account captures or credentials are involved.

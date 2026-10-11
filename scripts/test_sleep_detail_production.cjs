@@ -1,0 +1,75 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+const engine=require('../pokemon-sleep/analyzer/engine.js');
+const data=require('../pokemon-sleep/analyzer/data.json');
+const outcomes=require('../pokemon-sleep/analyzer/outcomes');
+const origin=process.env.SLEEP_TEST_ORIGIN||'http://localhost:8769';
+const fmt=n=>n.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});
+(async()=>{
+ const browser=await chromium.launch({headless:true});
+ const context=await browser.newContext({viewport:{width:1280,height:1000}});
+ const page=await context.newPage(),errors=[],tracking=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ page.on('request',r=>{if(/google-analytics|googletagmanager/.test(r.url()))tracking.push(r.url());});
+ const history=await (await context.request.get(origin+'/pokemon-sleep/history.json')).json();
+ for(const snapshot of [history.snapshots[0],history.snapshots.at(-1)]) {
+  const capture=await (await context.request.get(origin+'/pokemon-sleep/'+snapshot.file)).json();
+  const mon=capture.roster.records.find(p=>p.nickname==='charge king');
+  const build=engine.fromRoster(data,mon);
+  const expected=engine.simulate(build,engine.defaultConditions);
+  const effect=outcomes.evaluate(build,expected,{});
+  await page.goto(origin+`/pokemon-sleep/?snapshot=${snapshot.id}&pokemon=${mon.id}&analytics=off`);
+  await page.waitForSelector('#detail .detail-production-card');
+  assert.deepEqual(await page.locator('#detail .detail-production-card strong').allTextContents(),[expected.berries,...Object.values(expected.ingredients),expected.triggers].map(fmt));
+  assert.match(await page.locator('#detail .detail-production-cards').innerText(),/Fiery Herb/);
+  assert.equal(await page.locator('.detail-ingredient-card img').count(),Object.keys(expected.ingredients).length);
+  const power=await page.locator('#detail .practical-card strong').allTextContents();
+  assert.equal(power[0],effect.directStrength.toLocaleString('en-US',{maximumFractionDigits:0}));
+  assert.equal(power.length,1); // Strength always occupies its own first row.
+  assert.equal(await page.locator('.detail-strength-icon').count(),1);
+  assert.equal(await page.locator('#detail-favorite, .detail-shard-card').count(),0);
+  assert.doesNotMatch(await page.locator('.detail-production').innerText(),/Favorites:|weekly favorite|Saved area bonus/);
+  assert.equal(await page.locator('.detail-production > .practical-cards + .detail-production-cards').count(),1);
+  assert.equal(await page.locator('#detail .practical-output, #detail .detail-production-assumptions').count(),0);
+  assert.equal(await page.getByRole('link',{name:'Analyze this helper →'}).isVisible(),true);
+ }
+ const latest=history.snapshots.at(-1);
+ const saved=await (await context.request.get(origin+'/pokemon-sleep/'+latest.file)).json();
+ const swalot=saved.roster.records.find(m=>m.species==='Swalot' && m.level===51);
+ const shardBuild=engine.fromRoster(data,swalot), shardResult=engine.simulate(shardBuild,engine.defaultConditions);
+ const shardEffect=outcomes.evaluate(shardBuild,shardResult,{});
+ await page.goto(origin+`/pokemon-sleep/?snapshot=${latest.id}&pokemon=${swalot.id}&analytics=off`);
+ await page.waitForSelector('.detail-shard-card');
+ assert.equal(await page.locator('#detail .practical-card').count(),1);
+ assert.equal(await page.locator('.detail-shard-card img').count(),1);
+ assert.equal(await page.locator('.detail-shard-card strong').innerText(),shardEffect.dreamShards.toLocaleString('en-US',{maximumFractionDigits:0}));
+ assert.equal(await page.locator('.detail-production-cards .detail-shard-card').count(),1);
+ await page.screenshot({path:'/tmp/sleep-detail-production-desktop.png'});
+ await page.setViewportSize({width:390,height:844});
+ await page.screenshot({path:'/tmp/sleep-detail-production-mobile.png'});
+ assert.equal(await page.locator('#detail').evaluate(n=>n.scrollWidth<=n.clientWidth),true);
+ await page.locator('#close-detail').click();
+ await page.getByRole('button',{name:/View Mew,/}).click();
+ await page.waitForFunction(()=>document.querySelector('.detail-production [role=status]')?.textContent.includes('unsupported'));
+ assert.equal(await page.locator('.detail-production-card').count(),0);
+ assert.equal(await page.getByRole('link',{name:'Analyze this helper →'}).isVisible(),true);
+ // Delayed catalog responses must not paint a previously selected helper.
+ const race=await context.newPage();
+ await race.route('**/analyzer/data.json',async route=>{await new Promise(r=>setTimeout(r,350));await route.continue();});
+ await race.goto(origin+'/pokemon-sleep/?analytics=off');await race.waitForSelector('#grid .card');
+ await race.getByRole('button',{name:/View charge king,/}).click();await race.locator('#close-detail').click();
+ await race.getByRole('button',{name:/View sausage king,/}).click();await race.waitForSelector('.detail-production-card');
+ assert.match(await race.locator('.detail-header h2').innerText(),/sausage king/);
+ assert.equal(await race.locator('.detail-production-card').count(),4);
+ // A catalog outage is recoverable on the next detail open.
+ const failure=await context.newPage();let requests=0;
+ await failure.route('**/analyzer/data.json',route=>++requests===1?route.fulfill({status:503,body:'Unavailable'}):route.continue());
+ await failure.goto(origin+'/pokemon-sleep/?analytics=off');await failure.waitForSelector('#grid .card');
+ await failure.getByRole('button',{name:/View charge king,/}).click();
+ await failure.waitForFunction(()=>document.querySelector('.detail-production [role=status]')?.textContent.includes('could not load'));
+ await failure.locator('#close-detail').click();await failure.getByRole('button',{name:/View charge king,/}).click();
+ await failure.waitForSelector('.detail-production-card');assert.equal(requests,2);
+ assert.deepEqual(errors,[]);assert.deepEqual(tracking,[]);
+ await browser.close();
+ console.log('Automatic detail estimates, archived/current builds, ingredient breakdown, mobile, unsupported forms, stale requests, recovery, and analytics opt-out verified.');
+})().catch(e=>{console.error(e);process.exit(1);});
