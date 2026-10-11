@@ -1,6 +1,8 @@
 const assert=require('node:assert/strict');
 const U=require('../pokemon-sleep/upgrades/engine.js'), L=require('../pokemon-sleep/upgrades/levels.json');
-const D=require('../pokemon-sleep/analyzer/data.json'), R=require('../pokemon-sleep/roster.json');
+// Fixed saved snapshot keeps exact regression cases stable across weekly refreshes.
+const D=require('../pokemon-sleep/analyzer/data.json'), R=require('../pokemon-sleep/snapshots/2026-10-04-1c3647d40662.json').roster;
+const currentRoster=require('../pokemon-sleep/roster.json');
 const A=require('../pokemon-sleep/analyzer/engine.js');
 const fixture=(level,progress=0,effect)=>({level,xp_total:L.cumulativeXP.standard[level-1]+progress,xp_in_level:progress,xp_level_required:L.cumulativeXP.standard[level]-L.cumulativeXP.standard[level-1],nature_effects:{'EXP gains':effect}});
 assert.equal(U.capForRank(66),70); assert.equal(U.capForRank(64),65);assert.equal(U.capForRank(9),20);assert.throws(()=>U.capForRank(null));
@@ -24,5 +26,5 @@ const raikou=R.records.find(m=>m.species==='Raikou');assert.equal(U.curveFor(rai
 const one=U.cost({...raikou,xp_in_level:raikou.xp_level_required-1,xp_total:raikou.xp_total-raikou.xp_in_level+raikou.xp_level_required-1},51,L);assert.deepEqual(one,{candy:1,shards:309});
 assert.deepEqual(U.thresholds(mon,70),[58,60,70]);
 assert.throws(()=>U.project(D,{...mon,ingredients:[mon.ingredients[0],mon.ingredients[1],{name:'Unknown',quantity:1}]},60));
-for(const m of R.records) assert.ok(U.cost(m,70,L).shards>0);
+for(const m of [...R.records,...currentRoster.records]) assert.ok(U.cost(m,70,L).shards>0);
 console.log('Level-up costs, EXP overflow, natures, growth curves, caps, and saved unlock projections pass.');
