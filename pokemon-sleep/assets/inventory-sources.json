@@ -969,6 +969,11 @@
       "file": "items/dream-shards.webp",
       "url": "https://cdn.raenonx.cc/api/image/pks?format=webp&url=%2Fimages%2Fgeneric%2Fshard.png",
       "sha256": "dd0b3145cc8885b71c21476edcab09e0ece24b3019e431e3abd7738d21240f51"
+    },
+    {
+      "file": "items/candy-590.webp",
+      "url": "https://cdn.raenonx.cc/api/image/pks?format=webp&url=%2Fimages%2Fcandy%2F590.png",
+      "sha256": "37656e31aacd74189c805d2f7f7a5ec76f5844f536fab78f5c0b98aa3f130d9b"
     }
   ]
 }
