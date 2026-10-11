@@ -2,6 +2,8 @@
 // Public names and game rarity values; independent of the private roster.
 const sleepAssets = {
     "items": {
+        "Foongus Candy": "items/candy-590.webp",
+        "Foongus Incense": "items/incense-pokemon-8.webp",
         "Bagon Incense": "items/incense-pokemon-15.webp",
         "Bug-Type Candy M": "items/item-67.webp",
         "Bulbasaur Incense": "items/incense-pokemon-5.webp",
