@@ -17,3 +17,8 @@ The upgrade planner's recipes.json adapts the public recipe tables from the same
 credited Neroli's Lab source commit. It preserves names, required ingredients,
 recipe sizes, and base/max strength. The planning heuristic and rotation solver
 are independently implemented; see upgrades/README.md and research.md.
+
+Ingredient analyzer evolution graph and previous-stage counts are adapted from
+Neroli's Lab at the same credited source commit (Apache-2.0). Requirements are
+factual entries from Serebii's linked Pokémon Sleep evolution tables; per-step
+URLs and the official v2.9 capacity update are in ingredients/evolutions.json.
