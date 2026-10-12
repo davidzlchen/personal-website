@@ -50,9 +50,9 @@
         const list=all.filter(r=>`${name(r.mon)} ${r.mon.species}`.toLowerCase().includes(search));
         const heading=$('ingredient-heading');heading.replaceChildren();const img=icon(ingredient);if(img)heading.append(img);heading.append(make('span',ingredient));
         const top=$('leaders');top.replaceChildren();
-        for(const [title,r,p] of [['Best now',lead.now,lead.now?.current],['Highest saved-build potential',lead.potential,lead.potential?.peak]]){
-            const card=make('div',undefined,'ceiling-card');card.append(make('span',title));
-            if(r)card.append(make('strong',`${fmt(p.ingredients[ingredient]||0)} / day`),make('p',`${name(r.mon)}${p.steps?.length?' → '+p.form.name:''} · Lv. ${p.level}`));else card.append(make('p','No matching saved producer.'));
+        for(const [title,r,p] of [['Best now',lead.now,lead.now?.current],['Highest saved potential',lead.potential,lead.potential?.peak]]){
+            const card=make('div',undefined,'summary-stat');card.append(make('span',title));
+            if(r){const value=make('strong',`${fmt(p.ingredients[ingredient]||0)} / day`);value.title=`${name(r.mon)}${p.steps?.length?' → '+p.form.name:''} · Lv. ${p.level}`;card.append(value);}else card.append(make('strong','—'));
             top.append(card);
         }
         $('count').textContent=`${list.length} saved candidate${list.length===1?'':'s'} · ${rows.length} of ${total} ingredient specialists modeled · cap Lv. ${cap}.`;
