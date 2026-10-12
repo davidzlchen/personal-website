@@ -1,7 +1,7 @@
 // DOM integration test, not a browser/visual check. Requires jsdom in the test environment.
 const {JSDOM}=require(process.env.SLEEP_DOM_TEST_MODULE||'jsdom'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),html=fs.readFileSync(path.join(root,'pokemon-sleep/ingredients/index.html'),'utf8');
-const dom=new JSDOM(html,{url:'https://davidzlchen.com/pokemon-sleep/ingredients/?analytics=off',runScripts:'outside-only',pretendToBeVisual:true});
+const dom=new JSDOM(html,{url:'https://davidzlchen.com/pokemon-sleep/ingredients/?analytics=off&ingredient=Honey&evolutions=false',runScripts:'outside-only',pretendToBeVisual:true});
 const w=dom.window,errors=[];w.addEventListener('error',e=>errors.push(e.message));w.HTMLElement.prototype.scrollIntoView=function(){};
 w.fetch=async url=>{const u=new URL(url,w.location.href);const file=path.join(root,u.pathname);return {ok:fs.existsSync(file),json:async()=>JSON.parse(fs.readFileSync(file,'utf8'))};};
 w.Worker=class{
@@ -15,6 +15,12 @@ const $=id=>w.document.getElementById(id),change=(id,value)=>{$(id).value=value;
  while($('results').hidden){await new Promise(r=>setTimeout(r,20));assert.ok(!errors.length,errors.join('\n'));}
  assert.equal($('snapshot').value,'2026-10-11-216ba00d4db6');assert.match($('supplies').textContent,/810,361/);
  assert.equal($('overview').children.length,$('ingredient').options.length);assert.ok($('candidates').children.length>0);assert.ok($('reference').children.length>0);
+ assert.equal($('evolutions').checked,true,'legacy default URL must not hide unevolved helpers');
+ assert.ok(!new URL(w.location.href).searchParams.has('evolutions'));
+ const bulb=[...$('candidates').querySelectorAll('article')].find(a=>a.textContent.includes('Bulbasaur'));
+ assert.ok(bulb,'AAA Bulbasaur appears in default Honey results');assert.match(bulb.textContent,/saved Lv\. 14/);assert.match(bulb.textContent,/AAA/);assert.match(bulb.textContent,/Current-form projection/);
+ $('evolutions').checked=false;$('evolutions').dispatchEvent(new w.Event('change'));assert.ok(!$('candidates').textContent.includes('Bulbasaur'));assert.equal(new URL(w.location.href).searchParams.get('final-only'),'true');
+ $('evolutions').checked=true;$('evolutions').dispatchEvent(new w.Event('change'));
  change('ingredient','Honey');$('aaa').checked=false;$('aaa').dispatchEvent(new w.Event('change'));
  const pinsir=[...$('candidates').querySelectorAll('article')].find(a=>a.textContent.includes('Pinsir'));assert.ok(pinsir);assert.match(pinsir.textContent,/Lv\. 59/);assert.match(pinsir.textContent,/655 Pinsir Candy/);assert.match(pinsir.textContent,/276,049 Dream Shards/);
  assert.match(pinsir.querySelector('a').href,/snapshot=2026-10-11/);assert.match(pinsir.querySelector('a').href,/analytics=off/);

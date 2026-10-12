@@ -14,8 +14,10 @@ cap for mixed lines: Pinsir's third apple slot reduces honey output at 60.
 Production uses the unchanged 4,000-day simulation and default conditions.
 Only gathered ingredients count; random skill ingredient mixtures are excluded.
 
-AAA uses all three saved slots, including locked slots. Final forms and AAA are
-the defaults, with mixed lines and unevolved current forms available via filters.
+AAA uses all three saved slots, including locked slots. AAA and all saved evolution stages are
+the defaults. Mixed lines and a final-forms-only view are available via filters.
+Legacy automatically generated `evolutions=false` URLs migrate to the inclusive
+default; an explicit new `final-only=true` URL retains the final-form filter.
 Each candidate includes current production, peak production and level, incremental
 ordinary candy/shard costs, remaining resource shortfalls, and a milestone table.
 Past investments remain reflected in saved level/EXP; costs do not restart at 1.

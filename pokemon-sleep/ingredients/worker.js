@@ -1,4 +1,4 @@
-importScripts('../analyzer/engine.js','../upgrades/engine.js?v=2','model.js?v=1');
+importScripts('../analyzer/engine.js','../upgrades/engine.js?v=2','model.js?v=2');
 self.onmessage=({data:{catalog,roster,cap,levels}})=>{
     try{
         const rows=[],excluded=[],references=[];

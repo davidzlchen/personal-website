@@ -7,7 +7,7 @@ assert.equal(M.best(profiles,'B').level,70);assert.equal(M.best(profiles,'Unknow
 assert.equal(M.at(profiles,50),null,'unavailable levels are not fabricated');
 const aaa={id:'aaa',species:'AAA',ingredients:[{name:'A'},{name:'A'},{name:'A'}]},aab={id:'aab',species:'AAB',ingredients:[{name:'A'},{name:'A'},{name:'B'}]};
 const rows=[{id:'aab',remainingEvolutions:0,projections:profiles},{id:'aaa',remainingEvolutions:1,projections:profiles}];
-assert.equal(M.candidates(rows,[aaa,aab],'A').length,0);
+assert.equal(M.candidates(rows,[aaa,aab],'A').length,1);
 assert.equal(M.candidates(rows,[aaa,aab],'A',{aaa:true,evolutions:true}).length,1);
 assert.equal(M.candidates(rows,[aaa,aab],'A',{aaa:false,evolutions:true}).length,2);
 assert.equal(M.line({...aaa,ingredients:[{name:'A'},{name:'A'},{name:'B'}]}).aaa,false,'locked third slot matters');
@@ -30,3 +30,10 @@ assert.equal(M.referenceBuild(D,species,'Slowpoke Tail',70,true),null);
 assert.equal(M.referenceBuild(D,D.species.find(p=>p.name==='Larvitar'),'Warming Ginger',70,true),null,'unowned benchmark is explicitly final-form');
 assert.ok(A.simulate(b,A.defaultConditions,100).ingredients['Warming Ginger']>0);
 console.log('Named ingredient maxima, all reachable levels, AAA locked slots, evolution filters, incremental costs, missing data, shared resources, and species benchmarks pass.');
+
+const bulbasaur=S.roster.records.find(m=>m.species==='Bulbasaur'&&M.line(m).aaa);
+assert.equal(bulbasaur.level,14);
+const bulbRow=M.owned(D,bulbasaur,70,L,build=>({ingredients:{Honey:build.level}}));
+assert.ok(M.candidates([bulbRow],S.roster.records,'Honey').some(r=>r.id===bulbasaur.id),'saved AAA Bulbasaur is included by default');
+assert.equal(M.candidates([bulbRow],S.roster.records,'Honey',{evolutions:false}).length,0,'explicit final-only filtering remains available');
+console.log('October 11 AAA honey Bulbasaur is visible by default; explicit final-form filtering still works.');
