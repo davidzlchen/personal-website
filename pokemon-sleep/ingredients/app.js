@@ -89,7 +89,7 @@
     function render(){
         const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('ingredient',selectedIngredient);u.searchParams.set('aaa',String($('aaa').checked));u.searchParams.delete('evolutions');u.searchParams.set('final-only',String(!$('evolutions').checked));u.searchParams.set('sort',$('sort').value);history.replaceState(null,'',u);
         $('back').href=link('/pokemon-sleep/');$('upgrades').href=link('/pokemon-sleep/upgrades/');
-        if(!$('results').hidden){renderOverview();renderCandidates();renderReference();}
+        renderOverview();if(!$('results').hidden){renderCandidates();renderReference();}
     }
     async function load(){
         const token=++request;worker?.terminate();rows=[];references=[];excluded=[];$('results').hidden=true;$('supplies').textContent='';$('retry').hidden=true;$('status').hidden=false;$('status').textContent='Loading the paired saved collection…';
