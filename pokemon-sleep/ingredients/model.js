@@ -11,7 +11,7 @@
         return projections.filter(p=>(p.ingredients[name]||0)>0).reduce((lead,p)=>!lead||(p.ingredients[name]||0)>(lead.ingredients[name]||0)?p:lead,null);
     }
     function at(projections,level){return projections.find(p=>p.level===level)||null;}
-    function candidates(rows,roster,name,{aaa=true,evolutions=false,sort='max'}={}){
+    function candidates(rows,roster,name,{aaa=true,evolutions=true,sort='max'}={}){
         return rows.map(r=>{const mon=roster.find(m=>m.id===r.id),current=r.projections[0],peak=best(r.projections,name);return {...r,mon,current,peak,line:line(mon)};})
             .filter(r=>r.peak&&(!aaa||r.line.aaa)&&(evolutions||r.remainingEvolutions===0))
             .sort((a,b)=>sort==='current'?(b.current.ingredients[name]||0)-(a.current.ingredients[name]||0):sort==='cost'?(a.peak.costs?.shards??Infinity)-(b.peak.costs?.shards??Infinity):(b.peak.ingredients[name]||0)-(a.peak.ingredients[name]||0));

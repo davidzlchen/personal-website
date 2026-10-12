@@ -73,7 +73,7 @@
         if(!list.length)box.append(make('p','No supported final-form species matches this ingredient and line filter. Uncheck AAA to see mixed-line sources.'));
     }
     function render(){
-        const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('ingredient',$('ingredient').value);u.searchParams.set('aaa',String($('aaa').checked));u.searchParams.set('evolutions',String($('evolutions').checked));u.searchParams.set('sort',$('sort').value);history.replaceState(null,'',u);
+        const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('ingredient',$('ingredient').value);u.searchParams.set('aaa',String($('aaa').checked));u.searchParams.delete('evolutions');u.searchParams.set('final-only',String(!$('evolutions').checked));u.searchParams.set('sort',$('sort').value);history.replaceState(null,'',u);
         $('back').href=link('/pokemon-sleep/');$('upgrades').href=link('/pokemon-sleep/upgrades/');
         if(!$('results').hidden){renderOverview();renderCandidates();renderReference();}
     }
@@ -86,7 +86,7 @@
             roster=paired.roster.records;inventory=paired.inventory;cap=SleepUpgrades.capForRank(inventory.researcher_rank,levels.cap);
             if(roster.some(m=>m.level>cap))throw Error('Saved helper levels exceed the research rank cap.');
             $('supplies').textContent=`Saved ${entry.captured_at} · ${int(inventory.dream_shards)} Dream Shards · trainable cap Lv. ${cap}. Island selection does not change ingredient gathering.`;render();
-            worker=new Worker('worker.js?v=1');worker.onmessage=({data})=>{
+            worker=new Worker('worker.js?v=2');worker.onmessage=({data})=>{
                 if(token!==request)return;
                 if(data.error){worker.terminate();$('status').textContent=data.error;$('retry').hidden=false;}
                 else if(data.rows){({rows,references,excluded,total}=data);worker.terminate();$('results').hidden=false;$('status').hidden=true;$('limitations').textContent=excluded.length?'Unmodeled saved helpers: '+excluded.map(r=>`${name(roster.find(m=>m.id===r.id))}: ${r.reason}`).join(' · '):'Every saved ingredient specialist has supported current production.';render();}
@@ -103,7 +103,7 @@
         $('snapshot').replaceChildren(...manifest.snapshots.map(s=>{const option=make('option',s.captured_at);option.value=s.id;return option;}));
         if(params.has('snapshot')&&!manifest.snapshots.some(s=>s.id===params.get('snapshot')))throw Error('That saved collection is unavailable.');
         $('snapshot').value=params.get('snapshot')||manifest.snapshots.at(-1).id;
-        if(params.has('aaa'))$('aaa').checked=params.get('aaa')!=='false';if(params.has('evolutions'))$('evolutions').checked=params.get('evolutions')==='true';if(['max','current','cost'].includes(params.get('sort')))$('sort').value=params.get('sort');await load();
+        if(params.has('aaa'))$('aaa').checked=params.get('aaa')!=='false';if(params.has('final-only'))$('evolutions').checked=params.get('final-only')!=='true';if(['max','current','cost'].includes(params.get('sort')))$('sort').value=params.get('sort');await load();
     }catch(error){$('status').textContent=error.message;$('retry').hidden=false;}}
     $('snapshot').addEventListener('change',load);for(const id of ['ingredient','aaa','evolutions','sort'])$(id).addEventListener('change',render);$('search').addEventListener('input',render);$('retry').addEventListener('click',()=>manifest?load():initialize());initialize();
 })();
