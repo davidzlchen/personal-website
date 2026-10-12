@@ -1,0 +1,19 @@
+{
+  "entries": {
+    "snapshots/2026-10-03-7608354d1cd9.json": {
+      "key": "1e1b273c0abbdfd7f552483783d873b324ed39742f8e75c04e96731bbec999dc",
+      "file": "2026-10-03-7608354d1cd9-1e1b273c0abbdfd7.json",
+      "digest": "5f2d8e32b3bedce6f09ae3b0e452c7a6a333d42fc057b5e5028c6d763d1cd826"
+    },
+    "snapshots/2026-10-04-1c3647d40662.json": {
+      "key": "bf5a9549db4fbe32794dc7a401b95d43d5594e697af568f2db2a0f4db1a55a18",
+      "file": "2026-10-04-1c3647d40662-bf5a9549db4fbe32.json",
+      "digest": "51873a271009674fc01f3dfbc0d2323bf3bcaed0e18ef0d48fe9d1fa137f0e46"
+    },
+    "snapshots/2026-10-11-216ba00d4db6.json": {
+      "key": "02a6660f8e5db48cc75fac04c3f861a6d275fea149a030ccb3cecf990cbf5764",
+      "file": "2026-10-11-216ba00d4db6-02a6660f8e5db48c.json",
+      "digest": "15064a32530f70e7a199338366c8b009bb9830e134c172e3c9d6f3f7b51edff3"
+    }
+  }
+}

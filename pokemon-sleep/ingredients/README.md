@@ -83,3 +83,20 @@ AAA level-14 Bulbasaur, the level-30 Venusaur scenario uses 234 leveling candy +
 120 evolution candy = 354 total, with 20,601 leveling shards and no required item.
 The current-form calculation is about 13.8 Honey/day; the Venusaur level-30
 scenario is about 57.7 under the same collection/energy assumptions.
+
+## Shared snapshot cache
+
+Run `node scripts/build_sleep_ingredient_cache.cjs` after changing calculator code,
+mechanics data, or archived snapshots; `--check` verifies freshness without simulation.
+The normal collection sync runs this automatically after publishing sanitized archives.
+The generator uses the same calculation function as the worker and writes one shared
+static result per paired snapshot, including every level/evolution and species reference.
+Filters, sorting, and ingredient selection only render these results.
+
+SHA-256 keys cover exact snapshot bytes, production/evolution/level data, simulation,
+projection and calculation code, and cache schema code. The browser validates these
+inputs and the result-file digest before using a cache. New snapshots or changed
+mechanics cannot silently reuse older results. Missing, corrupt or stale artifacts
+fall back to the worker; completed results are also reused while switching snapshots
+in the same page session. Generated filenames contain the input hash. Only sanitized
+public data is cached; original snapshot files remain byte-identical.

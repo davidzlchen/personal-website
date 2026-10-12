@@ -3,6 +3,15 @@
     "cleanUrls": true,
     "headers": [
         {
+            "source": "/pokemon-sleep/ingredients/cache/(.*)-(.*).json",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
             "source": "/pokemon-sleep/roster.json",
             "headers": [
                 {
@@ -42,5 +51,7 @@
                 }
             ]
         }
-    ]
+    ],
+    "buildCommand": "node pokemon-sleep/ingredients/build-cache.cjs",
+    "outputDirectory": "."
 }
