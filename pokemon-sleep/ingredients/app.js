@@ -3,7 +3,17 @@
     const $=id=>document.getElementById(id),make=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
     const params=new URLSearchParams(location.search),fmt=n=>n.toLocaleString('en-US',{maximumFractionDigits:1}),int=n=>n.toLocaleString('en-US');
     let catalog,levels,manifest,evolutions,roster=[],inventory,rows=[],references=[],excluded=[],worker,request=0,cap,total=0;
-    async function json(path){const response=await fetch(path,{cache:'no-cache'});if(!response.ok)throw Error('Data could not be loaded.');return response.json();}
+    const sources=new Map(),sessionResults=new Map();
+    async function text(path){
+        const url=new URL(path,location.href).pathname;
+        if(!sources.has(url))sources.set(url,fetch(url,{cache:'no-cache'}).then(response=>{if(!response.ok)throw Error('Data could not be loaded.');return response.text();}).catch(error=>{sources.delete(url);throw error;}));
+        return sources.get(url);
+    }
+    async function json(path){return JSON.parse(await text(path));}
+    function showResults(data){
+        ({rows,references,excluded,total}=data);$('results').hidden=false;$('status').hidden=true;
+        $('limitations').textContent=excluded.length?'Unmodeled saved helpers: '+excluded.map(r=>`${name(roster.find(m=>m.id===r.id))}: ${r.reason}`).join(' · '):'Every saved ingredient specialist has supported current production.';render();
+    }
     function icon(name){const path=sleepAssets.ingredients?.[name];if(!path)return null;const img=make('img');img.src='/pokemon-sleep/assets/'+path;img.alt='';return img;}
     function portrait(dex,name){const img=make('img');img.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${dex}.png`;img.alt=name;img.loading='lazy';return img;}
     function name(mon){return mon.nickname||mon.species;}
@@ -90,10 +100,14 @@
             roster=paired.roster.records;inventory=paired.inventory;cap=SleepUpgrades.capForRank(inventory.researcher_rank,levels.cap);
             if(roster.some(m=>m.level>cap))throw Error('Saved helper levels exceed the research rank cap.');
             $('supplies').textContent=`Saved ${entry.captured_at} · ${int(inventory.dream_shards)} Dream Shards · trainable cap Lv. ${cap}. Island selection does not change ingredient gathering.`;render();
-            worker=new Worker('worker.js?v=3');worker.onmessage=({data})=>{
+            $('status').textContent='Loading saved analysis…';
+            const cached=sessionResults.get(entry.file)||await SleepIngredientCache.load(text,entry.file);
+            if(token!==request)return;
+            if(cached){sessionResults.set(entry.file,cached);showResults(cached);return;}
+            worker=new Worker('worker.js?v=4');worker.onmessage=({data})=>{
                 if(token!==request)return;
                 if(data.error){worker.terminate();$('status').textContent=data.error;$('retry').hidden=false;}
-                else if(data.rows){({rows,references,excluded,total}=data);worker.terminate();$('results').hidden=false;$('status').hidden=true;$('limitations').textContent=excluded.length?'Unmodeled saved helpers: '+excluded.map(r=>`${name(roster.find(m=>m.id===r.id))}: ${r.reason}`).join(' · '):'Every saved ingredient specialist has supported current production.';render();}
+                else if(data.rows){worker.terminate();sessionResults.set(entry.file,data);showResults(data);}
                 else $('status').textContent='Calculating… '+data.progress;
             };worker.onerror=()=>{if(token!==request)return;worker.terminate();$('status').textContent='The calculation could not finish. Retry to calculate again.';$('retry').hidden=false;};worker.postMessage({catalog,roster,cap,levels,evolutions});
         }catch(error){if(token!==request)return;$('status').textContent=error.message;$('retry').hidden=false;}
