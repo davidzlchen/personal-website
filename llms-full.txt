@@ -270,6 +270,10 @@ Your best farmer for each ingredient, the room left in each saved build, and wha
 
 [Best opportunities to level up →](https://davidzlchen.com/pokemon-sleep/upgrades/)
 
+## Choose an ingredient
+
+Filters
+
 Saved collectionRank saved candidates
 
 AAA lines only Include unevolved saved helpersFind a helper
