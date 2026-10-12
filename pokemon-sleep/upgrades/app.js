@@ -78,6 +78,7 @@
     function render(){
         if(!inventory)return;
         $('back').href=url('/pokemon-sleep/');
+        $('ingredient-analyzer').href=url('/pokemon-sleep/ingredients/');
         const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('island',$('island').value);u.searchParams.set('metric',$('metric').value);for(const [key,id] of [['recipe','recipe'],['pot','pot'],['budget','budget'],['candy-reserve','candy-reserve'],['slots','slots']]){if($(id).value)u.searchParams.set(key,$(id).value);else u.searchParams.delete(key);}history.replaceState(null,'',u);
         $('island-note').textContent=SleepIslands.note($('island').value,inventory,SleepIslands.savedBonus($('island').value,inventory)||0)+(['custom','greengrass'].includes($('island').value)?' No favorite berries assumed in this view.':'');
         if(!results.length)return;
