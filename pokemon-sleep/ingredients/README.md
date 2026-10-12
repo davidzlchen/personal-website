@@ -19,7 +19,7 @@ the defaults. Mixed lines and a final-forms-only view are available via filters.
 Legacy automatically generated `evolutions=false` URLs migrate to the inclusive
 default; an explicit new `final-only=true` URL retains the final-form filter.
 Each candidate includes current production, peak production and level, incremental
-ordinary candy/shard costs, remaining resource shortfalls, and a milestone table.
+ordinary candy/shard costs, remaining resource shortfalls, and an always-visible milestone table.
 Past investments remain reflected in saved level/EXP; costs do not restart at 1.
 Only future evolution steps are charged, so an already-owned Chansey does not
 pay again for the Happiny stage.
@@ -60,7 +60,7 @@ snapshot files. Install jsdom in an isolated test directory and set
 browser or visual check.
 
 Browser checks cover the main entry link, paired snapshot selection, overview
-clicks, mixed/AAA toggles, Pinsir's honey peak at 59, milestone costs, the species
+icon selectors, mixed/AAA toggles, Pinsir's honey peak at 59, milestone costs, the species
 reference, saved-detail links, historical snapshot switching, and mobile layout.
 
 
@@ -100,3 +100,7 @@ mechanics cannot silently reuse older results. Missing, corrupt or stale artifac
 fall back to the worker; completed results are also reused while switching snapshots
 in the same page session. Generated filenames contain the input hash. Only sanitized
 public data is cached; original snapshot files remain byte-identical.
+
+Ingredient selection uses accessible icon-only buttons with names in tooltips and
+ARIA labels. The selected ingredient stays in the shareable URL. Saved candidates
+and species references are standalone sections, with individual Pokémon cards.

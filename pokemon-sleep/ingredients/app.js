@@ -2,7 +2,7 @@
     'use strict';
     const $=id=>document.getElementById(id),make=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
     const params=new URLSearchParams(location.search),fmt=n=>n.toLocaleString('en-US',{maximumFractionDigits:1}),int=n=>n.toLocaleString('en-US');
-    let catalog,levels,manifest,evolutions,roster=[],inventory,rows=[],references=[],excluded=[],worker,request=0,cap,total=0;
+    let catalog,levels,manifest,evolutions,roster=[],inventory,rows=[],references=[],excluded=[],worker,request=0,cap,total=0,ingredients=[],selectedIngredient;
     const sources=new Map(),sessionResults=new Map();
     async function text(path){
         const url=new URL(path,location.href).pathname;
@@ -22,13 +22,13 @@
     function link(path,mon){const u=new URL(path,location.origin);u.searchParams.set('snapshot',$('snapshot').value);if(params.has('island'))u.searchParams.set('island',params.get('island'));if(mon)u.searchParams.set('pokemon',mon.id);if(params.get('analytics')==='off')u.searchParams.set('analytics','off');return u.href;}
     function leaders(list,ingredient){return {now:list.filter(r=>(r.current.ingredients[ingredient]||0)>0).sort((a,b)=>(b.current.ingredients[ingredient]||0)-(a.current.ingredients[ingredient]||0))[0],potential:list.slice().sort((a,b)=>b.peak.ingredients[ingredient]-a.peak.ingredients[ingredient])[0]};}
     function renderOverview(){
-        const box=$('overview');box.replaceChildren();
-        for(const ingredient of Array.from($('ingredient').options).map(o=>o.value)){
-            const lead=leaders(options(ingredient),ingredient),button=make('button',undefined,'ingredient-tile');button.type='button';button.setAttribute('aria-pressed',String(ingredient===$('ingredient').value));
-            const title=make('strong');const img=icon(ingredient);if(img)title.append(img);title.append(make('span',ingredient));button.append(title);
-            button.append(make('span',lead.now?`Now: ${name(lead.now.mon)} · ${fmt(lead.now.current.ingredients[ingredient])}/day`:'Now: no matching producer.'),make('span',lead.potential?`Potential: ${name(lead.potential.mon)}${lead.potential.peak.steps?.length?' → '+lead.potential.peak.form.name:''} · ${fmt(lead.potential.peak.ingredients[ingredient])}/day at ${lead.potential.peak.level}`:'No saved build matches these filters.'));
-            button.addEventListener('click',()=>{$('ingredient').value=ingredient;$('search').value='';render();$('selected-heading').scrollIntoView({behavior:'smooth',block:'start'});});box.append(button);
+        const box=$('overview');
+        if(!box.children.length)for(const ingredient of ingredients){
+            const button=make('button',undefined,'ingredient-tile');button.type='button';button.dataset.ingredient=ingredient;button.setAttribute('aria-label',ingredient);button.title=ingredient;
+            const img=icon(ingredient);if(img)button.append(img);else button.append(make('span',ingredient));
+            button.addEventListener('click',()=>{selectedIngredient=ingredient;$('search').value='';render();});box.append(button);
         }
+        for(const button of box.children)button.setAttribute('aria-pressed',String(button.dataset.ingredient===selectedIngredient));
     }
     function costsBlock(mon,p){
         const box=make('div',undefined,'candidate-costs'),candy=inventory.pokemon_candies?.[mon.id];
@@ -46,7 +46,7 @@
         return box;
     }
     function renderCandidates(){
-        const ingredient=$('ingredient').value,all=options(ingredient),lead=leaders(all,ingredient),search=$('search').value.trim().toLowerCase();
+        const ingredient=selectedIngredient,all=options(ingredient),lead=leaders(all,ingredient),search=$('search').value.trim().toLowerCase();
         const list=all.filter(r=>`${name(r.mon)} ${r.mon.species}`.toLowerCase().includes(search));
         const heading=$('ingredient-heading');heading.replaceChildren();const img=icon(ingredient);if(img)heading.append(img);heading.append(make('span',ingredient));
         const top=$('leaders');top.replaceChildren();
@@ -68,7 +68,7 @@
             if(peak.steps?.length)card.append(make('p','Evolution path: '+[mon.species,...peak.steps.map(step=>catalog.species.find(p=>p.key===step.to)?.name||step.to)].join(' → '),'priority-reason'));
             if(r.remainingEvolutions&&r.evolutionPaths?.length===1)card.append(make('p','Current-form projection only; evolution requirements are unverified.','availability short'));
             if(peak.form)card.append(make('p',`Modeled carry limit before inventory subskills: ${current.carry} → ${peak.carry}. Main skill level: ${current.skillLevel??'unknown'} → ${peak.skillLevel??'unknown'}.`,'candidate-meta'));
-            const detail=make('details');detail.open=r.evolutionPaths.length>1;detail.append(make('summary','Evolution milestones and resource costs'));
+            const detail=make('div',undefined,'evolution-milestones');detail.append(make('h4','Evolution milestones and resource costs'));
             const table=make('table',undefined,'milestone-table'),caption=make('caption',`${ingredient} per day; costs from saved level`);table.append(caption);
             const header=make('tr');for(const text of ['Form / level','Per day','Candy','Shards'])header.append(make('th',text));const thead=make('thead');thead.append(header);table.append(thead);
             const milestoneRows=SleepIngredients.milestones(r,ingredient,cap),tbody=make('tbody');for(const p of milestoneRows){
@@ -80,14 +80,14 @@
         if(!list.length){box.append(make('p','No saved ingredient specialist matches these filters.'));if($('aaa').checked){const button=make('button','Show mixed ingredient lines','add-plan');button.type='button';button.addEventListener('click',()=>{$('aaa').checked=false;render();});box.append(button);}}
     }
     function renderReference(){
-        const ingredient=$('ingredient').value,list=references.filter(r=>r.ingredient===ingredient&&(!$('aaa').checked||r.aaa)).sort((a,b)=>b.amount-a.amount),box=$('reference');box.replaceChildren();$('reference-cap').textContent=String(cap);
+        const ingredient=selectedIngredient,list=references.filter(r=>r.ingredient===ingredient&&(!$('aaa').checked||r.aaa)).sort((a,b)=>b.amount-a.amount),box=$('reference');box.replaceChildren();$('reference-cap').textContent=String(cap);
         for(const r of list){const card=make('article',undefined,'reference-card'),body=make('div');card.append(portrait(r.dex,r.name));body.append(make('strong',r.name),make('p',`${fmt(r.amount)} ${ingredient}/day`,'reference-output'),make('p',`${r.aaa?'AAA':'Mixed'} · ${r.line.join(' / ')}`));
             const saved=roster.filter(m=>SleepAnalyzer.matchSpecies(catalog,m)?.key===r.key),evolving=rows.filter(row=>row.evolutionPaths.some(p=>p.form.key===r.key&&p.steps.length)&&(!$('aaa').checked||SleepIngredients.line(roster.find(m=>m.id===row.id)).aaa));if(evolving.length)body.append(make('p','Can evolve from your saved '+evolving.map(row=>{const m=roster.find(m=>m.id===row.id);return name(m)+' (Lv. '+m.level+')';}).join(', ')+'. Actual-build evolution costs are shown above.'));body.append(make('p',saved.length?`You have ${saved.length} saved ${r.name}. The benchmark changes nature/subskills; its build is not priced as a level-only upgrade.`:'Not in your saved collection. Catch/evolve first; resource cost depends on the actual saved build.'));card.append(body);box.append(card);
         }
         if(!list.length)box.append(make('p','No supported final-form species matches this ingredient and line filter. Uncheck AAA to see mixed-line sources.'));
     }
     function render(){
-        const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('ingredient',$('ingredient').value);u.searchParams.set('aaa',String($('aaa').checked));u.searchParams.delete('evolutions');u.searchParams.set('final-only',String(!$('evolutions').checked));u.searchParams.set('sort',$('sort').value);history.replaceState(null,'',u);
+        const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('ingredient',selectedIngredient);u.searchParams.set('aaa',String($('aaa').checked));u.searchParams.delete('evolutions');u.searchParams.set('final-only',String(!$('evolutions').checked));u.searchParams.set('sort',$('sort').value);history.replaceState(null,'',u);
         $('back').href=link('/pokemon-sleep/');$('upgrades').href=link('/pokemon-sleep/upgrades/');
         if(!$('results').hidden){renderOverview();renderCandidates();renderReference();}
     }
@@ -114,14 +114,13 @@
     }
     async function initialize(){try{
         [catalog,levels,manifest,evolutions]=await Promise.all([json('/pokemon-sleep/analyzer/data.json'),json('/pokemon-sleep/upgrades/levels.json'),json('/pokemon-sleep/history.json'),json('evolutions.json')]);
-        const ingredients=[...new Set(catalog.species.filter(p=>p.specialty==='ingredient').flatMap(p=>p.ingredients.flat().map(s=>s.name)))].sort();
-        $('ingredient').replaceChildren(...ingredients.map(n=>{const option=make('option',n);option.value=n;return option;}));
+        ingredients=[...new Set(catalog.species.filter(p=>p.specialty==='ingredient').flatMap(p=>p.ingredients.flat().map(s=>s.name)))].sort();
         if(params.has('ingredient')&&!ingredients.includes(params.get('ingredient')))throw Error('That ingredient is unavailable in the catalog.');
-        $('ingredient').value=params.get('ingredient')||'Warming Ginger';
+        selectedIngredient=params.get('ingredient')||'Warming Ginger';
         $('snapshot').replaceChildren(...manifest.snapshots.map(s=>{const option=make('option',s.captured_at);option.value=s.id;return option;}));
         if(params.has('snapshot')&&!manifest.snapshots.some(s=>s.id===params.get('snapshot')))throw Error('That saved collection is unavailable.');
         $('snapshot').value=params.get('snapshot')||manifest.snapshots.at(-1).id;
         if(params.has('aaa'))$('aaa').checked=params.get('aaa')!=='false';if(params.has('final-only'))$('evolutions').checked=params.get('final-only')!=='true';if(['max','current','cost'].includes(params.get('sort')))$('sort').value=params.get('sort');await load();
     }catch(error){$('status').textContent=error.message;$('retry').hidden=false;}}
-    $('snapshot').addEventListener('change',load);for(const id of ['ingredient','aaa','evolutions','sort'])$(id).addEventListener('change',render);$('search').addEventListener('input',render);$('retry').addEventListener('click',()=>manifest?load():initialize());initialize();
+    $('snapshot').addEventListener('change',load);for(const id of ['aaa','evolutions','sort'])$(id).addEventListener('change',render);$('search').addEventListener('input',render);$('retry').addEventListener('click',()=>manifest?load():initialize());initialize();
 })();
