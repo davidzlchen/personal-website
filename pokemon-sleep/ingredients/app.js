@@ -18,9 +18,12 @@
     function portrait(dex,name){const img=make('img');img.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${dex}.png`;img.alt=name;img.loading='lazy';return img;}
     function name(mon){return mon.nickname||mon.species;}
     function filters(){return {aaa:$('aaa').checked,evolutions:$('evolutions').checked,sort:$('sort').value};}
-    function options(ingredient){return SleepIngredients.candidates(rows,roster,ingredient,filters());}
+    function options(ingredient){
+        const config=filters(),list=SleepIngredients.candidates(rows,roster,ingredient,config).map(r=>({...r,practical:SleepPracticalIngredients.recommend(r,r.mon,ingredient,inventory)}));
+        return list.sort((a,b)=>config.sort==='current'?(b.current.ingredients[ingredient]||0)-(a.current.ingredients[ingredient]||0):config.sort==='cost'?(a.practical.target.costs?.shards??Infinity)-(b.practical.target.costs?.shards??Infinity):(b.practical.target.ingredients[ingredient]||0)-(a.practical.target.ingredients[ingredient]||0));
+    }
     function link(path,mon){const u=new URL(path,location.origin);u.searchParams.set('snapshot',$('snapshot').value);if(params.has('island'))u.searchParams.set('island',params.get('island'));if(mon)u.searchParams.set('pokemon',mon.id);if(params.get('analytics')==='off')u.searchParams.set('analytics','off');return u.href;}
-    function leaders(list,ingredient){return {now:list.filter(r=>(r.current.ingredients[ingredient]||0)>0).sort((a,b)=>(b.current.ingredients[ingredient]||0)-(a.current.ingredients[ingredient]||0))[0],potential:list.slice().sort((a,b)=>b.peak.ingredients[ingredient]-a.peak.ingredients[ingredient])[0]};}
+    function leaders(list,ingredient){return {now:list.filter(r=>(r.current.ingredients[ingredient]||0)>0).sort((a,b)=>(b.current.ingredients[ingredient]||0)-(a.current.ingredients[ingredient]||0))[0],potential:list.slice().sort((a,b)=>(b.practical.target.ingredients[ingredient]||0)-(a.practical.target.ingredients[ingredient]||0))[0]};}
     function renderOverview(){
         const box=$('overview');
         if(!box.children.length)for(const ingredient of ingredients){
@@ -50,7 +53,7 @@
         const list=all.filter(r=>`${name(r.mon)} ${r.mon.species}`.toLowerCase().includes(search));
         const heading=$('ingredient-heading');heading.replaceChildren();const img=icon(ingredient);if(img)heading.append(img);heading.append(make('span',ingredient));
         const top=$('leaders');top.replaceChildren();
-        for(const [title,r,p] of [['Best now',lead.now,lead.now?.current],['Highest saved potential',lead.potential,lead.potential?.peak]]){
+        for(const [title,r,p] of [['Best now',lead.now,lead.now?.current],['Practical target',lead.potential,lead.potential?.practical.target]]){
             const card=make('div',undefined,'summary-stat');card.append(make('span',title));
             if(r){const value=make('strong',`${fmt(p.ingredients[ingredient]||0)} / day`);value.title=`${name(r.mon)}${p.steps?.length?' → '+p.form.name:''} · Lv. ${p.level}`;card.append(value);}else card.append(make('strong','—'));
             top.append(card);
@@ -58,12 +61,14 @@
         $('count').textContent=`${list.length} saved candidate${list.length===1?'':'s'} · ${rows.length} of ${total} ingredient specialists modeled · cap Lv. ${cap}.`;
         const box=$('candidates');box.replaceChildren();
         for(const r of list){
-            const {mon,peak,current}=r,card=make('article',undefined,'opportunity');
+            const {mon,current,practical}=r,peak=practical.target,card=make('article',undefined,'opportunity');
             const head=make('div',undefined,'opportunity-head'),title=make('div');title.append(make('h3',name(mon)),make('p',`${mon.species} · saved Lv. ${mon.level}${r.remainingEvolutions?' · unevolved':''}`));head.append(portrait(mon.national_dex,mon.species),title);card.append(head);
             card.append(make('p',`${r.line.aaa?'AAA':'Mixed line'} · ${mon.nature_neutralized?'neutralized nature':mon.nature}`,'candidate-meta'));
             const line=make('div',undefined,'ingredient-line');mon.ingredients.forEach((s,i)=>{const span=make('span'),image=icon(s.name);if(image)span.append(image);span.append(make('span',`${[1,30,60][i]}: ${s.name} ×${s.quantity}`));line.append(span);});card.append(line);
-            card.append(make('p',`Now: ${fmt(current.ingredients[ingredient]||0)} ${ingredient}/day`,'candidate-current'),make('p',`${fmt(peak.ingredients[ingredient])} / day`,'gain'),make('p',`Highest modeled ${ingredient} · ${peak.form?.name||mon.species} Lv. ${peak.level} · +${fmt(peak.ingredients[ingredient]-(current.ingredients[ingredient]||0))}/day`,'gain-label'));
-            card.append(costsBlock(mon,peak));
+            card.append(make('p',`Now: ${fmt(current.ingredients[ingredient]||0)} ${ingredient}/day`,'candidate-current'),make('p',`${fmt(peak.ingredients[ingredient])} / day`,'gain'),make('p',`${practical.invest?'Recommended target':'Keep current level'} · ${peak.form?.name||mon.species} Lv. ${peak.level} · +${fmt(practical.gain)}/day`,'gain-label'));
+            card.append(costsBlock(mon,peak));card.append(make('p',practical.reason,'priority-reason'));
+            const maximum=r.peak;
+            if(maximum.level>60&&maximum.costs&&peak.costs&&maximum.costs.shards>=peak.costs.shards&&maximum.ingredients[ingredient]>peak.ingredients[ingredient])card.append(make('p',`The Lv. ${maximum.level} maximum adds ${fmt(maximum.ingredients[ingredient]-peak.ingredients[ingredient])}/day beyond this target for another ${int(maximum.costs.shards-peak.costs.shards)} shards and ${int(maximum.costs.candy-peak.costs.candy)} candy.`,'muted'));
             if(r.limitation)card.append(make('p',r.limitation+' Maximum is limited to confirmed saved data.','availability short'));
             if(peak.steps?.length)card.append(make('p','Evolution path: '+[mon.species,...peak.steps.map(step=>catalog.species.find(p=>p.key===step.to)?.name||step.to)].join(' → '),'priority-reason'));
             if(r.remainingEvolutions&&r.evolutionPaths?.length===1)card.append(make('p','Current-form projection only; evolution requirements are unverified.','availability short'));
