@@ -9,7 +9,7 @@ w.Worker=class{
  terminate(){this.dead=true;}
  postMessage(data){queueMicrotask(()=>{const ctx=vm.createContext({});ctx.self=ctx;ctx.importScripts=()=>{ctx.SleepAnalyzer=require(path.join(root,'pokemon-sleep/analyzer/engine.js'));ctx.SleepUpgrades=require(path.join(root,'pokemon-sleep/upgrades/engine.js'));ctx.SleepIngredients=require(path.join(root,'pokemon-sleep/ingredients/model.js'));ctx.calculateSleepIngredients=require(path.join(root,'pokemon-sleep/ingredients/calculate.js'));};ctx.postMessage=msg=>{if(!this.dead){try{this.onmessage?.({data:JSON.parse(JSON.stringify(msg))});}catch(e){errors.push(e.message);console.error('CLIENT',e.stack);throw e;}}};vm.runInContext(fs.readFileSync(path.join(root,'pokemon-sleep/ingredients/worker.js'),'utf8'),ctx);ctx.onmessage({data});});}
 };
-for(const file of ['pokemon-sleep/asset-data.js','pokemon-sleep/analyzer/engine.js','pokemon-sleep/upgrades/engine.js','pokemon-sleep/ingredients/model.js','pokemon-sleep/ingredients/cache.js','pokemon-sleep/ingredients/app.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),dom.getInternalVMContext());
+for(const file of ['pokemon-sleep/asset-data.js','pokemon-sleep/analyzer/engine.js','pokemon-sleep/upgrades/engine.js','pokemon-sleep/ingredients/model.js','pokemon-sleep/ingredients/cache.js','pokemon-sleep/ingredients/practical.js','pokemon-sleep/ingredients/app.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),dom.getInternalVMContext());
 const $=id=>w.document.getElementById(id),change=(id,value)=>{if(id==='ingredient'){$('overview').querySelector(`[data-ingredient="${value}"]`).click();return;}$(id).value=value;$(id).dispatchEvent(new w.Event('change',{bubbles:true}));};
 (async()=>{
  while($('results').hidden){await new Promise(r=>setTimeout(r,20));assert.ok(!errors.length,errors.join('\n'));}
@@ -19,11 +19,11 @@ const $=id=>w.document.getElementById(id),change=(id,value)=>{if(id==='ingredien
  assert.equal($('evolutions').checked,true,'legacy default URL must not hide unevolved helpers');
  assert.ok(!new URL(w.location.href).searchParams.has('evolutions'));
  const bulb=[...$('candidates').querySelectorAll('article')].find(a=>a.textContent.includes('Bulbasaur'));
- assert.ok(bulb,'AAA Bulbasaur appears in default Honey results');assert.match(bulb.textContent,/saved Lv\. 14/);assert.match(bulb.textContent,/AAA/);assert.match(bulb.textContent,/Evolution path: Bulbasaur → Ivysaur → Venusaur/);assert.match(bulb.textContent,/120 evolution candy/);assert.match(bulb.textContent,/Venusaur Lv\. 70/);
+ assert.ok(bulb,'AAA Bulbasaur appears in default Honey results');assert.match(bulb.textContent,/saved Lv\. 14/);assert.match(bulb.textContent,/AAA/);assert.match(bulb.textContent,/Evolution path: Bulbasaur → Ivysaur → Venusaur/);assert.match(bulb.textContent,/120 evolution candy/);assert.match(bulb.textContent,/Venusaur Lv\. 30/);
  $('evolutions').checked=false;$('evolutions').dispatchEvent(new w.Event('change'));assert.ok(!$('candidates').textContent.includes('Bulbasaur'));assert.equal(new URL(w.location.href).searchParams.get('final-only'),'true');
  $('evolutions').checked=true;$('evolutions').dispatchEvent(new w.Event('change'));
  change('ingredient','Honey');$('aaa').checked=false;$('aaa').dispatchEvent(new w.Event('change'));
- const pinsir=[...$('candidates').querySelectorAll('article')].find(a=>a.textContent.includes('Pinsir'));assert.ok(pinsir);assert.match(pinsir.textContent,/Lv\. 59/);assert.match(pinsir.textContent,/655 Pinsir Candy/);assert.match(pinsir.textContent,/276,049 Dream Shards/);
+ const pinsir=[...$('candidates').querySelectorAll('article')].find(a=>a.textContent.includes('Pinsir'));assert.ok(pinsir);assert.match(pinsir.querySelector('.milestone-table').textContent,/Pinsir 59/);assert.match(pinsir.textContent,/Keep current level/);assert.match(pinsir.textContent,/0 Pinsir Candy/);
  assert.ok(pinsir.querySelector('.milestone-table'),'final forms always show milestones');assert.equal(pinsir.querySelector('details'),null,'milestones cannot collapse');
  assert.match(pinsir.querySelector('a').href,/snapshot=2026-10-11/);assert.match(pinsir.querySelector('a').href,/analytics=off/);
  $('aaa').checked=true;$('aaa').dispatchEvent(new w.Event('change'));assert.ok(!$('candidates').textContent.includes('Pinsir'));
@@ -32,6 +32,7 @@ const $=id=>w.document.getElementById(id),change=(id,value)=>{if(id==='ingredien
  assert.match($('candidates').textContent,/Oval Stone/);assert.match($('candidates').textContent,/150 hours/);assert.match($('candidates').textContent,/Requirement to check/);
  $('search').value='';$('search').dispatchEvent(new w.Event('input'));$('aaa').checked=true;$('aaa').dispatchEvent(new w.Event('change'));
  assert.equal($('overview').querySelector('[aria-pressed=true]').getAttribute('aria-label'),'Fancy Egg');assert.equal(new URL(w.location.href).searchParams.get('ingredient'),'Fancy Egg');
+ change('ingredient','Fiery Herb');assert.match($('leaders').textContent,/Practical target105\.4/);assert.match($('candidates').textContent,/Keep current level · Dragonite Lv\. 60/);assert.match($('candidates').textContent,/1,670,861 shards and 1,780 candy/);
  change('ingredient','Warming Ginger');assert.match($('candidates').textContent,/Tyranitar/);assert.match($('candidates').textContent,/AAA/);
  change('ingredient','Soothing Cacao');$('evolutions').checked=true;$('evolutions').dispatchEvent(new w.Event('change'));assert.match($('candidates').textContent,/Wooper/);assert.match($('candidates').textContent,/Evolution path: Wooper/);
  change('snapshot','2026-10-04-1c3647d40662');while($('results').hidden){await new Promise(r=>setTimeout(r,20));assert.ok(!errors.length,errors.join('\n'));}assert.match($('supplies').textContent,/930,177/);assert.match($('back').href,/snapshot=2026-10-04/);

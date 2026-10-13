@@ -104,3 +104,21 @@ public data is cached; original snapshot files remain byte-identical.
 Ingredient selection uses accessible icon-only buttons with names in tooltips and
 ARIA labels. The selected ingredient stays in the shareable URL. Saved candidates
 and species references are standalone sections, with individual Pokémon cards.
+
+## Practical targets
+
+The primary summary and each candidate now show a practical milestone instead of
+the absolute maximum. `practical.js` evaluates cached projections at evolution,
+subskill and ingredient breakpoints through 60, with 29/59 preserving mixed-line
+peaks. It requires both +3 ingredients/day and +10% relative to the saved helper.
+A documented resource heuristic discounts expensive targets, candy/shard shortages,
+missing items and unconfirmed requirements. Saved balances affect the comparison;
+this is not a recipe/team optimizer or an automatically committed spending budget.
+Unpriced future upgrades are excluded. Helpers with no meaningful milestone retain
+their saved level, including helpers already above 60. Every level and the absolute
+maximum remain in the milestone table. Policy runs over cached output without
+resimulation; calculation caches do not change.
+
+Run `node scripts/test_sleep_practical_ingredients.cjs` for account regressions:
+Dragonite stays at 60, the AAA Bulbasaur targets Venusaur 30, Tyranitar unlocks 60,
+and Pinsir's marginal Honey gain does not justify the next 276k shards.
