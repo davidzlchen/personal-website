@@ -122,3 +122,9 @@ resimulation; calculation caches do not change.
 Run `node scripts/test_sleep_practical_ingredients.cjs` for account regressions:
 Dragonite stays at 60, the AAA Bulbasaur targets Venusaur 30, Tyranitar unlocks 60,
 and Pinsir's marginal Honey gain does not justify the next 276k shards.
+
+Neutralizing Mint candidates now appear directly below the saved ingredient
+candidates. They use the same selected ingredient, snapshot and filters, compare
+named current-level gathering output, and rank gain for that ingredient. Matched
+berry/trigger changes expose lost nature bonuses. This uses existing cached mint
+comparisons; it does not change practical level targets or rerun simulations.

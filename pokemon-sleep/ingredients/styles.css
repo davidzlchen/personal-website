@@ -3,3 +3,5 @@
 .filter-disclosure{max-width:760px;margin:0 0 22px}.filter-disclosure>summary{width:fit-content;padding:10px 16px;border:1px solid #ccd4c8;border-radius:10px;background:#fff;font-size:13px;font-weight:600;cursor:pointer;color:#263c39}.filter-disclosure[open]>summary{margin-bottom:20px}.filter-disclosure .ingredient-filters{margin-bottom:0}.filter-disclosure>summary:focus-visible{outline:3px solid #597a61;outline-offset:3px}
 
 .summary-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.summary-stat{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-width:0;padding:10px 0}.summary-stat>span{font-size:13px;color:var(--muted)}.summary-stat>strong{font-size:22px;color:#29473f;white-space:nowrap}@media(max-width:650px){.summary-row{gap:16px}.summary-stat{display:grid;gap:5px;align-content:start}.summary-stat>span{font-size:11px}.summary-stat>strong{font-size:19px}}
+
+.mint-section{margin:30px 0 40px;padding-top:12px;border-top:1px solid #dce3d6}.mint-loss{color:#98514a}.mint-gain{color:#345d46}
