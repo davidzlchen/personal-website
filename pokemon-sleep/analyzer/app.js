@@ -214,6 +214,7 @@
                 } catch { inventory=null; snapshotFailed=true; $('load-status').textContent='That snapshot could not be loaded. Choose a helper from the latest collection, or try a custom build.'; }
             }
             roster=savedData?.records || []; capturedAt=savedData?.captured_at;
+            const mintURL=new URL('/pokemon-sleep/mints/',location.origin);for(const key of ['snapshot','analytics','island'])if(params.has(key))mintURL.searchParams.set(key,params.get(key));$('mint-link').href=mintURL.href;
             options($('species'),data.species.map(p=>[p.key,p.name]),'AMPHAROS');
             options($('nature'),[['','Choose a nature'],...data.natures.map(n=>[n.name,n.label])],'Hardy');
             options($('saved'),[['','Custom build'],...roster.map(m=>[m.id,`${m.nickname || m.species} · ${m.species} · Lv. ${m.level}${speciesMatch(m)?'':' (form unavailable)'}`])]);

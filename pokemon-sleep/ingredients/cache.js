@@ -1,7 +1,7 @@
 (function(root){
 'use strict';
 // Hash the actual inputs and implementation, not a manually maintained version.
-const dependencies=['analyzer/engine.js','analyzer/data.json','upgrades/engine.js','upgrades/levels.json','ingredients/model.js','ingredients/evolutions.json','ingredients/calculate.js','ingredients/cache.js'];
+const dependencies=['analyzer/engine.js','analyzer/data.json','upgrades/engine.js','upgrades/levels.json','ingredients/model.js','ingredients/evolutions.json','ingredients/calculate.js','mints/model.js','ingredients/cache.js'];
 async function digest(text){
     const bytes=new TextEncoder().encode(text),hash=await crypto.subtle.digest('SHA-256',bytes);
     return Array.from(new Uint8Array(hash),n=>n.toString(16).padStart(2,'0')).join('');
