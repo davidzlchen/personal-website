@@ -129,7 +129,9 @@ function render() {
     );
     const sort = $("#sort").value;
     shown.sort((a, b) =>
-        sort === "rp" || sort === "level"
+        sort === "recent"
+            ? (b.met_date || "").localeCompare(a.met_date || "") || a.species.localeCompare(b.species)
+            : sort === "rp" || sort === "level"
             ? (b[sort] ?? -1) - (a[sort] ?? -1) ||
               a.species.localeCompare(b.species)
             : (sort === "nickname"
