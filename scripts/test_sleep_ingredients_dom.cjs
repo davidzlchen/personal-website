@@ -1,7 +1,7 @@
 // DOM integration test, not a browser/visual check. Requires jsdom in the test environment.
 const {JSDOM}=require(process.env.SLEEP_DOM_TEST_MODULE||'jsdom'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),html=fs.readFileSync(path.join(root,'pokemon-sleep/ingredients/index.html'),'utf8');
-const dom=new JSDOM(html,{url:'https://davidzlchen.com/pokemon-sleep/ingredients/?analytics=off&ingredient=Honey&evolutions=false',runScripts:'outside-only',pretendToBeVisual:true});
+const dom=new JSDOM(html,{url:'https://davidzlchen.com/pokemon-sleep/ingredients/?analytics=off&ingredient=Honey&evolutions=false&snapshot=2026-10-11-216ba00d4db6',runScripts:'outside-only',pretendToBeVisual:true});
 const w=dom.window,errors=[];let workerCount=0;Object.defineProperty(w,'crypto',{value:require('node:crypto').webcrypto});w.TextEncoder=TextEncoder;w.addEventListener('error',e=>errors.push(e.message));w.HTMLElement.prototype.scrollIntoView=function(){};
 w.fetch=async url=>{const u=new URL(url,w.location.href);const file=path.join(root,u.pathname);return {ok:fs.existsSync(file)&&!(process.env.SLEEP_CACHE_TEST==='missing'&&u.pathname.endsWith('/cache/index.json')),text:async()=>fs.readFileSync(file,'utf8')+(process.env.SLEEP_CACHE_TEST==='stale'&&u.pathname.endsWith('/analyzer/engine.js')?'\n':''),json:async()=>JSON.parse(fs.readFileSync(file,'utf8'))};};
 w.Worker=class{
