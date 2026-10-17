@@ -2,8 +2,8 @@
     'use strict';
     const $=id=>document.getElementById(id),make=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
     const params=new URLSearchParams(location.search),fmt=n=>n.toLocaleString('en-US',{maximumFractionDigits:1}),int=n=>n.toLocaleString('en-US');
-    let catalog,levels,manifest,evolutions,roster=[],inventory,rows=[],references=[],excluded=[],worker,request=0,cap,total=0,ingredients=[],selectedIngredient;
-    const sources=new Map(),sessionResults=new Map();
+    let catalog,levels,manifest,evolutions,roster=[],inventory,rows=[],references=[],excluded=[],worker,request=0,cap,total=0,mintRows=[],ingredients=[],selectedIngredient;
+    const sources=new Map(),sessionResults=new Map();let mintAnchorShown=false;
     async function text(path){
         const url=new URL(path,location.href).pathname;
         if(!sources.has(url))sources.set(url,fetch(url,{cache:'no-cache'}).then(response=>{if(!response.ok)throw Error('Data could not be loaded.');return response.text();}).catch(error=>{sources.delete(url);throw error;}));
@@ -11,8 +11,8 @@
     }
     async function json(path){return JSON.parse(await text(path));}
     function showResults(data){
-        ({rows,references,excluded,total}=data);$('results').hidden=false;$('status').hidden=true;
-        $('limitations').textContent=excluded.length?'Unmodeled saved helpers: '+excluded.map(r=>`${name(roster.find(m=>m.id===r.id))}: ${r.reason}`).join(' · '):'Every saved ingredient specialist has supported current production.';render();
+        ({rows,references,excluded,total}=data);mintRows=data.mints?.rows||[];$('results').hidden=false;$('status').hidden=true;
+        $('limitations').textContent=excluded.length?'Unmodeled saved helpers: '+excluded.map(r=>`${name(roster.find(m=>m.id===r.id))}: ${r.reason}`).join(' · '):'Every saved ingredient specialist has supported current production.';render();if(location.hash==='#mint-analysis'&&!mintAnchorShown){mintAnchorShown=true;$('mint-analysis').scrollIntoView({block:'start'});}
     }
     function icon(name){const path=sleepAssets.ingredients?.[name];if(!path)return null;const img=make('img');img.src='/pokemon-sleep/assets/'+path;img.alt='';return img;}
     function portrait(dex,name){const img=make('img');img.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${dex}.png`;img.alt=name;img.loading='lazy';return img;}
@@ -84,6 +84,21 @@
         }
         if(!list.length){box.append(make('p','No saved ingredient specialist matches these filters.'));if($('aaa').checked){const button=make('button','Show mixed ingredient lines','add-plan');button.type='button';button.addEventListener('click',()=>{$('aaa').checked=false;render();});box.append(button);}}
     }
+    function renderMints(){
+        const ingredient=selectedIngredient,eligible=new Set(options(ingredient).map(r=>r.id)),query=$('search').value.trim().toLowerCase(),box=$('mint-candidates');box.replaceChildren();
+        const list=mintRows.map(r=>({...r,mon:roster.find(m=>m.id===r.id),beforeAmount:r.before.ingredients[ingredient]||0,afterAmount:r.after.ingredients[ingredient]||0})).filter(r=>r.mon?.specialty==='Ingredients'&&eligible.has(r.id)&&r.beforeAmount>0&&(r.afterAmount-r.beforeAmount)/r.beforeAmount>=.01&&`${name(r.mon)} ${r.mon.species}`.toLowerCase().includes(query)).sort((a,b)=>(b.afterAmount-b.beforeAmount)-(a.afterAmount-a.beforeAmount)||b.level-a.level);
+        const stock=inventory.entries?.filter(e=>e.name==='Neutralizing Mint').reduce((sum,e)=>sum+e.quantity,0);
+        $('mint-summary').textContent=`${list.length} ingredient specialist${list.length===1?' improves':'s improve'} ${ingredient} by at least 1% at their saved level. ${stock===undefined?'Mint balance unavailable':stock+' Neutralizing Mints available'}. Filters above apply here too.`;
+        for(const r of list){
+            const mon=r.mon,card=make('article',undefined,'opportunity'),head=make('div',undefined,'opportunity-head'),title=make('div');title.append(make('h3',name(mon)),make('p',`${mon.species} · saved Lv. ${mon.level}${mon.favorite?' · Favorite':''} · ${SleepIngredients.line(mon).aaa?'AAA':'Mixed line'}`));head.append(portrait(mon.national_dex,mon.species),title);card.append(head);
+            const output=make('p',undefined,'ingredient-line');const img=icon(ingredient);if(img)output.append(img);output.append(make('span',`${ingredient}: ${fmt(r.beforeAmount)} → ${fmt(r.afterAmount)}/day`));card.append(output,make('p',`+${fmt(r.afterAmount-r.beforeAmount)}/day · +${fmt((r.afterAmount/r.beforeAmount-1)*100)}%`,'gain'),make('p',`${mon.nature} effects → neutral`,'gain-label'));
+            card.append(make('p',Object.entries(r.effects).map(([effect,direction])=>`${effect} ${direction==='up'?'↑':'↓'} removed`).join(' · '),'candidate-meta'));
+            const table=make('table',undefined,'milestone-table');table.append(make('caption','Same saved level · daily output'));const header=make('tr');for(const label of ['Output','Now','Minted','Change'])header.append(make('th',label));const thead=make('thead');thead.append(header);table.append(thead);const body=make('tbody');
+            for(const [label,before,after] of [[ingredient,r.beforeAmount,r.afterAmount],['Skill triggers',r.before.triggers,r.after.triggers],['Berries',r.before.berries,r.after.berries]]){const tr=make('tr'),delta=after-before;for(const value of [label,fmt(before),fmt(after),(delta>0?'+':'')+delta.toLocaleString('en-US',{maximumFractionDigits:2})])tr.append(make('td',value));tr.lastChild.className=delta<0?'mint-loss':'mint-gain';body.append(tr);}table.append(body);card.append(table,make('p','1 Neutralizing Mint · no leveling candy or Dream Shards','candidate-meta'));
+            const a=make('a','View saved Pokémon →');a.href=link('/pokemon-sleep/',mon);card.append(a);box.append(card);
+        }
+        if(!list.length)box.append(make('p',`No matching ingredient specialists gain ${ingredient} from a mint at their saved level.`));
+    }
     function renderReference(){
         const ingredient=selectedIngredient,list=references.filter(r=>r.ingredient===ingredient&&(!$('aaa').checked||r.aaa)).sort((a,b)=>b.amount-a.amount),box=$('reference');box.replaceChildren();$('reference-cap').textContent=String(cap);
         for(const r of list){const card=make('article',undefined,'reference-card'),body=make('div');card.append(portrait(r.dex,r.name));body.append(make('strong',r.name),make('p',`${fmt(r.amount)} ${ingredient}/day`,'reference-output'),make('p',`${r.aaa?'AAA':'Mixed'} · ${r.line.join(' / ')}`));
@@ -93,8 +108,8 @@
     }
     function render(){
         const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('ingredient',selectedIngredient);u.searchParams.set('aaa',String($('aaa').checked));u.searchParams.delete('evolutions');u.searchParams.set('final-only',String(!$('evolutions').checked));u.searchParams.set('sort',$('sort').value);history.replaceState(null,'',u);
-        $('back').href=link('/pokemon-sleep/');$('upgrades').href=link('/pokemon-sleep/upgrades/');$('mints').href=link('/pokemon-sleep/mints/');
-        renderOverview();if(!$('results').hidden){renderCandidates();renderReference();}
+        $('back').href=link('/pokemon-sleep/');$('upgrades').href=link('/pokemon-sleep/upgrades/');
+        renderOverview();if(!$('results').hidden){renderCandidates();renderMints();renderReference();}
     }
     async function load(){
         const token=++request;worker?.terminate();rows=[];references=[];excluded=[];$('results').hidden=true;$('supplies').textContent='';$('retry').hidden=true;$('status').hidden=false;$('status').textContent='Loading the paired saved collection…';

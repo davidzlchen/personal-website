@@ -13,7 +13,6 @@ Canonical HTML URLs are the sources for citations. Markdown copies are generated
 - [Pokémon Sleep Production Analyzer · Field Notes](https://davidzlchen.com/pokemon-sleep/analyzer/index.md): Estimate daily berries, ingredients, skill triggers, Snorlax strength, and Dream Shards for Pokémon Sleep. Start with a saved helper or explore a custom build, nature, and subskills.
 - [Best opportunities to level up · Pokémon Sleep Field Notes](https://davidzlchen.com/pokemon-sleep/upgrades/index.md): Find useful level milestones for your saved Pokémon Sleep helpers. Compare candy and Dream Shard costs, daily production gains, and current versus level-cap potential.
 - [Ingredient Analyzer · Pokémon Sleep Field Notes](https://davidzlchen.com/pokemon-sleep/ingredients/index.md): Find your best Pokémon Sleep producer for every ingredient. Compare AAA candidates, maximum modeled daily output, candy and Dream Shard costs, and species to look for.
-- [Neutralizing Mint Candidates · Pokémon Sleep Field Notes](https://davidzlchen.com/pokemon-sleep/mints/index.md): Compare saved Pokémon before and after a Neutralizing Mint. See daily ingredient, berry and skill-trigger gains and losses at their current level.
 - [Privacy — David Z. Chen](https://davidzlchen.com/privacy/index.md): Optional analytics and browser storage on David Z. Chen’s website and Pokémon Sleep Field Notes.
 
 ## Content feeds
