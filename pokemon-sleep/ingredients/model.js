@@ -60,7 +60,7 @@
                 let build;try{build=projectEvolution(catalog,mon,level,path,evolutions);}catch(error){limitation=`${form.name}, from Lv. ${level}: ${error.message}`;break;}
                 const result=simulate(build,A.defaultConditions);
                 let costs=null,costError=null;try{costs=evolutionCost(mon,level,levels,path.steps);}catch(error){costError=error.message;}
-                projections.push({level,form,steps:path.steps,ingredients:result.ingredients,costs,costError,carry:build.carry,skillLevel:build.skillLevel});
+                projections.push({level,form,steps:path.steps,ingredients:result.ingredients,berries:result.berries,triggers:result.triggers,costs,costError,carry:build.carry,skillLevel:build.skillLevel});
             }
         }
         if(!projections.length)throw Error(limitation||'Saved production unavailable.');

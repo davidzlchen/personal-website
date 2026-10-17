@@ -1,18 +1,15 @@
-# Neutralizing Mint comparison model
+# Neutralizing Mint plans
 
-The active UI is the **Neutralizing Mint candidates** section of
-`/pokemon-sleep/ingredients/`, scoped to the selected named ingredient and the
-existing AAA, evolution and search filters. It only displays ingredient specialists
-with at least 1% improvement in that ingredient at their saved level. Rankings use
-named ingredient gain, not total mixed output. Matched berries and skill triggers
-show lost benefits as well as gains. Mint inventory, including zero, stays explicit.
-Already-neutralized and neutral helpers are excluded from the shared cached model.
+The UI lives in the ingredient analyzer. The former standalone page redirects
+there, preserving snapshot and ingredient context.
 
-`model.js` and the existing per-snapshot cache retain matched current-level
-production comparisons. The UI filters those cached records without resimulation.
-Source snapshots and existing practical upgrade targets remain unchanged. Each
-comparison uses one mint, with no future leveling or EXP-nature costs included.
+`model.js` provides matched current-level neutralization comparisons. Ingredient
+`calculate.js` extends each ingredient specialist with neutralized leveling and
+evolution projections using the real production and resource engines. Mint before
+feeding candy: the EXP nature effect is removed for all projected candy costs.
+The shared practical policy picks affordable milestones through 60. The UI shows
+saved output, the same form/level without a mint, and the combined plan, including
+evolution candy, items and requirements. Already-neutralized helpers are excluded.
 
-The former `/pokemon-sleep/mints/` page redirects to the ingredient section,
-preserving snapshot, ingredient and relevant context. Its all-specialty UI has
-been removed. Run the mint model, mint DOM and existing ingredient tests.
+All projections are cached per immutable sanitized snapshot. Run mint model,
+combined-plan, DOM, ingredient, practical-target and cache tests.

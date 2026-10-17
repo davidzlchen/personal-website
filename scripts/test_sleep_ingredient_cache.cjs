@@ -5,6 +5,7 @@ const root=path.resolve(__dirname,'..'),read=async url=>fs.readFileSync(path.joi
  const snapshot='snapshots/2026-10-11-216ba00d4db6.json',data=await C.load(read,snapshot);assert.ok(data);
  const paired=JSON.parse(await read('/pokemon-sleep/'+snapshot)),mon=paired.roster.records.find(m=>m.id==='mon-72');
  assert.deepEqual(data.rows.find(r=>r.id===mon.id),I.owned(D,mon,70,L,undefined,E),'cached evolution results equal the actual calculator at every level');
+ const minted=data.mints.rows.find(r=>r.plan);const mintMon=paired.roster.records.find(m=>m.id===minted.id);assert.deepEqual(minted.plan,I.owned(D,{...mintMon,nature_neutralized:true},70,L,undefined,E),'cached combined mint/evolution output and costs equal real calculator');
  for(const file of C.dependencies){assert.equal(await C.load(async url=>await read(url)+(url==='/pokemon-sleep/'+file?'\n':''),snapshot),null,'invalidate '+file);}
  assert.equal(await C.load(async url=>await read(url)+(url.endsWith(snapshot)?'\n':''),snapshot),null,'invalidate changed snapshot');
  assert.equal(await C.load(async url=>url.includes('/cache/')&&!url.endsWith('index.json')?'{}':read(url),snapshot),null,'reject corrupt result');
