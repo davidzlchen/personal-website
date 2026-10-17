@@ -1,6 +1,7 @@
 (function(root){
 'use strict';
 const A=typeof module==='object'?require('../analyzer/engine.js'):root.SleepAnalyzer;
+const M=typeof module==='object'?require('../mints/model.js'):root.SleepMints;
 const I=typeof module==='object'?require('./model.js'):root.SleepIngredients;
 function calculate({catalog,roster,cap,levels,evolutions},progress=()=>{}){
         const rows=[],excluded=[],references=[];
@@ -21,7 +22,8 @@ function calculate({catalog,roster,cap,levels,evolutions},progress=()=>{}){
             }
             progress({progress:`Species references: ${i+1} / ${species.length}`});
         }
-return {rows,excluded,references,total:helpers.length};
+progress({progress:'Neutralizing Mint comparisons'});
+return {rows,excluded,references,total:helpers.length,mints:M.calculate(catalog,roster,evolutions)};
 }
 if(typeof module==='object')module.exports=calculate;else root.calculateSleepIngredients=calculate;
 })(typeof self==='object'?self:globalThis);

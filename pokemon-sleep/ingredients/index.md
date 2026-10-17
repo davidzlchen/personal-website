@@ -10,7 +10,7 @@ POKÉMON SLEEP · INGREDIENT SPECIALISTS
 
 Your best farmer for each ingredient, the upgrades worth considering in each saved build, and what it costs to get there. AAA means the same ingredient in all three slots, including the locked slot at 60.
 
-[Best opportunities to level up →](https://davidzlchen.com/pokemon-sleep/upgrades/)
+[Best opportunities to level up →](https://davidzlchen.com/pokemon-sleep/upgrades/) · [Neutralizing Mint candidates →](https://davidzlchen.com/pokemon-sleep/mints/)
 
 ## Choose an ingredient
 

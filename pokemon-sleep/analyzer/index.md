@@ -2,7 +2,7 @@
 
 Source: https://davidzlchen.com/pokemon-sleep/analyzer/
 
-[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/)
+[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/) · [Neutralizing Mint candidates →](https://davidzlchen.com/pokemon-sleep/mints/)
 
 POKÉMON SLEEP · THE DAILY HAUL
 

@@ -93,7 +93,7 @@
     }
     function render(){
         const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('ingredient',selectedIngredient);u.searchParams.set('aaa',String($('aaa').checked));u.searchParams.delete('evolutions');u.searchParams.set('final-only',String(!$('evolutions').checked));u.searchParams.set('sort',$('sort').value);history.replaceState(null,'',u);
-        $('back').href=link('/pokemon-sleep/');$('upgrades').href=link('/pokemon-sleep/upgrades/');
+        $('back').href=link('/pokemon-sleep/');$('upgrades').href=link('/pokemon-sleep/upgrades/');$('mints').href=link('/pokemon-sleep/mints/');
         renderOverview();if(!$('results').hidden){renderCandidates();renderReference();}
     }
     async function load(){
@@ -109,7 +109,7 @@
             const cached=sessionResults.get(entry.file)||await SleepIngredientCache.load(text,entry.file);
             if(token!==request)return;
             if(cached){sessionResults.set(entry.file,cached);showResults(cached);return;}
-            worker=new Worker('worker.js?v=4');worker.onmessage=({data})=>{
+            worker=new Worker('worker.js?v=5');worker.onmessage=({data})=>{
                 if(token!==request)return;
                 if(data.error){worker.terminate();$('status').textContent=data.error;$('retry').hidden=false;}
                 else if(data.rows){worker.terminate();sessionResults.set(entry.file,data);showResults(data);}
