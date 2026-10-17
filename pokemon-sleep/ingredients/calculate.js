@@ -22,8 +22,14 @@ function calculate({catalog,roster,cap,levels,evolutions},progress=()=>{}){
             }
             progress({progress:`Species references: ${i+1} / ${species.length}`});
         }
-progress({progress:'Neutralizing Mint comparisons'});
-return {rows,excluded,references,total:helpers.length,mints:M.calculate(catalog,roster,evolutions)};
+progress({progress:'Neutralizing Mint and leveling plans'});
+const mints=M.calculate(catalog,helpers,evolutions);
+for(const row of mints.rows){
+    const mon=helpers.find(m=>m.id===row.id);
+    try{row.plan=I.owned(catalog,{...mon,nature_neutralized:true},cap,levels,undefined,evolutions);}
+    catch(error){row.planError=error.message;}
+}
+return {rows,excluded,references,total:helpers.length,mints};
 }
 if(typeof module==='object')module.exports=calculate;else root.calculateSleepIngredients=calculate;
 })(typeof self==='object'?self:globalThis);

@@ -86,18 +86,29 @@
     }
     function renderMints(){
         const ingredient=selectedIngredient,eligible=new Set(options(ingredient).map(r=>r.id)),query=$('search').value.trim().toLowerCase(),box=$('mint-candidates');box.replaceChildren();
-        const list=mintRows.map(r=>({...r,mon:roster.find(m=>m.id===r.id),beforeAmount:r.before.ingredients[ingredient]||0,afterAmount:r.after.ingredients[ingredient]||0})).filter(r=>r.mon?.specialty==='Ingredients'&&eligible.has(r.id)&&r.beforeAmount>0&&(r.afterAmount-r.beforeAmount)/r.beforeAmount>=.01&&`${name(r.mon)} ${r.mon.species}`.toLowerCase().includes(query)).sort((a,b)=>(b.afterAmount-b.beforeAmount)-(a.afterAmount-a.beforeAmount)||b.level-a.level);
+        const list=mintRows.map(r=>{
+            const mon=roster.find(m=>m.id===r.id),original=rows.find(p=>p.id===r.id);
+            if(!mon||!original||!r.plan)return null;
+            const practical=SleepPracticalIngredients.recommend(r.plan,{...mon,nature_neutralized:true},ingredient,inventory),target=practical.target;
+            const levelOnly=original.projections.find(p=>p.level===target.level&&p.form.key===target.form.key);
+            if(!levelOnly)return null;
+            const beforeAmount=r.before.ingredients[ingredient]||0,afterAmount=target.ingredients[ingredient]||0,withoutMint=levelOnly?.ingredients[ingredient]||0;
+            return {...r,mon,practical,target,levelOnly,beforeAmount,afterAmount,withoutMint};
+        }).filter(r=>r&&r.mon.specialty==='Ingredients'&&eligible.has(r.id)&&r.afterAmount>0&&r.afterAmount-r.withoutMint>=Math.max(.01,r.withoutMint*.01)&&`${name(r.mon)} ${r.mon.species}`.toLowerCase().includes(query)).sort((a,b)=>b.practical.score-a.practical.score||(b.afterAmount-b.withoutMint)-(a.afterAmount-a.withoutMint));
         const stock=inventory.entries?.filter(e=>e.name==='Neutralizing Mint').reduce((sum,e)=>sum+e.quantity,0);
-        $('mint-summary').textContent=`${list.length} ingredient specialist${list.length===1?' improves':'s improve'} ${ingredient} by at least 1% at their saved level. ${stock===undefined?'Mint balance unavailable':stock+' Neutralizing Mints available'}. Filters above apply here too.`;
+        $('mint-summary').textContent=`${list.length} ingredient specialist${list.length===1?' has':'s have'} mint + upgrade plans for ${ingredient}. ${stock===undefined?'Mint balance unavailable':stock+' Neutralizing Mints available'}. Filters above apply here too.`;
         for(const r of list){
             const mon=r.mon,card=make('article',undefined,'opportunity'),head=make('div',undefined,'opportunity-head'),title=make('div');title.append(make('h3',name(mon)),make('p',`${mon.species} · saved Lv. ${mon.level}${mon.favorite?' · Favorite':''} · ${SleepIngredients.line(mon).aaa?'AAA':'Mixed line'}`));head.append(portrait(mon.national_dex,mon.species),title);card.append(head);
-            const output=make('p',undefined,'ingredient-line');const img=icon(ingredient);if(img)output.append(img);output.append(make('span',`${ingredient}: ${fmt(r.beforeAmount)} → ${fmt(r.afterAmount)}/day`));card.append(output,make('p',`+${fmt(r.afterAmount-r.beforeAmount)}/day · +${fmt((r.afterAmount/r.beforeAmount-1)*100)}%`,'gain'),make('p',`${mon.nature} effects → neutral`,'gain-label'));
+            const output=make('p',undefined,'ingredient-line');const img=icon(ingredient);if(img)output.append(img);output.append(make('span',`${ingredient}: ${fmt(r.beforeAmount)} → ${fmt(r.afterAmount)}/day`));card.append(output,make('p',`+${fmt(r.afterAmount-r.beforeAmount)}/day from saved build`,'gain'),make('p',`${mon.nature} effects → neutral`,'gain-label'));
+            card.append(make('p',`Mint first → ${r.target.form.name} Lv. ${r.target.level}${r.target.steps.length?' · includes evolution':''}`,'priority-reason'),costsBlock({...mon,nature_neutralized:true},r.target),make('p',r.practical.reason,'muted'));
             card.append(make('p',Object.entries(r.effects).map(([effect,direction])=>`${effect} ${direction==='up'?'↑':'↓'} removed`).join(' · '),'candidate-meta'));
-            const table=make('table',undefined,'milestone-table');table.append(make('caption','Same saved level · daily output'));const header=make('tr');for(const label of ['Output','Now','Minted','Change'])header.append(make('th',label));const thead=make('thead');thead.append(header);table.append(thead);const body=make('tbody');
-            for(const [label,before,after] of [[ingredient,r.beforeAmount,r.afterAmount],['Skill triggers',r.before.triggers,r.after.triggers],['Berries',r.before.berries,r.after.berries]]){const tr=make('tr'),delta=after-before;for(const value of [label,fmt(before),fmt(after),(delta>0?'+':'')+delta.toLocaleString('en-US',{maximumFractionDigits:2})])tr.append(make('td',value));tr.lastChild.className=delta<0?'mint-loss':'mint-gain';body.append(tr);}table.append(body);card.append(table,make('p','1 Neutralizing Mint · no leveling candy or Dream Shards','candidate-meta'));
+            const table=make('table',undefined,'milestone-table');table.append(make('caption',`Daily output · target ${r.target.form.name} Lv. ${r.target.level}`));const header=make('tr');for(const label of ['Output','Now','Level only','Mint + level'])header.append(make('th',label));const thead=make('thead');thead.append(header);table.append(thead);const body=make('tbody');
+            for(const [label,before,without,after] of [[ingredient,r.beforeAmount,r.withoutMint,r.afterAmount],['Skill triggers',r.before.triggers,r.levelOnly?.triggers,r.target.triggers],['Berries',r.before.berries,r.levelOnly?.berries,r.target.berries]]){const tr=make('tr');for(const value of [label,fmt(before),Number.isFinite(without)?fmt(without):'Unknown',fmt(after)])tr.append(make('td',value));tr.lastChild.className=after<without?'mint-loss':'mint-gain';body.append(tr);}table.append(body);card.append(table,make('p',`Mint adds +${fmt(r.afterAmount-r.withoutMint)} ${ingredient}/day versus the same form and level without minting.`,'candidate-meta'),make('p','1 Neutralizing Mint, plus the leveling and evolution resources above. Costs assume minting before feeding candy.','candidate-meta'));
+            const milestones=make('table',undefined,'milestone-table');milestones.append(make('caption','Mint + leveling / evolution milestones'));const mh=make('tr');for(const label of ['Form / level','Per day','Candy','Shards'])mh.append(make('th',label));const mt=make('thead');mt.append(mh);milestones.append(mt);const mb=make('tbody');
+            for(const p of SleepIngredients.milestones(r.plan,ingredient,cap).filter(p=>p.level<=60||p.level===mon.level)){const tr=make('tr');for(const value of [`${p.form.name} ${p.level}`,fmt(p.ingredients[ingredient]||0),p.costs?int(p.costs.candy):'Unknown',p.costs?int(p.costs.shards):'Unknown'])tr.append(make('td',value));mb.append(tr);}milestones.append(mb);card.append(milestones);
             const a=make('a','View saved Pokémon →');a.href=link('/pokemon-sleep/',mon);card.append(a);box.append(card);
         }
-        if(!list.length)box.append(make('p',`No matching ingredient specialists gain ${ingredient} from a mint at their saved level.`));
+        if(!list.length)box.append(make('p',`No matching ingredient specialists gain ${ingredient} from minting at a practical leveling or evolution target.`));
     }
     function renderReference(){
         const ingredient=selectedIngredient,list=references.filter(r=>r.ingredient===ingredient&&(!$('aaa').checked||r.aaa)).sort((a,b)=>b.amount-a.amount),box=$('reference');box.replaceChildren();$('reference-cap').textContent=String(cap);
@@ -124,7 +135,7 @@
             const cached=sessionResults.get(entry.file)||await SleepIngredientCache.load(text,entry.file);
             if(token!==request)return;
             if(cached){sessionResults.set(entry.file,cached);showResults(cached);return;}
-            worker=new Worker('worker.js?v=5');worker.onmessage=({data})=>{
+            worker=new Worker('worker.js?v=6');worker.onmessage=({data})=>{
                 if(token!==request)return;
                 if(data.error){worker.terminate();$('status').textContent=data.error;$('retry').hidden=false;}
                 else if(data.rows){worker.terminate();sessionResults.set(entry.file,data);showResults(data);}
