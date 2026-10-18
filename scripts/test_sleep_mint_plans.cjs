@@ -1,0 +1,9 @@
+const assert=require('node:assert/strict'),I=require('../pokemon-sleep/ingredients/model.js'),U=require('../pokemon-sleep/upgrades/engine.js'),P=require('../pokemon-sleep/ingredients/practical.js'),D=require('../pokemon-sleep/analyzer/data.json'),L=require('../pokemon-sleep/upgrades/levels.json'),E=require('../pokemon-sleep/ingredients/evolutions.json'),S=require('../pokemon-sleep/snapshots/2026-10-17-f8a6caef6bc8.json');
+const mon=S.roster.records.find(m=>m.species==='Bulbasaur'),original=JSON.stringify(mon),minted={...mon,nature_neutralized:true},builds=[];
+const simulate=b=>{builds.push(b);return {ingredients:{Honey:b.level*2+(b.species.name==='Venusaur'?20:0)},berries:b.level,triggers:b.nature.skill};};
+const plan=I.owned(D,minted,60,L,simulate,E),target=plan.projections.find(p=>p.form.name==='Venusaur'&&p.level===30);
+assert.ok(target);assert.equal(target.steps.length,2);assert.equal(target.costs.evolutionCandy,120);assert.deepEqual(target.costs,I.evolutionCost(minted,30,L,target.steps));assert.equal(target.costs.levelCandy,U.cost(minted,30,L).candy);
+assert.ok(builds.every(b=>b.nature.name==='Hardy'));assert.equal(target.berries,30);assert.equal(target.triggers,1);assert.equal(JSON.stringify(mon),original,'immutable snapshot record');
+assert.equal(builds.find(b=>b.level===30&&b.species.name==='Venusaur').species,D.species.find(s=>s.name==='Venusaur'),'evolved production uses evolved species rates');
+const xpMon=S.roster.records.find(m=>m.level<50&&m.nature_effects?.['EXP gains']==='down');assert.ok(xpMon);assert.ok(U.cost({...xpMon,nature_neutralized:true},60,L).candy<U.cost(xpMon,60,L).candy,'mint before leveling removes EXP penalty');
+const choice=P.recommend(plan,minted,'Honey',S.inventory);assert.ok(choice.target.level<=60);assert.ok(choice.target.costs);console.log('Combined mint plans: evolution output/costs, neutral EXP candy, matched levels, practical cap, and immutable source pass.');

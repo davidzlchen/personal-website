@@ -89,6 +89,9 @@ def main():
                 parser.error('--captured-at is required with --source.')
             source, date = args.source, args.captured_at
         print(json.dumps(prepare(source, date, args.output_root, private_dir)))
+        # Build shared analysis only from the sanitized published archives.
+        if args.output_root.resolve() == Path(__file__).resolve().parents[1] / 'pokemon-sleep':
+            subprocess.run(['node', str(Path(__file__).with_name('build_sleep_ingredient_cache.cjs'))], check=True)
 
 
 if __name__ == '__main__':

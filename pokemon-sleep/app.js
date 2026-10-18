@@ -129,7 +129,9 @@ function render() {
     );
     const sort = $("#sort").value;
     shown.sort((a, b) =>
-        sort === "rp" || sort === "level"
+        sort === "recent"
+            ? (b.met_date || "").localeCompare(a.met_date || "") || a.species.localeCompare(b.species)
+            : sort === "rp" || sort === "level"
             ? (b[sort] ?? -1) - (a[sort] ?? -1) ||
               a.species.localeCompare(b.species)
             : (sort === "nickname"
@@ -471,6 +473,8 @@ function renderIslands(islands) {
     upgradeURL.searchParams.set("island", selected);
     if (new URLSearchParams(location.search).get("analytics") === "off") upgradeURL.searchParams.set("analytics", "off");
     $("#upgrade-link").href = upgradeURL.href;
+    const ingredientURL = new URL(upgradeURL);ingredientURL.pathname="/pokemon-sleep/ingredients/";
+    $("#ingredient-link").href = ingredientURL.href;
     $("#island-analysis-status").textContent=selected==='custom' ? 'Choose an island card to use its area bonus and favorite berries in Pokémon analysis.' : `Analyzing at ${SleepIslands.get(selected).name}. Open any Pokémon to see its estimates.`;
     $("#clear-island").hidden=selected==='custom';
     for (const island of islands) {

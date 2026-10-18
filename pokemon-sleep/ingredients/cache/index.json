@@ -1,0 +1,24 @@
+{
+  "entries": {
+    "snapshots/2026-10-03-7608354d1cd9.json": {
+      "key": "11a9c2c5130652902fee4c76bf5d620734a2184d115ed203971190270253f888",
+      "file": "2026-10-03-7608354d1cd9-11a9c2c513065290.json",
+      "digest": "f07a3871172e492f3e50722cca03d9cadc1c8300da2570ab42a6816500e7b01d"
+    },
+    "snapshots/2026-10-04-1c3647d40662.json": {
+      "key": "a33435e5787ab294c11a79c695c6d4e292a436d14c2e57fa3706ee2a4e156e8e",
+      "file": "2026-10-04-1c3647d40662-a33435e5787ab294.json",
+      "digest": "0cd65f423f8e03d9b8058605f4d4d823d17655003f13a4574c269d6248f69a8a"
+    },
+    "snapshots/2026-10-11-216ba00d4db6.json": {
+      "key": "b20074dbdea1c793b23c6ea3a2190793d3b75a12d3587b5c98408db3d4a5a32d",
+      "file": "2026-10-11-216ba00d4db6-b20074dbdea1c793.json",
+      "digest": "52499400a395bc50271b221624de79ed49011bdf7cc4cc74759e707c73bb08c0"
+    },
+    "snapshots/2026-10-17-f8a6caef6bc8.json": {
+      "key": "01a8e2d509fefde257e8dbec69ecd46012d7b3ba4175987a770fb82e8b548bbf",
+      "file": "2026-10-17-f8a6caef6bc8-01a8e2d509fefde2.json",
+      "digest": "567353ca5705a01949ed15efd93d1c0201d5ea59cb99ceaab67dfe173672ae77"
+    }
+  }
+}
