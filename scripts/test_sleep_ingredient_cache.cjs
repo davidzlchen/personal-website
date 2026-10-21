@@ -1,11 +1,13 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const C=require('../pokemon-sleep/ingredients/cache.js'),I=require('../pokemon-sleep/ingredients/model.js'),D=require('../pokemon-sleep/analyzer/data.json'),L=require('../pokemon-sleep/upgrades/levels.json'),E=require('../pokemon-sleep/ingredients/evolutions.json');
+const Seeds=require('../pokemon-sleep/ingredients/seeds.js');
 const root=path.resolve(__dirname,'..'),read=async url=>fs.readFileSync(path.join(root,url),'utf8');
 (async()=>{
  const snapshot='snapshots/2026-10-11-216ba00d4db6.json',data=await C.load(read,snapshot);assert.ok(data);
  const paired=JSON.parse(await read('/pokemon-sleep/'+snapshot)),mon=paired.roster.records.find(m=>m.id==='mon-72');
  assert.deepEqual(data.rows.find(r=>r.id===mon.id),I.owned(D,mon,70,L,undefined,E),'cached evolution results equal the actual calculator at every level');
  const minted=data.mints.rows.find(r=>r.plan);const mintMon=paired.roster.records.find(m=>m.id===minted.id);assert.deepEqual(minted.plan,I.owned(D,{...mintMon,nature_neutralized:true},70,L,undefined,E),'cached combined mint/evolution output and costs equal real calculator');
+ const seeded=data.seeds.rows.find(r=>r.mint);const seedMon=paired.roster.records.find(m=>m.id===seeded.id);assert.deepEqual(seeded.plan,Seeds.project(D,{...seedMon,nature_neutralized:true},data.rows.find(r=>r.id===seeded.id),data.mints.rows.find(r=>r.id===seeded.id).plan,70,E),'seeded cache equals real simulator and resource calculator');
  for(const file of C.dependencies){assert.equal(await C.load(async url=>await read(url)+(url==='/pokemon-sleep/'+file?'\n':''),snapshot),null,'invalidate '+file);}
  assert.equal(await C.load(async url=>await read(url)+(url.endsWith(snapshot)?'\n':''),snapshot),null,'invalidate changed snapshot');
  assert.equal(await C.load(async url=>url.includes('/cache/')&&!url.endsWith('index.json')?'{}':read(url),snapshot),null,'reject corrupt result');

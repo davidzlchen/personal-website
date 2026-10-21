@@ -2,6 +2,7 @@
 'use strict';
 const A=typeof module==='object'?require('../analyzer/engine.js'):root.SleepAnalyzer;
 const M=typeof module==='object'?require('../mints/model.js'):root.SleepMints;
+const Seeds=typeof module==='object'?require('./seeds.js'):root.SleepIngredientSeeds;
 const I=typeof module==='object'?require('./model.js'):root.SleepIngredients;
 function calculate({catalog,roster,cap,levels,evolutions},progress=()=>{}){
         const rows=[],excluded=[],references=[];
@@ -29,7 +30,17 @@ for(const row of mints.rows){
     try{row.plan=I.owned(catalog,{...mon,nature_neutralized:true},cap,levels,undefined,evolutions);}
     catch(error){row.planError=error.message;}
 }
-return {rows,excluded,references,total:helpers.length,mints};
+const seeds={rows:[],excluded:[]};
+for(const mon of helpers){
+    const original=rows.find(r=>r.id===mon.id);if(!original)continue;
+    const minted=mints.rows.find(r=>r.id===mon.id)?.plan;
+    for(const [mint,source] of [[false,original],[true,minted]]){
+        if(!source)continue;
+        try{const plan=Seeds.project(catalog,mint?{...mon,nature_neutralized:true}:mon,original,source,cap,evolutions);if(plan.projections.length>1)seeds.rows.push({id:mon.id,mint,plan});}
+        catch(error){seeds.excluded.push({id:mon.id,mint,reason:error.message});}
+    }
+}
+return {rows,excluded,references,total:helpers.length,mints,seeds};
 }
 if(typeof module==='object')module.exports=calculate;else root.calculateSleepIngredients=calculate;
 })(typeof self==='object'?self:globalThis);
