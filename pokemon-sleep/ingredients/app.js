@@ -2,7 +2,7 @@
     'use strict';
     const $=id=>document.getElementById(id),make=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
     const params=new URLSearchParams(location.search),fmt=n=>n.toLocaleString('en-US',{maximumFractionDigits:1}),int=n=>n.toLocaleString('en-US');
-    let catalog,levels,manifest,evolutions,roster=[],inventory,rows=[],references=[],excluded=[],worker,request=0,cap,total=0,mintRows=[],ingredients=[],selectedIngredient;
+    let catalog,levels,manifest,evolutions,roster=[],inventory,rows=[],references=[],excluded=[],worker,request=0,cap,total=0,mintRows=[],seedRows=[],ingredients=[],selectedIngredient;
     const sources=new Map(),sessionResults=new Map();let mintAnchorShown=false;
     async function text(path){
         const url=new URL(path,location.href).pathname;
@@ -11,7 +11,7 @@
     }
     async function json(path){return JSON.parse(await text(path));}
     function showResults(data){
-        ({rows,references,excluded,total}=data);mintRows=data.mints?.rows||[];$('results').hidden=false;$('status').hidden=true;
+        ({rows,references,excluded,total}=data);mintRows=data.mints?.rows||[];seedRows=data.seeds?.rows||[];$('results').hidden=false;$('status').hidden=true;
         $('limitations').textContent=excluded.length?'Unmodeled saved helpers: '+excluded.map(r=>`${name(roster.find(m=>m.id===r.id))}: ${r.reason}`).join(' · '):'Every saved ingredient specialist has supported current production.';render();if(location.hash==='#mint-analysis'&&!mintAnchorShown){mintAnchorShown=true;$('mint-analysis').scrollIntoView({block:'start'});}
     }
     function icon(name){const path=sleepAssets.ingredients?.[name];if(!path)return null;const img=make('img');img.src='/pokemon-sleep/assets/'+path;img.alt='';return img;}
@@ -84,6 +84,37 @@
         }
         if(!list.length){box.append(make('p','No saved ingredient specialist matches these filters.'));if($('aaa').checked){const button=make('button','Show mixed ingredient lines','add-plan');button.type='button';button.addEventListener('click',()=>{$('aaa').checked=false;render();});box.append(button);}}
     }
+    function renderSeeds(eligible,ingredient,query,box){
+        const candidates=seedRows.map(r=>{
+            const mon=roster.find(m=>m.id===r.id),original=rows.find(p=>p.id===r.id);
+            if(!mon||!original||!eligible.has(r.id)||!`${name(mon)} ${mon.species}`.toLowerCase().includes(query))return null;
+            // Require the seeds themselves to improve the named ingredient, rather than crediting leveling gains to seeds.
+            const plan={...r.plan,projections:r.plan.projections.filter((p,i)=>i===0||(p.seedCount&&p.seedUpgrades.some(s=>/^(Ingredient Finder|Helping Speed|Inventory Up) /.test(s.from))&&(p.ingredients[ingredient]||0)-(p.withoutSeeds.ingredients[ingredient]||0)>=Math.max(.1,(p.withoutSeeds.ingredients[ingredient]||0)*.01)))};
+            const practical=SleepPracticalIngredients.recommend(plan,r.mint?{...mon,nature_neutralized:true}:mon,ingredient,inventory),target=practical.target;
+            if(!practical.invest||!target.seedCount)return null;
+            if(r.mint){
+                const plain=seedRows.find(s=>s.id===r.id&&!s.mint)?.plan.projections.find(p=>p.level===target.level&&p.form.key===target.form.key&&p.seedCount);
+                if(!plain||(target.ingredients[ingredient]||0)-(plain.ingredients[ingredient]||0)<Math.max(.1,(plain.ingredients[ingredient]||0)*.01))return null;
+            }
+            return {...r,mon,original,practical,target};
+        }).filter(Boolean).sort((a,b)=>b.practical.score-a.practical.score);
+        // Keep one seeded alternative per helper, alongside its ordinary mint/level plan.
+        const selected=candidates.filter((r,i)=>candidates.findIndex(q=>q.id===r.id)===i);
+        for(const r of selected){
+            const {mon,target}=r,card=make('article',undefined,'opportunity'),head=make('div',undefined,'opportunity-head'),title=make('div');title.append(make('h3',name(mon)+' · '+(r.mint?'mint + seeds':'seed plan')),make('p',`${mon.species} · saved Lv. ${mon.level}${mon.shiny?' · Shiny':''} · ${SleepIngredients.line(mon).aaa?'AAA':'Mixed line'}`));head.append(portrait(mon.national_dex,mon.species),title);card.append(head);
+            const now=r.original.projections[0],amount=p=>p.ingredients[ingredient]||0,line=make('p',undefined,'ingredient-line'),img=icon(ingredient);if(img)line.append(img);line.append(make('span',`${ingredient}: ${fmt(amount(now))} → ${fmt(amount(target))}/day`));card.append(line,make('p',`+${fmt(amount(target)-amount(now))}/day from saved build`,'gain'),make('p',`${r.mint?'Mint first → ':''}${target.form.name} Lv. ${target.level} → seed unlocked subskills`,'priority-reason'));
+            card.append(costsBlock(mon,target),make('p',`${r.mint?'1 Neutralizing Mint + ':''}${target.seedCount} Sub Skill Seed${target.seedCount===1?'':'s'} · guaranteed bundle`,'priority-reason'));
+            for(const upgrade of target.seedUpgrades)card.append(make('p',`Lv. ${upgrade.unlock}: ${upgrade.from} → ${upgrade.to}`,'candidate-meta'));
+            const desired=target.seedUpgrades.filter(s=>/^(Ingredient Finder|Helping Speed) /.test(s.from));if(target.seedCount>1&&desired.length)card.append(make('p',desired.map(s=>`${s.to}: 1–${target.seedCount} seeds to reach it`).join(' · ')+'. Output below uses the completed bundle.','candidate-meta'));
+            card.append(make('p',target.seedCount===1?'Only one eligible upgrade at this target: the seed is guaranteed.':'Seeds randomly choose an eligible unlocked skill. The budget upgrades every eligible skill, so the final build is guaranteed; a desired upgrade may land earlier.','muted'));
+            const table=make('table',undefined,'milestone-table');table.append(make('caption',`Daily output · ${target.form.name} Lv. ${target.level}`));const th=make('tr');for(const label of ['Output','Now',r.mint?'Mint + level':'Level only','With seeds'])th.append(make('th',label));const thead=make('thead');thead.append(th);table.append(thead);const tbody=make('tbody');
+            for(const [label,before,without,after] of [[ingredient,amount(now),amount(target.withoutSeeds),amount(target)],['Skill triggers',now.triggers,target.withoutSeeds.triggers,target.triggers],['Berries',now.berries,target.withoutSeeds.berries,target.berries]]){const tr=make('tr');for(const value of [label,fmt(before),fmt(without),fmt(after)])tr.append(make('td',value));tr.lastChild.className=after<without?'mint-loss':'mint-gain';tbody.append(tr);}table.append(tbody);card.append(table,make('p',`Seeds add +${fmt(amount(target)-amount(target.withoutSeeds))} ${ingredient}/day at this same form and level.`,'candidate-meta'),make('p',r.practical.reason,'muted'));
+            const milestones=make('table',undefined,'milestone-table');milestones.append(make('caption','Seeded milestones · total resources from saved build'));const mh=make('tr');for(const label of ['Form / level','Per day','Seeds','Candy','Shards'])mh.append(make('th',label));const mhead=make('thead');mhead.append(mh);milestones.append(mhead);const mb=make('tbody');
+            for(const p of r.plan.projections.filter(p=>p.seedCount&&[mon.level,30,50,60,target.level].includes(p.level))){const tr=make('tr');for(const value of [`${p.form.name} ${p.level}`,fmt(p.ingredients[ingredient]||0),int(p.seedCount),int(p.costs.candy),int(p.costs.shards)])tr.append(make('td',value));mb.append(tr);}milestones.append(mb);card.append(milestones);
+            const linkEl=make('a','View saved Pokémon →');linkEl.href=link('/pokemon-sleep/',mon);card.append(linkEl);box.append(card);
+        }
+        return selected.length;
+    }
     function renderMints(){
         const ingredient=selectedIngredient,eligible=new Set(options(ingredient).map(r=>r.id)),query=$('search').value.trim().toLowerCase(),box=$('mint-candidates');box.replaceChildren();
         const list=mintRows.map(r=>{
@@ -108,7 +139,9 @@
             for(const p of SleepIngredients.milestones(r.plan,ingredient,cap).filter(p=>p.level<=60||p.level===mon.level)){const tr=make('tr');for(const value of [`${p.form.name} ${p.level}`,fmt(p.ingredients[ingredient]||0),p.costs?int(p.costs.candy):'Unknown',p.costs?int(p.costs.shards):'Unknown'])tr.append(make('td',value));mb.append(tr);}milestones.append(mb);card.append(milestones);
             const a=make('a','View saved Pokémon →');a.href=link('/pokemon-sleep/',mon);card.append(a);box.append(card);
         }
-        if(!list.length)box.append(make('p',`No matching ingredient specialists gain ${ingredient} from minting at a practical leveling or evolution target.`));
+        const seedCount=renderSeeds(eligible,ingredient,query,box);
+        $('mint-summary').textContent+=` ${seedCount} seeded alternative${seedCount===1?'':'s'} · ${inventory.entries?.filter(e=>e.name==='Sub Skill Seed').reduce((sum,e)=>sum+e.quantity,0)??'unknown'} Sub Skill Seeds saved.`;
+        if(!list.length&&!seedCount)box.append(make('p',`No matching ingredient specialists gain ${ingredient} from minting at a practical leveling or evolution target.`));
     }
     function renderReference(){
         const ingredient=selectedIngredient,list=references.filter(r=>r.ingredient===ingredient&&(!$('aaa').checked||r.aaa)).sort((a,b)=>b.amount-a.amount),box=$('reference');box.replaceChildren();$('reference-cap').textContent=String(cap);
@@ -135,7 +168,7 @@
             const cached=sessionResults.get(entry.file)||await SleepIngredientCache.load(text,entry.file);
             if(token!==request)return;
             if(cached){sessionResults.set(entry.file,cached);showResults(cached);return;}
-            worker=new Worker('worker.js?v=6');worker.onmessage=({data})=>{
+            worker=new Worker('worker.js?v=7');worker.onmessage=({data})=>{
                 if(token!==request)return;
                 if(data.error){worker.terminate();$('status').textContent=data.error;$('retry').hidden=false;}
                 else if(data.rows){worker.terminate();sessionResults.set(entry.file,data);showResults(data);}
