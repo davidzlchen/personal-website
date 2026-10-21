@@ -475,6 +475,7 @@ function renderIslands(islands) {
     $("#upgrade-link").href = upgradeURL.href;
     const ingredientURL = new URL(upgradeURL);ingredientURL.pathname="/pokemon-sleep/ingredients/";
     $("#ingredient-link").href = ingredientURL.href;
+    const christmasURL=new URL(ingredientURL);christmasURL.pathname="/pokemon-sleep/christmas/";$("#christmas-link").href=christmasURL.href;
     $("#island-analysis-status").textContent=selected==='custom' ? 'Choose an island card to use its area bonus and favorite berries in Pokémon analysis.' : `Analyzing at ${SleepIslands.get(selected).name}. Open any Pokémon to see its estimates.`;
     $("#clear-island").hidden=selected==='custom';
     for (const island of islands) {

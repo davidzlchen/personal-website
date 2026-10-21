@@ -8,4 +8,4 @@ POKÉMON SLEEP · FIELD NOTES
 
 A record of quiet progress: island milestones, familiar helpers, and a little preparation for the next good night.
 
-[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection) [Ingredient analyzer ↗](https://davidzlchen.com/pokemon-sleep/ingredients/) [Best opportunities to level up ↗](https://davidzlchen.com/pokemon-sleep/upgrades/)
+[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection) [Ingredient analyzer ↗](https://davidzlchen.com/pokemon-sleep/ingredients/) [Christmas planner ↗](https://davidzlchen.com/pokemon-sleep/christmas/) [Best opportunities to level up ↗](https://davidzlchen.com/pokemon-sleep/upgrades/)
