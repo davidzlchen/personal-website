@@ -24,7 +24,7 @@ const $=id=>w.document.getElementById(id),change=(id,value)=>{if(id==='ingredien
  $('evolutions').checked=true;$('evolutions').dispatchEvent(new w.Event('change'));
  change('ingredient','Honey');$('aaa').checked=false;$('aaa').dispatchEvent(new w.Event('change'));
  const pinsir=[...$('candidates').querySelectorAll('article')].find(a=>a.textContent.includes('Pinsir'));assert.ok(pinsir);assert.match(pinsir.querySelector('.milestone-table').textContent,/Pinsir 59/);assert.match(pinsir.textContent,/Keep current level/);assert.match(pinsir.textContent,/0 Pinsir Candy/);
- assert.ok(pinsir.querySelector('.milestone-table'),'final forms always show milestones');assert.equal(pinsir.querySelector('details'),null,'milestones cannot collapse');
+ assert.ok(pinsir.querySelector('.milestone-table'),'final forms always show milestones');assert.match(pinsir.querySelector('.level-60-outlook').textContent,/Pinsir Lv\. 60/,'level 60 remains visible when keeping the current level is recommended');assert.equal(pinsir.querySelector('details'),null,'milestones cannot collapse');
  assert.match(pinsir.querySelector('a').href,/snapshot=2026-10-11/);assert.match(pinsir.querySelector('a').href,/analytics=off/);
  $('aaa').checked=true;$('aaa').dispatchEvent(new w.Event('change'));assert.ok(!$('candidates').textContent.includes('Pinsir'));
  const honeyButton=$('overview').querySelector('[data-ingredient="Honey"]');honeyButton.focus();honeyButton.click();assert.equal(w.document.activeElement,honeyButton,'selection preserves keyboard focus');assert.equal(workerCount,process.env.SLEEP_CACHE_TEST?1:0,'ingredient selection does not recalculate');
