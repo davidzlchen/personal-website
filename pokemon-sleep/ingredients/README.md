@@ -150,3 +150,10 @@ seeds guarantee IFM + STM, while a lucky first seed can hit IFM.
 Sources: official seed restrictions in model notes and the in-game item description.
 Run `node scripts/test_sleep_seed_plans.cjs` plus the existing ingredient, mint,
 practical, DOM and cache tests. No source snapshot is mutated by planning.
+
+Every rendered saved candidate, mint plan and seeded alternative includes a
+Level 60 outlook with the third ingredient slot, named output, total leveling
+and evolution resources, and relevant mint/seed costs. This stays visible even
+when a cheaper practical target is recommended. Existing snapshots already cache
+these projections, so the change does not regenerate simulations. Missing level-60
+data is explicit; helpers already above 60 retain their saved investment.

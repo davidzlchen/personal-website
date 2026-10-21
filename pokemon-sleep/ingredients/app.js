@@ -48,6 +48,19 @@
         if(candy)box.append(make('p',`Saved ${int(candy.quantity)} ${candy.name}; costs are incremental from Lv. ${mon.level}.`,'muted'));
         return box;
     }
+    function level60Block(mon,row,{mint=false,seeds=false}={}){
+        const box=make('section',undefined,'level-60-outlook');box.append(make('h4','Level 60 · third ingredient slot'));
+        if(mon.level>60){box.append(make('p',`Already unlocked · saved Lv. ${mon.level}. Costs and projections start from your saved investment.`,'muted'));return box;}
+        const target=SleepIngredients.best(row.projections.filter(p=>p.level===60&&(!seeds||p.seedCount)),selectedIngredient);
+        if(!target){box.append(make('p',`Level 60 projection unavailable${cap<60?' · above this snapshot’s trainable cap':''}. ${row.limitation||'Saved ingredient or growth data may be incomplete.'}`,'availability short'));return box;}
+        box.append(make('p',`${target.form.name} Lv. 60${mint?' · mint':''}${target.seedCount?' · '+target.seedCount+' Sub Skill Seed'+(target.seedCount===1?'':'s'):''}`,'priority-reason'));
+        const line=make('p',undefined,'ingredient-line'),img=icon(selectedIngredient);if(img)line.append(img);line.append(make('strong',`${fmt(target.ingredients[selectedIngredient]||0)} ${selectedIngredient}/day`));box.append(line);
+        const third=mon.ingredients[2]?.name,slot=third&&catalog.species.find(s=>s.key===target.form.key)?.ingredients[2].find(s=>s.name===third);
+        if(slot){const unlock=make('p',undefined,'ingredient-line'),image=icon(third);if(image)unlock.append(image);unlock.append(make('span',`Third slot: ${third} ×${slot.quantity}`));box.append(unlock);}
+        box.append(costsBlock(mon,target));
+        if(target.seedUpgrades?.length)box.append(make('p',target.seedUpgrades.map(s=>`${s.from} → ${s.to}`).join(' · '),'candidate-meta'));
+        box.append(make('p',`Total resources from saved Lv. ${mon.level}${mint?' include one Neutralizing Mint in addition to the costs above':''}.`,'muted'));return box;
+    }
     function renderCandidates(){
         const ingredient=selectedIngredient,all=options(ingredient),lead=leaders(all,ingredient),search=$('search').value.trim().toLowerCase();
         const list=all.filter(r=>`${name(r.mon)} ${r.mon.species}`.toLowerCase().includes(search));
@@ -66,7 +79,7 @@
             card.append(make('p',`${r.line.aaa?'AAA':'Mixed line'} · ${mon.nature_neutralized?'neutralized nature':mon.nature}`,'candidate-meta'));
             const line=make('div',undefined,'ingredient-line');mon.ingredients.forEach((s,i)=>{const span=make('span'),image=icon(s.name);if(image)span.append(image);span.append(make('span',`${[1,30,60][i]}: ${s.name} ×${s.quantity}`));line.append(span);});card.append(line);
             card.append(make('p',`Now: ${fmt(current.ingredients[ingredient]||0)} ${ingredient}/day`,'candidate-current'),make('p',`${fmt(peak.ingredients[ingredient])} / day`,'gain'),make('p',`${practical.invest?'Recommended target':'Keep current level'} · ${peak.form?.name||mon.species} Lv. ${peak.level} · +${fmt(practical.gain)}/day`,'gain-label'));
-            card.append(costsBlock(mon,peak));card.append(make('p',practical.reason,'priority-reason'));
+            card.append(costsBlock(mon,peak));card.append(make('p',practical.reason,'priority-reason'));card.append(level60Block(mon,r));
             const maximum=r.peak;
             if(maximum.level>60&&maximum.costs&&peak.costs&&maximum.costs.shards>=peak.costs.shards&&maximum.ingredients[ingredient]>peak.ingredients[ingredient])card.append(make('p',`The Lv. ${maximum.level} maximum adds ${fmt(maximum.ingredients[ingredient]-peak.ingredients[ingredient])}/day beyond this target for another ${int(maximum.costs.shards-peak.costs.shards)} shards and ${int(maximum.costs.candy-peak.costs.candy)} candy.`,'muted'));
             if(r.limitation)card.append(make('p',r.limitation+' Maximum is limited to confirmed saved data.','availability short'));
@@ -109,6 +122,7 @@
             card.append(make('p',target.seedCount===1?'Only one eligible upgrade at this target: the seed is guaranteed.':'Seeds randomly choose an eligible unlocked skill. The budget upgrades every eligible skill, so the final build is guaranteed; a desired upgrade may land earlier.','muted'));
             const table=make('table',undefined,'milestone-table');table.append(make('caption',`Daily output · ${target.form.name} Lv. ${target.level}`));const th=make('tr');for(const label of ['Output','Now',r.mint?'Mint + level':'Level only','With seeds'])th.append(make('th',label));const thead=make('thead');thead.append(th);table.append(thead);const tbody=make('tbody');
             for(const [label,before,without,after] of [[ingredient,amount(now),amount(target.withoutSeeds),amount(target)],['Skill triggers',now.triggers,target.withoutSeeds.triggers,target.triggers],['Berries',now.berries,target.withoutSeeds.berries,target.berries]]){const tr=make('tr');for(const value of [label,fmt(before),fmt(without),fmt(after)])tr.append(make('td',value));tr.lastChild.className=after<without?'mint-loss':'mint-gain';tbody.append(tr);}table.append(tbody);card.append(table,make('p',`Seeds add +${fmt(amount(target)-amount(target.withoutSeeds))} ${ingredient}/day at this same form and level.`,'candidate-meta'),make('p',r.practical.reason,'muted'));
+            card.append(level60Block(mon,r.plan,{mint:r.mint,seeds:true}));
             const milestones=make('table',undefined,'milestone-table');milestones.append(make('caption','Seeded milestones · total resources from saved build'));const mh=make('tr');for(const label of ['Form / level','Per day','Seeds','Candy','Shards'])mh.append(make('th',label));const mhead=make('thead');mhead.append(mh);milestones.append(mhead);const mb=make('tbody');
             for(const p of r.plan.projections.filter(p=>p.seedCount&&[mon.level,30,50,60,target.level].includes(p.level))){const tr=make('tr');for(const value of [`${p.form.name} ${p.level}`,fmt(p.ingredients[ingredient]||0),int(p.seedCount),int(p.costs.candy),int(p.costs.shards)])tr.append(make('td',value));mb.append(tr);}milestones.append(mb);card.append(milestones);
             const linkEl=make('a','View saved Pokémon →');linkEl.href=link('/pokemon-sleep/',mon);card.append(linkEl);box.append(card);
@@ -135,6 +149,7 @@
             card.append(make('p',Object.entries(r.effects).map(([effect,direction])=>`${effect} ${direction==='up'?'↑':'↓'} removed`).join(' · '),'candidate-meta'));
             const table=make('table',undefined,'milestone-table');table.append(make('caption',`Daily output · target ${r.target.form.name} Lv. ${r.target.level}`));const header=make('tr');for(const label of ['Output','Now','Level only','Mint + level'])header.append(make('th',label));const thead=make('thead');thead.append(header);table.append(thead);const body=make('tbody');
             for(const [label,before,without,after] of [[ingredient,r.beforeAmount,r.withoutMint,r.afterAmount],['Skill triggers',r.before.triggers,r.levelOnly?.triggers,r.target.triggers],['Berries',r.before.berries,r.levelOnly?.berries,r.target.berries]]){const tr=make('tr');for(const value of [label,fmt(before),Number.isFinite(without)?fmt(without):'Unknown',fmt(after)])tr.append(make('td',value));tr.lastChild.className=after<without?'mint-loss':'mint-gain';body.append(tr);}table.append(body);card.append(table,make('p',`Mint adds +${fmt(r.afterAmount-r.withoutMint)} ${ingredient}/day versus the same form and level without minting.`,'candidate-meta'),make('p','1 Neutralizing Mint, plus the leveling and evolution resources above. Costs assume minting before feeding candy.','candidate-meta'));
+            card.append(level60Block(mon,r.plan,{mint:true}));
             const milestones=make('table',undefined,'milestone-table');milestones.append(make('caption','Mint + leveling / evolution milestones'));const mh=make('tr');for(const label of ['Form / level','Per day','Candy','Shards'])mh.append(make('th',label));const mt=make('thead');mt.append(mh);milestones.append(mt);const mb=make('tbody');
             for(const p of SleepIngredients.milestones(r.plan,ingredient,cap).filter(p=>p.level<=60||p.level===mon.level)){const tr=make('tr');for(const value of [`${p.form.name} ${p.level}`,fmt(p.ingredients[ingredient]||0),p.costs?int(p.costs.candy):'Unknown',p.costs?int(p.costs.shards):'Unknown'])tr.append(make('td',value));mb.append(tr);}milestones.append(mb);card.append(milestones);
             const a=make('a','View saved Pokémon →');a.href=link('/pokemon-sleep/',mon);card.append(a);box.append(card);
