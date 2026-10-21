@@ -23,6 +23,7 @@
         return list.sort((a,b)=>config.sort==='current'?(b.current.ingredients[ingredient]||0)-(a.current.ingredients[ingredient]||0):config.sort==='cost'?(a.practical.target.costs?.shards??Infinity)-(b.practical.target.costs?.shards??Infinity):(b.practical.target.ingredients[ingredient]||0)-(a.practical.target.ingredients[ingredient]||0));
     }
     function link(path,mon){const u=new URL(path,location.origin);u.searchParams.set('snapshot',$('snapshot').value);if(params.has('island'))u.searchParams.set('island',params.get('island'));if(mon)u.searchParams.set('pokemon',mon.id);if(params.get('analytics')==='off')u.searchParams.set('analytics','off');return u.href;}
+    function christmasLink(mon,variant='saved',target){const a=make('a','Christmas spending strategy →','christmas-link'),u=new URL(link('/pokemon-sleep/christmas/',mon));u.searchParams.set('variant',variant);u.searchParams.set('ingredient',selectedIngredient);if(target)u.searchParams.set('target',target);a.href=u.href;return a;}
     function leaders(list,ingredient){return {now:list.filter(r=>(r.current.ingredients[ingredient]||0)>0).sort((a,b)=>(b.current.ingredients[ingredient]||0)-(a.current.ingredients[ingredient]||0))[0],potential:list.slice().sort((a,b)=>(b.practical.target.ingredients[ingredient]||0)-(a.practical.target.ingredients[ingredient]||0))[0]};}
     function renderOverview(){
         const box=$('overview');
@@ -93,7 +94,7 @@
                 const tr=make('tr');for(const text of [`${p.form.name} ${p.level}`,fmt(p.ingredients[ingredient]||0),p.costs?int(p.costs.candy):'Unknown',p.costs?int(p.costs.shards):'Unknown'])tr.append(make('td',text));tbody.append(tr);
             }table.append(tbody);detail.append(table);for(const p of milestoneRows.filter((p,i,all)=>all.findIndex(q=>q.form.key===p.form.key)===i)){const needs=[...Object.entries(p.costs?.items||{}).map(([n,q])=>q+' '+n),...(p.costs?.conditions||[])];if(needs.length)detail.append(make('p',p.form.name+': '+needs.join(' · ')));}card.append(detail);
             const subskills=make('p',mon.subskills.filter(s=>s.unlock_level<=peak.level).map(s=>`${s.unlock_level}: ${s.name}`).join(' · '),'candidate-meta');card.append(subskills);
-            const a=make('a','View saved Pokémon →');a.href=link('/pokemon-sleep/',mon);card.append(a);box.append(card);
+            const a=make('a','View saved Pokémon →');a.href=link('/pokemon-sleep/',mon);card.append(a,christmasLink(mon));box.append(card);
         }
         if(!list.length){box.append(make('p','No saved ingredient specialist matches these filters.'));if($('aaa').checked){const button=make('button','Show mixed ingredient lines','add-plan');button.type='button';button.addEventListener('click',()=>{$('aaa').checked=false;render();});box.append(button);}}
     }
@@ -125,7 +126,7 @@
             card.append(level60Block(mon,r.plan,{mint:r.mint,seeds:true}));
             const milestones=make('table',undefined,'milestone-table');milestones.append(make('caption','Seeded milestones · total resources from saved build'));const mh=make('tr');for(const label of ['Form / level','Per day','Seeds','Candy','Shards'])mh.append(make('th',label));const mhead=make('thead');mhead.append(mh);milestones.append(mhead);const mb=make('tbody');
             for(const p of r.plan.projections.filter(p=>p.seedCount&&[mon.level,30,50,60,target.level].includes(p.level))){const tr=make('tr');for(const value of [`${p.form.name} ${p.level}`,fmt(p.ingredients[ingredient]||0),int(p.seedCount),int(p.costs.candy),int(p.costs.shards)])tr.append(make('td',value));mb.append(tr);}milestones.append(mb);card.append(milestones);
-            const linkEl=make('a','View saved Pokémon →');linkEl.href=link('/pokemon-sleep/',mon);card.append(linkEl);box.append(card);
+            const linkEl=make('a','View saved Pokémon →');linkEl.href=link('/pokemon-sleep/',mon);card.append(linkEl,christmasLink(mon,r.mint?'mint-seeds':'seeds',target.level));box.append(card);
         }
         return selected.length;
     }
@@ -152,7 +153,7 @@
             card.append(level60Block(mon,r.plan,{mint:true}));
             const milestones=make('table',undefined,'milestone-table');milestones.append(make('caption','Mint + leveling / evolution milestones'));const mh=make('tr');for(const label of ['Form / level','Per day','Candy','Shards'])mh.append(make('th',label));const mt=make('thead');mt.append(mh);milestones.append(mt);const mb=make('tbody');
             for(const p of SleepIngredients.milestones(r.plan,ingredient,cap).filter(p=>p.level<=60||p.level===mon.level)){const tr=make('tr');for(const value of [`${p.form.name} ${p.level}`,fmt(p.ingredients[ingredient]||0),p.costs?int(p.costs.candy):'Unknown',p.costs?int(p.costs.shards):'Unknown'])tr.append(make('td',value));mb.append(tr);}milestones.append(mb);card.append(milestones);
-            const a=make('a','View saved Pokémon →');a.href=link('/pokemon-sleep/',mon);card.append(a);box.append(card);
+            const a=make('a','View saved Pokémon →');a.href=link('/pokemon-sleep/',mon);card.append(a,christmasLink(mon,'mint',r.target.level));box.append(card);
         }
         const seedCount=renderSeeds(eligible,ingredient,query,box);
         $('mint-summary').textContent+=` ${seedCount} seeded alternative${seedCount===1?'':'s'} · ${inventory.entries?.filter(e=>e.name==='Sub Skill Seed').reduce((sum,e)=>sum+e.quantity,0)??'unknown'} Sub Skill Seeds saved.`;
@@ -167,7 +168,7 @@
     }
     function render(){
         const u=new URL(location.href);u.searchParams.set('snapshot',$('snapshot').value);u.searchParams.set('ingredient',selectedIngredient);u.searchParams.set('aaa',String($('aaa').checked));u.searchParams.delete('evolutions');u.searchParams.set('final-only',String(!$('evolutions').checked));u.searchParams.set('sort',$('sort').value);history.replaceState(null,'',u);
-        $('back').href=link('/pokemon-sleep/');$('upgrades').href=link('/pokemon-sleep/upgrades/');
+        $('back').href=link('/pokemon-sleep/');$('upgrades').href=link('/pokemon-sleep/upgrades/');$('christmas').href=link('/pokemon-sleep/christmas/');
         renderOverview();if(!$('results').hidden){renderCandidates();renderMints();renderReference();}
     }
     async function load(){

@@ -2,7 +2,7 @@
 
 Source: https://davidzlchen.com/pokemon-sleep/upgrades/
 
-[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/) [Ingredient analyzer →](https://davidzlchen.com/pokemon-sleep/ingredients/)
+[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/) [Ingredient analyzer →](https://davidzlchen.com/pokemon-sleep/ingredients/) [Christmas Candy Boost planner →](https://davidzlchen.com/pokemon-sleep/christmas/)
 
 POKÉMON SLEEP · GROWING ROOM
 
