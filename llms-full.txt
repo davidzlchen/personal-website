@@ -215,7 +215,7 @@ POKÉMON SLEEP · FIELD NOTES
 
 A record of quiet progress: island milestones, familiar helpers, and a little preparation for the next good night.
 
-[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection) [Ingredient analyzer ↗](https://davidzlchen.com/pokemon-sleep/ingredients/) [Best opportunities to level up ↗](https://davidzlchen.com/pokemon-sleep/upgrades/)
+[Explore the Pokémon ↗](https://davidzlchen.com/pokemon-sleep/#collection) [Ingredient analyzer ↗](https://davidzlchen.com/pokemon-sleep/ingredients/) [Christmas planner ↗](https://davidzlchen.com/pokemon-sleep/christmas/) [Best opportunities to level up ↗](https://davidzlchen.com/pokemon-sleep/upgrades/)
 
 
 ---
@@ -243,7 +243,7 @@ This analyzer needs JavaScript to calculate production in your browser.
 
 Source: https://davidzlchen.com/pokemon-sleep/upgrades/
 
-[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/) [Ingredient analyzer →](https://davidzlchen.com/pokemon-sleep/ingredients/)
+[← Back to the Field Notes](https://davidzlchen.com/pokemon-sleep/) [Ingredient analyzer →](https://davidzlchen.com/pokemon-sleep/ingredients/) [Christmas Candy Boost planner →](https://davidzlchen.com/pokemon-sleep/christmas/)
 
 POKÉMON SLEEP · GROWING ROOM
 
@@ -266,9 +266,9 @@ POKÉMON SLEEP · INGREDIENT SPECIALISTS
 
 # Ingredient analyzer✦
 
-Your best farmer for each ingredient, the upgrades worth considering in each saved build, and what it costs to get there. AAA means the same ingredient in all three slots, including the locked slot at 60.
+Your best farmer for each ingredient, the upgrades worth considering in each saved build, and what it costs to get there. Every candidate also shows its level-60 ingredient unlock, production, and total resource cost. AAA means the same ingredient in all three slots, including the locked slot at 60.
 
-[Best opportunities to level up →](https://davidzlchen.com/pokemon-sleep/upgrades/)
+[Best opportunities to level up →](https://davidzlchen.com/pokemon-sleep/upgrades/) · [Christmas spending planner →](https://davidzlchen.com/pokemon-sleep/christmas/)
 
 ## Choose an ingredient
 
@@ -279,6 +279,25 @@ Saved collectionRank saved candidates
 AAA lines only Include unevolved saved helpersFind a helper
 
 Loading the saved collection…
+
+
+---
+
+# Christmas Candy Boost Planner · Pokémon Sleep Field Notes
+
+Source: https://davidzlchen.com/pokemon-sleep/christmas/
+
+[← Ingredient analyzer](https://davidzlchen.com/pokemon-sleep/ingredients/)
+
+POKÉMON SLEEP · CHRISTMAS PLANNING
+
+# Make your shards count✦
+
+A spending strategy for your top saved candidates: cheap level-30 unlocks first, rare candy where it matters, and the full cost of reaching 60.
+
+Planning scenario · 2× candy EXP · 5× shards per boosted candy · 500 boosted candy/day shared by all Pokémon
+
+Loading saved candidates…
 
 
 ---

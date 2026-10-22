@@ -130,3 +130,30 @@ ingredient/berry/trigger output. The same resource policy picks targets through
 60; the UI compares now, leveling alone at the target, and mint plus leveling.
 Candidates must improve the selected ingredient by 1% versus that same unminted
 target. Existing shared filters and immutable snapshot boundaries apply.
+
+Seeded alternatives are cached by `seeds.js`, at practical ingredient/subskill
+and evolution milestones through 60. Both the saved nature and neutralized
+nature are considered. Only plans with a gathering-relevant upgrade and at least
+1% named output gain versus the same target without seeds are shown. A resource
+burden of two per seed discourages marginal bundles; seed shortages are also
+visible. Existing level-only and mint-only comparisons remain available.
+
+A Sub Skill Seed randomly upgrades an eligible unlocked skill. The model does
+not promise a chosen roll: it upgrades every eligible skill at that target to
+its legal maximum, charging the full deterministic bundle. Duplicate next-tier
+skills block an upgrade even in locked slots. This includes collateral trigger
+and skill-level upgrades; a desired upgrade may happen before all seeds are
+spent. Seed-only plans cover neutral/already-minted helpers too. For the saved
+shiny Farfetch'd, IF S unlocks at 50 and IFM competes with Skill Trigger S: two
+seeds guarantee IFM + STM, while a lucky first seed can hit IFM.
+
+Sources: official seed restrictions in model notes and the in-game item description.
+Run `node scripts/test_sleep_seed_plans.cjs` plus the existing ingredient, mint,
+practical, DOM and cache tests. No source snapshot is mutated by planning.
+
+Every rendered saved candidate, mint plan and seeded alternative includes a
+Level 60 outlook with the third ingredient slot, named output, total leveling
+and evolution resources, and relevant mint/seed costs. This stays visible even
+when a cheaper practical target is recommended. Existing snapshots already cache
+these projections, so the change does not regenerate simulations. Missing level-60
+data is explicit; helpers already above 60 retain their saved investment.

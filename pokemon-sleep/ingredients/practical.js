@@ -15,7 +15,7 @@ function recommend(row,mon,ingredient,inventory){
         if(gain<Math.max(3,baseline*.1))continue;
         const cost=p.costs,candyShort=Number.isFinite(candy)?Math.max(0,cost.candy-candy):0,shardShort=Math.max(0,cost.shards-(inventory.dream_shards||0));
         const items=Object.entries(cost.items||{}),itemPending=items.some(([name,n])=>!Array.isArray(inventory.entries)||inventory.entries.filter(e=>e.name===name).reduce((sum,e)=>sum+(e.quantity||0),0)<n);
-        const burden=cost.candy/candyScale+cost.shards/shardScale+candyShort/candyScale+shardShort/shardScale;
+        const burden=(cost.seedCount||0)*2+cost.candy/candyScale+cost.shards/shardScale+candyShort/candyScale+shardShort/shardScale;
         const score=gain/(1+burden)*(itemPending?.5:1)*((cost.conditions||[]).length?.75:1);
         if(!selected||score>selected.score)selected={target:p,gain,score,invest:true};
     }

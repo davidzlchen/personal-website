@@ -1,44 +1,39 @@
 {
   "entries": {
     "snapshots/2026-10-03-7608354d1cd9.json": {
-      "key": "11a9c2c5130652902fee4c76bf5d620734a2184d115ed203971190270253f888",
-      "file": "2026-10-03-7608354d1cd9-11a9c2c513065290.json",
-      "digest": "f07a3871172e492f3e50722cca03d9cadc1c8300da2570ab42a6816500e7b01d"
+      "key": "2d91c86246df1f13d1f76e0877e18c4fa7e641e25562d4dc06bf13d01ffdcce1",
+      "file": "2026-10-03-7608354d1cd9-2d91c86246df1f13.json",
+      "digest": "59aeaa2d76693a80a31a3f08589c28857346d406316c86f160c53857cb0ac11e"
     },
     "snapshots/2026-10-04-1c3647d40662.json": {
-      "key": "a33435e5787ab294c11a79c695c6d4e292a436d14c2e57fa3706ee2a4e156e8e",
-      "file": "2026-10-04-1c3647d40662-a33435e5787ab294.json",
-      "digest": "0cd65f423f8e03d9b8058605f4d4d823d17655003f13a4574c269d6248f69a8a"
+      "key": "5589675bf3049678c7ece5fdd6a98714561d87118b2862a3304b6cd5a61bf0d4",
+      "file": "2026-10-04-1c3647d40662-5589675bf3049678.json",
+      "digest": "b314d48963470d2547e579bdb9f1c3d3f59f220c6a3dee80ae013f914506142a"
     },
     "snapshots/2026-10-11-216ba00d4db6.json": {
-      "key": "b20074dbdea1c793b23c6ea3a2190793d3b75a12d3587b5c98408db3d4a5a32d",
-      "file": "2026-10-11-216ba00d4db6-b20074dbdea1c793.json",
-      "digest": "52499400a395bc50271b221624de79ed49011bdf7cc4cc74759e707c73bb08c0"
+      "key": "bddae2a075cb275adc7daf4d1cc397fd58ff5f5faa92bdda2a8e1b16e8947627",
+      "file": "2026-10-11-216ba00d4db6-bddae2a075cb275a.json",
+      "digest": "34351f3719a665ff2b7bee1e2775c7ce568d904695302649e967c722fadb529d"
     },
     "snapshots/2026-10-17-f8a6caef6bc8.json": {
-      "key": "01a8e2d509fefde257e8dbec69ecd46012d7b3ba4175987a770fb82e8b548bbf",
-      "file": "2026-10-17-f8a6caef6bc8-01a8e2d509fefde2.json",
-      "digest": "567353ca5705a01949ed15efd93d1c0201d5ea59cb99ceaab67dfe173672ae77"
+      "key": "830e1584b687a4b69377b86bbdbe693c7b9692e3063d1c154958484f2bcf5509",
+      "file": "2026-10-17-f8a6caef6bc8-830e1584b687a4b6.json",
+      "digest": "9d846d8cdba16b4cd3b614c482cc7fb32733389330735e86d64aa7155cd615de"
     },
     "snapshots/2026-10-18-588a9ab2086c.json": {
-      "key": "1751ceafdec25d79dd8a675c7d264d596ee96e41174165fe085874184def8b86",
-      "file": "2026-10-18-588a9ab2086c-1751ceafdec25d79.json",
-      "digest": "567353ca5705a01949ed15efd93d1c0201d5ea59cb99ceaab67dfe173672ae77"
+      "key": "f15263244e0be67715674d92d62f73d4377a94ebd6a0c6a0e83d35664fbc7b8c",
+      "file": "2026-10-18-588a9ab2086c-f15263244e0be677.json",
+      "digest": "9d846d8cdba16b4cd3b614c482cc7fb32733389330735e86d64aa7155cd615de"
     },
     "snapshots/2026-10-19-38e5f33356cc.json": {
-      "key": "b500058808b1281402d01b22795369c5dfdd994a855d79df067b52edd44a7817",
-      "file": "2026-10-19-38e5f33356cc-b500058808b12814.json",
-      "digest": "bb618e6f5072e557fdc98e2fe0a4164f9ef9f7d1371062d059c14bc63107eaa6"
+      "key": "d7efc2e0fffcb4c8e9befc67f910a18bcc9e885d48e7f56824c73944ca61ff7a",
+      "file": "2026-10-19-38e5f33356cc-d7efc2e0fffcb4c8.json",
+      "digest": "937335a709b396516a0d2bcd000636e690857e4d16bfd6f9dc94bb952f05c02e"
     },
     "snapshots/2026-10-20-8bcc7794ad68.json": {
-      "key": "c1894599e8f912d4a945e87b795698d9225cc135e42ee1f8dec969d7f1229b73",
-      "file": "2026-10-20-8bcc7794ad68-c1894599e8f912d4.json",
-      "digest": "28f1b3eb82f7dceaa598bdbecca22a42dae84c89652e50366f0b1ac0bcd6f036"
-    },
-    "snapshots/2026-10-21-f9a2cbaa94fe.json": {
-      "key": "5e4a35f7b679c1d64e009b81e908b5dfeee8fa1389ab2bd846d8345cf9874610",
-      "file": "2026-10-21-f9a2cbaa94fe-5e4a35f7b679c1d6.json",
-      "digest": "76178170cb020c11859abb0c99138eab6e06f451b3578927dc2c9f7135f70476"
+      "key": "90ed77df98a67e4648c0b4520264fc4875ada6b09634010caeee39650360c017",
+      "file": "2026-10-20-8bcc7794ad68-90ed77df98a67e46.json",
+      "digest": "463afeb9557e31b449b99ffb00fd3732288205929b037458ae00ebd9d80d4ac0"
     }
   }
 }
