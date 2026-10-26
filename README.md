@@ -248,3 +248,22 @@ python3 scripts/build-discovery.py
 
 Review the data diff and upstream mechanics before publishing. Only that public
 species catalog is imported; no account captures or credentials are involved.
+
+## Trip notebooks
+
+`/trips/` links to separate Hokkaido, Mammoth and Palisades trip pages. These
+are static, shareable notebooks, marked `noindex, nofollow` in HTML and response
+headers and intentionally excluded from the public discovery generator. They
+are not authenticated private pages. No booking references, access codes,
+passenger details, private source documents or other travelers' contact data
+belong in these files.
+
+The Hokkaido page preserves the October 21, 2026 research snapshot and compares
+complete room configurations, with the four-adult Niseko exception. Package
+changes and the JPY/USD view are browser-only; amounts are not live prices.
+Mammoth uses the booked December 25–January 1 seven-night stay. Palisades is the
+saved January 2026 plan, explicitly archived rather than inferred as a new trip.
+
+Trip styles are in `css/trips.css`; `js/trips.js` handles package/currency
+selection, share links and per-device checklist progress. Default HTML remains
+readable without JavaScript. Keep private confirmations outside the repository.
