@@ -67,6 +67,18 @@ public export schema. Only run it on the reviewed sanitized exports; no API
 credentials or raw responses belong here. This adds retention, not scheduled
 API fetching or session renewal.
 
+The private daily worker calls `scripts/sync_sleep_collection.py --fetch`.
+Before contacting the game, this command reads the current Pokémon Sleep version
+from Apple's public app metadata and passes it to the existing same-account helper
+as `POKEMON_SLEEP_CLIENT_VERSION`. The helper must apply that version to both
+startup and authenticated request templates and mark a full roster as verified in
+its private `safe-summary.json`. This avoids replaying a frozen client version
+after mandatory app updates. If version lookup or authentication fails, the
+worker stops without retries or publication. Public errors include only the
+request stage, numeric response code, and client version; private responses and
+credentials remain outside Git. The private helper, account identity, phone, and
+existing network setup are not provisioned by this repository.
+
 Main skill defaults and specialties use species references where noted. Minted
 nature effects and certain individual main skills remain unresolved. Missing
 values are displayed explicitly. Pokémon species/shiny artwork is served from

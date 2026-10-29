@@ -3,12 +3,74 @@ import argparse
 import datetime
 import importlib.util
 import json
+import os
+import re
 import shutil
 import subprocess
 import tempfile
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from urllib.request import Request, urlopen
 from map_api_roster import write_exports
+
+
+def current_client_version():
+    """Read public App Store metadata; never probe authentication to find a version."""
+    request = Request('https://itunes.apple.com/lookup?id=1579464667&country=us',
+                      headers={'Accept': 'application/json'})
+    try:
+        with urlopen(request, timeout=20) as response:
+            data = json.load(response)
+        matches = [app for app in data['results']
+                   if app.get('trackId') == 1579464667 and app.get('bundleId') == 'jp.pokemon.pokemonsleep']
+        version = matches[0]['version'] if len(matches) == 1 else None
+        if not isinstance(version, str) or not re.fullmatch(r'\d+\.\d+\.\d+', version):
+            raise ValueError('Invalid app metadata')
+        return version
+    except Exception:
+        raise ValueError('Cannot verify the current Pokémon Sleep client version. '
+                         'No game request was sent; published data is unchanged.') from None
+
+
+def fetch_private_source(workspace):
+    research = (workspace / '.research').resolve()
+    python, helper = research / 'proxy-venv/bin/python', research / 'refresh_and_fetch.py'
+    if not python.exists() or not helper.exists():
+        raise ValueError('The private local session helper and runtime are required.')
+    version = current_client_version()
+    try:
+        completed = subprocess.run([str(python), str(helper)], cwd=workspace,
+                                   capture_output=True, text=True, timeout=120,
+                                   env=dict(os.environ, POKEMON_SLEEP_CLIENT_VERSION=version))
+    except (OSError, subprocess.TimeoutExpired):
+        raise ValueError('The private game refresh could not complete. Published data is unchanged.') from None
+    # Only known stage names and numeric codes may leave the private helper.
+    paths = [line.removeprefix('Private output: ') for line in completed.stdout.splitlines()
+             if line.startswith('Private output: ')]
+    if completed.returncode or len(paths) != 1:
+        stages = re.findall(r'(get-token|login|roster) HTTP (\d{3}) server code (\d+)', completed.stdout)
+        detail = ''
+        if stages:
+            stage, status, code = stages[-1]
+            detail = f' at {stage} (HTTP {status}, server code {code}, client {version})'
+        raise ValueError(f'Game refresh failed{detail}. Published data is unchanged; inspect private capture logs.')
+    capture = (workspace / paths[0]).resolve()
+    if not capture.is_relative_to(research):
+        raise ValueError('Game refresh returned an invalid private capture path.')
+    source = (capture / 'roster-decoded.json').resolve()
+    summary = (capture / 'safe-summary.json').resolve()
+    if not all(path.is_relative_to(research) for path in (source, summary)):
+        raise ValueError('Game refresh returned an invalid private capture path.')
+    if not source.is_file() or not summary.is_file():
+        raise ValueError('Game refresh returned no verified full response. Published data is unchanged.')
+    try:
+        status = json.loads(summary.read_text())
+        verified = isinstance(status, dict) and status.get('full_roster_verified') is True
+    except (ValueError, OSError):
+        verified = False
+    if not verified:
+        raise ValueError('Game refresh did not verify a complete roster. Published data is unchanged.')
+    return source, version
 
 
 def module(name, filename):
@@ -71,24 +133,16 @@ def main():
     with tempfile.TemporaryDirectory(prefix='collection-sync-', dir=research) as temporary:
         private_dir = Path(temporary)
         if args.fetch:
-            python = research / 'proxy-venv/bin/python'
-            helper = research / 'refresh_and_fetch.py'
-            if not python.exists() or not helper.exists():
-                raise ValueError('The private local session helper and runtime are required.')
-            completed = subprocess.run([str(python), str(helper)], cwd=args.workspace, capture_output=True, text=True)
-            # Never print helper output or exceptions that could contain session data.
-            paths = [line.removeprefix('Private output: ') for line in completed.stdout.splitlines() if line.startswith('Private output: ')]
-            if completed.returncode or len(paths) != 1:
-                raise ValueError('Game refresh failed. Published data is unchanged; inspect private capture logs.')
-            source = args.workspace / paths[0] / 'roster-decoded.json'
-            if not source.exists():
-                raise ValueError('Game refresh returned no full response. Published data is unchanged.')
+            source, version = fetch_private_source(args.workspace)
             date = datetime.datetime.now(ZoneInfo('America/New_York')).date().isoformat()
         else:
             if not args.captured_at:
                 parser.error('--captured-at is required with --source.')
             source, date = args.source, args.captured_at
-        print(json.dumps(prepare(source, date, args.output_root, private_dir)))
+        report = prepare(source, date, args.output_root, private_dir)
+        if args.fetch:
+            report['client_version'] = version
+        print(json.dumps(report))
         # Build shared analysis only from the sanitized published archives.
         if args.output_root.resolve() == Path(__file__).resolve().parents[1] / 'pokemon-sleep':
             subprocess.run(['node', str(Path(__file__).with_name('build_sleep_ingredient_cache.cjs'))], check=True)
