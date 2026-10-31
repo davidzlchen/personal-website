@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-10-29",
+  "captured_at": "2026-10-31",
   "island_bests": [
     {
       "name": "Greengrass Isle",
@@ -51,18 +51,18 @@
     }
   ],
   "researcher_rank": 67,
-  "dream_shards": 1277741,
+  "dream_shards": 1304384,
   "entries": [
     {
       "name": "Bean Sausage",
-      "quantity": 16,
+      "quantity": 1,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Fancy Apple",
-      "quantity": 93,
+      "quantity": 113,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
@@ -76,7 +76,7 @@
     },
     {
       "name": "Fiery Herb",
-      "quantity": 35,
+      "quantity": 46,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
@@ -90,21 +90,21 @@
     },
     {
       "name": "Greengrass Corn",
-      "quantity": 14,
+      "quantity": 4,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Greengrass Soybeans",
-      "quantity": 125,
+      "quantity": 134,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Honey",
-      "quantity": 15,
+      "quantity": 30,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
@@ -160,28 +160,28 @@
     },
     {
       "name": "Soft Potato",
-      "quantity": 0,
+      "quantity": 27,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Soothing Cacao",
-      "quantity": 90,
+      "quantity": 104,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Tasty Mushroom",
-      "quantity": 0,
+      "quantity": 28,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Warming Ginger",
-      "quantity": 54,
+      "quantity": 37,
       "category": "Ingredients",
       "description": null,
       "needs_review": false
@@ -855,6 +855,13 @@
       "needs_review": false
     },
     {
+      "name": "Pikachu (Halloween) Incense",
+      "quantity": 1,
+      "category": "Items",
+      "description": null,
+      "needs_review": false
+    },
+    {
       "name": "Pikachu (Holiday) Incense",
       "quantity": 1,
       "category": "Items",
@@ -1199,7 +1206,7 @@
     },
     {
       "name": "Aron Candy",
-      "quantity": 589,
+      "quantity": 591,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1220,7 +1227,7 @@
     },
     {
       "name": "Bulbasaur Candy",
-      "quantity": 922,
+      "quantity": 923,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1248,7 +1255,7 @@
     },
     {
       "name": "Charmander Candy",
-      "quantity": 1002,
+      "quantity": 1003,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1262,7 +1269,7 @@
     },
     {
       "name": "Chimchar Candy",
-      "quantity": 326,
+      "quantity": 327,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1283,7 +1290,7 @@
     },
     {
       "name": "Cramorant Candy",
-      "quantity": 232,
+      "quantity": 233,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1367,21 +1374,21 @@
     },
     {
       "name": "Drampa Candy",
-      "quantity": 320,
+      "quantity": 338,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Dratini Candy",
-      "quantity": 495,
+      "quantity": 499,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Drifloon Candy",
-      "quantity": 264,
+      "quantity": 266,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1395,7 +1402,7 @@
     },
     {
       "name": "Eevee Candy",
-      "quantity": 2075,
+      "quantity": 2076,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1437,7 +1444,7 @@
     },
     {
       "name": "Gastly Candy",
-      "quantity": 904,
+      "quantity": 905,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1507,7 +1514,7 @@
     },
     {
       "name": "Larvitar Candy",
-      "quantity": 4,
+      "quantity": 6,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1584,14 +1591,14 @@
     },
     {
       "name": "Mimikyu Candy",
-      "quantity": 233,
+      "quantity": 253,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Minun Candy",
-      "quantity": 357,
+      "quantity": 359,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1689,7 +1696,7 @@
     },
     {
       "name": "Pumpkaboo Candy",
-      "quantity": 829,
+      "quantity": 832,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1759,14 +1766,14 @@
     },
     {
       "name": "Shuppet Candy",
-      "quantity": 573,
+      "quantity": 574,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Slakoth Candy",
-      "quantity": 434,
+      "quantity": 435,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1815,7 +1822,7 @@
     },
     {
       "name": "Squirtle Candy",
-      "quantity": 165,
+      "quantity": 191,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1829,7 +1836,7 @@
     },
     {
       "name": "Sudowoodo Candy",
-      "quantity": 336,
+      "quantity": 348,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1850,7 +1857,7 @@
     },
     {
       "name": "Tinkatink Candy",
-      "quantity": 457,
+      "quantity": 458,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1864,7 +1871,7 @@
     },
     {
       "name": "Togepi Candy",
-      "quantity": 694,
+      "quantity": 706,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1899,14 +1906,14 @@
     },
     {
       "name": "Treecko Candy",
-      "quantity": 473,
+      "quantity": 474,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
     },
     {
       "name": "Turtwig Candy",
-      "quantity": 346,
+      "quantity": 364,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
@@ -1934,14 +1941,14 @@
     },
     {
       "name": "Wooper Candy",
-      "quantity": 54,
+      "quantity": 56,
       "category": "Pokémon candies",
       "description": null,
       "needs_review": false
     },
     {
       "name": null,
-      "quantity": 160,
+      "quantity": 223,
       "category": "Unmapped items",
       "description": null,
       "needs_review": true,
@@ -1971,7 +1978,7 @@
     },
     "mon-2": {
       "name": "Wooper Candy",
-      "quantity": 54
+      "quantity": 56
     },
     "mon-3": {
       "name": "Cresselia Candy",
@@ -2007,7 +2014,7 @@
     },
     "mon-11": {
       "name": "Wooper Candy",
-      "quantity": 54
+      "quantity": 56
     },
     "mon-12": {
       "name": "Mr. Mime Candy",
@@ -2015,7 +2022,7 @@
     },
     "mon-13": {
       "name": "Wooper Candy",
-      "quantity": 54
+      "quantity": 56
     },
     "mon-14": {
       "name": "Dedenne Candy",
@@ -2023,7 +2030,7 @@
     },
     "mon-15": {
       "name": "Turtwig Candy",
-      "quantity": 346
+      "quantity": 364
     },
     "mon-16": {
       "name": "Latias Candy",
@@ -2031,7 +2038,7 @@
     },
     "mon-17": {
       "name": "Charmander Candy",
-      "quantity": 1002
+      "quantity": 1003
     },
     "mon-18": {
       "name": "Gulpin Candy",
@@ -2047,7 +2054,7 @@
     },
     "mon-21": {
       "name": "Treecko Candy",
-      "quantity": 473
+      "quantity": 474
     },
     "mon-22": {
       "name": "Mawile Candy",
@@ -2063,7 +2070,7 @@
     },
     "mon-25": {
       "name": "Eevee Candy",
-      "quantity": 2075
+      "quantity": 2076
     },
     "mon-26": {
       "name": "Stufful Candy",
@@ -2075,11 +2082,11 @@
     },
     "mon-28": {
       "name": "Eevee Candy",
-      "quantity": 2075
+      "quantity": 2076
     },
     "mon-29": {
       "name": "Squirtle Candy",
-      "quantity": 165
+      "quantity": 191
     },
     "mon-30": {
       "name": "Pawmi Candy",
@@ -2087,7 +2094,7 @@
     },
     "mon-31": {
       "name": "Wooper Candy",
-      "quantity": 54
+      "quantity": 56
     },
     "mon-32": {
       "name": "Wobbuffet Candy",
@@ -2111,7 +2118,7 @@
     },
     "mon-37": {
       "name": "Treecko Candy",
-      "quantity": 473
+      "quantity": 474
     },
     "mon-38": {
       "name": "Gulpin Candy",
@@ -2127,11 +2134,11 @@
     },
     "mon-41": {
       "name": "Larvitar Candy",
-      "quantity": 4
+      "quantity": 6
     },
     "mon-42": {
       "name": "Tinkatink Candy",
-      "quantity": 457
+      "quantity": 458
     },
     "mon-43": {
       "name": "Geodude Candy",
@@ -2139,7 +2146,7 @@
     },
     "mon-44": {
       "name": "Charmander Candy",
-      "quantity": 1002
+      "quantity": 1003
     },
     "mon-45": {
       "name": "Piplup Candy",
@@ -2147,7 +2154,7 @@
     },
     "mon-46": {
       "name": "Pumpkaboo Candy",
-      "quantity": 829
+      "quantity": 832
     },
     "mon-47": {
       "name": "Jigglypuff Candy",
@@ -2167,7 +2174,7 @@
     },
     "mon-51": {
       "name": "Larvitar Candy",
-      "quantity": 4
+      "quantity": 6
     },
     "mon-52": {
       "name": "Cutiefly Candy",
@@ -2183,7 +2190,7 @@
     },
     "mon-55": {
       "name": "Dratini Candy",
-      "quantity": 495
+      "quantity": 499
     },
     "mon-56": {
       "name": "Farfetch’d Candy",
@@ -2203,7 +2210,7 @@
     },
     "mon-60": {
       "name": "Pumpkaboo Candy",
-      "quantity": 829
+      "quantity": 832
     },
     "mon-61": {
       "name": "Snover Candy",
@@ -2215,7 +2222,7 @@
     },
     "mon-63": {
       "name": "Eevee Candy",
-      "quantity": 2075
+      "quantity": 2076
     },
     "mon-64": {
       "name": "Cetoddle Candy",
@@ -2235,7 +2242,7 @@
     },
     "mon-68": {
       "name": "Eevee Candy",
-      "quantity": 2075
+      "quantity": 2076
     },
     "mon-69": {
       "name": "Comfey Candy",
@@ -2263,7 +2270,7 @@
     },
     "mon-75": {
       "name": "Cramorant Candy",
-      "quantity": 232
+      "quantity": 233
     },
     "mon-76": {
       "name": "Latios Candy",
@@ -2271,7 +2278,7 @@
     },
     "mon-77": {
       "name": "Bulbasaur Candy",
-      "quantity": 922
+      "quantity": 923
     },
     "mon-78": {
       "name": "Croagunk Candy",
@@ -2279,7 +2286,7 @@
     },
     "mon-79": {
       "name": "Treecko Candy",
-      "quantity": 473
+      "quantity": 474
     },
     "mon-80": {
       "name": "Mewtwo Candy",
@@ -2291,7 +2298,7 @@
     },
     "mon-82": {
       "name": "Bulbasaur Candy",
-      "quantity": 922
+      "quantity": 923
     },
     "mon-83": {
       "name": "Fuecoco Candy",
@@ -2303,7 +2310,7 @@
     },
     "mon-85": {
       "name": "Togepi Candy",
-      "quantity": 694
+      "quantity": 706
     },
     "mon-86": {
       "name": "Raikou Candy",
@@ -2327,7 +2334,7 @@
     },
     "mon-91": {
       "name": "Eevee Candy",
-      "quantity": 2075
+      "quantity": 2076
     },
     "mon-92": {
       "name": "Trapinch Candy",
@@ -2343,11 +2350,11 @@
     },
     "mon-95": {
       "name": "Eevee Candy",
-      "quantity": 2075
+      "quantity": 2076
     },
     "mon-96": {
       "name": "Squirtle Candy",
-      "quantity": 165
+      "quantity": 191
     },
     "mon-97": {
       "name": "Croagunk Candy",
@@ -2359,11 +2366,11 @@
     },
     "mon-99": {
       "name": "Aron Candy",
-      "quantity": 589
+      "quantity": 591
     },
     "mon-100": {
       "name": "Sudowoodo Candy",
-      "quantity": 336
+      "quantity": 348
     },
     "mon-101": {
       "name": "Munna Candy",
@@ -2375,7 +2382,7 @@
     },
     "mon-103": {
       "name": "Eevee Candy",
-      "quantity": 2075
+      "quantity": 2076
     },
     "mon-104": {
       "name": "Foongus Candy",
@@ -2403,7 +2410,7 @@
     },
     "mon-110": {
       "name": "Eevee Candy",
-      "quantity": 2075
+      "quantity": 2076
     }
   }
 }
