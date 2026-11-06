@@ -74,6 +74,11 @@
       "key": "cf2b43d7d680eb4b2af668517c995241e3cf7075b6b4b0ae5a315dcbdff791d2",
       "file": "2026-11-05-07f2340d7723-cf2b43d7d680eb4b.json",
       "digest": "71cc79207863a75218c2678864fb645c00635e8d99ca24fb790edf6db60bc488"
+    },
+    "snapshots/2026-11-06-2f2c98f02e4d.json": {
+      "key": "8e619d81b971ba860847f463a02c05ea92116475f650ea29b884f51cb1615e4e",
+      "file": "2026-11-06-2f2c98f02e4d-8e619d81b971ba86.json",
+      "digest": "4ec9a4dab9e4a2a4acf13ab83c096ba3f2692a0e869c36f3e56bf0d961a64f66"
     }
   }
 }
