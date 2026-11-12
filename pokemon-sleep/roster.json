@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-11-11",
+  "captured_at": "2026-11-12",
   "count": 114,
   "records": [
     {
@@ -1429,12 +1429,12 @@
       "species": "Latias",
       "national_dex": 380,
       "nickname": null,
-      "level": 38,
-      "rp": 1697,
-      "xp_total": 33089,
-      "xp_in_level": 77,
-      "xp_level_required": 1575,
-      "xp_to_next_level": 1498,
+      "level": 39,
+      "rp": 1725,
+      "xp_total": 35589,
+      "xp_in_level": 1002,
+      "xp_level_required": 1607,
+      "xp_to_next_level": 605,
       "nature": "Careful",
       "original_nature": "Careful",
       "nature_effects": {
